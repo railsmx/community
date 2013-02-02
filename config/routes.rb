@@ -1,6 +1,6 @@
 Community::Application.routes.draw do
-  get "home/index"
-  get "home/show"
+  root to: "home#index"
+  get "/:id" => "home#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
