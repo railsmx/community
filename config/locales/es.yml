@@ -1,0 +1,8 @@
+mail_form:
+  models:
+    contact_form: "Tu forma de contacto"
+  attributes:
+    contact_form:
+      email: "E-mail"
+      message: "Mensaje enviado"
+  
