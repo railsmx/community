@@ -7,10 +7,9 @@ class ContactFormController < ApplicationController
     @contact_form = ContactForm.new(params[:contact_form])
     @contact_form.request = request
 
-    unless @contact.valid?
-      return render :new
-    end
+    return render :new unless @contact.valid?
 
+    @contact.deliver
     redirect_to root_url, notice: t('.message_sent')
   end
 end
