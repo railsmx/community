@@ -1,8 +1,5 @@
 class HomeController < ApplicationController
 
-
-  #@contact_form.request = request
-
   def index
 
   end

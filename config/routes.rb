@@ -1,7 +1,9 @@
 Community::Application.routes.draw do
-  get "/:id" => "home#show"
 
-  resource :contacto, only: [:new, :create], controller: :contact_form, as: :contact_form
+  get "/contacto" => "contact_form#new", as: :contact_form_new
+  post "/contacto" => "contact_form#create", as: :contact_form
+
+  get "/:id" => "home#show"
 
   root to: "home#index"
 
