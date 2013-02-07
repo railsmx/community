@@ -20,13 +20,6 @@ describe HomeController do
     assert_template 'privacidad'
   end
 
-  it "should get show with 'contacto' parameter" do
-    get :show, id: 'contacto'
-
-    assert_response :success
-    assert_template 'contacto'
-  end
-
   it "should get 404 on show with invalid parameter" do
     get :show, id: 'invalid'
 

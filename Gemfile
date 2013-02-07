@@ -20,6 +20,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'mac_generators'
 
 group :test do
   gem 'minitest-rails'
@@ -30,7 +31,7 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
-gem 'mail_form'
+gem 'mail_form', github: 'heribertoci/mail_form'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -43,3 +44,5 @@ gem 'mail_form'
 
 # To use debugger
 # gem 'debugger'
+
+gem "bootstrap-sass"
