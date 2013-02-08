@@ -1,16 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Community</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  
+  <head>
+    <title>Untitled (0)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap.css">
+    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="https://djyhxgczejc94.cloudfront.net/builds/fd5d342fab2d7c06a61cadfd77a29e9f5ae2d360.css"> 
+  </head>
+  
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#"><br></a>
+          <div class="navbar-content">
+            <ul class="nav ">
+              <li>
+                <%=link_to "Blog", ('#')%>
+              </li>
+              <li>
+                <%=link_to "Comunidad", ('acerca')%>
+              </li>
+              <li>
+                <%=link_to "Eventos", ('Privacidad')%>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%=yield%>
+      <div class="footer">
+        <ul class="pull-left">
+          <li>
+            <%=link_to "Acerca", ('acerca')%>
+          </li>
+          <li>
+            <%=link_to "Privacidad", ('privacidad')%>
+          </li>
+          <li>
+            <%=link_to "Contactanos", ('contacto')%> 
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://app.divshot.com/js/jquery.min.js"></script>
+    <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
+  </body>
 
-  <div class="container">
-    <%= yield %>
-  </div>
-
-</body>
 </html>

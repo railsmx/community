@@ -1,21 +1,41 @@
-<%= form_for @contact_form, url: contact_form_path  do |f| %>
-  <div class="message error">
-    <%= t '.form_errors' %>
-  </div>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, :required => true %>(required)
-    <span class='error'><%= @contact_form.errors[:name] %></span>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, :required => true %>(required)
-  </div>
-  <div class="field">
-    Comments (What types of wine are you interested in?):<br /> <%= f.text_area :message %><br />
-  </div>
-  <div class="field">
-    Submit: <%= f.submit "Create" %>
-  </div>
+<!doctype html>
+<html>
+  
+  <head>
+    <title>Contacto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap.css">
+    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap-responsive.css"> 
+  </head>
+  
+  <body>
+    <%= form_for @contact_form, url: contact_form_path  do |f| %>
+    <div class="message error">
+      <%= t '.form_errors' %>
+    </div>
+    <div class="container">
+      <div class="form-actions">
+        <%= f.label :name %>
+        <%= f.text_field :name, :required => true %>
+        <span class="label label-important">Obligatorio</span>
+        <span class='error'><%= @contact_form.errors[:name] %></span>
+        <%= f.label :email %>
+        <%= f.email_field :email, :required => true %>
+        <span class="label label-important">Obligatorio</span>
+        <span class='error'><%= @contact_form.errors[:email] %></span>
+        <p>Comentarios</p>
+        <%= f.text_area :message %>
+        <br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
+    <script src="https://app.divshot.com/js/jquery.min.js"></script>
+    <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
+    <%end %>
+  </body>
+  
 
-<% end %>
+
+</html>
+
