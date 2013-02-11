@@ -2,26 +2,21 @@
   In this file override any css style or add new ones
 */
 
-containered {
-  padding-top: 50px;
-}
-
-.nav{
-  padding-left: 700px;
+.page-header{
+  padding-top: 40px;
   }
+
 .footer{
   width: auto;
   background-color: black;
   height: 100px;
   }
+
 .textifier{
+  width: 400px;
   text-align: justify;
+  } 
+
+.nav{
+  padding-left: 600px;
   }
-  
-.container{
-  padding-top: 40px;
-  }
-  
-.page-header{
-  padding-top: 40px;
-}

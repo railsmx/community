@@ -2,12 +2,11 @@
 <html>
   
   <head>
-    <title>Untitled (0)</title>
+    <title>Rails Mx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap.css">
-    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="https://djyhxgczejc94.cloudfront.net/builds/fd5d342fab2d7c06a61cadfd77a29e9f5ae2d360.css"> 
+    <%=stylesheet_link_tag "application" %>
+    <%=javascript_include_tag "application" %>
   </head>
   
   <body>
@@ -32,20 +31,18 @@
       </div>
     </div>
     <%=yield%>
-      <div class="footer">
-        <ul class="pull-left">
-          <li>
-            <%=link_to "Acerca", ('acerca')%>
-          </li>
-          <li>
-            <%=link_to "Privacidad", ('privacidad')%>
-          </li>
-          <li>
-            <%=link_to "Contactanos", ('contacto')%> 
-          </li>
-        </ul>
-      </div>
     </div>
+    <div class="footer">
+      <li>
+        <%=link_to "Acerca", ('acerca')%>
+      </li>
+      <li>
+        <%=link_to "Privacidad", ('privacidad')%>
+      </li>
+      <li>
+        <%=link_to "Contactanos", ('contacto')%> 
+      </li>
+  </div>
     <script src="https://app.divshot.com/js/jquery.min.js"></script>
     <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
   </body>
