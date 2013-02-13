@@ -5,6 +5,8 @@ Community::Application.routes.draw do
 
   get "/:id" => "home#show"
 
+  resources :events, except: [:show]
+
   root to: "home#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
