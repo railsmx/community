@@ -1,8 +1,8 @@
 es:
   mail_form:
     models:
-      contact_form: "Tu forma de contacto"
-      name: "nombre"
+      contact_form: "Forma para contactar"
+      name: "Nombre"
     attributes:
       contact_form:
         email: "E-mail"
@@ -13,5 +13,5 @@ es:
   activerecord:
     errors:
       messages: 
-        invalid: "fecha invalida"
+        invalid: "Fecha invalida"
     
