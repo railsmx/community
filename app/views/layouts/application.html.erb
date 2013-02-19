@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <%=stylesheet_link_tag "application" %>
-    <%=javascript_include_tag "application" %>
+    <%=stylesheet_link_tag "bootstrap-datepicker" %>
+    <%=javascript_include_tag "application" %>  
   </head>
   
   <body>
@@ -16,13 +17,16 @@
           <div class="navbar-content">
             <ul class="nav ">
               <li>
+                <%=link_to "Home", root_path%>
+              </li>
+              <li>
                 <%=link_to "Blog", ('#')%>
               </li>
               <li>
                 <%=link_to "Comunidad", ('#')%>
               </li>
               <li>
-                <%=link_to "Eventos", ('#')%>
+                <%=link_to "Eventos", new_event_path%>
               </li>
             </ul>
           </div>
@@ -36,14 +40,12 @@
         <%=link_to "Acerca", static_path('acerca')%>
       </li>
       <li>
-        <%=link_to "Politicas de Privacidad", ('privacidad')%>
+        <%=link_to "Politicas de Privacidad", static_path('privacidad')%>
       </li>
       <li>
-        <%=link_to "Contactanos", ('contacto')%> 
+        <%=link_to "Contactanos", static_path('contacto')%> 
       </li>
   </div>
-    <script src="https://app.divshot.com/js/jquery.min.js"></script>
-    <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
   </body>
 
 </html>
