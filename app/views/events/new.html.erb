@@ -6,10 +6,10 @@
       <%= f.text_field :name, :required => true %>
       <label>Lugar:</label>
       <%= f.text_field :location %>
-      <p>Fecha de inicio:</p>
-      <%= f.text_field :date, :class => 'datepicker_start', :required => true %>
-      <p>Fecha de termino:</p>
+      <label>Fecha de inicio:</label>
       <%= f.text_field :date, :class => 'datepicker', :required => true %>
+      <label>Hora:</label>
+      <input type="text"  class="time" />
       <label>Organizador:</label>
       <%= f.text_field :organizer, :required => true %>
       <label>Contacto:</label>
@@ -17,7 +17,6 @@
       <label>Descripcion:</label>
       <%= f.text_area :description, :class => 'areamail'%>
       <br>
-      <input type="text" class="date-picker" data-start-date="2012-01-01">
       <button type="submit"class="btn btn-danger btn-large">Crear Evento</button>
     </div>
   <%end%>
@@ -25,5 +24,27 @@
 </div>
 
 <script type="text/javascript">
- $('.datepicker_start').datepicker()
+ startDate = new Date();
+ endDate = (new Date())
+ endDate.setDate(startDate.getDate()+180);
+ $('.datepicker').datepicker(
+    { 
+      startDate: startDate,
+      endDate: endDate,
+      language: 'es',
+      format: 'dd/mm/yyyy',
+      autoclose: true
+    }
+  );
+
+
+
+
+  $('.time').inputmask('h:s t', {autoUnmask: true, placeholder: " "});
+
+
+
 </script>
+
+
+
