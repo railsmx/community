@@ -24,11 +24,11 @@ describe Event do
   it "must be valid" do
     event.tap do |e|
       e.name = 'MagmaConf'
-      e.date = Date.today + 1
+      e.date = Date.today + 2
       e.location = 'Manzanillo'
       e.contact = 'CrowdInt'
     end
-
+    
     event.valid?.must_equal true
   end
 end

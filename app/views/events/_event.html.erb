@@ -1,0 +1,40 @@
+<%= form_for @event, url: events_path  do |f| %>
+<div class="container">
+  <div class="page-header">  
+    <label>Nombre del evento:</label>
+    <%= f.text_field :name %>
+    <label>Lugar:</label>
+    <%= f.text_field :location %>
+    <label>Fecha de inicio:</label>
+    <%= f.text_field :date, class: 'datepicker' %>
+    <label>Hora:</label>
+    <%= f.text_field :time, class: 'time' %>
+    <label>Organizador:</label>
+    <%= f.text_field :organizer %>
+    <label>Contacto:</label>
+    <%= f.text_field :contact %>
+    <label>Descripcion:</label>
+    <%= f.text_area :description, class: 'areamail'%>
+    <br>
+    <button type="submit"class="btn btn-danger btn-large">Crear Evento</button>
+  </div>
+</div>
+<%end%>
+<script type="text/javascript">
+ startDate = new Date();
+ endDate = (new Date())
+ endDate.setDate(startDate.getDate()+180);
+ 
+ $('.datepicker').datepicker(
+    { 
+      startDate: startDate,
+      endDate: endDate,
+      language: 'es',
+      format: 'dd/mm/yyyy',
+      autoclose: true
+    }
+  );
+
+
+  $('.time').inputmask('h:s t', {autoUnmask: true, placeholder: " "});
+</script>
