@@ -1,4 +1,16 @@
 class EventsController < ApplicationController
+  
+  def index
+    @event = Event.order("date DESC").limit(3)
+    @oldevent = Event.order("date ASC").limit(3)
+    #@event = Event.all
+
+  end
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def new
     @event =  Event.new
   end 
@@ -7,7 +19,6 @@ class EventsController < ApplicationController
     # Crear un nuevo evento a partir de los parametros
     # Si valid? entonces hay que .save
     # y hacer redirect a events_path
-
     @event = Event.new(create_params).tap do |event|
       event.date = "#{params[:event][:date]} #{params[:event][:time]}"
     end
@@ -44,4 +55,6 @@ class EventsController < ApplicationController
     params.require(:event)
       .permit(:name, :location, :description, :contact, :organizer, :date, :time)
   end
+
+  
 end
