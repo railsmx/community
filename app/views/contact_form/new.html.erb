@@ -1,21 +1,23 @@
-<%= form_for @contact_form, url: contact_form_path  do |f| %>
+<div class= "container">
+  <%= form_for @contact_form, url: contact_form_path  do |f| %>
   <div class="message error">
     <%= t '.form_errors' %>
   </div>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, :required => true %>(required)
-    <span class='error'><%= @contact_form.errors[:name] %></span>
+  <div class="container">
+    <div class="form-actions">
+      <%= f.label :name %>
+      <%= f.text_field :name, :required => true %>
+      <span class="label label-important">Obligatorio</span>
+      
+      <%= f.label :email %>
+      <%= f.email_field :email, :required => true %>
+      <span class="label label-important">Obligatorio</span>
+      
+      <p>Comentarios</p>
+      <%= f.text_area :message, :class => 'areamail' %>
+      <br>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, :required => true %>(required)
-  </div>
-  <div class="field">
-    Comments (What types of wine are you interested in?):<br /> <%= f.text_area :message %><br />
-  </div>
-  <div class="field">
-    Submit: <%= f.submit "Create" %>
-  </div>
-
-<% end %>
+  <%end %>
+</div>

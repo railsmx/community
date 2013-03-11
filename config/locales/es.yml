@@ -1,0 +1,17 @@
+es:
+  mail_form:
+    models:
+      contact_form: "Forma para contactar"
+      name: "Nombre"
+    attributes:
+      contact_form:
+        email: "E-mail"
+        message: "Mensaje enviado"
+        name: "Nombre"
+
+
+  activerecord:
+    errors:
+      messages: 
+        invalid: "Fecha invalida"
+    
