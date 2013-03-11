@@ -70,4 +70,19 @@ describe EventsController do
       flash[:notice].wont_be_nil
     end  
   end
+
+  # describe "index" do
+    
+  #   it "should show the events"
+  #     get :index
+  #   end
+
+  #   it "should show nearest events"
+
+  #   end
+
+  #   it "should show lastest events"
+
+  #   end
+  # end
 end

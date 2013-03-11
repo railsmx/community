@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :location
       t.string :contact
       t.string :organizer
+      
 
       t.timestamps
     end

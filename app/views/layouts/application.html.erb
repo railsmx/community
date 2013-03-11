@@ -17,7 +17,7 @@
           <div class="navbar-content">
             <ul class="nav ">
               <li>
-                <%=link_to "Home", root_path%>
+                <%=link_to "Home", root_path %>
               </li>
               <li>
                 <%=link_to "Blog", ('#')%>
@@ -26,7 +26,10 @@
                 <%=link_to "Comunidad", ('#')%>
               </li>
               <li>
-                <%=link_to "Eventos", new_event_path%>
+                <%=link_to "Eventos", new_event_path %>
+              </li>
+              <li>
+                <%=link_to "Login", "/auth/github", :class => "linktest btn-info"%>
               </li>
             </ul>
           </div>
