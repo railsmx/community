@@ -16,3 +16,4 @@
 /tmp
 
 .rbenv-version
+.DS_Store
