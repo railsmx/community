@@ -1,28 +1,45 @@
-== README
+# README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+## Dependencies
+This application depends on Ruby 2.0 and Ruby on Rails 4.0
 
-* System dependencies
+## Authentication
+For authentication it uses OmniAuth with a Github provider
 
-* Configuration
+Before starting the application export Github OAuth keys as follow:
 
-* Database creation
+  export GITHUB_KEY=4849ab3245ef432
+  export GUTHYB_SECRET=83478374872acb7848393
 
-* Database initialization
+These keys are being used in the omniauth.rb initializer
 
-* How to run the test suite
+## Run tests
+For tests minitest in being used so all tests can been found in /test
+directory. For integration tests minitest with capybara is being used.
 
-* Services (job queues, cache servers, search engines, etc.)
+To run test, use rake tasks:
 
-* Deployment instructions
+  rake test
+  rake test:models
+  rake test:controllers
+  rake test:integration
 
-* ...
+## Configuration
+Puma is the web server used for this application, so we shouls avoid running
 
+  rails server
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+And instead start puma server with foreman as follow:
+
+  foreman start
+
+This command will start puma server on localhost at port 5000,
+http://127.0.0.1:5000
+
+## Database
+Posqtgresql database is being used in this application

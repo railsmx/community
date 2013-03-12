@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0.beta1'
 
 gem 'pg'
+gem 'puma'
 
 gem 'mail_form', github: 'heribertoci/mail_form'
 gem 'omniauth-github'
@@ -26,10 +27,15 @@ gem 'bootstrap-sass'
 
 group :test do
   gem 'minitest-rails'
+  gem 'minitest-focus'
+  gem 'minitest-colorize'
+  gem 'minitest-rails-capybara'
+  gem 'launchy'
 end
 
 group :development do
   gem 'pry-rails'
+  gem 'foreman'
 end
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
