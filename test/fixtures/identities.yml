@@ -2,11 +2,12 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  provider: MyString
-  uid: MyString
-  name: MyString
+  provider: github
+  uid: 3345444
+  username: iszandro
+  email: yasnet21@gmail.com
 
-two:
-  provider: MyString
-  uid: MyString
-  name: MyString
+# two:
+#   provider: MyString
+#   uid: MyString
+#   name: MyString
