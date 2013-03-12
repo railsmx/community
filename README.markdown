@@ -13,8 +13,8 @@ For authentication it uses OmniAuth with a Github provider
 
 Before starting the application export Github OAuth keys as follow:
 
-  export GITHUB_KEY=4849ab3245ef432
-  export GUTHYB_SECRET=83478374872acb7848393
+    export GITHUB_KEY=4849ab3245ef432
+    export GUTHYB_SECRET=83478374872acb7848393
 
 These keys are being used in the omniauth.rb initializer
 
@@ -24,19 +24,19 @@ directory. For integration tests minitest with capybara is being used.
 
 To run test, use rake tasks:
 
-  rake test
-  rake test:models
-  rake test:controllers
-  rake test:integration
+    rake test
+    rake test:models
+    rake test:controllers
+    rake test:integration
 
 ## Configuration
 Puma is the web server used for this application, so we shouls avoid running
 
-  rails server
+    rails server
 
 And instead start puma server with foreman as follow:
 
-  foreman start
+    foreman start
 
 This command will start puma server on localhost at port 5000,
 http://127.0.0.1:5000
