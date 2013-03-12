@@ -7,6 +7,7 @@ gem 'puma'
 
 gem 'mail_form', github: 'heribertoci/mail_form'
 gem 'omniauth-github'
+gem 'warden', '~> 1.2.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
