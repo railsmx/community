@@ -6,8 +6,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_identity
 
   private
+  def warden
+  	request.env['warden']
+  end
 
   def current_identity
-    @current_identity ||= Identity.find(session[:identity_id]) if session[:identity_id]
+    #@current_identity ||= Identity.find(session[:identity_id]) if session[:identity_id]
+    warden.user
   end
 end
