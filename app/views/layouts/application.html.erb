@@ -10,7 +10,6 @@
   </head>
   
   <body>
-    <span><%= flash[:notice] %></span>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -30,7 +29,7 @@
                 <%=link_to "Eventos", new_event_path %>
               </li>
               <li>
-                <%=link_to "Login", "/auth/github", :class => "linktest btn-info"%>
+                <%= display_login_link %>
               </li>
             </ul>
           </div>

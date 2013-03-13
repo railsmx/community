@@ -26,11 +26,4 @@ Warden::Strategies.add(:omniauth_public) do
       fail! I18n.t('warden.strategies.unauthorized_domain')
     end
   end
-
- 
-  def create_identity(auth)
-    params = { uid: auth['uid'], provider: auth['provider'],
-               username: auth['info']['nickname'], email: auth['info']['email'] }
-    Identity.create! params
-  end
 end
