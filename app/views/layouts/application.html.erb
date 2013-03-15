@@ -8,7 +8,7 @@
     <%=stylesheet_link_tag "bootstrap-datepicker" %>
     <%=javascript_include_tag "application" %>
   </head>
-  
+
   <body>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -17,38 +17,39 @@
           <div class="navbar-content">
             <ul class="nav ">
               <li>
-                <%=link_to "Home", root_path %>
+              <%=link_to "Home", root_path %>
               </li>
               <li>
-                <%=link_to "Blog", ('#')%>
+              <%=link_to "Blog", ('#')%>
               </li>
               <li>
-                <%=link_to "Comunidad", ('#')%>
+              <%=link_to "Comunidad", ('#')%>
               </li>
               <li>
-                <%=link_to "Eventos", new_event_path %>
+              <%=link_to "Eventos", new_event_path %>
               </li>
               <li>
-                <%= display_login_link %>
+              <%= display_login_link %>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
+
     <%=yield%>
-    </div>
+
     <div class="footer">
       <li>
-        <%=link_to "Acerca", static_path('acerca')%>
+      <%=link_to "Acerca", static_path('acerca')%>
       </li>
       <li>
-        <%=link_to "Politicas de Privacidad", static_path('privacidad')%>
+      <%=link_to "Politicas de Privacidad", static_path('privacidad')%>
       </li>
       <li>
-        <%=link_to "Contactanos", static_path('contacto')%> 
+      <%=link_to "Contactanos", static_path('contacto')%>
       </li>
-  </div>
+    </div>
   </body>
 
 </html>
