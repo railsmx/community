@@ -126,6 +126,8 @@ GEM
       omniauth (~> 1.0)
     pg (0.14.1)
     polyglot (0.3.3)
+    pretty_formatter (0.0.1)
+      activesupport (>= 3.2)
     pry (0.9.12)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -218,6 +220,7 @@ DEPENDENCIES
   minitest-rails-capybara
   omniauth-github
   pg
+  pretty_formatter
   pry-rails
   puma
   rails (= 4.0.0.beta1)

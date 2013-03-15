@@ -13,5 +13,7 @@ module Community
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+
+    config.log_formatter = PrettyFormatter.formatter
   end
 end

@@ -4,6 +4,7 @@ gem 'rails', '4.0.0.beta1'
 
 gem 'pg'
 gem 'puma'
+gem 'pretty_formatter'
 
 gem 'mail_form', github: 'heribertoci/mail_form'
 gem 'omniauth-github'
