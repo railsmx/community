@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20130312193332) do
     t.string   "uid",                        null: false
     t.string   "username",                   null: false
     t.string   "email",                      null: false
-    t.boolean  "block",      default: false
+    t.boolean  "blocked",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

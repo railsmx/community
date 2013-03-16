@@ -54,4 +54,13 @@ class MiniTest::Unit::TestCase
     Warden.test_reset!
     Capybara.reset_sessions!
   end
+
+  def mock_omniauth(uid = '12334')
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
+      { 'provider' => 'github', 'uid' => uid,
+        'info' => { 'nickname' => 'Test user', 'email' => 'test@user.com' }
+      }
+    )
+  end
 end
