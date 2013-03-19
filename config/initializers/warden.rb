@@ -1,6 +1,6 @@
 Rails.application.config.middleware.use Warden::Manager do |manager|
   manager.default_strategies :omniauth_public
-  manager.failure_app = lambda { |env| DashboardController.action(:index).call(env) }
+  manager.failure_app = lambda { |env| HomeController.action(:index).call(env) }
 end
 
 Warden::Manager.serialize_into_session(:identity) do |identity|
@@ -22,7 +22,7 @@ Warden::Strategies.add(:omniauth_public) do
 
 
     identity = Identity.my_identity(auth['uid'], auth['provider']).last || Identity.create_with_omniauth(auth)
-    return fail! I18n.t('warden.strategies.unauthorized_domain') if identity.blocked?
+    return fail! I18n.t('warden.strategies.unauthorized_identity') if identity.blocked?
     success! identity             
   end
 end

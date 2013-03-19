@@ -1,4 +1,14 @@
 es:
+  warden:
+    strategies:
+      unauthorized_identity: 'Su cuenta ha sido suspendida'
+
+  layouts:
+    application:
+      sign_in: 'Iniciar sesión'
+      sign_out: 'Cerrar sesión'
+      welcome: 'Bienvenido %{user}' 
+
   mail_form:
     models:
       contact_form: "Forma para contactar"
