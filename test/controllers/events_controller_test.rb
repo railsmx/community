@@ -36,31 +36,31 @@ describe EventsController do
   end
 
   describe "create" do
-    focus
     it "should create new event for logged user" do
       log_in_user
-
+      
       post :create, event: params
 
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
 
-    focus
     it "should not create new event when not logged user" do
       post :create, event: params
 
       assert_redirected_to root_path
-      flash[:alert].wont_be_nil
+      flash[:notice].wont_be_nil
     end
 
-    focus
     it "should not create new event when params are invalid" do
-      post :create, event: {}
+      log_in_user
+      
+      invalid_params = params.merge({ name: '' })
+      post :create, event: invalid_params
 
       assert_response :success
       assert_template :new
-      flash[:alert].wont_be_nil
+      flash.now[:alert].wont_be_nil
     end
   end
 

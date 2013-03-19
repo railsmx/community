@@ -16,18 +16,14 @@ class EventsController < ApplicationController
   end
 
   def create
-    # Crear un nuevo evento a partir de los parametros
-    # Si valid? entonces hay que .save
-    # y hacer redirect a events_path
     @event = Event.new(create_params).tap do |event|
       event.date = "#{params[:event][:date]} #{params[:event][:time]}"
+      event.identity = current_identity
     end
 
-    if @event.valid?
-      @event.save
-      return redirect_to events_path, notice: t('.event_created')
-    end
+    return redirect_to events_path, notice: t('.event_created') if @event.save
 
+    flash.now[:alert] = t('.invalid_event')
     @event.date = params[:event][:date]
     render :new
   end
