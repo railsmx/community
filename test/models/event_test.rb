@@ -2,10 +2,11 @@ require "minitest_helper"
 
 describe Event do
   let(:event) { Event.new }
+  let(:identity) { Identity.first }
 
   it "must be invalid without attributes" do
     event.valid?.must_equal false
-    event.errors.size.must_equal 5
+    event.errors.size.must_equal 6
   end
   
   it "must be invalid when date is not in future" do
@@ -13,7 +14,8 @@ describe Event do
       e.name = 'Magmaconf'
       e.location = 'Manzanillo'
       e.contact = 'Crowdint'
-      e.date = Date.today
+      e.identity = identity
+      e.date = Date.today    
     end
 
     event.valid?.must_equal false
@@ -26,6 +28,7 @@ describe Event do
       e.name = 'MagmaConf'
       e.date = Date.today + 2
       e.location = 'Manzanillo'
+      e.identity = identity
       e.contact = 'CrowdInt'
     end
     

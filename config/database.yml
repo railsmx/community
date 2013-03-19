@@ -20,6 +20,7 @@ development:
   database: community_development
   pool: 5
   host: localhost
+  username: postgres
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,6 +49,7 @@ test:
   database: community_test
   pool: 5
   host: localhost
+  username: postgres
 
 production:
   adapter: postgresql
@@ -55,3 +57,4 @@ production:
   database: community_production
   pool: 5
   host: localhost
+  username: postgres
