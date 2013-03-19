@@ -40,7 +40,10 @@ describe SessionsController do
 
   describe 'destroy' do
     it 'success logout' do
-      lambda{ delete :destroy }.must_raise(ArgumentError)
+      delete :destroy
+      
+      assert_redirected_to root_path
+      flash[:notice].wont_be_nil
     end
   end
 end

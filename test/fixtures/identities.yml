@@ -4,8 +4,8 @@
 one:
   provider: github
   uid: 3345444
-  username: iszandro
-  email: yasnet21@gmail.com
+  username: test_user
+  email: test@user.com
 
 # two:
 #   provider: MyString
