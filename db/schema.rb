@@ -11,25 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130312193332) do
+ActiveRecord::Schema.define(version: 20130306220950) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "date"
-    t.string   "location"
-    t.string   "contact"
+    t.string   "name",        null: false
+    t.text     "description", null: false
+    t.datetime "date",        null: false
+    t.string   "location",    null: false
+    t.string   "contact",     null: false
     t.string   "organizer"
+    t.integer  "identity_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "events", ["identity_id"], name: "index_events_on_identity_id"
 
   create_table "identities", force: true do |t|
     t.string   "provider",                   null: false
     t.string   "uid",                        null: false
     t.string   "username",                   null: false
     t.string   "email",                      null: false
-    t.boolean  "blocked",      default: false
+    t.boolean  "blocked",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
