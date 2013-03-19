@@ -41,7 +41,7 @@ feature 'Events management' do
     visit '/'
     click_link 'Eventos'
 
-    assert !page.has_selector?(:a, text: 'Agregar evento')
+    assert !page.has_selector?('a', text: 'Agregar evento')
   end
 
   scenario 'As event owner I should be able to edit the event' do
