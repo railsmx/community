@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/heribertoci/mail_form.git
+  remote: git://github.com/mariochavez/mail_form.git
   revision: e8c1e1400c52c52c767cb25938ede03a4786b8b6
   specs:
     mail_form (1.5.0)
