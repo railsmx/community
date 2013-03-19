@@ -1,13 +1,15 @@
 require "minitest_helper"
 
 describe EventsController do
-  let(:params) { { name: 'MagmaConf',
+  let(:params) {
+  { name: 'MagmaConf',
                 location: 'Manzanillo',
                 description: 'Cool conf',
                 contact: 'mg@crowdint.com',
                 organizer: 'Crowdint',
                 date: '28/2/2015',
-                time: '5:05 pm' } }
+                time: '5:05 pm' }
+  }
 
   let(:event) { Event.create name: 'MagmaConf',
                 location: 'Manzanillo', description: 'Cool conf',
