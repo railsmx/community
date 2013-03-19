@@ -25,9 +25,10 @@ group :linux do
 end
 
 gem 'jquery-rails'
-gem 'mac_generators'
-gem 'bootstrap-datepicker-rails'
-gem 'bootstrap-sass'
+gem 'bourbon'
+#gem 'mac_generators'
+#gem 'bootstrap-datepicker-rails'
+#gem 'bootstrap-sass'
 
 group :test do
   gem 'minitest-rails'

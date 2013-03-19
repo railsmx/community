@@ -35,10 +35,9 @@ GEM
     addressable (2.3.3)
     arel (4.0.0.beta1)
     atomic (1.0.1)
-    bootstrap-datepicker-rails (1.0.0.1)
-      railties (>= 3.0)
-    bootstrap-sass (2.3.0.1)
-      sass (~> 3.2)
+    bourbon (3.1.1)
+      sass (>= 3.2.0)
+      thor
     builder (3.1.4)
     capybara (2.0.2)
       mime-types (>= 1.16)
@@ -80,8 +79,6 @@ GEM
     launchy (2.2.0)
       addressable (~> 2.3)
     libv8 (3.11.8.13)
-    mac_generators (0.0.1)
-      rails (~> 4.0.0.beta)
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -205,14 +202,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-datepicker-rails
-  bootstrap-sass
+  bourbon
   coffee-rails (~> 4.0.0.beta1)
   foreman
   jbuilder (~> 1.0.1)
   jquery-rails
   launchy
-  mac_generators
   mail_form!
   minitest-colorize
   minitest-focus
