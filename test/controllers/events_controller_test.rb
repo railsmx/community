@@ -30,7 +30,7 @@ describe EventsController do
     it "should redirect to events when not logged user" do
       get :new
 
-      assert_redirected_to events_path
+      assert_redirected_to root_path
       flash[:alert].wont_be_nil
     end
   end

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_identity, :identity_signed_in?, :warden
 
-  private
+  protected
   def warden
   	request.env['warden']
   end
@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
 
   def current_identity
     warden.user(scope: :identity)
+  end
+
+  def authenticate!
+    redirect_to root_path, notice: t('.not_logged') unless identity_signed_in?
   end
 end

@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate!
 
   def index
     @event = Event.order("date DESC").limit(3)
