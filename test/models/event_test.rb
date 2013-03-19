@@ -7,6 +7,12 @@ describe Event do
   it "must be invalid without attributes" do
     event.valid?.must_equal false
     event.errors.size.must_equal 6
+    event.errors[:name].wont_be_nil
+    event.errors[:description].wont_be_nil
+    event.errors[:date].wont_be_nil
+    event.errors[:location].wont_be_nil
+    event.errors[:contact].wont_be_nil    
+    event.errors[:identity_id].wont_be_nil
   end
   
   it "must be invalid when date is not in future" do
@@ -33,5 +39,19 @@ describe Event do
     end
     
     event.valid?.must_equal true
+  end
+
+  it 'must be invalid with a wrong identity reference' do 
+    event.tap do |e|
+      e.name = 'Magmaconf'
+      e.location = 'Manzanillo'
+      e.contact = 'Crowdint'
+      e.identity = nil
+      e.date = Date.today + 2   
+    end    
+
+    event.valid?.must_equal false    
+    event.errors.size.must_equal 1    
+    event.errors[:identity_id].wont_be_nil
   end
 end

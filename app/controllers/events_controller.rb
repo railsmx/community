@@ -5,7 +5,6 @@ class EventsController < ApplicationController
     @event = Event.order("date DESC").limit(3)
     @oldevent = Event.order("date ASC").limit(3)
     #@event = Event.all
-
   end
 
   def show
@@ -13,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event =  Event.new
+    @event = Event.new
   end
 
   def create
@@ -42,8 +41,8 @@ class EventsController < ApplicationController
   def update
     @event = Event.find_by_params[:id]
 
-      if @event.update_attributes_params[:id]
-        return redirect_to events_path, notice: t('event_was_updated')
+    if @event.update_attributes_params[:id]
+      return redirect_to events_path, notice: t('event_was_updated')
       end
   end
 
@@ -56,6 +55,4 @@ class EventsController < ApplicationController
     params.require(:event)
       .permit(:name, :location, :description, :contact, :organizer, :date, :time)
   end
-
-
 end

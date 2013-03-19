@@ -16,7 +16,6 @@ describe EventsController do
               }
 
   describe 'new' do
-    focus
     it "should display new form for logged user" do
       log_in_user
 
@@ -26,7 +25,6 @@ describe EventsController do
       assert_template :new
     end
 
-    focus
     it "should redirect to events when not logged user" do
       get :new
 
@@ -37,26 +35,31 @@ describe EventsController do
 
   describe "create" do
 
-    it "should create new event" do
+    it "should create new event when logged user" do
+      log_in_user
+
       post :create, event: params
 
-      assert_response 302
-      assert_redirected_to '/events'
+      assert_response :success
+      assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
 
-    it "should display new form when fail to create event" do
+    it "should not create new event when not logged user" do
       post :create, event: { name: 'MagmaConf' }
 
-      assert_response :success
+      #assert_response :success
+      assert_redirected_to root_path
       assert_template :new
-      flash[:error].must_be_nil
+      flash[:alert].wont_be_nil
     end
   end
 
   describe "edit" do
 
-    it "should fetch event for edit" do
+    it "should edit event when logged user" do
+      log_in_user
+      
       get :edit, id: event.id
 
       assert_response :success
