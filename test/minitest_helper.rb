@@ -35,7 +35,12 @@ class ActiveSupport::TestCase
         request.env['warden'] = Warden::Proxy.new(@request.env, manager)
      end
   end
+  alias_method :warden, :setup_warden
 
+  def log_in_user(id = 100)
+    identity = Identity.find id
+    warden.set_user identity, scope: :identity
+  end
 end
 
 class MiniTest::Unit::TestCase

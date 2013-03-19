@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  
+
   def index
     @event = Event.order("date DESC").limit(3)
     @oldevent = Event.order("date ASC").limit(3)
@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
   def new
     @event =  Event.new
-  end 
+  end
 
   def create
     # Crear un nuevo evento a partir de los parametros
@@ -27,27 +27,27 @@ class EventsController < ApplicationController
       @event.save
       return redirect_to events_path, notice: t('.event_created')
     end
-    
+
     @event.date = params[:event][:date]
     render :new
   end
 
   def edit
     @event = Event.find_by_id params[:id]
-    
+
     return redirect_to events_path, notice: t('.event_not_found') unless @event
   end
-  
+
   def update
     @event = Event.find_by_params[:id]
 
       if @event.update_attributes_params[:id]
         return redirect_to events_path, notice: t('event_was_updated')
       end
-  end 
+  end
 
   def destroy
-  	@event.destroy
+    @event.destroy
   end
 
   private
@@ -56,5 +56,5 @@ class EventsController < ApplicationController
       .permit(:name, :location, :description, :contact, :organizer, :date, :time)
   end
 
-  
+
 end

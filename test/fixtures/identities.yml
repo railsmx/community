@@ -2,6 +2,7 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 100
   provider: github
   uid: 3345444
   username: test_user

@@ -15,11 +15,24 @@ describe EventsController do
                 date: Date.today + 10
               }
 
-  it "should get new" do
-    get :new
+  describe 'new' do
+    focus
+    it "should display new form for logged user" do
+      log_in_user
 
-    assert_response :success
-    assert_template :new
+      get :new
+
+      assert_response :success
+      assert_template :new
+    end
+
+    focus
+    it "should redirect to events when not logged user" do
+      get :new
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
   end
 
   describe "create" do
