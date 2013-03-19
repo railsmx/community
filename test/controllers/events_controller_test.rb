@@ -1,7 +1,7 @@
 require "minitest_helper"
 
 describe EventsController do
-  let(:params) { { name: 'MagmaConf', 
+  let(:params) { { name: 'MagmaConf',
                 location: 'Manzanillo',
                 description: 'Cool conf',
                 contact: 'mg@crowdint.com',
@@ -9,10 +9,10 @@ describe EventsController do
                 date: '28/2/2015',
                 time: '5:05 pm' } }
 
-  let(:event) { Event.create name: 'MagmaConf', 
+  let(:event) { Event.create name: 'MagmaConf',
                 location: 'Manzanillo', description: 'Cool conf',
                 contact: 'mg@crowdint.com', organizer: 'Crowdint',
-                date: Date.today + 10 
+                date: Date.today + 10
               }
 
   it "should get new" do
@@ -60,7 +60,7 @@ describe EventsController do
   end
 
   describe "update" do
-    
+
     it "should update event" do
       new_params = params.merge({id: event.id})
 
@@ -68,11 +68,11 @@ describe EventsController do
       assert_response 302
       assert_redirected_to '/events'
       flash[:notice].wont_be_nil
-    end  
+    end
   end
 
   # describe "index" do
-    
+
   #   it "should show the events"
   #     get :index
   #   end
