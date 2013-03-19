@@ -14,7 +14,7 @@ describe EventsController do
   let(:event) { Event.create name: 'MagmaConf',
                 location: 'Manzanillo', description: 'Cool conf',
                 contact: 'mg@crowdint.com', organizer: 'Crowdint',
-                date: Date.today + 10
+                date: Date.today + 10, identity_id: 100
               }
 
   describe 'new' do
@@ -38,7 +38,7 @@ describe EventsController do
   describe "create" do
     it "should create new event for logged user" do
       log_in_user
-      
+
       post :create, event: params
 
       assert_redirected_to events_path
@@ -54,7 +54,7 @@ describe EventsController do
 
     it "should not create new event when params are invalid" do
       log_in_user
-      
+
       invalid_params = params.merge({ name: '' })
       post :create, event: invalid_params
 
@@ -66,7 +66,8 @@ describe EventsController do
 
   describe "edit" do
 
-    it "should edit event when logged user" do
+    focus
+    it "should be able to edit my events" do
       log_in_user
 
       get :edit, id: event.id
@@ -75,12 +76,32 @@ describe EventsController do
       assert_template :edit
     end
 
-    it "should display an error when event could not be found" do
+    focus
+    it "should redirect to events when event not found" do
+      log_in_user
+
       get :edit, id: 10
 
-      assert_response 302
-      assert_redirected_to '/events'
-      flash[:error].must_be_nil
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+
+    focus
+    it "should redirect to events when not event owner" do
+      log_in_user 200
+
+      get :edit, id: event.id
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+
+    focus
+    it "should redirect to events when not logged user" do
+      get :edit, id: 10
+
+      assert_redirected_to root_path
+      flash[:alert].wont_be_nil
     end
   end
 

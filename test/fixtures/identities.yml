@@ -8,7 +8,9 @@ one:
   username: test_user
   email: test@user.com
 
-# two:
-#   provider: MyString
-#   uid: MyString
-#   name: MyString
+two:
+  id: 200
+  provider: github
+  uid: 64674747
+  username: another_user
+  email: test1@user.com
