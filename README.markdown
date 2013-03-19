@@ -42,4 +42,7 @@ This command will start puma server on localhost at port 5000,
 http://127.0.0.1:5000
 
 ## Database
-Posqtgresql database is being used in this application
+Posqtgresql database is being used in this application.
+To start with a clean database run:
+
+    rake db:drop db:setup
