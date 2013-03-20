@@ -35,14 +35,16 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.my_event params[:id], current_identity
+    puts "create_params => {#{create_params.inspect}}"
+    puts "event => {#{@event.inspect}}"
     
-    return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes(create_params)
+    return redirect_to events_path, notice: t('.event_updated') unless @event #if @event.update_attributes(create_params)
     
     flash.now[:alert] = t('.invalid_event')
     @event.date = params[:event][:date]
     render :edit
   end
-
+  
   def destroy
     @event.destroy
   end

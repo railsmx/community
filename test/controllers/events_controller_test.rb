@@ -101,6 +101,7 @@ describe EventsController do
   end
 
   describe "update" do
+    focus
     it "should be able to update my events" do
       log_in_user
 
@@ -110,6 +111,7 @@ describe EventsController do
       flash[:notice].wont_be_nil
     end
 
+    focus
     it "should redirect to events when event not found" do
       log_in_user
 
@@ -119,6 +121,7 @@ describe EventsController do
       flash[:alert].wont_be_nil
     end
 
+    focus
     it "should redirect to events when not event owner" do
       log_in_user 200
 
@@ -128,6 +131,7 @@ describe EventsController do
       flash[:alert].wont_be_nil
     end
 
+    focus
     it "should redirect to events when not logged user" do
       put :update, id: 10, event: params
 
