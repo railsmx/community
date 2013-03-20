@@ -29,9 +29,9 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find_by_id params[:id]
-
-    return redirect_to events_path, notice: t('.event_not_found') unless @event
+    @event = Event.my_event params[:id], current_identity
+    
+    return redirect_to events_path, alert: t('.event_not_found') unless @event
   end
 
   def update

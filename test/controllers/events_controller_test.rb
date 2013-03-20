@@ -101,7 +101,7 @@ describe EventsController do
       get :edit, id: 10
 
       assert_redirected_to root_path
-      flash[:alert].wont_be_nil
+      flash[:notice].wont_be_nil
     end
   end
 
