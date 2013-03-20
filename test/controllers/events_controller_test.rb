@@ -109,7 +109,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-    
+
     it "should redirect to events when event not found" do
       log_in_user
 
@@ -134,8 +134,19 @@ describe EventsController do
       assert_redirected_to root_path
       flash[:notice].wont_be_nil
     end
+
+    it 'render edit view when update params are invalid' do
+      log_in_user
+
+      invalid_params = params.merge({ name: '' })
+      put :update, id: event.id, event: invalid_params
+
+      assert_response :success
+      assert_template :edit
+      flash.now[:alert].wont_be_nil
+    end
   end
-  
+
   describe 'destroy' do
     it 'should be able to destroy my events' do
       log_in_user
@@ -145,7 +156,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-    
+
     it 'should not destroy when not event owner' do
       log_in_user 200
 
@@ -154,7 +165,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:alert].wont_be_nil
     end
-    
+
     it 'should redirect to events when not event found' do
       log_in_user
 
@@ -172,21 +183,21 @@ describe EventsController do
     end
   end
 
-  #describe 'show' do
-  #  it "should display an existing event" do
-  #    get :show, id: event.id
+  describe 'show' do
+    it "should display an existing event" do
+      get :show, id: event.id
 
-  #    assert_response :success
-  #    assert_template :show
-  #  end
+      assert_response :success
+      assert_template :show
+    end
 
-  #  it "should redirect to events when event not found" do
-  #    get :show, id: 10
+    it "should redirect to events when event not found" do
+      get :show, id: 10
 
-  #    assert_redirected_to events_path
-  #    flash[:alert].wont_be_nil
-  #  end
-  #end
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+  end
 
   describe 'index' do
     it "should display all upcoming event and the 5 last passed events" do
