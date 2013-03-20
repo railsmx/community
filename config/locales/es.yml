@@ -19,11 +19,12 @@ es:
         message: "Mensaje enviado"
         name: "Nombre"
 
-
   activerecord:
     errors:
       messages: 
         invalid: "Fecha invalida"
-
-  
-    
+        
+  events:
+    update:
+      event_updated: 'El evento fue actualizado'
+      invalid_event: 'Evento no actualidado'

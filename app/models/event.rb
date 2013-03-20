@@ -11,5 +11,4 @@ class Event < ActiveRecord::Base
       where(:id => event_id, :identity_id => identity.id).first
   	end
 	end
-	
 end

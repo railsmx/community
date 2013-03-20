@@ -35,11 +35,13 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find_by_params[:id]
-
-    if @event.update_attributes_params[:id]
-      return redirect_to events_path, notice: t('event_was_updated')
-      end
+    @event = Event.my_event params[:id], current_identity
+    
+    return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes(create_params)
+    
+    flash.now[:alert] = t('.invalid_event')
+    @event.date = params[:event][:date]
+    render :edit
   end
 
   def destroy
@@ -48,7 +50,6 @@ class EventsController < ApplicationController
 
   private
   def create_params
-    params.require(:event)
-      .permit(:name, :location, :description, :contact, :organizer, :date, :time)
+    params.require(:event).permit(:name, :location, :description, :contact, :organizer, :date, :time)
   end
 end
