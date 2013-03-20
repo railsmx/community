@@ -221,6 +221,9 @@ describe EventsController do
 
       assert_response :success
       assert_template :index
+
+      assigns[:current_events].size.must_equal 4
+      assigns[:past_events].size.must_equal 3
     end
   end
 end
