@@ -98,6 +98,7 @@ describe EventsController do
       assert_redirected_to root_path
       flash[:notice].wont_be_nil
     end
+
   end
 
   describe "update" do
@@ -109,7 +110,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-    
+
     it "should redirect to events when event not found" do
       log_in_user
 
@@ -134,10 +135,20 @@ describe EventsController do
       assert_redirected_to root_path
       flash[:notice].wont_be_nil
     end
+
+    it 'render edit view when update params are invalid' do
+      log_in_user
+
+      invalid_params = params.merge({ name: '' })
+      put :update, id: event.id, event: invalid_params
+
+      assert_response :success
+      assert_template :edit
+      flash.now[:alert].wont_be_nil
+    end
   end
-  
+
   describe 'destroy' do
-    focus
     it 'should be able to destroy my events' do
       log_in_user
 
@@ -146,8 +157,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-    
-    focus
+
     it 'should not destroy when not event owner' do
       log_in_user 200
 
@@ -156,8 +166,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:alert].wont_be_nil
     end
-    
-    focus
+
     it 'should redirect to events when not event found' do
       log_in_user
 
@@ -166,8 +175,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:alert].wont_be_nil
     end
-    
-    focus
+
     it 'should redirect to events when not logged user' do
       delete :destroy, id: event.id
 
