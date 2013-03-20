@@ -101,7 +101,6 @@ describe EventsController do
   end
 
   describe "update" do
-    focus
     it "should be able to update my events" do
       log_in_user
 
@@ -110,8 +109,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-
-    focus
+    
     it "should redirect to events when event not found" do
       log_in_user
 
@@ -121,7 +119,6 @@ describe EventsController do
       flash[:alert].wont_be_nil
     end
 
-    focus
     it "should redirect to events when not event owner" do
       log_in_user 200
 
@@ -131,9 +128,48 @@ describe EventsController do
       flash[:alert].wont_be_nil
     end
 
-    focus
     it "should redirect to events when not logged user" do
       put :update, id: 10, event: params
+
+      assert_redirected_to root_path
+      flash[:notice].wont_be_nil
+    end
+  end
+  
+  describe 'destroy' do
+    focus
+    it 'should be able to destroy my events' do
+      log_in_user
+
+      delete :destroy, id: event.id
+
+      assert_redirected_to events_path
+      flash[:notice].wont_be_nil
+    end
+    
+    focus
+    it 'should not destroy when not event owner' do
+      log_in_user 200
+
+      delete :destroy, id: event.id
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+    
+    focus
+    it 'should redirect to events when not event found' do
+      log_in_user
+
+      delete :destroy, id: 10
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+    
+    focus
+    it 'should redirect to events when not logged user' do
+      delete :destroy, id: event.id
 
       assert_redirected_to root_path
       flash[:notice].wont_be_nil
