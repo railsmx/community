@@ -152,18 +152,28 @@ describe EventsController do
     end
   end
 
-  # describe "index" do
+  describe 'index' do
+    it "should display first 4 upcoming event and 3 last passed events" do
+      6.times do |index|
+        Event.create name: "Upcomming #{index}",
+                      location: 'Manzanillo', description: 'Cool conf',
+                      contact: 'mg@crowdint.com', organizer: 'Crowdint',
+                      date: Date.today + (10 * (index + 1)),
+                      identity_id: 100
 
-  #   it "should show the events"
-  #     get :index
-  #   end
+        Event.new(name: "Past #{index}",
+                    location: 'Manzanillo', description: 'Cool conf',
+                    contact: 'mg@crowdint.com', organizer: 'Crowdint',
+                    date: Date.today - (10 * (index + 1)),
+                    identity_id: 100).tap do |event|
+          event.save(false)
+        end
+      end
 
-  #   it "should show nearest events"
+      get :index
 
-  #   end
-
-  #   it "should show lastest events"
-
-  #   end
-  # end
+      assert_response :success
+      assert_template :index
+    end
+  end
 end
