@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
-  before_action :authenticate!
+  before_action :authenticate!, except: [:index, :show]
 
   def index
-    @event = Event.order("date DESC").limit(3)
-    @oldevent = Event.order("date ASC").limit(3)
+    @newevents = Event.where("date > ?", DateTime.now).order("date DESC")
+    @oldevents = Event.where("date <= ?", DateTime.now).order("date ASC").limit(5)
   end
 
   def new
@@ -33,10 +33,10 @@ class EventsController < ApplicationController
     @event = Event.my_event params[:id], current_identity
     
     if @event
-      return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes(create_params)
+      return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes create_params
     end
     
-    return redirect_to events_path, alert: t('.invalid_event')
+    return redirect_to events_path, alert: t('.event_not_found')
   end
   
   def destroy
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
       return redirect_to events_path, notice: t('.event_deleted') if @event.destroy
     end
     
-    return redirect_to events_path, alert: t('.invalid_event')
+    return redirect_to events_path, alert: t('.event_not_found')
   end
 
   private

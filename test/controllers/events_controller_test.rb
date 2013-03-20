@@ -31,7 +31,7 @@ describe EventsController do
       get :new
 
       assert_redirected_to root_path
-      flash[:alert].wont_be_nil
+      flash[:notice].wont_be_nil
     end
   end
 
@@ -137,7 +137,6 @@ describe EventsController do
   end
   
   describe 'destroy' do
-    focus
     it 'should be able to destroy my events' do
       log_in_user
 
@@ -147,7 +146,6 @@ describe EventsController do
       flash[:notice].wont_be_nil
     end
     
-    focus
     it 'should not destroy when not event owner' do
       log_in_user 200
 
@@ -157,7 +155,6 @@ describe EventsController do
       flash[:alert].wont_be_nil
     end
     
-    focus
     it 'should redirect to events when not event found' do
       log_in_user
 
@@ -167,7 +164,6 @@ describe EventsController do
       flash[:alert].wont_be_nil
     end
     
-    focus
     it 'should redirect to events when not logged user' do
       delete :destroy, id: event.id
 
@@ -193,25 +189,17 @@ describe EventsController do
   #end
 
   describe 'index' do
-    it "should display first 4 upcoming event and 3 last passed events" do
+    it "should display all upcoming event and the 5 last passed events" do
       6.times do |index|
-        Event.create name: "Upcomming #{index}",
-                      location: 'Manzanillo', description: 'Cool conf',
-                      contact: 'mg@crowdint.com', organizer: 'Crowdint',
-                      date: Date.today + (10 * (index + 1)),
-                      identity_id: 100
-
-        Event.new(name: "Past #{index}",
-                    location: 'Manzanillo', description: 'Cool conf',
-                    contact: 'mg@crowdint.com', organizer: 'Crowdint',
-                    date: Date.today - (10 * (index + 1)),
-                    identity_id: 100).tap do |event|
-          event.save(false)
-        end
+        new_event = Event.create name: "Upcomming #{index}", location: 'Manzanillo', description: 'Cool conf', 
+                              contact: 'mg@crowdint.com', organizer: 'Crowdint', date: Date.today + (10 * (index + 1)), identity_id: 100
+        
+        old_event = Event.create name: "Past #{index}", location: 'Manzanillo', description: 'Cool conf', contact: 'mg@crowdint.com', organizer: 'Crowdint',
+                                 date: Date.today - (10 * (index + 1)), identity_id: 100
       end
-
+      
       get :index
-
+      
       assert_response :success
       assert_template :index
     end
