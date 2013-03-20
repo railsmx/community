@@ -2,20 +2,20 @@ require "minitest_helper"
 
 describe EventsController do
   let(:params) {
-  { name: 'MagmaConf',
-                location: 'Manzanillo',
-                description: 'Cool conf',
-                contact: 'mg@crowdint.com',
-                organizer: 'Crowdint',
-                date: '28/2/2015',
-                time: '5:05 pm' }
+    { name: 'MagmaConf',
+      location: 'Manzanillo',
+      description: 'Cool conf',
+      contact: 'mg@crowdint.com',
+      organizer: 'Crowdint',
+      date: '28/2/2015',
+      time: '5:05 pm' }
   }
 
   let(:event) { Event.create name: 'MagmaConf',
                 location: 'Manzanillo', description: 'Cool conf',
                 contact: 'mg@crowdint.com', organizer: 'Crowdint',
                 date: Date.today + 10, identity_id: 100
-              }
+  }
 
   describe 'new' do
     it "should display new form for logged user" do
@@ -174,7 +174,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:alert].wont_be_nil
     end
-    
+
     it 'should redirect to events when not logged user' do
       delete :destroy, id: event.id
 
@@ -200,17 +200,25 @@ describe EventsController do
   end
 
   describe 'index' do
-    it "should display all upcoming event and the 5 last passed events" do
+    it "display first 4 upcoming event and 3 last passed events" do
       6.times do |index|
-        new_event = Event.create name: "Upcomming #{index}", location: 'Manzanillo', description: 'Cool conf', 
-                              contact: 'mg@crowdint.com', organizer: 'Crowdint', date: Date.today + (10 * (index + 1)), identity_id: 100
-        
-        old_event = Event.create name: "Past #{index}", location: 'Manzanillo', description: 'Cool conf', contact: 'mg@crowdint.com', organizer: 'Crowdint',
-                                 date: Date.today - (10 * (index + 1)), identity_id: 100
+        Event.create name: "Upcomming #{index}",
+          location: 'Manzanillo', description: 'Cool conf',
+          contact: 'mg@crowdint.com', organizer: 'Crowdint',
+          date: Date.today + (10 * (index + 1)),
+          identity_id: 100
+
+        Event.new(name: "Past #{index}",
+                  location: 'Manzanillo', description: 'Cool conf',
+                  contact: 'mg@crowdint.com', organizer: 'Crowdint',
+                  date: Date.today - (10 * (index + 1)),
+                  identity_id: 100).tap do |event|
+                    event.save(false)
+                  end
       end
-      
+
       get :index
-      
+
       assert_response :success
       assert_template :index
     end

@@ -31,21 +31,21 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.my_event params[:id], current_identity
-    
+
     if @event
       return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes create_params
     end
-    
+
     return redirect_to events_path, alert: t('.event_not_found')
   end
-  
+
   def destroy
     @event = Event.my_event params[:id], current_identity
-    
+
     if @event
       return redirect_to events_path, notice: t('.event_deleted') if @event.destroy
     end
-    
+
     return redirect_to events_path, alert: t('.event_not_found')
   end
 
