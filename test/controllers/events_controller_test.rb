@@ -65,8 +65,6 @@ describe EventsController do
   end
 
   describe "edit" do
-
-    focus
     it "should be able to edit my events" do
       log_in_user
 
@@ -76,7 +74,6 @@ describe EventsController do
       assert_template :edit
     end
 
-    focus
     it "should redirect to events when event not found" do
       log_in_user
 
@@ -86,7 +83,6 @@ describe EventsController do
       flash[:alert].wont_be_nil
     end
 
-    focus
     it "should redirect to events when not event owner" do
       log_in_user 200
 
@@ -96,7 +92,6 @@ describe EventsController do
       flash[:alert].wont_be_nil
     end
 
-    focus
     it "should redirect to events when not logged user" do
       get :edit, id: 10
 
@@ -106,13 +101,37 @@ describe EventsController do
   end
 
   describe "update" do
+    it "should be able to update my events" do
+      log_in_user
 
-    it "should update event" do
-      new_params = params.merge({id: event.id})
+      put :update, id: event.id, event: params
 
-      post :create, event: new_params
-      assert_response 302
-      assert_redirected_to '/events'
+      assert_redirected_to events_path
+      flash[:notice].wont_be_nil
+    end
+
+    it "should redirect to events when event not found" do
+      log_in_user
+
+      put :update, id: 10, event: params
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+
+    it "should redirect to events when not event owner" do
+      log_in_user 200
+
+      put :update, id: event.id, event: params
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+
+    it "should redirect to events when not logged user" do
+      put :update, id: 10, event: params
+
+      assert_redirected_to root_path
       flash[:notice].wont_be_nil
     end
   end
