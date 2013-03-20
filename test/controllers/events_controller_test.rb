@@ -2,26 +2,20 @@ require "minitest_helper"
 
 describe EventsController do
   let(:params) {
-    { name: 'MagmaConf',
-      location: 'Manzanillo',
-      description: 'Cool conf',
-      contact: 'mg@crowdint.com',
-      organizer: 'Crowdint',
-      date: '28/2/2015',
-      time: '5:05 pm' 
-    }
+  { name: 'MagmaConf',
+                location: 'Manzanillo',
+                description: 'Cool conf',
+                contact: 'mg@crowdint.com',
+                organizer: 'Crowdint',
+                date: '28/2/2015',
+                time: '5:05 pm' }
   }
 
-  let(:event) { 
-    Event.create  name: 'MagmaConf',
-                  location: 'Manzanillo', 
-                  description: 'Cool conf',
-                  contact: 'mg@crowdint.com', 
-                  organizer: 'Crowdint',
-                  date: Date.today + 10, 
-                  identity_id: 100
-  }
-
+  let(:event) { Event.create name: 'MagmaConf',
+                location: 'Manzanillo', description: 'Cool conf',
+                contact: 'mg@crowdint.com', organizer: 'Crowdint',
+                date: Date.today + 10, identity_id: 100
+              }
 
   describe 'new' do
     it "should display new form for logged user" do
@@ -37,10 +31,9 @@ describe EventsController do
       get :new
 
       assert_redirected_to root_path
-      flash[:notice].wont_be_nil
+      flash[:alert].wont_be_nil
     end
   end
-
 
   describe "create" do
     it "should create new event for logged user" do
@@ -71,10 +64,6 @@ describe EventsController do
     end
   end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 1eeb4928f33ad5c115fb7d6543f4589ea5f5096c
   describe "edit" do
     it "should be able to edit my events" do
       log_in_user
@@ -111,17 +100,6 @@ describe EventsController do
     end
   end
 
-<<<<<<< HEAD
-
-  describe "update" do
-    focus
-    it "should update event only if it haven't passed" do
-      log_in_user
-      
-      put :update, id: event.id, event: params
-      
-      assert_redirected_to events_path
-=======
   describe "update" do
     it "should be able to update my events" do
       log_in_user
@@ -154,19 +132,7 @@ describe EventsController do
       put :update, id: 10, event: params
 
       assert_redirected_to root_path
->>>>>>> 1eeb4928f33ad5c115fb7d6543f4589ea5f5096c
       flash[:notice].wont_be_nil
-    end
-    
-    it "should not update event if it already passed" do
-      log_in_user
-      
-      past_event_params = params.merge({ date: Date.today - 1 })
-      put :update, id: event.id, event: past_event_params
-      
-      assert_response :success 
-      assert_template :new
-      flash[:alert].wont_be_nil	
     end
   end
 
@@ -187,14 +153,17 @@ describe EventsController do
   end
 
   # describe "index" do
+
   #   it "should show the events"
   #     get :index
   #   end
 
   #   it "should show nearest events"
+
   #   end
 
   #   it "should show lastest events"
+
   #   end
   # end
 end
