@@ -184,21 +184,21 @@ describe EventsController do
     end
   end
 
-  #describe 'show' do
-  #  it "should display an existing event" do
-  #    get :show, id: event.id
+  describe 'show' do
+    it "should display an existing event" do
+      get :show, id: event.id
 
-  #    assert_response :success
-  #    assert_template :show
-  #  end
+      assert_response :success
+      assert_template :show
+    end
 
-  #  it "should redirect to events when event not found" do
-  #    get :show, id: 10
+    it "should redirect to events when event not found" do
+      get :show, id: 10
 
-  #    assert_redirected_to events_path
-  #    flash[:alert].wont_be_nil
-  #  end
-  #end
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+  end
 
   describe 'index' do
     it "should display first 4 upcoming event and 3 last passed events" do
