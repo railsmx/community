@@ -71,7 +71,10 @@ describe EventsController do
     end
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eeb4928f33ad5c115fb7d6543f4589ea5f5096c
   describe "edit" do
     it "should be able to edit my events" do
       log_in_user
@@ -108,6 +111,7 @@ describe EventsController do
     end
   end
 
+<<<<<<< HEAD
 
   describe "update" do
     focus
@@ -117,6 +121,40 @@ describe EventsController do
       put :update, id: event.id, event: params
       
       assert_redirected_to events_path
+=======
+  describe "update" do
+    it "should be able to update my events" do
+      log_in_user
+
+      put :update, id: event.id, event: params
+
+      assert_redirected_to events_path
+      flash[:notice].wont_be_nil
+    end
+
+    it "should redirect to events when event not found" do
+      log_in_user
+
+      put :update, id: 10, event: params
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+
+    it "should redirect to events when not event owner" do
+      log_in_user 200
+
+      put :update, id: event.id, event: params
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
+    end
+
+    it "should redirect to events when not logged user" do
+      put :update, id: 10, event: params
+
+      assert_redirected_to root_path
+>>>>>>> 1eeb4928f33ad5c115fb7d6543f4589ea5f5096c
       flash[:notice].wont_be_nil
     end
     
@@ -129,6 +167,22 @@ describe EventsController do
       assert_response :success 
       assert_template :new
       flash[:alert].wont_be_nil	
+    end
+  end
+
+  describe 'show' do
+    it "should display an existing event" do
+      get :show, id: event.id
+
+      assert_response :success
+      assert_template :show
+    end
+
+    it "should redirect to events when event not found" do
+      get :show, id: 10
+
+      assert_redirected_to events_path
+      flash[:alert].wont_be_nil
     end
   end
 

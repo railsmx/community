@@ -4,7 +4,6 @@ class EventsController < ApplicationController
   def index
     @event = Event.order("date DESC").limit(3)
     @oldevent = Event.order("date ASC").limit(3)
-    #@event = Event.all
   end
 
   def show
@@ -30,7 +29,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.my_event params[:id], current_identity
-    
+
     return redirect_to events_path, alert: t('.event_not_found') unless @event
   end
 
