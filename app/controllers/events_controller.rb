@@ -2,8 +2,8 @@ class EventsController < ApplicationController
   before_action :authenticate!, except: [:index, :show]
 
   def index
-    @current_events = Event.where("date > ?", DateTime.now).order("date DESC").limit(4)
-    @past_events = Event.where("date <= ?", DateTime.now).order("date ASC").limit(3)
+    @current_events = Event.current_events(4)
+    @past_events = Event.past_events(3)
   end
 
   def show
@@ -32,21 +32,19 @@ class EventsController < ApplicationController
   def edit
     @event = Event.my_event params[:id], current_identity
 
-    return redirect_to events_path, alert: t('.event_not_found') unless @event
+    redirect_to events_path, alert: t('.event_not_found') unless @event
   end
 
   def update
     @event = Event.my_event params[:id], current_identity
 
-    if @event
-      return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes create_params
+    return redirect_to events_path, alert: t('.event_not_found') if !@event 
 
-      flash.now[:alert] = t('.invalid_event')
-      @event.date = params[:event][:date]
-      render :edit
-    else
-      redirect_to events_path, alert: t('.event_not_found')
-    end
+    return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes create_params
+
+    flash.now[:alert] = t('.invalid_event')
+    @event.date = params[:event][:date]
+    render :edit  
   end
 
   def destroy

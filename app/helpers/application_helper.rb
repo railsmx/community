@@ -12,4 +12,16 @@ module ApplicationHelper
   		warden.message   		
   	end if warden.message.present? 	
   end
+
+  def display_invalid_event_message
+    content_tag :div, class: 'alert' do
+      t('.invalid_event')
+    end if flash[:alert]
+  end
+
+  def display_event_created_message
+    content_tag :div, class: 'notice' do
+      t('.create_event')
+    end if flash[:notice]
+  end
 end

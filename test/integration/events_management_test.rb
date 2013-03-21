@@ -7,7 +7,8 @@ feature 'Events management' do
 
   scenario 'As logged user I should be able to create an event' do
     login_user
-    click_link 'Eventos'
+
+    visit '/events'
 
     click_link 'Agregar evento'
 
@@ -28,7 +29,8 @@ feature 'Events management' do
 
   scenario 'An event should not be created if it has invalid info' do
     login_user
-    click_link 'Eventos'
+    
+    visit '/events'
 
     click_link 'Agregar evento'
 

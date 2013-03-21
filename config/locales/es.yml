@@ -7,7 +7,8 @@ es:
     application:
       sign_in: 'Iniciar sesión'
       sign_out: 'Cerrar sesión'
-      welcome: 'Bienvenido %{user}' 
+      welcome: 'Bienvenido %{user}'
+
 
   mail_form:
     models:
@@ -25,6 +26,22 @@ es:
         invalid: "Fecha invalida"
         
   events:
+    index:
+      add_event: 'Agregar evento'
+      create_event: 'Su evento ha sido creado'
+    edit:
+    show:
+      event_not_found: 'Evento no encontrado'
+    new:
+      invalid_event: 'Por favor revise la información del evento'
+    create:
+      event_created: 'Su evento ha sido creado' 
     update:
-      event_updated: 'El evento fue actualizado'
-      invalid_event: 'Evento no actualidado'
+      event_not_found: 'Evento no encontrado'
+      event_updated: 'Evento actualizado'
+      invalid_event: 'Evento invalido'
+    destroy:
+      event_deleted: 'Evento eliminado'
+      event_not_found: 'Evento no encontrado'
+    event:
+      create_event: 'Crear evento'
