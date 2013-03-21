@@ -5,10 +5,10 @@ class EventsController < ApplicationController
     @current_events = Event.where("date > ?", DateTime.now).order("date DESC").limit(4)
     @past_events = Event.where("date <= ?", DateTime.now).order("date ASC").limit(3)
   end
-  
+
   def show
     @event = Event.find_by_id params[:id]
-    
+
     redirect_to events_path, alert: t('.event_not_found') unless @event
   end
 
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
 
     if @event
       return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes create_params
-      
+
       flash.now[:alert] = t('.invalid_event')
       @event.date = params[:event][:date]
       render :edit
@@ -52,11 +52,13 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.my_event params[:id], current_identity
 
-    if @event
-      return redirect_to events_path, notice: t('.event_deleted') if @event.destroy
-    end
+    messages = if @event and @event.destroy
+                 { notice: t('.event_deleted') }
+               else
+                 { alert: t('.event_not_found') }
+               end
 
-    return redirect_to events_path, alert: t('.event_not_found')
+    redirect_to events_path, messages
   end
 
   private
