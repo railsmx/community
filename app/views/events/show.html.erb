@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="hero-unit hidden-phone">
+    <h1>Evento</h1>
+    <p>Detalles del Eventos</p>
+    <p></p>
+  </div>
+  
+  <div class="row main-features">
+    <div class="span4">
+      <div class="well">
+        <h3><%= @event.name %></h3>
+        <h4>Organizador:</h4>
+        <h5><%= @event.organizer %></h5>
+        <h4>Lugar:</h4>
+        <h5><%= @event.location %></h5>
+        <h4>Fecha:</h4>
+        <h5><%= @event.date %></h5>
+        <h4>Horar:</h4>
+        <h5><%= @event.time %></h5>
+        <h4>Contacto:</h4>
+        <h5><%= @event.contact %></h5>
+        <h4>Descripciòn:</h4>
+        <p><%= @event.description %></p>
+      </div>
+    </div>
+  </div>
+
+</div>

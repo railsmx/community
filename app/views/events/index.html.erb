@@ -6,7 +6,7 @@
   </div>
   
   <div class="row main-features">
-    <% @newevents.each do |event| %>
+    <% @current_events.each do |event| %>
     <div class="span4">
       <div class="well">
         <h3><%= event.name %></h3>
@@ -33,7 +33,7 @@
     <p></p>
   </div>
 
-  <% @oldevents.each do |event| %>
+  <% @past_events.each do |event| %>
     <div class="row main-features">
       <div class="span4">
         <div class="well">
