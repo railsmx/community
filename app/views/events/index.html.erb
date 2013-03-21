@@ -1,5 +1,23 @@
-<%= display_event_created_message %>
-<div class="container">
+<%= display_notice %>
+
+<%= display_create_event_link %>
+
+<h3>Eventos recientes</h3>
+<% @current_events.each do |event| %>
+  <div id="event_<%= event.id %>">
+    name:<%= event.name %> |
+    <%= link_to t('.edit'), edit_event_path(event) %>
+  </div>
+<% end %>
+<p>
+<h3>Eventos pasados</h3>
+<% @past_events.each do |event| %>
+  <div id="event_<%= event.id %>">
+    name:<%= event.name%>
+  </div>
+<% end %>
+
+<!-- <div class="container">
   <%= link_to t('.add_event'), new_event_path %>
 
   <div class="hero-unit hidden-phone">
@@ -10,7 +28,7 @@
   
   <div class="row main-features">
     <% @current_events.each do |event| %>
-    <div class="span4">
+    <div id="event_<%= event.id %>">
       <div class="well">
         <h3><%= event.name %></h3>
         <h4>Organizador:</h4>
@@ -26,6 +44,7 @@
         <h4>Descripciòn:</h4>
         <p><%= event.description %></p>
       </div>
+      <%= link_to t('.edit'), edit_event_path(event) %>
     </div>
     <% end %>  
   </div>
@@ -38,7 +57,7 @@
 
   <% @past_events.each do |event| %>
     <div class="row main-features">
-      <div class="span4">
+      <div id="past_event_<%= event.id %>">
         <div class="well">
           <h3><%= event.name %></h3>
           <h4>Organizador:</h4>
@@ -54,11 +73,12 @@
           <h4>Descripciòn:</h4>
           <p><%= event.description %></p>
         </div>
+        <%= link_to t('.edit'), edit_event_path(event) %>
       </div>
     <% end %>  
     </div>
    </div>
-</div>
+</div> -->
 
 
 

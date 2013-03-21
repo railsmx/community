@@ -8,6 +8,7 @@ es:
       sign_in: 'Iniciar sesión'
       sign_out: 'Cerrar sesión'
       welcome: 'Bienvenido %{user}'
+      events: 'Eventos'
 
 
   mail_form:
@@ -26,15 +27,18 @@ es:
         invalid: "Fecha invalida"
         
   events:
+    new:
+      create_event: 'Crear evento'
     index:
       add_event: 'Agregar evento'
       create_event: 'Su evento ha sido creado'
+      edit: 'Modificar'
     edit:
+      update_event: 'Actualizar evento'
     show:
       event_not_found: 'Evento no encontrado'
-    new:
-      invalid_event: 'Por favor revise la información del evento'
     create:
+      invalid_event: 'Por favor revise la información del evento'
       event_created: 'Su evento ha sido creado' 
     update:
       event_not_found: 'Evento no encontrado'

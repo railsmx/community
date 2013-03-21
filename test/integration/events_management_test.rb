@@ -29,7 +29,7 @@ feature 'Events management' do
 
   scenario 'An event should not be created if it has invalid info' do
     login_user
-    
+
     visit '/events'
 
     click_link 'Agregar evento'
@@ -56,6 +56,7 @@ feature 'Events management' do
     end
 
     click_button 'Actualizar evento'
+    
     assert page.has_selector?('.notice', text: 'Su evento ha sido actualizado')
   end
 

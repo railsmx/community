@@ -13,15 +13,19 @@ module ApplicationHelper
   	end if warden.message.present? 	
   end
 
-  def display_invalid_event_message
+  def display_create_event_link
+    link_to t('.add_event'), new_event_path if current_identity
+  end
+
+  def display_alert
     content_tag :div, class: 'alert' do
-      t('.invalid_event')
+      flash[:alert]
     end if flash[:alert]
   end
 
-  def display_event_created_message
+  def display_notice
     content_tag :div, class: 'notice' do
-      t('.create_event')
+      flash[:notice]
     end if flash[:notice]
   end
 end

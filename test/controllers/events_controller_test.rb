@@ -65,6 +65,7 @@ describe EventsController do
   end
 
   describe "edit" do
+    focus
     it "should be able to edit my events" do
       log_in_user
 
@@ -72,6 +73,7 @@ describe EventsController do
 
       assert_response :success
       assert_template :edit
+      assigns[:event].time.wont_be_nil
     end
 
     it "should redirect to events when event not found" do

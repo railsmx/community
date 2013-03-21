@@ -1,5 +1,4 @@
-
-<%= form_for @event, url: events_path do |f| %>
+<%= form_for event, url: event_path(event) do |f| %>
 <div class="container">
   <div class="page-header">  
     <label>Nombre del evento:</label>
@@ -17,7 +16,7 @@
     <label>Descripcion:</label>
     <%= f.text_area :description, class: 'areamail'%>
     <br>
-    <%= f.submit t('.create_event') %>
+    <%= f.submit submit %>
   </div>
 </div>
 <% end %>

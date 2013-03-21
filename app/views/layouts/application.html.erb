@@ -18,10 +18,11 @@
         <%= link_to t('.sign_out'), signout_path, class: "sign-out btn-info" %>
       <% end %>
     </header>
-    <%= display_warden_message_tag %>
+    <%= link_to t('.events'), events_path %>
+    <%= display_warden_message_tag %><p>
 
-
-    <div class="navbar navbar-fixed-top">
+    <%=yield%>
+ <!--   <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="#"><br></a>
@@ -47,9 +48,6 @@
         </div>
       </div>
     </div>
-
-    <%=yield%>
-
     <div class="footer">
       <li>
       <%=link_to "Acerca", static_path('acerca')%>
@@ -60,7 +58,7 @@
       <li>
       <%=link_to "Contactanos", static_path('contacto')%>
       </li>
-    </div>
+    </div> -->
   </body>
 
 </html>

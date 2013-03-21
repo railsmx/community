@@ -1,4 +1,4 @@
-<%= display_invalid_event_message %>
+<%= display_alert %>
 <div class="container">
- <%= render @event %>
+ <%= render partial: 'form', locals: { event: @event, submit: t('.create_event') } %>
 </div>

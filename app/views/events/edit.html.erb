@@ -1,3 +1,4 @@
+<%= display_alert %>
 <div class="container">
- <%= render @event %>
+ <%= render partial: 'form', locals: { event: @event, submit: t('.update_event') } %>
 </div>

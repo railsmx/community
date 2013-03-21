@@ -33,18 +33,26 @@ class EventsController < ApplicationController
     @event = Event.my_event params[:id], current_identity
 
     redirect_to events_path, alert: t('.event_not_found') unless @event
+
+    @event.time = @event.date.strftime('%H:%M')
+    @event.date = @event.date.strftime('%C-%m-%d')
   end
 
   def update
     @event = Event.my_event params[:id], current_identity
+    @event.date = "#{params[:event][:date]} #{params[:event][:time]}"
 
-    return redirect_to events_path, alert: t('.event_not_found') if !@event 
+    messages = if @event and @event.update_attributes create_params
+                 { notice: t('.event_updated') }
+               elsif !@event
+                 { alert: t('.event_not_found') }
+               end
 
-    return redirect_to events_path, notice: t('.event_updated') if @event.update_attributes create_params
+    return redirect_to events_path, messages if messages 
 
     flash.now[:alert] = t('.invalid_event')
     @event.date = params[:event][:date]
-    render :edit  
+    render :edit
   end
 
   def destroy
@@ -52,7 +60,7 @@ class EventsController < ApplicationController
 
     messages = if @event and @event.destroy
                  { notice: t('.event_deleted') }
-               else
+               elsif !@event
                  { alert: t('.event_not_found') }
                end
 
