@@ -47,7 +47,8 @@ feature 'Events management' do
   end
 
   scenario 'As event owner I should be able to edit the event' do
-    event = add_event
+    identity = Identity.last
+    event = add_event(identity.id)
     login_user
     click_link 'Eventos'
 
@@ -56,7 +57,7 @@ feature 'Events management' do
     end
 
     click_button 'Actualizar evento'
-    
+
     assert page.has_selector?('.notice', text: 'Su evento ha sido actualizado')
   end
 
