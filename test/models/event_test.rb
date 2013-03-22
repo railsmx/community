@@ -54,7 +54,6 @@ describe Event do
   it "must time if date is given" do
     event.date = Time.zone.parse('2013-06-01 13:25')
 
-    event.valid?
     event.time.must_equal '13:25'
   end
 
