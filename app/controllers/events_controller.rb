@@ -18,7 +18,6 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(create_params).tap do |event|
-      #event.date = "#{params[:event][:date]} #{params[:event][:time]}"
       event.identity = current_identity
     end
 
@@ -42,7 +41,6 @@ class EventsController < ApplicationController
     @event = Event.my_event params[:id], current_identity
 
     updated = @event.update_attributes create_params if @event
-    Rails.logger.debug @event.inspect
 
     messages = calculate_redirect_message @event, updated, 'updated'
     return redirect_to events_path, messages unless messages.empty?

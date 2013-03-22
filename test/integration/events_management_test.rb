@@ -74,8 +74,8 @@ feature 'Events management' do
 
     click_link 'Eventos'
 
-    page.must_have_selector("event_#{event1.id} a.edit")
-    page.wont_have_selector("event_#{event2.id} a.edit")
+    page.must_have_selector("#event_#{event1.id} a.edit")
+    page.wont_have_selector("#event_#{event2.id} a.edit")
   end
 
 end

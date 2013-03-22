@@ -56,6 +56,9 @@ class MiniTest::Unit::TestCase
   prepare
 
   def setup
+    Identity.destroy_all
+    Event.destroy_all
+
     Warden.test_reset!
     Capybara.reset_sessions!
   end

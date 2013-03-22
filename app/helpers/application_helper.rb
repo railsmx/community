@@ -17,6 +17,10 @@ module ApplicationHelper
     link_to t('.add_event'), new_event_path if current_identity
   end
 
+  def display_edit_event_link(event)
+    link_to t('.edit'), edit_event_path(event), :class => 'edit' if event.identity == current_identity
+  end
+
   def display_alert
     content_tag :div, class: 'alert' do
       flash[:alert]

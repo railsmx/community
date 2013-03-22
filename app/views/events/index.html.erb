@@ -6,7 +6,7 @@
 <% @current_events.each do |event| %>
   <div id="event_<%= event.id %>">
     name:<%= event.name %> |
-    <%= link_to t('.edit'), edit_event_path(event) %>
+    <%= display_edit_event_link event %>
   </div>
 <% end %>
 <p>
