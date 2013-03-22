@@ -40,4 +40,24 @@ describe Event do
 
     event.valid?.must_equal true
   end
+
+  it "must combine date and time before validation" do
+    event.tap do |e|
+      e.date = '2013-06-01'
+      e.time = '17:45'
+    end
+
+    event.valid?
+    event.date.must_equal Time.zone.parse('2013-06-01 17:45')
+  end
+
+  it "must time if date is given" do
+    event.date = Time.zone.parse('2013-06-01 13:25')
+
+    event.time.must_equal '13:25'
+  end
+
+  it "wont set time if no date is given" do
+    event.time.must_be_nil
+  end
 end
