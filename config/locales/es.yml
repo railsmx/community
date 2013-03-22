@@ -42,7 +42,7 @@ es:
       event_created: 'Su evento ha sido creado' 
     update:
       event_not_found: 'Evento no encontrado'
-      event_updated: 'Evento actualizado'
+      event_updated: 'Su evento ha sido actualizado'
       invalid_event: 'Evento invalido'
     destroy:
       event_deleted: 'Evento eliminado'
