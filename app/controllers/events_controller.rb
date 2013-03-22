@@ -40,7 +40,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.my_event params[:id], current_identity
-    
+
     updated = @event.update_attributes create_params if @event
     Rails.logger.debug @event.inspect
 

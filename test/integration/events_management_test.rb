@@ -24,7 +24,7 @@ feature 'Events management' do
 
     click_button 'Crear evento'
 
-    assert page.has_selector?('.notice', text: 'Su evento ha sido creado')
+    page.must_have_selector('.notice', text: 'Su evento ha sido creado')
   end
 
   scenario 'An event should not be created if it has invalid info' do
@@ -36,20 +36,22 @@ feature 'Events management' do
 
     click_button 'Crear evento'
 
-    assert page.has_selector?('.alert', text: 'Por favor revise la información del evento')
+    page.must_have_selector('.alert', text: 'Por favor revise la información del evento')
   end
 
   scenario 'As not logged user I should not be able to create an event' do
     visit '/'
     click_link 'Eventos'
 
-    assert !page.has_selector?('a', text: 'Agregar evento')
+    page.wont_have_selector('a', text: 'Agregar evento')
   end
 
   scenario 'As event owner I should be able to edit the event' do
+    login_user
+
     identity = Identity.last
     event = add_event(identity.id)
-    login_user
+
     click_link 'Eventos'
 
     within("#event_#{event.id}") do
@@ -58,18 +60,22 @@ feature 'Events management' do
 
     click_button 'Actualizar evento'
 
-    assert page.has_selector?('.notice', text: 'Su evento ha sido actualizado')
+    page.must_have_selector('.notice', text: 'Su evento ha sido actualizado')
   end
 
   scenario 'I should not be able to edit an event from other user' do
-    skip('WIP')
-    event = add_event('998877')
     login_user
+    logged_user = Identity.last
+
+    identity = Identity.create uid: '998877', provider: 'github', username: 'second', email: 'second@user.com'
+
+    event1 = add_event(logged_user.id)
+    event2 = add_event(identity.id)
+
     click_link 'Eventos'
 
-    within("#event_#{event.id}") do
-      click_link 'Modificar'
-    end
+    page.must_have_selector("event_#{event1.id} a.edit")
+    page.wont_have_selector("event_#{event2.id} a.edit")
   end
 
 end
@@ -81,7 +87,9 @@ def login_user
 end
 
 def add_event(identity_id = '12334')
-  Event.create name: 'MagmaConf', description: 'Conferencias',
+  events_count = Event.count + 1
+  Event.create name: "MagmaConf #{events_count}",
+    description: 'Conferencias',
     date: DateTime.now + 100, location: 'Manzanillo Colima',
     contact: 'http://magmaconf.com', organizer: 'Crowdint',
     identity_id: identity_id
