@@ -19,8 +19,10 @@ class Event < ActiveRecord::Base
 
   private
   def set_date
-    return if self.date.nil? || self.time.nil?
+    return if self.date.nil?
 
+    self.time = date.strftime('%H:%M') if self.time.nil?
+    
     current_date = date.strftime('%Y-%m-%d')
     self.date = DateTime.parse "#{current_date} #{self.time}"
   end
