@@ -51,7 +51,7 @@ describe Event do
     event.date.must_equal Time.zone.parse('2013-06-01 17:45')
   end
 
-  it "must time if date is given" do
+  it "must have time if date is given" do
     event.date = Time.zone.parse('2013-06-01 13:25')
 
     event.time.must_equal '13:25'
