@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(create_params).tap do |event|
-      event.date = "#{params[:event][:date]} #{params[:event][:time]}"
+      #event.date = "#{params[:event][:date]} #{params[:event][:time]}"
       event.identity = current_identity
     end
 
@@ -35,14 +35,15 @@ class EventsController < ApplicationController
     redirect_to events_path, alert: t('.event_not_found') unless @event
 
     @event.time = @event.date.strftime('%H:%M')
-    @event.date = @event.date.strftime('%C-%m-%d')
+    @event.date = @event.date.strftime('%Y-%m-%d')
   end
 
   def update
     @event = Event.my_event params[:id], current_identity
-    @event.date = "#{params[:event][:date]} #{params[:event][:time]}"
-
+    
     updated = @event.update_attributes create_params if @event
+    Rails.logger.debug @event.inspect
+
     messages = calculate_redirect_message @event, updated, 'updated'
     return redirect_to events_path, messages unless messages.empty?
 

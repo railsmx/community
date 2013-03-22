@@ -65,7 +65,6 @@ describe EventsController do
   end
 
   describe "edit" do
-    focus
     it "should be able to edit my events" do
       log_in_user
 
@@ -103,6 +102,7 @@ describe EventsController do
   end
 
   describe "update" do
+    focus
     it "should be able to update my events" do
       log_in_user
 

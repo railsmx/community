@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  before_validation :set_date
+
   belongs_to :identity
 
   attr_accessor :time
@@ -13,5 +15,13 @@ class Event < ActiveRecord::Base
     def my_event(event_id, identity)
       where(:id => event_id, :identity_id => identity.id).first
     end
+  end
+
+  private
+  def set_date
+    return if self.date.nil? || self.time.nil?
+
+    current_date = date.strftime('%Y-%m-%d')
+    self.date = DateTime.parse "#{current_date} #{self.time}"
   end
 end
