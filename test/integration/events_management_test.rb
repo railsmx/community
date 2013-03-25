@@ -58,7 +58,7 @@ feature 'Events management' do
       click_link 'Modificar'
     end
 
-    click_button 'Actualizar evento'
+    click_button 'Actualizar evento'  
 
     page.must_have_selector('.notice', text: 'Su evento ha sido actualizado')
   end
@@ -90,7 +90,7 @@ def add_event(identity_id = '12334')
   events_count = Event.count + 1
   Event.create name: "MagmaConf #{events_count}",
     description: 'Conferencias',
-    date: DateTime.now + 100, location: 'Manzanillo Colima',
+    date: (DateTime.now + 100).strftime(:custom_datetime), location: 'Manzanillo Colima',
     contact: 'http://magmaconf.com', organizer: 'Crowdint',
     identity_id: identity_id
 end
