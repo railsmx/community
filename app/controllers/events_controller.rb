@@ -33,8 +33,8 @@ class EventsController < ApplicationController
 
     redirect_to events_path, alert: t('.event_not_found') unless @event
 
-    @event.time = @event.date.strftime(:custom_time)
-    @event.date = @event.date.strftime(:custom_date)
+    @event.time = @event.date.to_s(:custom_time)
+    @event.date = @event.date.to_s(:custom_date)
   end
 
   def update
