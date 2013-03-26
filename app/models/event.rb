@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
   end
 
   def time
-    return date.strftime('%H:%M') if date && date.strftime('%H:%M') != '00:00'
+    return date.to_s(:custom_time) if date && date.to_s(:custom_time) != '00:00'
     @time
   end
 
@@ -26,7 +26,7 @@ class Event < ActiveRecord::Base
   def set_date
     return if self.date.nil? || self.time.nil?
     
-    current_date = date.strftime('%Y-%m-%d')
+    current_date = date.to_s(:custom_date)
     self.date = DateTime.parse "#{current_date} #{self.time}"
   end
 end
