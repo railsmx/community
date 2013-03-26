@@ -78,7 +78,6 @@ GEM
       multi_json (>= 1.5)
     launchy (2.2.0)
       addressable (~> 2.3)
-    libv8 (3.11.8.13)
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -153,7 +152,6 @@ GEM
     rake (10.0.3)
     rdoc (3.12.2)
       json (~> 1.4)
-    ref (1.0.2)
     rubyzip (0.9.9)
     sass (3.2.7)
     sass-rails (4.0.0.beta1)
@@ -176,9 +174,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    therubyracer (0.11.4)
-      libv8 (~> 3.11.8.12)
-      ref
     thor (0.17.0)
     thread_safe (0.1.0)
       atomic
@@ -220,7 +215,6 @@ DEPENDENCIES
   puma
   rails (= 4.0.0.beta1)
   sass-rails (~> 4.0.0.beta1)
-  therubyracer
   turbolinks
   uglifier (>= 1.0.3)
   warden (~> 1.2.1)
