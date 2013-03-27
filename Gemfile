@@ -21,11 +21,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :linux do
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', platforms: :ruby
-end
-
 gem 'jquery-rails'
 gem 'bourbon'
 #gem 'mac_generators'
