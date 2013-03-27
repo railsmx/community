@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def index
+    @current_events = Event.current_events(2)
   end
 
   def show

@@ -1,33 +1,49 @@
-<div class="container">
-  <div class="hero-unit hidden-phone">
-    <a></a>
-    <h1>
-      <div>
-        <br> 
+<div class="text-welcome">
+  <p>La Comunidad Mexicana de
+  Ruby on Rails
+  Una comunidad de desarrolladores mexicanos 
+  e hispanohablantes. Un puntode encuentro para 
+  compartir experiencias y mejores prácticas 
+  sobre el mundo de rails.<br>
+  <%= display_login_button %>
+  </p>
+</div>
+
+<div class="info">
+  <div class="sidebar">
+      <div class="events">
+        <h2>Proximos eventos</h2>
+        <% @current_events.each do |event| %>
+          <div class="event">
+            <%= link_to event.name, events_path %><br>
+            <%= truncate event.description, length: 80 %><br>
+            <%= event.date %><br>
+            <%= event.location %>
+          </div><br>
+        <% end %>
       </div>
-      <div>Rails MX</div>
-      <div><%= display_login_button %></div>
-    </h1>
-    <p>
-      <br> 
-    </p>
-    <p class="textifier">Una comunidad de desarrolladores mexicanos e hispanohablantes. Un punto
-  de encuentro para compartir experiencias y mejores prácticas sobre el mundo
-  de rails.</p>
+      <div class="blog">
+        <h2>Blog</h2>
+      </div>  
   </div>
-  <div class="row main-features">
-    <div class="span4">
-      <h1>twitter-timeline</h1>
-    </div>
-    <div class="span8">
-      <ol class="breadcrumb">
-        <li>Noticias&nbsp;
-          <span class="divider">/</span>
-        </li>
-        <li>Eventos</li>
-      </ol>
-      <div class="well">
-        <div class="row"></div>
-      </div>
-    </div>
+
+  <div class="info-welcome">
+      <div id="about">
+      <h3>¿Qué es rails.mx?</h3>
+      <%= image_tag "http://placehold.it/90x90", id: "img1" %> Rails México (rails.mx) es una comunidad de desarrolladores mexicanos
+      e hispanohablantes. Un punto de encuentro para compartir experiencias y
+      mejores prácticas sobre el mundo de rails.
+      <br> Con el propósito de motivar a los desarrolladores a que se introduzcan
+      en este maravilloso mundo de Rails, y de ayudar a los recién llegados a
+      que su viaje por el aprendizaje del framework sea fácil y divertido.
+
+      <h3>¿Qué puedo encontrar aquí?</h3>
+      la comunidad funciona como repositorio de artículos, tutoriales, guías,
+      tips, enlaces y noticias, todo sobre el mismo tema: Ruby on Rails. Aunque
+      <%= image_tag "http://placehold.it/300x150", id: "img2" %> 
+      no hay porqué limitarse!, si quieres puedes compartir tus conocimientos
+      sobre otros frameworks basados en Ruby. No esperes más y únete a esta comunidad
+      de desarrolladores, aprende, comparte y agiliza tu desarrollo.
+      <>
   </div>
+</div>

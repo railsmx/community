@@ -9,6 +9,10 @@ es:
       sign_out: 'Cerrar sesión'
       welcome: 'Bienvenido %{user}'
       events: 'Eventos'
+      who_we_are: 'Quienes somos?'
+      contact: 'Contacto'
+      privacy: 'Privacidad'
+      blog: 'Blog'
 
   home:
     index:

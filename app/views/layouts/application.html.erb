@@ -10,8 +10,8 @@
   <div id="wrap">
     <header>
       <div class="logo">
-        <span>Rails Mx</span>
-        <%= link_to t('.events'), events_path %>
+        <span id="logo">Rails.MX</span>
+        <%= link_to t('.blog'), "#" %> | <%= link_to t('.events'), events_path %> 
       </div>
       <div class="welcome">
         <%= display_login_link do %>
@@ -23,13 +23,12 @@
         <% end %>  
       </div>
     </header>
-
-    <div class="content">
-      <%= display_warden_message_tag %><p>
-      <%=yield%>
+     <%= display_warden_message_tag %>
+    <div class="container">  
+      <%= yield %>
     </div>  
-
-    <div id="footer">
+    <div class="footer">
+      <span>Rails.MX</span> <%= link_to t('.who_we_are'), "#" %> | <%= link_to t('.contact'), "#" %> | <%= link_to t('.privacy'), "#" %>
     </div>
   </div>  
   </body>
