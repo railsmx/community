@@ -10,6 +10,9 @@ es:
       welcome: 'Bienvenido %{user}'
       events: 'Eventos'
 
+  home:
+    index:
+      sign_in: 'Iniciar sesión'
 
   mail_form:
     models:

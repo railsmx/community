@@ -2,45 +2,44 @@
   In this file override any css style or add new ones
 */
 
-
-.page-header{
-  padding-top: 40px;
-  }
-
-.footer{
-  width: auto;
-  background-color: black;
-  height: 100px;
-  bottom:0;
-  }
-
-.textifier{
-  width: 400px;
-  text-align: justify;
-  } 
-
-.nav{
-  padding-left: 500px;
-  }
-
-#content{
-  margin: 0px 0px 10px;
-  width: 577px;
-  height: 288px;
+body {
+  background-color: #eee;
 }
 
-.area{
-  margin: 0px 0px 10px;
-  width: 491px;
-  height: 129px;
+#wrap {
+  background-color: #fff;
+  width: 1024px;
+  margin: 0px auto 0px auto
+}
+
+header {
+  height: 70px;
+  border-style: solid;
+  border-width: 1px;
+
+  .logo {
+    float: left;
+    padding-top: $padding-top-header;
+    padding-left: $padding-side-header;
   }
 
-.areamail{
-  margin: 0px 0px 10px;
-  width: 726px;
-  height: 285px;
+  .welcome {
+    float: right;    
+    padding-top: $padding-top-header - 10;
+    padding-right: $padding-side-header;
   }
+}
 
-.linktext{
-  color: white;
+.btn {
+  @include button;
+  @include size(75px 10px);
+  font-size: 0.8em;
+  @include font-face(SourceSansPro, '/fonts/Source_Sans_Pro/SourceSansPro-Regular');
+
+}
+
+.big_btn {
+  @include button(pill);
+  @include size(150px 30px);
+  font-size: 0.8em;
 }

@@ -2,63 +2,35 @@
 <html>
   <head>
     <title>Rails Mx</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <%=stylesheet_link_tag "application" %>
-    <%=stylesheet_link_tag "bootstrap-datepicker" %>
     <%=javascript_include_tag "application" %>
   </head>
-
   <body>
+  <div id="wrap">
     <header>
-      <%= display_login_link do %>
-        <span class="user-info">
-          <%= t('.welcome', user: current_identity.try(:username))  %> |        
-        </span>
-        <%= link_to t('.sign_out'), signout_path, class: "sign-out btn-info" %>
-      <% end %>
-    </header>
-    <%= link_to t('.events'), events_path %>
-    <%= display_warden_message_tag %><p>
-
-    <%=yield%>
- <!--   <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#"><br></a>
-          <div class="navbar-content">
-            <ul class="nav ">
-              <li>
-              <%=link_to "Home", root_path %>
-              </li>
-              <li>
-              <%=link_to "Blog", ('#')%>
-              </li>
-              <li>
-              <%=link_to "Comunidad", ('#')%>
-              </li>
-              <li>
-              <%=link_to "Eventos", new_event_path %>
-              </li>
-              <li>
-              
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="logo">
+        <span>Rails Mx</span>
+        <%= link_to t('.events'), events_path %>
       </div>
-    </div>
-    <div class="footer">
-      <li>
-      <%=link_to "Acerca", static_path('acerca')%>
-      </li>
-      <li>
-      <%=link_to "Politicas de Privacidad", static_path('privacidad')%>
-      </li>
-      <li>
-      <%=link_to "Contactanos", static_path('contacto')%>
-      </li>
-    </div> -->
-  </body>
+      <div class="welcome">
+        <%= display_login_link do %>
+          <span class="user-info">
+            <%= t('.welcome', user: current_identity.try(:username))  %> 
+            <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), :alt => current_identity.username) %>       
+          </span>
+          <%= link_to t('.sign_out'), signout_path, class: "sign-out zocial github" %>
+        <% end %>  
+      </div>
+    </header>
 
+    <div class="content">
+      <%= display_warden_message_tag %><p>
+      <%=yield%>
+    </div>  
+
+    <div id="footer">
+    </div>
+  </div>  
+  </body>
 </html>

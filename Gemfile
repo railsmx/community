@@ -6,6 +6,8 @@ gem 'pg'
 gem 'puma'
 gem 'pretty_formatter'
 
+gem 'gravatar_image_tag'
+
 gem 'mail_form', github: 'mariochavez/mail_form'
 gem 'omniauth-github'
 gem 'warden', '~> 1.2.1'
