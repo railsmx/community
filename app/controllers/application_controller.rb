@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def warden
-    request.env['warden']
+    request.env['warden']
   end
 
   def identity_signed_in?
