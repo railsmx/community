@@ -7,29 +7,33 @@
     <%=javascript_include_tag "application" %>
   </head>
   <body>
-  <div id="wrap">
     <header>
-      <div class="logo">
-        <span id="logo">Rails.MX</span>
-        <%= link_to t('.blog'), "#" %> | <%= link_to t('.events'), events_path %> 
-      </div>
-      <div class="welcome">
-        <%= display_login_link do %>
-          <span class="user-info">
-            <%= t('.welcome', user: current_identity.try(:username))  %> 
-            <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), :alt => current_identity.username) %>       
-          </span>
-          <%= link_to t('.sign_out'), signout_path, class: "sign-out zocial github" %>
-        <% end %>  
+      <div class="container">
+        <div class="logo six">
+          <span id="logo">Rails.MX</span>
+          <%= link_to t('.blog'), "#" %> | <%= link_to t('.events'), events_path %> 
+        </div>
+        <div class="welcome six">
+          <%= display_login_link do %>
+            <span class="user-info">
+              <%= t('.welcome', user: current_identity.try(:username))  %> 
+              <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), :alt => current_identity.username) %>       
+            </span>
+            <%= link_to t('.sign_out'), signout_path, class: "sign-out zocial github" %>
+          <% end %>  
+        </div>
       </div>
     </header>
+     
      <%= display_warden_message_tag %>
-    <div class="container">  
+    <div class="container <%= controller.controller_name %>">  
       <%= yield %>
-    </div>  
-    <div class="footer">
-      <span>Rails.MX</span> <%= link_to t('.who_we_are'), "#" %> | <%= link_to t('.contact'), "#" %> | <%= link_to t('.privacy'), "#" %>
     </div>
-  </div>  
+
+    <footer>
+      <div class="container"> 
+        <span>Rails.MX</span> <%= link_to t('.who_we_are'), "#" %> | <%= link_to t('.contact'), "#" %> | <%= link_to t('.privacy'), "#" %>
+      </div>
+    </footer>
   </body>
 </html>
