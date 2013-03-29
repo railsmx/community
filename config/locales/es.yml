@@ -18,6 +18,14 @@ es:
     index:
       sign_in: 'Iniciar sesión'
 
+  shared:
+    event:
+      organizer: 'Organizado por %{organize}'
+
+  contact_form:
+    new:
+      send: 'Enviar'    
+
   mail_form:
     models:
       contact_form: "Forma para contactar"
@@ -56,3 +64,30 @@ es:
       event_not_found: 'Evento no encontrado'
     event:
       create_event: 'Crear evento'
+
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+      long_date: "El %d de %B de %Y"
+
+    day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
+    abbr_day_names: [Dom, Lun, Mar, Vie, Jue, Vie, Sab]
+
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+    
+    order:
+      - year
+      - month
+      - day
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+
+    am: "am"
+    pm: "pm"

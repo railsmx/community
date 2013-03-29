@@ -1,5 +1,6 @@
 class ContactFormController < ApplicationController
   def new
+    current_events
     @contact_form = ContactForm.new
   end
 

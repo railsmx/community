@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
-
+  before_action :current_events, only: [:index, :privacy, :about]
+  
   def index
-    @current_events = Event.current_events(2)
   end
 
   def show
@@ -11,5 +11,9 @@ class HomeController < ApplicationController
     render text: 'Not found', status: 404
   end
 
+  def privacy
+  end
 
+  def about 
+  end
 end

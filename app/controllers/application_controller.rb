@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
   def authenticate!
     redirect_to root_path, notice: t('.not_logged') unless identity_signed_in?
   end
+
+  def current_events
+    @current_events = Event.current_events(3)
+  end
 end

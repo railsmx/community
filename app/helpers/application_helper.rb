@@ -1,7 +1,7 @@
 module ApplicationHelper
   def display_login_link(&block)
     unless identity_signed_in?
-      link_to t('.sign_in'), "/auth/github", class: "sign-in zocial github"
+      link_to t('.sign_in'), "/auth/github", class: "sign-in zocial github", style: "font-size: .8em;"
     else
       html = capture(&block) if block_given?
     end
@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def display_login_button(&block)
     unless identity_signed_in?
-      link_to t('.sign_in'), "/auth/github", class: "sign-in big_btn"
+      link_to t('.sign_in'), "/auth/github", class: "sign-in btn btn-large"
     else
       html = capture(&block) if block_given?
     end
@@ -39,5 +39,9 @@ module ApplicationHelper
     content_tag :div, class: 'notice' do
       flash[:notice]
     end if flash[:notice]
+  end
+
+  def localize_long_date(date)
+    I18n::localize(date, format: t(:long_date, scope: [:date, :formats]))
   end
 end

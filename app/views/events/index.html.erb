@@ -1,18 +1,37 @@
-<%= display_notice %>
+<div class="container events twelve">
 
-<%= display_create_event_link %>
+  <%= display_notice %>
 
-<h3>Eventos recientes</h3>
-<% @current_events.each do |event| %>
-  <div id="event_<%= event.id %>">
-    name:<%= event.name %> |
-    <%= display_edit_event_link event %>
+  <%= display_create_event_link %>
+
+  <h2>Eventos</h2>
+  <p>
+  zxkhczkhxcnzzxc zxc zxczxc zxczxc zxczxczxcz zxczc zxcvbgcg ggasdfcasdf sdfgsdf
+  azsdcasdasdasd asdf sdf sdfs dfs df sdfs df sd f sdf s df sd fs d fs df sd f sf sd fs df
+  </p>
+
+  <div class="content-event">
+  <div class="first-event">
+    <div class="four">
+      <h2><%= @current_events.first.name %></h2>
+      <h4>    
+      <%= localize_long_date @current_events.first.date %><br>
+      <%= @current_events.first.location %><br>
+      <%= t('.organizer', organize: @current_events.first.organizer) %>
+      </h4>
+    </div>
+    <div class="seven">
+      <p>
+        <%= @current_events.first.description %>
+      </p>  
+    </div>
   </div>
-<% end %>
-<p>
-<h3>Eventos pasados</h3>
-<% @past_events.each do |event| %>
-  <div id="event_<%= event.id %>">
-    name:<%= event.name%>
+
+  <div class="second-event five">
   </div>
-<% end %>
+
+  <div class="third-event five">
+  </div>
+</div>
+
+</div>

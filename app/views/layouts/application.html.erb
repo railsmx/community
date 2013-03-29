@@ -9,9 +9,12 @@
   <body>
     <header>
       <div class="container">
-        <div class="logo six">
-          <span id="logo">Rails.MX</span>
-          <%= link_to t('.blog'), "#" %> | <%= link_to t('.events'), events_path %> 
+        <div class="banner six">
+          <span class="logo">Rails.MX</span>
+          <ul class="menu">
+            <li><%= link_to t('.blog'), "#" %></li>
+            <li><%= link_to t('.events'), events_path %></li>
+          </ul>
         </div>
         <div class="welcome six">
           <%= display_login_link do %>
@@ -19,7 +22,7 @@
               <%= t('.welcome', user: current_identity.try(:username))  %> 
               <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), :alt => current_identity.username) %>       
             </span>
-            <%= link_to t('.sign_out'), signout_path, class: "sign-out zocial github" %>
+            <%= link_to t('.sign_out'), signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
           <% end %>  
         </div>
       </div>
@@ -31,8 +34,15 @@
     </div>
 
     <footer>
-      <div class="container"> 
-        <span>Rails.MX</span> <%= link_to t('.who_we_are'), "#" %> | <%= link_to t('.contact'), "#" %> | <%= link_to t('.privacy'), "#" %>
+      <div class="container">
+        <div class="six">
+          <span class="logo">Rails.MX</span> 
+          <ul class="submenu">
+            <li><%= link_to t('.who_we_are'), acerca_path %></li>
+            <li><%= link_to t('.contact'), contact_form_new_path %></li>
+            <li><%= link_to t('.privacy'), privacidad_path %></li>
+          </ul>
+        </div>
       </div>
     </footer>
   </body>

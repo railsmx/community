@@ -1,7 +1,46 @@
 .home {
   .hero {
+    @include size(1024px 300px);
     background: url('http://placehold.it/1024x300') no-repeat;
+
+    .welcome-text {
+      margin: ($margin * 2) 0 0 $margin;
+
+      h3 {
+        margin-bottom: 0;
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 3em;
+        margin-bottom: 0;
+      }
+
+      &.button {
+        margin-top: $margin;
+      }
+    }
+
+    .btn-large {
+      @include button(pill);
+      margin-top: $margin;
+      font-size: 1.2em;
+    }
   }
 
-    
+  .content {
+    p {
+      text-align: justify;
+    }
+
+    .image-left {
+      float: left;
+      margin: ($margin / 2);
+    }
+
+    .image-right {
+      float: right;
+      margin: ($margin / 2);
+    }
+  }
 }

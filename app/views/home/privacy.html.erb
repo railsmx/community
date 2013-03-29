@@ -1,7 +1,7 @@
 <div class="container">
-  <%= render partial: 'sidebar', locals: { @current_events } %>
+  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
 
-  <div class="page-header">
+  <div class="content nine">
   <h1>Política y Privacidad</h1>
   <p.textifier>Esta Política de Privacidad rige la manera en que rails.mx recopila, utiliza,
     mantiene y divulga la información recogida de los usuarios (cada "Usuario")
