@@ -1,37 +1,36 @@
-<div class="container events twelve">
-
-  <%= display_notice %>
-
-  <%= display_create_event_link %>
-
-  <h2>Eventos</h2>
-  <p>
-  zxkhczkhxcnzzxc zxc zxczxc zxczxc zxczxczxcz zxczc zxcvbgcg ggasdfcasdf sdfgsdf
-  azsdcasdasdasd asdf sdf sdfs dfs df sdfs df sd f sdf s df sd fs d fs df sd f sf sd fs df
-  </p>
-
-  <div class="content-event">
-  <div class="first-event">
-    <div class="four">
-      <h2><%= @current_events.first.name %></h2>
-      <h4>    
-      <%= localize_long_date @current_events.first.date %><br>
-      <%= @current_events.first.location %><br>
-      <%= t('.organizer', organize: @current_events.first.organizer) %>
-      </h4>
-    </div>
-    <div class="seven">
-      <p>
-        <%= @current_events.first.description %>
-      </p>  
-    </div>
+<div class="eleven-medium content">
+<%= display_notice %>
+<%= display_create_event_link %>
+<h1>Eventos</h1>
+<p>
+zxkhczkhxcnzzxc zxc zxczxc zxczxc zxczxczxcz zxczc zxcvbgcg ggasdfcasdf sdfgsdf sdkhfbsdkhbfkshdf
+azsdcasdasdasd asdf sdf sdfs dfs df sdfs df sd f sdf s df sd fs d fs df sd f sf sd fs df
+</p>
+<div class="first">
+  <div class="four">
+    <%= render partial: 'shared/event_show', locals: { event: @current_events.first, all: false } %>
   </div>
-
-  <div class="second-event five">
-  </div>
-
-  <div class="third-event five">
+  <div class="six">
+    <p>
+      <%= display_description @current_events.first %>
+    </p>  
   </div>
 </div>
+<div class="second five">
+  <%= render partial: 'shared/event_show', locals: { event: @current_events.second, all: true } %>
+</div>
+<div class="third five">
+  <%= render partial: 'shared/event_show', locals: { event: @current_events.third, all: true } %>
+</div>
+
+<h2>Eventos pasados</h2>
+<div class="first-past five">
+  <%= render partial: 'shared/event_show', locals: { event: @past_events.first, all: false } %>
+</div>
+<div class="second-past five">
+  <%= render partial: 'shared/event_show', locals: { event: @past_events.first, all: false } %>
+</div>
+
+<h3>Blog<h3>
 
 </div>

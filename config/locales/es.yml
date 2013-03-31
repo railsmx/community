@@ -19,8 +19,11 @@ es:
       sign_in: 'Iniciar sesión'
 
   shared:
-    event:
+    event_show:
+      edit: 'Editar'
       organizer: 'Organizado por %{organize}'
+    event:
+      organizer: 'Organizado por %{organize}' 
 
   contact_form:
     new:

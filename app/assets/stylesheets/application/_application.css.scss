@@ -40,6 +40,14 @@ body {
     @include columns(9);
   }
 
+  .ten {
+    @include columns(10);
+  }
+
+  .eleven-medium {
+    @include columns(11.5);
+  }
+
   .twelve {
     @include columns(12); 
   }
@@ -167,6 +175,10 @@ footer {
 sidebar {
   padding: 0 ($padding * 2) 0 $padding;
   margin-left: 0 !important;
+
+  .events, .blog {
+    padding-left: 0 !important;
+  }
 
   p {
     font-size: 0.8em;

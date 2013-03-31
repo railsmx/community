@@ -1,24 +1,35 @@
-.events {
+.content {
   padding: $padding $padding 0 $padding;
 
-  .first-event {
+  .first {
     height: 200px;
-    border: 3px solid #000;
+    border: 2px solid #000;
   }
 
-  .second-event {
-    margin: $margin ($margin + 10);
-    height: 200px;
-    border: 3px solid #000;
+  .second {
+    margin: $margin ($margin + 10) ($margin * 2);
+    padding: 0 $padding 0 $padding;
+    height: 280px;
+    border: 2px solid #000;
   }
 
-  .third-event {
-    margin: $margin $margin $margin ($margin + 10) !important;
-    height: 200px;
-    border: 3px solid #000;
+  .third {
+    margin: $margin $margin ($margin * 2) ($margin + 10) !important;
+    padding: 0 $padding 0 $padding;
+    height: 280px;
+    border: 2px solid #000;
   }
 
-  .content-event {
-    padding: 0 $padding 0 $padding
+  .first-past {
+    @extend .second;
+    margin-top: 0;
+    height: 155px;
   }
+
+  .second-past {
+    @extend .third;
+    margin-top: 0 !important;
+    height: 155px;
+  }
+
 }

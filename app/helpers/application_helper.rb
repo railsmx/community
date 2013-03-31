@@ -22,11 +22,11 @@ module ApplicationHelper
   end
 
   def display_create_event_link
-    link_to t('.add_event'), new_event_path if current_identity
+    link_to t('.add_event'), new_event_path, :class => 'btn' if current_identity
   end
 
   def display_edit_event_link(event)
-    link_to t('.edit'), edit_event_path(event), :class => 'edit' if event.identity == current_identity
+    link_to t('.edit'), edit_event_path(event), :class => 'edit btn' if event.identity == current_identity
   end
 
   def display_alert
@@ -43,5 +43,9 @@ module ApplicationHelper
 
   def localize_long_date(date)
     I18n::localize(date, format: t(:long_date, scope: [:date, :formats]))
+  end
+
+  def display_description(event)
+    event.description if event
   end
 end
