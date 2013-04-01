@@ -28,6 +28,10 @@ body {
     @include columns(5);
   }
 
+  .five-half {
+    @include columns(5.5);
+  }
+
   .six {
     @include columns(6);
   }
@@ -44,12 +48,12 @@ body {
     @include columns(10);
   }
 
-  .eleven-medium {
-    @include columns(11.5);
+  .eleven-3quarters {
+    @include columns(11.75);
   }
 
   .twelve {
-    @include columns(12); 
+    @include columns(12);
   }
 
   .content {
@@ -73,7 +77,7 @@ header {
   }
 
   .welcome {
-    padding: $padding 0;
+    padding: $padding $padding;
 
     .sign-out {
       background-color: #fbfbfb;
@@ -93,8 +97,8 @@ header {
         margin-left: ($margin / 2);
       }
 
-      &:last-child:after { 
-        content: ''; 
+      &:last-child:after {
+        content: '';
       }
 
       a {
@@ -161,8 +165,8 @@ footer {
         margin-left: ($margin / 2);
       }
 
-      &:last-child:after { 
-        content: ''; 
+      &:last-child:after {
+        content: '';
       }
 
       a {
@@ -201,7 +205,7 @@ sidebar {
     }
 
     textarea {
-      font-size: .7em;      
+      font-size: .7em;
       @include size(300px 150px);
     }
 

@@ -1,36 +1,33 @@
-<div class="eleven-medium content">
-<%= display_notice %>
-<%= display_create_event_link %>
-<h1>Eventos</h1>
-<p>
-zxkhczkhxcnzzxc zxc zxczxc zxczxc zxczxczxcz zxczc zxcvbgcg ggasdfcasdf sdfgsdf sdkhfbsdkhbfkshdf
-azsdcasdasdasd asdf sdf sdfs dfs df sdfs df sd f sdf s df sd fs d fs df sd f sf sd fs df
-</p>
-<div class="first">
-  <div class="four">
-    <%= render partial: 'shared/event_show', locals: { event: @current_events.first, all: false } %>
-  </div>
-  <div class="six">
-    <p>
+<div class="eleven-3quarters content">
+  <%= display_notice %>
+  <%= display_create_event_link %>
+  <h1>Eventos</h1>
+  <p>
+    zxkhczkhxcnzzxc zxc zxczxc zxczxc zxczxczxcz zxczc zxcvbgcg ggasdfcasdf sdfgsdf sdkhfbsdkhbfkshdf
+    azsdcasdasdasd asdf sdf sdfs dfs df sdfs df sd f sdf s df sd fs d fs df sd f sf sd fs df
+  </p>
+  <div class="first">
+    <div class="four main-data">
+      <%= render partial: 'shared/event_show', locals: { event: @current_events.first, all: false } %>
+    </div>
+    <div class="seven description">
       <%= display_description @current_events.first %>
-    </p>  
+    </div>
   </div>
-</div>
-<div class="second five">
-  <%= render partial: 'shared/event_show', locals: { event: @current_events.second, all: true } %>
-</div>
-<div class="third five">
-  <%= render partial: 'shared/event_show', locals: { event: @current_events.third, all: true } %>
-</div>
+  <div class="second five-half">
+    <%= render partial: 'shared/event_show', locals: { event: @current_events.second, all: true } %>
+  </div>
+  <div class="third five-half">
+    <%= render partial: 'shared/event_show', locals: { event: @current_events.third, all: true } %>
+  </div>
 
-<h2>Eventos pasados</h2>
-<div class="first-past five">
-  <%= render partial: 'shared/event_show', locals: { event: @past_events.first, all: false } %>
-</div>
-<div class="second-past five">
-  <%= render partial: 'shared/event_show', locals: { event: @past_events.first, all: false } %>
-</div>
+  <h2>Eventos pasados</h2>
+  <div class="first-past five-half">
+    <%= render partial: 'shared/event_show', locals: { event: @past_events.first, all: false } %>
+  </div>
+  <div class="second-past five-half">
+    <%= render partial: 'shared/event_show', locals: { event: @past_events.first, all: false } %>
+  </div>
 
-<h3>Blog<h3>
-
+  <h2>Blog</h2>
 </div>

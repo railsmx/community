@@ -1,35 +1,48 @@
 .content {
-  padding: $padding $padding 0 $padding;
+  padding: $padding $padding 0 0;
 
   .first {
+    margin: $margin $margin ($margin / 2) $margin;
     height: 200px;
     border: 2px solid #000;
+    text-align: justify;
+
+    .main-data {
+      padding: $padding $padding 0 0;
+    }
+
+    .description {
+      padding: $padding $padding $padding $padding;
+    }
   }
 
   .second {
-    margin: $margin ($margin + 10) ($margin * 2);
-    padding: 0 $padding 0 $padding;
+    margin: ($margin / 2) ($margin / 2 + 5) $margin $margin;
+    padding: $padding $padding $padding $padding;
     height: 280px;
     border: 2px solid #000;
+    text-align: justify;
   }
 
   .third {
-    margin: $margin $margin ($margin * 2) ($margin + 10) !important;
-    padding: 0 $padding 0 $padding;
-    height: 280px;
-    border: 2px solid #000;
+    @extend .second;
+    margin: ($margin / 2) $margin $margin ($margin / 2);
   }
 
   .first-past {
     @extend .second;
-    margin-top: 0;
+    margin-top: $margin;
     height: 155px;
   }
 
   .second-past {
     @extend .third;
-    margin-top: 0 !important;
+    margin-top: $margin;
     height: 155px;
   }
 
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
