@@ -3,9 +3,10 @@
   <head>
     <title>Rails Mx</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <%=stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "application" %>
     <%= yield :custom_css if content_for?(:custom_css) %>
-    <%=javascript_include_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= yield :custom_js if content_for?(:custom_js) %>
   </head>
   <body>
     <header>
@@ -28,12 +29,10 @@
         </div>
       </div>
     </header>
-     
      <%= display_warden_message_tag %>
-    <div class="container <%= controller.controller_name %>">  
+    <div class="container <%= controller.controller_name %>">
       <%= yield %>
     </div>
-
     <footer>
       <div class="container">
         <div class="six">
@@ -46,6 +45,5 @@
         </div>
       </div>
     </footer>
-    <%= yield :custom_js if content_for?(:custom_js) %>
   </body>
 </html>

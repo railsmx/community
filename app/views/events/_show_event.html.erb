@@ -1,43 +1,41 @@
-<% if @current_events.size > 0 %>
-  <% if @current_events.first == event %>
-    <div class="first">
-      <div class="two datetime">
+<% if event.date > DateTime.now  %>
+  <% if @current_events.size > 0 %>
+    <% first = true if @current_events.first == event %>
+    <div class="<%= first ? "first" : "second five-half"%>">
+      <div class="<%= first ? "two" : "one-half" %> datetime">
         <span class="month"><%= localize_month event.date %></span><br>
         <span class="day"><%= event.date.strftime("%e") %></span><br>
         <span class="weekday"><%= localize_weekday event.date %></span><br>
         <span class="time"><%= localize_time event.date %></span><br>
       </div>
-      <div class="nine main-data">
-        <span class="title"><%= link_to event.name, event_path(event) %></span><br>
+      <div class="<%= first ? "nine" : "four" %> main-data">
+        <span class="title"><%= link_to (truncate event.name, length: 16), event_path(event) %></span><br>
         <%= image_tag "pin.png", id: "maker", align: "left" %>
         <span class="location"><%= event.location %></span><br>
         <span class="organizer"><%= t('.organizer', organize: event.organizer) %></span><br><br>
         <span class="description">
-          <%= truncate event.description, length: 350 %>
+          <%= truncate event.description, length: first ? 300 : 150 %>
           <%= link_to t('.edit_event'), edit_event_path(event) %>
         </span>
       </div>
     </div>
   <% else %>
-    <div class="second five-half">
-      <div class="one-half datetime">
-        <span class="month"><%= localize_month event.date %></span><br>
-        <span class="day"><%= event.date.strftime("%e") %></span><br>
-        <span class="weekday"><%= localize_weekday event.date %></span><br>
-        <span class="time"><%= localize_time event.date %></span><br>
-      </div>
-      <div class="four main-data">
-        <span class="title"><%= link_to event.name, event_path(event) %></span><br>
-        <%= image_tag "pin.png", id: "maker", align: "left" %>
-        <span class="location"><%= event.location %></span><br>
-        <span class="organizer"><%= t('.organizer', organize: event.organizer) %></span><br><br>
-        <span class="description">
-          <%= truncate event.description, length: 150 %>
-          <%= display_edit_event_link event %>
-        </span>
-      </div>
+    <%= t('.not_upcoming_events') %>
+  <% end %> 
+<% elsif @past_events.size > 0 %>
+  <div class="third five-half">
+    <div class="one-half datetime">
+      <span class="month"><%= localize_month event.date %></span><br>
+      <span class="day"><%= event.date.strftime("%e") %></span><br>
+      <span class="weekday"><%= localize_weekday event.date %></span><br>
     </div>
-  <% end %>
+    <div class="four main-data">
+      <span class="title"><%= link_to (truncate event.name, length: 16), event_path(event) %></span><br>
+      <%= image_tag "pin.png", id: "maker", align: "left" %>
+      <span class="location"><%= event.location %></span><br>
+      <span class="organizer"><%= t('.organizer', organize: event.organizer) %></span><br><br>
+    </div>
+  </div>
 <% else %>
-  <h4><%= t('.not_upcoming_events') %></h4>
+  <%= t('.not_recent_events') %>
 <% end %>

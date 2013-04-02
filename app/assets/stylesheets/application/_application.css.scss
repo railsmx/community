@@ -252,9 +252,9 @@ sidebar {
     }
 }
 
-  #map {
-    height: 180px;
-  }
+#map {
+  height: 250px;
+}
 
 .btn {
   @include button($red, white);

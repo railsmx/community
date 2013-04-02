@@ -47,7 +47,6 @@ es:
 
   events:
     show_event:
-      recent_events: 'Eventos recientes'
       not_recent_events: 'No hay eventos recientes'
       organizer: 'Organizado por %{organize}'
       not_upcoming_events: 'No hay eventos próximos a realizarse'
@@ -55,6 +54,7 @@ es:
     new:
       create_event: 'Crear evento'
     index:
+      recent_events: 'Eventos recientes'  
       help_text: 'Consulta los eventos que ocurren alrededor de la comunidad. Si estas organizando un evento y deseas darle promoción, registralo.'
       events: 'Eventos'
       blog: 'Blog'

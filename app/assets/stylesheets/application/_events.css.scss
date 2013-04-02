@@ -3,6 +3,7 @@
 
   .event-section {
     margin-left: $margin !important;
+    margin-bottom: $margin;
     float: left;
   }
 
@@ -24,11 +25,11 @@
     text-align: justify;
 
     .datetime {
-      padding: $padding $padding 0 0;
+      padding: ($padding * 2) $padding ($padding * 2) 0;
       text-align: center;
 
       .month {
-        font-size: 1.6em;
+        font-size: 1.5em;
         color: $black;
       }
 
@@ -44,7 +45,7 @@
       }
 
       .time {
-        font-size: 1.4em;
+        font-size: 1.2em;
         font-weight: bold;
       }
     }
@@ -54,6 +55,7 @@
 
       .title {
         color: $red;
+        font-family: "Helvetica";
         font-weight: bold;
         font-size: 3.0em;
       }
@@ -68,6 +70,7 @@
         color: $red;
         font-family: "Helvetica";
         font-weight: lighter;
+        font-size: 1.2em;
       }
 
       .description {
@@ -76,10 +79,11 @@
         font-weight: lighter;
       }
     }
+
   }
 
   .second {
-    margin: ($margin / 2) ($margin / 2) $margin 0 !important;
+    margin: ($margin / 2) ($margin / 2) $margin 0;
     height: 234px;
     border: 1px solid $light-gray;
     text-align: justify;
@@ -116,6 +120,7 @@
 
       .title {
         color: $red;
+        font-family: "Helvetica";
         font-weight: bold;
         font-size: 2.0em;
       }
@@ -139,11 +144,24 @@
         font-weight: lighter;
       }
     }
+
+    &:nth-last-child(2n+1) {
+      margin: ($margin / 2) 0 $margin ($margin / 2);
+    }
   }
 
   .third {
-    margin: ($margin / 2) 0 $margin ($margin / 2) !important;
     @extend .second;
+    margin: ($margin / 2) ($margin / 2) $margin 0;
+    height: 140px;
+
+    .datetime {
+      padding: $padding $padding $padding 0;
+    }
+
+    &:nth-last-child(2n+1) {
+      margin: ($margin / 2) 0 $margin ($margin / 2);
+    }
   }
 
   .first-past {
