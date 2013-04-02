@@ -1,28 +1,74 @@
-<div class="container">
-  <div class="hero-unit hidden-phone">
-    <h1>Evento</h1>
-    <p>Detalles del Eventos</p>
-    <p></p>
-  </div>
-  
-  <div class="row main-features">
-    <div class="span4">
-      <div class="well">
-        <h3><%= @event.name %></h3>
-        <h4>Organizador:</h4>
-        <h5><%= @event.organizer %></h5>
-        <h4>Lugar:</h4>
-        <h5><%= @event.location %></h5>
-        <h4>Fecha:</h4>
-        <h5><%= @event.date %></h5>
-        <h4>Horar:</h4>
-        <h5><%= @event.time %></h5>
-        <h4>Contacto:</h4>
-        <h5><%= @event.contact %></h5>
-        <h4>Descripciòn:</h4>
-        <p><%= @event.description %></p>
-      </div>
-    </div>
-  </div>
+<div class="eleven-3quarters content">
+  <%= display_notice %>
+  <h1>Evento</h1>
+  <div id='location'><%= @event.location %></div><br>
+  <div id='map'></div>
 
+  <%= content_for :custom_css do %>
+    <%= stylesheet_link_tag 'http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' %>
+    <%= stylesheet_link_tag 'http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css' %>
+  <% end %>
+
+  <%= content_for :custom_js do %>
+    <%=javascript_include_tag "http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js" %>
+    <%=javascript_include_tag "http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js" %>
+  <% end %>
+<script>
+
+  var map = mapbox.map('map');
+  map.addLayer(mapbox.layer().id('examples.map-vyofok3q'));
+
+  // Create an empty markers layer
+  var markerLayer = mapbox.markers.layer();
+
+  // Add interaction to this marker layer. This
+  // binds tooltips to each marker that has title
+  // and description defined.
+  mapbox.markers.interaction(markerLayer);
+  map.addLayer(markerLayer);
+
+  map.zoom(9).center({ lat: 19, lon: -104 });
+
+  /*map.wax.tilejson('http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/geocode/' +
+            encodeURIComponent(document.getElementById('location').innerHTML) + '.json', function(center) {
+                if (center && center.results && center.results.length) {
+                    map.zoom(6).center(center.results[0][0]);
+                }
+            });*/
+
+  // Add a single feature to the markers layer.
+  // You can use .features() to add multiple features.
+  markerLayer.add_feature({
+      geometry: {
+          // The order of coordinates here is lon, lat. This is because
+          // we use the GeoJSON specification for all marker features.
+          // (lon, lat is also the internal order of KML and other geographic formats)
+          coordinates: [19.0, -104.2]/*[-100, 37.9]*/ 
+      },
+      properties: {
+          // these properties customize the look of the marker
+          // see the simplestyle-spec for a full reference:
+          // https://github.com/mapbox/simplestyle-spec
+          'marker-color': '#000',
+          'marker-symbol': 'star-stroked',
+          title: 'Example Marker',
+          description: 'This is a single marker.'
+      }
+  });
+
+  /*var m = mapbox.auto('map', 'examples.map-vyofok3q', function(map) {
+        window.onload = function() {
+            console.log(document.getElementById('location').innerHTML);
+            wax.tilejson('http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/geocode/' +
+            encodeURIComponent(document.getElementById('location').innerHTML) + '.json', function(center) {
+                if (center && center.results && center.results.length) {
+                    map.zoom(6).center(center.results[0][0]);
+                }
+            });
+            return false;
+        };
+    });
+  var markerLayer = mapbox.markers.layer();
+  m.addLayer(markerLayer);*/
+</script>
 </div>

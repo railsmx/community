@@ -1,19 +1,19 @@
 <%= form_for event, url: event_path(event) do |f| %>
 <div class="container">
   <div class="page-header">  
-    <label>Nombre del evento:</label>
+    <label><%= t('.event_name') %></label>
     <%= f.text_field :name %>
-    <label>Lugar:</label>
+    <label><%= t('.place') %></label>
     <%= f.text_field :location %>
-    <label>Fecha de inicio:</label>
+    <label><%= t('.date') %></label>
     <%= f.text_field :date, class: 'datepicker' %>
-    <label>Hora:</label>
+    <label><%= t('.time') %></label>
     <%= f.text_field :time, class: 'time' %>
-    <label>Organizador:</label>
+    <label><%= t('.organizer') %></label>
     <%= f.text_field :organizer %>
-    <label>Contacto:</label>
+    <label><%= t('.contact') %></label>
     <%= f.text_field :contact %>
-    <label>Descripcion:</label>
+    <label><%= t('.description') %></label>
     <%= f.text_area :description, class: 'areamail'%>
     <br>
     <%= f.submit submit %>

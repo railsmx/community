@@ -1,0 +1,14 @@
+<div class="first">
+  <div class="three datetime">
+    <%= localize_long_date event.date %><br>
+  </div>
+  <div class="eight main-data">
+    <h1><%= link_to event.name, event_path(event) %></h1>
+    <span class="location"><%= event.location %></span><br>
+    <span class="organizer"><%= t('.organizer', organize: event.organizer) %></span>
+    <p>
+      <%= truncate event.description, length: 200 %>
+      <%= link_to t('.edit_event'), event %>
+    </p>
+  </div>
+</div>

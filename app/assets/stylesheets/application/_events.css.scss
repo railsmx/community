@@ -1,23 +1,52 @@
 .content {
-  padding: $padding $padding 0 0;
+  padding: $padding 0 0 0;
+
+  .event-section {
+    margin-left: $margin !important;
+    float: left;
+  }
+
+  .btn {
+    float: right;
+    color: #fff;
+    margin-top: ($margin / 4);  
+  }
+
+  a {
+    color: $light-red;
+    text-decoration: none;
+  }
 
   .first {
-    margin: $margin $margin ($margin / 2) $margin;
+    margin: $margin 0 ($margin / 2) 0;
     height: 200px;
     border: 2px solid #000;
     text-align: justify;
 
-    .main-data {
+    .datetime {
       padding: $padding $padding 0 0;
     }
 
-    .description {
+    .main-data {
       padding: $padding $padding $padding $padding;
+      
+      p {
+       margin: 0;
+       color: $light-gray;
+      }
+
+      .location {
+        font-weight: bold;
+      }
+
+      .organizer {
+        color: $red;
+      }
     }
   }
 
   .second {
-    margin: ($margin / 2) ($margin / 2 + 5) $margin $margin;
+    margin: ($margin / 2) ($margin / 2) $margin 0 !important;
     padding: $padding $padding $padding $padding;
     height: 280px;
     border: 2px solid #000;
@@ -25,8 +54,8 @@
   }
 
   .third {
+    margin: ($margin / 2) 0 $margin ($margin / 2) !important;
     @extend .second;
-    margin: ($margin / 2) $margin $margin ($margin / 2);
   }
 
   .first-past {
@@ -44,5 +73,10 @@
   h2 {
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $red;
+    margin: 0;
   }
 }

@@ -17,11 +17,12 @@ es:
   home:
     index:
       sign_in: 'Iniciar sesión'
+      not_content: 'No hay contenido disponible'
 
   shared:
-    event_show:
-      edit: 'Editar'
-      organizer: 'Organizado por %{organize}'
+    sidebar:
+      coming_events: 'Próximos Eventos'
+      blog: 'Blog'
     event:
       organizer: 'Organizado por %{organize}' 
 
@@ -45,10 +46,19 @@ es:
         invalid: "Fecha invalida"
         
   events:
+    show_event:
+      recent_events: 'Eventos recientes'
+      not_recent_events: 'No hay eventos recientes'
+      organizer: 'Organizado por %{organize}'
+      not_upcoming_events: 'No hay eventos proximos a realizarse'
+      edit_event: 'Editar evento'
     new:
       create_event: 'Crear evento'
     index:
-      add_event: 'Agregar evento'
+      help_text: 'Consulta los eventos que ocurren alrededor de la comunidad. Si estas organizando un evento y deseas darle promoción, registralo.'
+      events: 'Eventos'
+      blog: 'Blog'
+      add_event: 'Registrar evento'
       create_event: 'Su evento ha sido creado'
       edit: 'Modificar'
     edit:

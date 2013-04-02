@@ -4,6 +4,7 @@
     <title>Rails Mx</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <%=stylesheet_link_tag "application" %>
+    <%= yield :custom_css if content_for?(:custom_css) %>
     <%=javascript_include_tag "application" %>
   </head>
   <body>
@@ -45,5 +46,6 @@
         </div>
       </div>
     </footer>
+    <%= yield :custom_js if content_for?(:custom_js) %>
   </body>
 </html>

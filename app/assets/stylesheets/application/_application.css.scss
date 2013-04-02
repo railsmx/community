@@ -4,6 +4,7 @@
 
 * {
   @include box-sizing(border-box);
+  color: $black;
 }
 
 body {
@@ -20,6 +21,10 @@ body {
     @include columns(3);
   }
 
+  .three-3quarters {
+    @include columns(3.75);
+  }
+
   .four {
     @include columns(4);
   }
@@ -29,7 +34,7 @@ body {
   }
 
   .five-half {
-    @include columns(5.5);
+    @include columns(5.52);
   }
 
   .six {
@@ -40,12 +45,24 @@ body {
     @include columns(7);
   }
 
+  .eight {
+    @include columns(8);
+  }
+
   .nine {
     @include columns(9);
   }
 
   .ten {
     @include columns(10);
+  }
+
+  .eleven {
+    @include columns(11);
+  }
+
+  .eleven-custom {
+    @include columns(11.05); 
   }
 
   .eleven-3quarters {
@@ -102,6 +119,7 @@ header {
       }
 
       a {
+        color: $light-red;
         font-size: 1.2em;
         text-decoration: none;
       }
@@ -118,6 +136,7 @@ header {
   }
 
   a {
+    color: $light-red;
     font-size: 20px;
     padding-left: 10px;
     padding-right: 10px;
@@ -171,6 +190,7 @@ footer {
 
       a {
         text-decoration: none;
+        color: $light-red;
       }
     }
   }
@@ -193,6 +213,7 @@ sidebar {
   }
 
   a {
+    color: $light-red;
     font-weight: bold;
     text-decoration: none;
   }
@@ -227,8 +248,13 @@ sidebar {
     }
 }
 
+  #map { 
+    height: 180px; 
+  }
+
 .btn {
-  @include button;
+  @include button($red, white);
+  color: white;
 
   &.btn-large {
     font-size: 1.2em;

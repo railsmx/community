@@ -1,0 +1,44 @@
+<div class="eleven-custom event-section">
+  <% if currents.size > 0 %>
+    <div class="first">
+      <div class="four main-data">
+        <h2><%= link_to currents.first.name, event_path(currents.first) %></h2>
+        <h4>
+          <%= localize_long_date currents.first.date %><br>
+          <%= currents.first.location %><br>
+          <%= t('.organizer', organize: currents.first.organizer) %>
+          <%= display_edit_event_link currents.first %>
+        </h4>
+      </div>
+      <div class="seven description">
+        <%= currents.first.description %>
+      </div>
+    </div>
+    <% if currents.second %>
+      <div class="second five-half">
+        <h2><%= link_to currents.second.name, event_path(currents.second) %></h2>
+        <h4>
+          <%= localize_long_date currents.second.date %><br>
+          <%= currents.second.location %><br>
+          <%= t('.organizer', organize: currents.second.organizer) %>
+          <%= display_edit_event_link currents.second %>
+        </h4>
+        <p><%= truncate currents.second.description, length: 200 %></p>      
+      </div>
+    <% end %>
+    <% if currents.third %>
+      <div class="third five-half">
+        <h2><%= link_to currents.third.name, event_path(currents.third) %></h2>
+        <h4>
+          <%= localize_long_date currents.third.date %><br>
+          <%= currents.third.location %><br>
+          <%= t('.organizer', organize: currents.third.organizer) %>
+          <%= display_edit_event_link currents.third %>
+        </h4>
+        <p><%= truncate currents.third.description, length: 200 %></p> 
+      </div>
+    <% end %>
+  <% else %>
+    <h4><%= t('.not_upcoming_events') %></h4>
+  <% end %>
+</div>

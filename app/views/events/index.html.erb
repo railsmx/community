@@ -1,33 +1,17 @@
 <div class="eleven-3quarters content">
   <%= display_notice %>
-  <%= display_create_event_link %>
-  <h1>Eventos</h1>
-  <p>
-    zxkhczkhxcnzzxc zxc zxczxc zxczxc zxczxczxcz zxczc zxcvbgcg ggasdfcasdf sdfgsdf sdkhfbsdkhbfkshdf
-    azsdcasdasdasd asdf sdf sdfs dfs df sdfs df sd f sdf s df sd fs d fs df sd f sf sd fs df
-  </p>
-  <div class="first">
-    <div class="four main-data">
-      <%= render partial: 'shared/event_show', locals: { event: @current_events.first, all: false } %>
-    </div>
-    <div class="seven description">
-      <%= display_description @current_events.first %>
-    </div>
-  </div>
-  <div class="second five-half">
-    <%= render partial: 'shared/event_show', locals: { event: @current_events.second, all: true } %>
-  </div>
-  <div class="third five-half">
-    <%= render partial: 'shared/event_show', locals: { event: @current_events.third, all: true } %>
+  <h1>
+    <%= t('.events') %>
+    <%= display_create_event_link %>
+  </h1>
+  <p><%= t('.help_text') %></p>
+
+  <div class="eleven-custom event-section">
+    <%=  render partial: 'show_event', collection: @current_events, :as => :event %>
   </div>
 
-  <h2>Eventos pasados</h2>
-  <div class="first-past five-half">
-    <%= render partial: 'shared/event_show', locals: { event: @past_events.first, all: false } %>
-  </div>
-  <div class="second-past five-half">
-    <%= render partial: 'shared/event_show', locals: { event: @past_events.first, all: false } %>
-  </div>
+  <h2><%= t('.blog') %></h2>
+  <div class="eleven-custom event-section">
 
-  <h2>Blog</h2>
+  </div>
 </div>
