@@ -7,12 +7,12 @@
   <p><%= t('.help_text') %></p>
 
   <div class="eleven-custom event-section">
-    <%=  render partial: 'show_event', collection: @current_events, :as => :event %>
+    <%= @current_events.size > 0 ? (render partial: 'show_event', collection: @current_events, :as => :event) : t('.not_upcoming_events') %>
   </div>
 
   <h1><%= t('.recent_events') %></h1>
   <div class="eleven-custom event-section">
-    <%=  render partial: 'show_event', collection: @past_events, :as => :event %>
+    <%= @past_events.size > 0 ? (render partial: 'show_event', collection: @past_events, :as => :event) : t('.not_recent_events') %>
   </div>
 
   <h1><%= t('.blog') %></h1>

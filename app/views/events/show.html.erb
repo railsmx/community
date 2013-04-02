@@ -42,9 +42,7 @@
 
     mapbox.markers.interaction(markerLayer);
     map.addLayer(markerLayer);
-
-    //map.zoom(11).center({ lat: 19.0729591593458, lon: -104.329271955293 });
-
+    
      wax.tilejson('http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/geocode/' +        
       encodeURIComponent("San fernando, colima") + '.json', function(position) {
       if (position && position.results && position.results.length) {
