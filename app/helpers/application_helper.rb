@@ -17,7 +17,7 @@ module ApplicationHelper
 
   def display_warden_message_tag
   	content_tag :div, class: 'alert' do
-  		warden.message   		
+  		warden.message
   	end if warden.message.present?
   end
 
@@ -26,7 +26,7 @@ module ApplicationHelper
   end
 
   def display_edit_event_link(event)
-    link_to t('.edit'), edit_event_path(event), :class => 'edit btn' if event.identity == current_identity
+    link_to t('.edit_event'), edit_event_path(event) if event.identity == current_identity
   end
 
   def display_alert
@@ -43,6 +43,18 @@ module ApplicationHelper
 
   def localize_long_date(date)
     I18n::localize(date, format: t(:long_date, scope: [:date, :formats]))
+  end
+
+  def localize_month(date)
+    I18n::localize(date, format: t(:month_name, scope: [:date, :formats]))
+  end
+
+  def localize_weekday(date)
+    I18n::localize(date, format: t(:day_name, scope: [:date, :formats]))
+  end
+
+  def localize_time(date)
+    I18n::localize(date, format: t(:short_time, scope: [:time, :formats]))
   end
 
   def display_description(event)

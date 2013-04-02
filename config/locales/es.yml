@@ -24,11 +24,11 @@ es:
       coming_events: 'Próximos Eventos'
       blog: 'Blog'
     event:
-      organizer: 'Organizado por %{organize}' 
+      organizer: 'Organizado por %{organize}'
 
   contact_form:
     new:
-      send: 'Enviar'    
+      send: 'Enviar'
 
   mail_form:
     models:
@@ -42,15 +42,15 @@ es:
 
   activerecord:
     errors:
-      messages: 
+      messages:
         invalid: "Fecha invalida"
-        
+
   events:
     show_event:
       recent_events: 'Eventos recientes'
       not_recent_events: 'No hay eventos recientes'
       organizer: 'Organizado por %{organize}'
-      not_upcoming_events: 'No hay eventos proximos a realizarse'
+      not_upcoming_events: 'No hay eventos próximos a realizarse'
       edit_event: 'Editar evento'
     new:
       create_event: 'Crear evento'
@@ -67,7 +67,7 @@ es:
       event_not_found: 'Evento no encontrado'
     create:
       invalid_event: 'Por favor revise la información del evento'
-      event_created: 'Su evento ha sido creado' 
+      event_created: 'Su evento ha sido creado'
     update:
       event_not_found: 'Evento no encontrado'
       event_updated: 'Su evento ha sido actualizado'
@@ -84,13 +84,15 @@ es:
       short: "%b %d"
       long: "%B %d, %Y"
       long_date: "El %d de %B de %Y"
+      month_name: "%B"
+      day_name: "%A"
 
-    day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
+    day_names: [DOMINGO, LUNES, MARTES, MIÉRCOLES, JUEVES, VIERNES, SÁBADO]
     abbr_day_names: [Dom, Lun, Mar, Vie, Jue, Vie, Sab]
 
-    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    month_names: [~, ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO, JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE]
     abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
-    
+
     order:
       - year
       - month
@@ -101,6 +103,7 @@ es:
       default: "%a, %d %b %Y %H:%M:%S %z"
       short: "%d %b %H:%M"
       long: "%B %d, %Y %H:%M"
+      short_time: "%l:%M %p"
 
-    am: "am"
-    pm: "pm"
+    am: "AM"
+    pm: "PM"

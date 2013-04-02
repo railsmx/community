@@ -17,12 +17,16 @@ body {
   overflow: hidden;
   margin: 0 auto;
 
-  .three {
-    @include columns(3);
+  .one-half {
+    @include columns(1.49);
   }
 
-  .three-3quarters {
-    @include columns(3.75);
+  .two {
+    @include columns(2);
+  }
+
+  .three {
+    @include columns(3);
   }
 
   .four {
@@ -62,7 +66,7 @@ body {
   }
 
   .eleven-custom {
-    @include columns(11.05); 
+    @include columns(11.05);
   }
 
   .eleven-3quarters {
@@ -248,15 +252,11 @@ sidebar {
     }
 }
 
-  #map { 
-    height: 180px; 
+  #map {
+    height: 180px;
   }
 
 .btn {
   @include button($red, white);
   color: white;
-
-  &.btn-large {
-    font-size: 1.2em;
-  }
 }

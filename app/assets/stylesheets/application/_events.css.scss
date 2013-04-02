@@ -9,7 +9,7 @@
   .btn {
     float: right;
     color: #fff;
-    margin-top: ($margin / 4);  
+    margin-top: ($margin / 4);
   }
 
   a {
@@ -19,38 +19,126 @@
 
   .first {
     margin: $margin 0 ($margin / 2) 0;
-    height: 200px;
-    border: 2px solid #000;
+    height: 234px;
+    border: 1px solid $light-gray;
     text-align: justify;
 
     .datetime {
       padding: $padding $padding 0 0;
+      text-align: center;
+
+      .month {
+        font-size: 1.6em;
+        color: $black;
+      }
+
+      .day {
+        font-size: 4.0em;
+        font-weight: bold;
+        color: $red;
+      }
+
+      .weekday {
+        color: $gray;
+        font-size: 1.2em;
+      }
+
+      .time {
+        font-size: 1.4em;
+        font-weight: bold;
+      }
     }
 
     .main-data {
       padding: $padding $padding $padding $padding;
-      
-      p {
-       margin: 0;
-       color: $light-gray;
+
+      .title {
+        color: $red;
+        font-weight: bold;
+        font-size: 3.0em;
       }
 
       .location {
+        color: $gray;
         font-weight: bold;
+        font-size: 1.3em;
       }
 
       .organizer {
         color: $red;
+        font-family: "Helvetica";
+        font-weight: lighter;
+      }
+
+      .description {
+        color: $gray;
+        font-family: "Helvetica";
+        font-weight: lighter;
       }
     }
   }
 
   .second {
     margin: ($margin / 2) ($margin / 2) $margin 0 !important;
-    padding: $padding $padding $padding $padding;
-    height: 280px;
-    border: 2px solid #000;
+    height: 234px;
+    border: 1px solid $light-gray;
     text-align: justify;
+    vertical-align: center;
+
+    .datetime {
+      padding: ($padding * 3) $padding ($padding * 3) 0;
+      text-align: center;
+
+      .month {
+        font-size: 1.2em;
+        color: $black;
+      }
+
+      .day {
+        font-size: 3.0em;
+        font-weight: bold;
+        color: $red;
+      }
+
+      .weekday {
+        color: $gray;
+        font-size: 1.0em;
+      }
+
+      .time {
+        font-size: 1.0em;
+        font-weight: bold;
+      }
+    }
+
+    .main-data {
+      padding: $padding $padding $padding $padding;
+
+      .title {
+        color: $red;
+        font-weight: bold;
+        font-size: 2.0em;
+      }
+
+      .location {
+        color: $gray;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      .organizer {
+        color: $red;
+        font-family: "Helvetica";
+        font-weight: lighter;
+        font-size: 1.0em;
+      }
+
+      .description {
+        color: $gray;
+        font-family: "Helvetica";
+        font-weight: lighter;
+      }
+    }
   }
 
   .third {

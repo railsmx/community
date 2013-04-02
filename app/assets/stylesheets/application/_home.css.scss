@@ -10,7 +10,7 @@
         margin-bottom: 0;
       }
 
-      h1 { 
+      h1 {
         margin-top: 0;
         font-size: 3em;
         margin-bottom: 0;
@@ -22,7 +22,8 @@
     }
 
     .btn-large {
-      @include button(pill);
+      @include button(pill, $red);
+      color: white;
       margin-top: $margin;
       font-size: 1.2em;
     }
