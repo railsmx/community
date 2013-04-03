@@ -166,12 +166,10 @@
 
     &:nth-last-child(odd) {
       margin: ($margin / 2) ($margin / 2) $margin 0 !important;
-      background-color: $light-gray;
     }
 
     &:nth-last-child(even) {
       margin: ($margin / 2) 0 $margin ($margin / 2) !important;
-      background-color: $light-red;
     }
   }
 
@@ -185,12 +183,10 @@
 
     &:nth-last-child(odd) {
       margin: ($margin / 2) ($margin / 2) $margin 0 !important;
-      background-color: $light-gray;
     }
 
     &:nth-last-child(even) {
       margin: ($margin / 2) 0 $margin ($margin / 2) !important;
-      background-color: $light-red;
     }
   }
 
