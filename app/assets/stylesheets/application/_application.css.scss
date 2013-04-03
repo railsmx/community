@@ -30,7 +30,7 @@ body {
   }
 
   .four {
-    @include columns(4);
+    @include columns(3.96);
   }
 
   .five {
@@ -54,7 +54,7 @@ body {
   }
 
   .nine {
-    @include columns(9);
+    @include columns(8.98);
   }
 
   .ten {

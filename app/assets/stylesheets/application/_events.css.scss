@@ -18,11 +18,19 @@
     text-decoration: none;
   }
 
+  .shadow {
+    -moz-box-shadow:    0px 1px 6px 1px $light-gray;
+    -webkit-box-shadow: 0px 1px 6px 1px $light-gray;
+    box-shadow:         0px 1px 6px 1px $light-gray;
+  }
+
+
   .first {
     margin: $margin 0 ($margin / 2) 0;
     height: 234px;
-    border: 1px solid $light-gray;
+    border: 3px solid $light-gray;
     text-align: justify;
+    @extend .shadow;
 
     .datetime {
       padding: ($padding * 2) $padding ($padding * 2) 0;
@@ -37,16 +45,19 @@
         font-size: 4.0em;
         font-weight: bold;
         color: $red;
+        line-height: .7em;
       }
 
       .weekday {
         color: $gray;
         font-size: 1.2em;
+        line-height: 1.7em;
       }
 
       .time {
         font-size: 1.2em;
         font-weight: bold;
+        line-height: .7em;
       }
     }
 
@@ -62,8 +73,8 @@
 
       .location {
         color: $gray;
-        font-weight: bold;
-        font-size: 1.3em;
+        font-size: 1.1em;
+        line-height: 1.7em;
       }
 
       .organizer {
@@ -71,6 +82,7 @@
         font-family: "Helvetica";
         font-weight: lighter;
         font-size: 1.2em;
+        line-height: 1.5em;
       }
 
       .description {
@@ -85,9 +97,10 @@
   .second {
     margin: ($margin / 2) ($margin / 2) $margin 0;
     height: 234px;
-    border: 1px solid $light-gray;
+    border: 3px solid $light-gray;
     text-align: justify;
     vertical-align: center;
+    @extend .shadow;
 
     .datetime {
       padding: ($padding * 3) $padding ($padding * 3) 0;
@@ -102,16 +115,19 @@
         font-size: 3.0em;
         font-weight: bold;
         color: $red;
+        line-height: .7em;
       }
 
       .weekday {
         color: $gray;
         font-size: 1.0em;
+        line-height: 1.7em;
       }
 
       .time {
         font-size: 1.0em;
         font-weight: bold;
+        line-height: .7em;
       }
     }
 
@@ -127,15 +143,18 @@
 
       .location {
         color: $gray;
-        font-weight: bold;
         font-size: 1.1em;
+        line-height: 1.7em;
       }
 
       .organizer {
         color: $red;
+        text-align: left;
         font-family: "Helvetica";
         font-weight: lighter;
         font-size: 1.0em;
+        line-height: 1.5em;
+
       }
 
       .description {
@@ -145,12 +164,12 @@
       }
     }
 
-    &:nth-last-child(2n+1):not(first) {
-     margin: ($margin / 2) 0 $margin 0;
+    &:nth-last-child(odd) {
+     margin: ($margin / 2) 0 ($margin / 2) 0;
     }
 
-    &:nth-last-child(2n) {
-      margin: ($margin / 2) 0 $margin $margin;
+    &:nth-last-child(even) {
+      margin: ($margin / 2) 0 ($margin / 2) $margin;
     }
   }
 

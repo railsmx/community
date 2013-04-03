@@ -84,7 +84,7 @@ es:
       default: "%Y-%m-%d"
       short: "%b %d"
       long: "%B %d, %Y"
-      long_date: "El %d de %B de %Y"
+      long_date: "El %d de %B de %Y".downcase
       month_name: "%B"
       day_name: "%A"
 
