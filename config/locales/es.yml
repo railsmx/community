@@ -84,14 +84,14 @@ es:
       default: "%Y-%m-%d"
       short: "%b %d"
       long: "%B %d, %Y"
-      long_date: "El %d de %B de %Y".downcase
+      long_date: "El %d de %B de %Y"
       month_name: "%B"
       day_name: "%A"
 
-    day_names: [DOMINGO, LUNES, MARTES, MIÉRCOLES, JUEVES, VIERNES, SÁBADO]
+    day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
     abbr_day_names: [Dom, Lun, Mar, Vie, Jue, Vie, Sab]
 
-    month_names: [~, ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO, JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE]
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
     abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
 
     order:

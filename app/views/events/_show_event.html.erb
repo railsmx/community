@@ -2,7 +2,7 @@
   <% first = true if @current_events.first == event %>
   <div class="<%= first ? "first" : "second five-half"%>">
     <div class="<%= first ? "two" : "one-half" %> datetime">
-      <div class="month"><%= localize_month event.date %></div>
+      <div class="month"><%= localize_month(event.date).upcase %></div>
       <div class="day"><%= event.date.strftime("%e") %></div>
       <div class="weekday"><%= localize_weekday event.date %></div>
       <div class="time"><%= localize_time event.date %></div>
@@ -22,7 +22,7 @@
 <% else %>
   <div class="third five-half">
     <div class="one-half datetime">
-      <div class="month"><%= localize_month event.date %></div>
+      <div class="month"><%= localize_month(event.date).upcase %></div>
       <div class="day"><%= event.date.strftime("%e") %></div>
       <div class="weekday"><%= localize_weekday event.date %></div>
     </div>
