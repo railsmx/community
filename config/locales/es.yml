@@ -26,6 +26,8 @@ es:
       not_content: 'No hay contenido disponible'
     event:
       organizer: 'Organizado por %{organize}'
+    event_show:
+      event_not_available: 'Evento no disponible'
 
   contact_form:
     new:

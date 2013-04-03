@@ -6,12 +6,12 @@
   </h1>
   <p><%= t('.help_text') %></p>
 
-  <div class="eleven-custom event-section">
+  <div class="eleven-custom event-section current">
     <%= @current_events.size > 0 ? (render partial: 'show_event', collection: @current_events, :as => :event) : t('.not_upcoming_events') %>
   </div>
 
   <h2><%= t('.recent_events') %></h2>
-  <div class="eleven-custom event-section">
+  <div class="eleven-custom event-section past">
     <%= @past_events.size > 0 ? (render partial: 'show_event', collection: @past_events, :as => :event) : t('.not_recent_events') %>
   </div>
 

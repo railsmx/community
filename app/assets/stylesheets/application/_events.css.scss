@@ -5,6 +5,7 @@
     margin-left: $margin !important;
     margin-bottom: $margin;
     float: left;
+
   }
 
   .btn {
@@ -19,9 +20,9 @@
   }
 
   .shadow {
-    -moz-box-shadow:    0px 3px 4px -2px $light-gray;
+    -moz-box-shadow:    0px 3px 5px -2px $light-gray;
     -webkit-box-shadow: 0px 3px 4px -2px $light-gray;
-    box-shadow:         0px 3px 4px -2px $light-gray;
+    box-shadow:         0px 3px 5px -2px $light-gray;
   }
 
 
@@ -95,7 +96,6 @@
   }
 
   .second {
-    //margin: ($margin / 2) ($margin / 2) $margin 0;
     height: 234px;
     border: 3px solid $light-gray;
     text-align: justify;
@@ -163,14 +163,6 @@
         font-weight: lighter;
       }
     }
-
-    &:nth-last-child(odd) {
-      margin: ($margin / 2) ($margin / 2) $margin 0 !important;
-    }
-
-    &:nth-last-child(even) {
-      margin: ($margin / 2) 0 $margin ($margin / 2) !important;
-    }
   }
 
   .third {
@@ -180,15 +172,24 @@
     .datetime {
       padding: $padding $padding $padding 0;
     }
-
-    &:nth-last-child(odd) {
-      margin: ($margin / 2) ($margin / 2) $margin 0 !important;
-    }
-
-    &:nth-last-child(even) {
-      margin: ($margin / 2) 0 $margin ($margin / 2) !important;
-    }
   }
+
+  .current > :nth-child(even) {
+      margin: ($margin / 2) 0 ($margin / 2) 0;
+  }
+
+  .current > :nth-child(odd):not(.first) {
+      margin: ($margin / 2) 0 ($margin / 2) $margin;
+  }
+
+  .past > :nth-child(odd) {
+      margin: ($margin / 2) 0 ($margin / 2) 0;
+  }
+
+  .past > :nth-child(even) {
+      margin: ($margin / 2) 0 ($margin / 2) $margin;
+  }
+
 
   h2 {
     margin-top: 0px;
