@@ -12,7 +12,7 @@
     <header>
       <div class="container">
         <div class="banner six">
-          <span class="logo">Rails.MX</span>
+          <span class="logo"><%= image_tag "railsmx-mini.png" %></span>
           <ul class="menu">
             <li><%= link_to t('.blog'), "#" %></li>
             <li><%= link_to t('.events'), events_path %></li>
@@ -35,13 +35,15 @@
     </div>
     <footer>
       <div class="container">
-        <div class="six">
-          <span class="logo">Rails.MX</span> 
+        <div class="four">
           <ul class="submenu">
             <li><%= link_to t('.who_we_are'), acerca_path %></li>
             <li><%= link_to t('.contact'), contact_form_new_path %></li>
             <li><%= link_to t('.privacy'), privacidad_path %></li>
           </ul>
+        </div>
+        <div class="three">
+          <span class="logo"><%= image_tag "railsmx.png" %></span> 
         </div>
       </div>
     </footer>

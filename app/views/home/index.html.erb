@@ -1,6 +1,6 @@
 <section class="hero">
 <div class="welcome-text five <%= identity_signed_in? ? 'no-button' : 'button' %>">
-  <h3>La Comunidad Mexicana de</h3>
+  <h2>La Comunidad Mexicana de</h2>
   <h1>Ruby on Rails</h1>
   <h4>
   Una comunidad de desarrolladores mexicanos 
@@ -16,8 +16,20 @@
   <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
   
   <div class="content nine">
+    <h2>¿Qué es Ruby on Rails?</h2>
+    <p><%= image_tag "ruby-on-rails.png", class: "image-left" %> Ruby on Rails es 
+      un marco de trabajo (framework) para el desarrollo de aplicaciones web, escrito en
+      el leguaje de programación Ruby. Ruby es un lenguaje dinámico orientado a 
+      objetos, con sintaxis inspirada en Python, Perl y Smalltalk. 
+      Ruby vio la luz en 1995 de la mano de Yukihiro “Matz” Matsumoto.</p>
+    <p>
+      Ruby on Rails es la creación de David Heinemeier Hasson; todo comenzó en el 2004 con 
+      el desarrollo del producto estrella de la empresa 37 Signals, Basecamp. David 
+      extrajo el código base de la aplicación y de esta manera se dio el inicio de Ruby On Rails.
+    </p>  
+
     <h2>¿Qué es rails.mx?</h2>
-    <p><%= image_tag "http://placehold.it/90x90", class: "image-left" %> Rails México (rails.mx) es una comunidad de desarrolladores mexicanos
+    <p>Rails México (rails.mx) es una comunidad de desarrolladores mexicanos
     e hispanohablantes. Un punto de encuentro para compartir experiencias y
     mejores prácticas sobre el mundo de rails.</p>
     <p>Con el propósito de motivar a los desarrolladores a que se introduzcan
@@ -25,7 +37,7 @@
     que su viaje por el aprendizaje del framework sea fácil y divertido.</p>
 
     <h2>¿Qué puedo encontrar aquí?</h2>
-    <p><%= image_tag "http://placehold.it/300x150", class: "image-right" %>La comunidad funciona como repositorio de artículos, tutoriales, guías,
+    <p><%= image_tag "community.png", class: "image-right" %>La comunidad funciona como repositorio de artículos, tutoriales, guías,
     tips, enlaces y noticias, todo sobre el mismo tema: Ruby on Rails. Aunque 
     no hay porqué limitarse!, si quieres puedes compartir tus conocimientos
     sobre otros frameworks basados en Ruby. No esperes más y únete a esta comunidad
