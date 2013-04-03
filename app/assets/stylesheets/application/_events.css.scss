@@ -19,9 +19,9 @@
   }
 
   .shadow {
-    -moz-box-shadow:    0px 1px 6px 1px $light-gray;
-    -webkit-box-shadow: 0px 1px 6px 1px $light-gray;
-    box-shadow:         0px 1px 6px 1px $light-gray;
+    -moz-box-shadow:    0px 3px 4px -2px $light-gray;
+    -webkit-box-shadow: 0px 3px 4px -2px $light-gray;
+    box-shadow:         0px 3px 4px -2px $light-gray;
   }
 
 
@@ -95,7 +95,7 @@
   }
 
   .second {
-    margin: ($margin / 2) ($margin / 2) $margin 0;
+    //margin: ($margin / 2) ($margin / 2) $margin 0;
     height: 234px;
     border: 3px solid $light-gray;
     text-align: justify;
@@ -165,38 +165,29 @@
     }
 
     &:nth-last-child(odd) {
-     margin: ($margin / 2) 0 ($margin / 2) 0;
+      margin: ($margin / 2) ($margin / 2) $margin 0 !important;
     }
 
     &:nth-last-child(even) {
-      margin: ($margin / 2) 0 ($margin / 2) $margin;
+      margin: ($margin / 2) 0 $margin ($margin / 2) !important;
     }
   }
 
   .third {
     @extend .second;
-    margin: ($margin / 2) ($margin / 2) $margin 0;
     height: 140px;
 
     .datetime {
       padding: $padding $padding $padding 0;
     }
 
-    &:nth-last-child(2n+1) {
-      margin: ($margin / 2) 0 $margin ($margin / 2);
+    &:nth-last-child(odd) {
+      margin: ($margin / 2) ($margin / 2) $margin 0 !important;
     }
-  }
 
-  .first-past {
-    @extend .second;
-    margin-top: $margin;
-    height: 155px;
-  }
-
-  .second-past {
-    @extend .third;
-    margin-top: $margin;
-    height: 155px;
+    &:nth-last-child(even) {
+      margin: ($margin / 2) 0 $margin ($margin / 2) !important;
+    }
   }
 
   h2 {
