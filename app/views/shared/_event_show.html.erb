@@ -10,5 +10,5 @@
     <p><%= truncate	event.description, length: 200 %></p>
   <% end %>
 <% else %>
-  <h2>Evento no disponible<h3>
+  <h3><%= t('.event_not_available') %></h3>
 <% end %>

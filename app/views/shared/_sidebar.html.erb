@@ -1,13 +1,11 @@
 <sidebar class="three">
-  <% if current_events.size > 0 %>
-    <div class="events">
-      <h4><%= t('.coming_events') %></h4>
-      <%= render partial: 'shared/event', collection: current_events %>
-    </div>
-    <div class="blog">
-      <h4><%= t('.blog') %></h4>
-    </div>
-  <% else %>
-    <%= t('.not_content') %>
-  <% end %>  
+  <div class="events">
+    <h4><%= t('.coming_events') %></h4>
+    <span class="sidebar_events">
+      <%= current_events.size > 0 ? (render partial: 'shared/event', collection: current_events) : t('.not_content') %>
+    </span>
+  </div>
+  <div class="blog">
+    <h4><%= t('.blog') %></h4>
+  </div>
 </sidebar>

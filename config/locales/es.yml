@@ -23,8 +23,11 @@ es:
     sidebar:
       coming_events: 'Próximos Eventos'
       blog: 'Blog'
+      not_content: 'No hay contenido disponible'
     event:
       organizer: 'Organizado por %{organize}'
+    event_show:
+      event_not_available: 'Evento no disponible'
 
   contact_form:
     new:
@@ -47,13 +50,13 @@ es:
 
   events:
     show_event:
-      not_recent_events: 'No hay eventos recientes'
       organizer: 'Organizado por %{organize}'
-      not_upcoming_events: 'No hay eventos próximos a realizarse'
       edit_event: 'Editar evento'
     new:
       create_event: 'Crear evento'
     index:
+      not_recent_events: 'No hay eventos recientes'
+      not_upcoming_events: 'No hay eventos próximos a realizarse'
       recent_events: 'Eventos recientes'  
       help_text: 'Consulta los eventos que ocurren alrededor de la comunidad. Si estas organizando un evento y deseas darle promoción, registralo.'
       events: 'Eventos'
@@ -87,10 +90,10 @@ es:
       month_name: "%B"
       day_name: "%A"
 
-    day_names: [DOMINGO, LUNES, MARTES, MIÉRCOLES, JUEVES, VIERNES, SÁBADO]
+    day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
     abbr_day_names: [Dom, Lun, Mar, Vie, Jue, Vie, Sab]
 
-    month_names: [~, ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO, JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE]
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
     abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
 
     order:

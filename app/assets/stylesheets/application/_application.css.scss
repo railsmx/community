@@ -30,7 +30,7 @@ body {
   }
 
   .four {
-    @include columns(4);
+    @include columns(3.96);
   }
 
   .five {
@@ -54,7 +54,7 @@ body {
   }
 
   .nine {
-    @include columns(9);
+    @include columns(8.98);
   }
 
   .ten {
@@ -206,6 +206,10 @@ sidebar {
 
   .events, .blog {
     padding-left: 0 !important;
+  }
+  
+  .sidebar_events {
+    font-size: 0.9em;
   }
 
   p {
