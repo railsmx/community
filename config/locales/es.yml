@@ -9,7 +9,7 @@ es:
       sign_out: 'Cerrar sesión'
       welcome: 'Bienvenido %{user}'
       events: 'Eventos'
-      who_we_are: 'Quienes somos?'
+      who_we_are: 'Acerca de'
       contact: 'Contacto'
       privacy: 'Privacidad'
       blog: 'Blog'

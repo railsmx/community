@@ -88,7 +88,8 @@ header {
   border-bottom: 1px solid $light-gray;
 
   .banner {
-    padding: $padding 0;
+    padding: ($padding / 2) 0;
+    line-height: 3em;
   }
 
   .logo {
@@ -111,6 +112,7 @@ header {
 
     li {
       float: left;
+      color: $red;
       margin-right: ($margin / 2);
 
       &:after {
@@ -124,7 +126,7 @@ header {
 
       a {
         color: $light-red;
-        font-size: 1.2em;
+        font-size: 1.4em;
         text-decoration: none;
       }
     }
@@ -132,6 +134,7 @@ header {
 
   .welcome {
     text-align: right;
+    color: $light-gray;
   }
 
   #logo {
@@ -162,25 +165,30 @@ footer {
   height: 75px;
   border-top: 1px solid $light-gray;
   margin-top: $margin;
+  background-color: $black;
 
-  .six {
-    padding: $padding 0;
+  .three {
+    float: right !important;
+    margin: ($margin / 2) 0 0 0 !important;
+  }
+
+  .four {
+    float: right !important;
+    margin: ($margin / 2) 0 0 0 !important;
   }
 
   .logo {
     font-size: 1.2em;
-    padding-left: $padding;
   }
 
   .submenu {
     list-style-type: none;
     display: inline-block;
-    margin: 0 0 0 $margin;
     font-size: 0.8em;
-    padding-left: 0;
 
     li {
       float: left;
+      color: $light-gray;
       margin-right: ($margin / 2);
 
       &:after {
@@ -194,7 +202,7 @@ footer {
 
       a {
         text-decoration: none;
-        color: $light-red;
+        color: $light-gray;
       }
     }
   }

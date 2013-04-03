@@ -20,16 +20,16 @@
   }
 
   .shadow {
-    -moz-box-shadow:    0px 3px 5px -2px $light-gray;
-    -webkit-box-shadow: 0px 3px 4px -2px $light-gray;
-    box-shadow:         0px 3px 5px -2px $light-gray;
+    -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+    -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+    box-shadow:         3px 3px 5px -2px $light-gray;
   }
 
 
   .first {
     margin: $margin 0 ($margin / 2) 0;
     height: 234px;
-    border: 3px solid $light-gray;
+    border: 1px solid $light-gray;
     text-align: justify;
     @extend .shadow;
 
@@ -97,7 +97,7 @@
 
   .second {
     height: 234px;
-    border: 3px solid $light-gray;
+    border: 1px solid $light-gray;
     text-align: justify;
     vertical-align: center;
     @extend .shadow;

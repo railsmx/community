@@ -6,6 +6,7 @@
   <%= content_for :custom_js do %>
     <%=javascript_include_tag "http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js" %>
     <%=javascript_include_tag "http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js" %>
+    <%=javascript_include_tag "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false" %>
   <% end %>
 
 <div class="eleven-3quarters content">
@@ -18,40 +19,6 @@
   <div id='map'></div>
 
   <script>
-
-    map = mapbox.map('map');
-    map.addLayer(mapbox.layer().id('examples.map-4l7djmvo'));
-
-    markerLayer = mapbox.markers.layer();
-
-    mapbox.markers.interaction(markerLayer);
-    map.addLayer(markerLayer);
-
-     wax.tilejson('http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/geocode/' +        
-      encodeURIComponent("San fernando, colima") + '.json', function(position) {
-      if (position && position.results && position.results.length) {
-            console.log(position);
-            
-            position = position.results[0][0];
-            
-            map.zoom(10).center({
-              lat: position.lat,
-              lon: position.lon
-            });
-
-            markerLayer.add_feature({
-              geometry: {
-                coordinates: [
-                  position.lon,
-                  position.lat]
-              },
-              properties: {
-                'marker-color': '#000',
-                'marker-symbol': 'star-stroked',
-              }
-            });
-        }
-    });
-
+    var map = new Map("<%= @event.location %>");
   </script>
 </div>
