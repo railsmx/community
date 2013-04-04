@@ -18,7 +18,7 @@ feature 'LoginUser Feature Test' do
 
     assert !page.has_selector?('.sign-in')
     assert page.has_selector? '.sign-out', text: 'Cerrar sesión'
-    assert page.has_selector? '.user-info', text: 'Bienvenido Test user |'
+    assert page.has_selector? '.user-info', text: 'Bienvenido Test user'
   end
 
   scenario 'Reject blocked user' do

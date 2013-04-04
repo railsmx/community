@@ -159,10 +159,6 @@ header {
     }
   }
 
-  .sign-out {
-
-  }
-
 }
 
 footer {
@@ -241,12 +237,15 @@ sidebar {
 .social-buttons {
   display: inline-block;
   list-style-type: none;
-  margin: ($margin * 2) 0 0 ($margin * 17) !important;
+  margin: ($margin * 2) 0 0 ($margin * 16) !important;
   padding: 0;
 
   li {
     float: left;
-    width: 100px;
+  }
+
+  .facebook-like {
+    padding-left: $padding; 
   }
 }
 

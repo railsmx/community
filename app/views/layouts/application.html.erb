@@ -3,6 +3,10 @@
   <head>
     <title><%= yield(:title).empty? ? "rails.mx" : yield(:title) %></title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="keywords" content="ruby, ruby on rails, ror, comunidad, eventos, magmaconf">
+    <meta name="description" content="Una comunidad de desarrolladores mexicanos e hispanohablantes. 
+    Un punto de encuentro para compartir experiencias y mejores prácticas sobre el mundo de rails.">
+    <meta name="robots" content="all" >
     <%= stylesheet_link_tag "application" %>
     <%= yield :custom_css if content_for?(:custom_css) %>
     <%= javascript_include_tag "application" %>

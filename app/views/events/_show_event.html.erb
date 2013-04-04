@@ -1,5 +1,5 @@
 <% (event.date <= DateTime.now) ? (past = true) : (@current_events.first == event ? (first = true) : (first = false)) %>
-<div class="<%= past ? "third five-half" : (first ? "first" : "second five-half")%>">
+<div id="event_<%= event.id %>" class="<%= past ? "third five-half" : (first ? "first" : "second five-half")%>">
   <div class="<%= first ? "two" : "one-half" %> datetime">
     <div class="month"><%= localize_month(event.date).upcase %></div>
     <div class="day"><%= event.date.strftime("%e") %></div>

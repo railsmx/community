@@ -67,6 +67,10 @@ class Capybara::Rails::TestCase
     Capybara.reset_sessions!
   end
 
+  def teardown
+    
+  end
+
   def mock_omniauth(uid = '12334')
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(

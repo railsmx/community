@@ -10,7 +10,7 @@ feature 'EventsManagement Feature Test' do
 
     visit '/events'
 
-    click_link 'Agregar evento'
+    click_link 'Registrar evento'
 
     within('#new_event') do
       fill_in 'event_name', with: 'MagmaConf'
@@ -32,7 +32,7 @@ feature 'EventsManagement Feature Test' do
 
     visit '/events'
 
-    click_link 'Agregar evento'
+    click_link 'Registrar evento'
 
     click_button 'Crear evento'
 
@@ -43,7 +43,7 @@ feature 'EventsManagement Feature Test' do
     visit '/'
     click_link 'Eventos'
 
-    page.wont_have_selector('a', text: 'Agregar evento')
+    page.wont_have_selector('a', text: 'Registrar evento')
   end
 
   scenario 'As event owner I should be able to edit the event' do
@@ -55,7 +55,7 @@ feature 'EventsManagement Feature Test' do
     click_link 'Eventos'
 
     within("#event_#{event.id}") do
-      click_link 'Modificar'
+      click_link 'Editar evento'
     end
 
     click_button 'Actualizar evento'
@@ -76,6 +76,20 @@ feature 'EventsManagement Feature Test' do
 
     page.must_have_selector("#event_#{event1.id} a.edit")
     page.wont_have_selector("#event_#{event2.id} a.edit")
+  end
+
+  scenario 'I should not be able to edit a past event' do
+    login_user
+    logged_user = Identity.last
+
+    event1 = add_event(logged_user.id)
+    event1.date = DateTime.now - 1
+    event1.save(validate: false)
+
+    click_link 'Eventos'
+
+    puts "#{event1.date}"
+    page.wont_have_selector("#event_#{event1.id} a.edit")
   end
 
 end

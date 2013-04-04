@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def display_login_button(&block)
     unless identity_signed_in?
-      link_to t('.sign_in'), "/auth/github", class: "sign-in btn btn-large"
+      link_to t('.sign_in'), "/auth/github", class: "sign-in-btn btn btn-large"
     else
       html = capture(&block) if block_given?
     end
@@ -26,7 +26,7 @@ module ApplicationHelper
   end
 
   def display_edit_event_link(event)
-    link_to t('.edit_event'), edit_event_path(event) if event.identity == current_identity
+    link_to t('.edit_event'), edit_event_path(event), class: "edit" if event.identity == current_identity
   end
 
   def display_alert
