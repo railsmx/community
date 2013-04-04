@@ -34,7 +34,7 @@ body {
   }
 
   .four {
-    @include columns(3.96);
+    @include columns(4);
   }
 
   .five {
@@ -58,7 +58,7 @@ body {
   }
 
   .nine {
-    @include columns(8.98);
+    @include columns(9);
   }
 
   .ten {
@@ -218,7 +218,7 @@ sidebar {
   .events, .blog {
     padding-left: 0 !important;
   }
-  
+
   .sidebar_events, .sidebar_blog  {
     font-size: 0.9em;
   }
@@ -237,6 +237,19 @@ sidebar {
     text-decoration: none;
   }
 }
+
+.social-buttons {
+  display: inline-block;
+  list-style-type: none;
+  margin: ($margin * 2) 0 0 ($margin * 17) !important;
+  padding: 0;
+
+  li {
+    float: left;
+    width: 100px;
+  }
+}
+
 
 .contact-form {
     input[type="text"], input[type="email"] {

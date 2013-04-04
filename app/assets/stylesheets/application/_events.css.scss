@@ -28,10 +28,9 @@
     border-radius: 3px;
   }
 
-
   .first {
     margin: $margin 0 ($margin / 2) 0;
-    height: 234px;
+    height: 240px;
     border: 1px solid $light-gray;
     text-align: justify;
     @extend .shadow;
@@ -86,10 +85,10 @@
         font-family: "Helvetica";
         font-weight: lighter;
         font-size: 1.2em;
-        line-height: 1.5em;
       }
 
       .description {
+        margin-top: $margin;
         color: $gray;
         font-family: "Helvetica";
         font-weight: lighter;
@@ -99,7 +98,7 @@
   }
 
   .second {
-    height: 234px;
+    height: 240px;
     border: 1px solid $light-gray;
     text-align: justify;
     vertical-align: center;
@@ -156,11 +155,11 @@
         font-family: "Helvetica";
         font-weight: lighter;
         font-size: 1.0em;
-        line-height: 1.5em;
 
       }
 
       .description {
+        margin-top: $margin;
         color: $gray;
         font-family: "Helvetica";
         font-weight: lighter;

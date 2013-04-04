@@ -1,5 +1,7 @@
 //= require jquery
+//= require socialite
 //= require jquery_ujs
 //= require turbolinks
+//= require app
 //= require map
-//= require socialite
+//= require social-buttons

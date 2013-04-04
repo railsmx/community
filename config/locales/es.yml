@@ -60,6 +60,7 @@ es:
     new:
       create_event: 'Crear evento'
     index:
+      not_content: 'No hay contenido disponible'
       not_recent_events: 'No hay eventos recientes'
       not_upcoming_events: 'No hay eventos próximos a realizarse'
       recent_events: 'Eventos recientes'  

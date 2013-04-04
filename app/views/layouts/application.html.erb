@@ -14,18 +14,18 @@
         <div class="banner six">
           <span class="logo"><%= link_to image_tag("railsmx-mini.png", :border => 0), root_path %></span>
           <ul class="menu">
-            <li><%= link_to t('.events'), events_path %></li>            
+            <li><%= link_to t('.events'), events_path %></li>
             <li><%= link_to t('.blog'), "#" %></li>
           </ul>
         </div>
         <div class="welcome six">
           <%= display_login_link do %>
             <span class="user-info">
-              <%= t('.welcome', user: current_identity.try(:username))  %> 
-              <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), :alt => current_identity.username) %>       
+              <%= t('.welcome', user: current_identity.try(:username))  %>
+              <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), :alt => current_identity.username) %>
             </span>
             <%= link_to t('.sign_out'), signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
-          <% end %>  
+          <% end %>
         </div>
       </div>
     </header>
@@ -33,6 +33,10 @@
     <div class="container <%= controller.controller_name %>">
       <%= yield %>
     </div>
+    <div class="container">
+      <%= render partial: 'shared/socialite' %>
+    </div>
+
     <footer style="background-color: #000">
       <div class="container">
         <div class="four">
@@ -43,7 +47,7 @@
           </ul>
         </div>
         <div class="three">
-          <span class="logo"><%= image_tag "railsmx.png" %></span> 
+          <span class="logo"><%= link_to (image_tag "railsmx.png"), root_path %></span>
         </div>
       </div>
     </footer>
