@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Rails Mx</title>
+    <title><%= yield(:title).empty? ? "rails.mx" : yield(:title) %></title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <%= stylesheet_link_tag "application" %>
     <%= yield :custom_css if content_for?(:custom_css) %>
@@ -14,8 +14,8 @@
         <div class="banner six">
           <span class="logo"><%= link_to image_tag("railsmx-mini.png", :border => 0), root_path %></span>
           <ul class="menu">
+            <li><%= link_to t('.events'), events_path %></li>            
             <li><%= link_to t('.blog'), "#" %></li>
-            <li><%= link_to t('.events'), events_path %></li>
           </ul>
         </div>
         <div class="welcome six">
@@ -33,7 +33,7 @@
     <div class="container <%= controller.controller_name %>">
       <%= yield %>
     </div>
-    <footer>
+    <footer style="background-color: #000">
       <div class="container">
         <div class="four">
           <ul class="submenu">

@@ -1,19 +1,24 @@
-<div class="container">
+<% title t('.who_we_are') %>
+<div class="container about">
   <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
   <div class="content nine">
-      <h2>¿Qué es rails.mx?</h2>
-      <p>Rails México (rails.mx) es una comunidad de desarrolladores mexicanos
-      e hispanohablantes. Un punto de encuentro para compartir experiencias y
-      mejores prácticas sobre el mundo de rails.
-      <br> Con el propósito de motivar a los desarrolladores a que se introduzcan
-      en este maravilloso mundo de Rails, y de ayudar a los recién llegados a
-      que su viaje por el aprendizaje del framework sea fácil y divertido.</p>
+      <h1>Acerca de rails.mx</h1>
+      <p>
+        rails.mx es un esfuerzo de Rubyistas entusiastas que 
+        buscan generar comunidad de desarrollo alrededor de Ruby on Rails.<br><br>
+        
+        Estos esfuerzos consisten en la organización de eventos presenciales y en 
+        línea. Los eventos que se llevan a cabo van desde conferencias hasta 
+        talleres y ¨hackatones¨ que ayuden a promover los conceptos, ideas, técnicas 
+        y herramientas que nos pueden ayudar a llevar a cabo proyectos exitosos.<br><br>
+        
+        rails.mx es un grupo abierto, en donde cualquier persona interesada en 
+        aportar o aprender algo nuevo, es bienvenida de participar.<br><br>
+        
+        Únete a la comunidad y particpa a traves de los diferentes mecanismos de 
+        comunición.
+      </p>
 
-      <h2>¿Qué puedo encontrar aquí?</h2>
-      <p>a comunidad funciona como repositorio de artículos, tutoriales, guías,
-        tips, enlaces y noticias, todo sobre el mismo tema: Ruby on Rails. Aunque
-        no hay porqué limitarse!, si quieres puedes compartir tus conocimientos
-        sobre otros frameworks basados en Ruby. No esperes más y únete a esta comunidad
-        de desarrolladores, aprende, comparte y agiliza tu desarrollo.</p>
+      <%= image_tag "working.png", class: "image" %>
   </div>
 </div>
