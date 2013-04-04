@@ -218,7 +218,7 @@ sidebar {
   .events, .blog {
     padding-left: 0 !important;
   }
-  
+
   .sidebar_events, .sidebar_blog  {
     font-size: 0.9em;
   }
@@ -238,19 +238,17 @@ sidebar {
   }
 }
 
-socialite {
-  .social-buttons {
-    list-style-type: none;
-    display: inline-block;
-    font-size: 0.8em;
-    background-color: yellow;
-  }
+.social-buttons {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0px 0px 0px 400px;
+  margin: 40px 0px 0px 0px;
+  height: 25px;
+}
 
-  li {
-    float: left;
-    color: $gray;
-    margin-right: ($margin / 2);
-  }
+li {
+  float: left;
+  margin-right: $margin;
 }
 
 .contact-form {
