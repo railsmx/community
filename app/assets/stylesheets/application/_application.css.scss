@@ -239,17 +239,17 @@ sidebar {
 }
 
 .social-buttons {
-  list-style-type: none;
   display: inline-block;
-  padding: 0px 0px 0px 400px;
-  margin: 40px 0px 0px 0px;
-  height: 25px;
+  list-style-type: none;
+  margin: ($margin * 2) 0 0 ($margin * 17) !important;
+  padding: 0;
+
+  li {
+    float: left;
+    width: 100px;
+  }
 }
 
-li {
-  float: left;
-  margin-right: $margin;
-}
 
 .contact-form {
     input[type="text"], input[type="email"] {

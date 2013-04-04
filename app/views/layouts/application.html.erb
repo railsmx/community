@@ -32,6 +32,8 @@
      <%= display_warden_message_tag %>
     <div class="container <%= controller.controller_name %>">
       <%= yield %>
+    </div>
+    <div class="container">
       <%= render partial: 'shared/socialite' %>
     </div>
 
