@@ -1,6 +1,6 @@
-require 'minitest_helper'
+require 'test_helper'
 
-feature 'Login User Test' do
+feature 'LoginUser Feature Test' do
   background do
     mock_omniauth
   end
@@ -17,7 +17,7 @@ feature 'Login User Test' do
     find('.sign-in').click
 
     assert !page.has_selector?('.sign-in')
-    assert page.has_selector? '.sign-out', text: 'Cerrar sesión'  
+    assert page.has_selector? '.sign-out', text: 'Cerrar sesión'
     assert page.has_selector? '.user-info', text: 'Bienvenido Test user |'
   end
 
@@ -29,7 +29,7 @@ feature 'Login User Test' do
     visit '/'
 
     find('.sign-in').click
-  
+
     assert page.has_selector? '.alert', text: 'Su cuenta ha sido suspendida'
     assert page.has_selector? '.sign-in', text: 'Iniciar sesión'
   end

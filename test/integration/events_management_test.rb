@@ -1,6 +1,6 @@
-require 'minitest_helper'
+require 'test_helper'
 
-feature 'Events management' do
+feature 'EventsManagement Feature Test' do
   background do
     mock_omniauth
   end

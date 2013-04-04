@@ -1,4 +1,4 @@
-require "minitest_helper"
+require "test_helper"
 
 describe Identity do
   let(:identity_valid) { identity_valid = Identity.find_by_uid(3345444) }
