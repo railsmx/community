@@ -17,6 +17,10 @@ body {
   overflow: hidden;
   margin: 0 auto;
 
+  h1 {
+    font-size: 32px;
+  }
+
   .one-half {
     @include columns(1.49);
   }
@@ -165,7 +169,6 @@ footer {
   height: 75px;
   border-top: 1px solid $light-gray;
   margin-top: $margin;
-  background-color: $black;
 
   .three {
     float: right !important;
@@ -174,7 +177,7 @@ footer {
 
   .four {
     float: right !important;
-    margin: ($margin / 2) 0 0 0 !important;
+    margin: $margin 0 0 0 !important;
   }
 
   .logo {
@@ -188,7 +191,7 @@ footer {
 
     li {
       float: left;
-      color: $light-gray;
+      color: white;
       margin-right: ($margin / 2);
 
       &:after {
@@ -202,7 +205,7 @@ footer {
 
       a {
         text-decoration: none;
-        color: $light-gray;
+        color: white;
       }
     }
   }
@@ -216,7 +219,7 @@ sidebar {
     padding-left: 0 !important;
   }
   
-  .sidebar_events {
+  .sidebar_events, .sidebar_blog  {
     font-size: 0.9em;
   }
 
@@ -249,7 +252,7 @@ sidebar {
     .submit {
       padding-left: $padding * 9;
       input[type="submit"] {
-        @include button(pill);
+        @include button($red);
         font-size: 1.2em;
       }
     }

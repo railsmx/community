@@ -60,4 +60,8 @@ module ApplicationHelper
   def display_description(event)
     event.description if event
   end
+
+  def title(page_title)
+    content_for(:title) { "rails.mx: #{page_title}" }
+  end
 end

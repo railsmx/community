@@ -15,6 +15,10 @@ es:
       blog: 'Blog'
 
   home:
+    about: 
+      who_we_are: 'Acerca de ...'
+    privacy:
+      privacy: 'Privacidad'  
     index:
       sign_in: 'Iniciar sesión'
       not_content: 'No hay contenido disponible'
@@ -32,6 +36,7 @@ es:
   contact_form:
     new:
       send: 'Enviar'
+      contact: 'Contacto'
 
   mail_form:
     models:

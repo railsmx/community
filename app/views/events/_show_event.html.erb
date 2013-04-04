@@ -16,7 +16,7 @@
     <% if !past %>
       <span class="description">
         <%= truncate event.description, length: first ? 300 : 150 %>
-        <%= link_to t('.edit_event'), edit_event_path(event) %>
+        <%= display_edit_event_link event %>
       </span>
     <% end %>
   </div>
