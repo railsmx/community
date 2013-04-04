@@ -88,7 +88,6 @@ feature 'EventsManagement Feature Test' do
 
     click_link 'Eventos'
 
-    puts "#{event1.date}"
     page.wont_have_selector("#event_#{event1.id} a.edit")
   end
 
