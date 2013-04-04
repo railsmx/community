@@ -1,5 +1,4 @@
 <% (event.date <= DateTime.now) ? (past = true) : (@current_events.first == event ? (first = true) : (first = false)) %>
-<!--<%= event_counter+1 %> -->
 <div class="<%= past ? "third five-half" : (first ? "first" : "second five-half")%>">
   <div class="<%= first ? "two" : "one-half" %> datetime">
     <div class="month"><%= localize_month(event.date).upcase %></div>
@@ -14,10 +13,10 @@
       <%= event.location %></span><br>
     <span class="organizer"><%= t('.organizer', organize: truncate(event.organizer, length: first ? 25 : 17)) %></span><br>
     <% if !past %>
-      <span class="description">
-        <%= truncate event.description, length: first ? 300 : 150 %>
+      <div class="description">
+        <%= truncate event.description, length: first ? 300 : 190 %>
         <%= display_edit_event_link event %>
-      </span>
+      </div>
     <% end %>
   </div>
 </div>

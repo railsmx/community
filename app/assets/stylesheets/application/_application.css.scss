@@ -34,7 +34,7 @@ body {
   }
 
   .four {
-    @include columns(3.96);
+    @include columns(4);
   }
 
   .five {
@@ -58,7 +58,7 @@ body {
   }
 
   .nine {
-    @include columns(8.98);
+    @include columns(9);
   }
 
   .ten {
@@ -235,6 +235,21 @@ sidebar {
     color: $light-red;
     font-weight: bold;
     text-decoration: none;
+  }
+}
+
+socialite {
+  .social-buttons {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 0.8em;
+    background-color: yellow;
+  }
+
+  li {
+    float: left;
+    color: $gray;
+    margin-right: ($margin / 2);
   }
 }
 
