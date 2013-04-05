@@ -21,3 +21,18 @@
     <%= t('.not_content') %>
   </div>
 </div>
+<script>
+  $(function(){
+
+    var elements = $('.first, .second'); 
+
+    elements.mouseover(function(){
+      $(this).find('a.edit').show();  
+    });
+
+    elements.mouseout(function(){
+      $(this).find('a.edit').hide();
+    });
+
+  });
+</script>
