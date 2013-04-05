@@ -7,6 +7,7 @@
     <div class="time"><%= localize_time event.date if !past %></div>
   </div>
   <div class="<%= first ? "nine" : "four" %> main-data">
+      <%= display_edit_event_link event %>
     <span class="title"><%= link_to (truncate event.name, length: first ? 25 : 16), event_path(event) %></span><br>
     <span class="location">
       <%= image_tag "pin.png", id: "maker", align: "left", size: "20x31" %>
@@ -15,7 +16,6 @@
     <% if !past %>
       <div class="description">
         <%= truncate event.description, length: first ? 300 : 190 %>
-        <%= display_edit_event_link event %>
       </div>
     <% end %>
   </div>

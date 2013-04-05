@@ -40,6 +40,8 @@ group :development do
   gem 'foreman'
 end
 
+gem 'font-awesome-sass-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

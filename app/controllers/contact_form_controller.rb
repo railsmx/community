@@ -1,4 +1,6 @@
 class ContactFormController < ApplicationController
+  before_action :current_events, only: [:create]
+
   def new
     current_events
     @contact_form = ContactForm.new

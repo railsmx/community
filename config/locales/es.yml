@@ -56,7 +56,7 @@ es:
   events:
     show_event:
       organizer: 'Organizado por %{organize}'
-      edit_event: 'Editar evento'
+      edit_event: 'editar'
     new:
       create_event: 'Crear evento'
     index:

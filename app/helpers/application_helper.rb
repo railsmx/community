@@ -26,7 +26,12 @@ module ApplicationHelper
   end
 
   def display_edit_event_link(event)
-    link_to t('.edit_event'), edit_event_path(event), class: "edit" if event.identity == current_identity
+    link_to edit_event_path(event), class: "edit" do
+      message = t('.edit_event')
+      message << " "
+      message << content_tag(:div, '', :class => "icon-edit")
+      message.html_safe
+    end if event.identity == current_identity
   end
 
   def display_alert
