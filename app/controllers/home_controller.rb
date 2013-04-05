@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
   before_action :current_events, only: [:index, :privacy, :about]
   
-  def index
-  end
+  def index; end
 
   def show
     pages = %w(acerca privacidad)
@@ -11,9 +10,7 @@ class HomeController < ApplicationController
     render text: 'Not found', status: 404
   end
 
-  def privacy
-  end
+  def privacy; end
 
-  def about 
-  end
+  def about; end
 end

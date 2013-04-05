@@ -1,8 +1,9 @@
 class ContactForm < MailForm::Base
   attributes :name,  :validate => true
   attribute :email
-  validates_format_of :email, :with => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attributes :message
+  
+  validates_format_of :email, :with => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
    def headers
     {
@@ -11,6 +12,4 @@ class ContactForm < MailForm::Base
       :from => %("#{name}" <#{email}>)
     }
   end
-
-
 end
