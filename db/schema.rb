@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130306220950) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20130406092758) do
 
   create_table "events", force: true do |t|
     t.string   "name",        null: false
@@ -26,6 +23,9 @@ ActiveRecord::Schema.define(version: 20130306220950) do
     t.integer  "identity_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "events", ["identity_id"], name: "index_events_on_identity_id"

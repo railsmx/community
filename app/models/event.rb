@@ -3,6 +3,9 @@ class Event < ActiveRecord::Base
 
   belongs_to :identity
 
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
   attr_accessor :time
 
   validates :name, :date, :location, :contact, :identity_id, presence: true
