@@ -14,5 +14,4 @@ class DateTimeInput
       }
     )
 
-
 App.Utilities.DateTimeInput = DateTimeInput
