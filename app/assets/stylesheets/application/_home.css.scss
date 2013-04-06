@@ -1,7 +1,7 @@
 .home {
   .hero {
     @include size(1024px 300px);
-    background: url('hero-image.png') no-repeat;
+    background: image-url('hero-image.png') no-repeat;
 
     .welcome-text {
       margin: ($margin * 2) 0 0 $margin;
