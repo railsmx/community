@@ -7,4 +7,3 @@
 //= require app
 //= require map
 //= require social-buttons
-//= require datetime

@@ -5,20 +5,20 @@
   <div class="content nine">
     <h1>Contactanos</h1>
     <p> Agradecemos de antemano sus comentarios. A la brevedad posible nos comunicaremos con usted.</p>
-    <div class="contact-form">
+    <div class="form-contact">
       <%= form_for @contact_form, url: contact_form_path  do |f| %>
         <div>
-          <%= f.label :name %>
+          <%= f.label t('.name') %>
           <%= f.text_field :name %>
         </div>
 
         <div>  
-          <%= f.label 'Correo electronico' %>
+          <%= f.label t('.email') %>
           <%= f.email_field :email %>
         </div>
 
         <div>
-          <%= f.label 'Descripcion' %>
+          <%= f.label t('.description') %>
           <%= f.text_area :message %>
         </div>
 

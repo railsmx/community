@@ -61,11 +61,7 @@ module ApplicationHelper
   def localize_time(date)
     I18n::localize(date, format: t(:short_time, scope: [:time, :formats]))
   end
-
-  def display_description(event)
-    event.description if event
-  end
-
+  
   def title(page_title)
     content_for(:title) { "rails.mx: #{page_title}" }
   end

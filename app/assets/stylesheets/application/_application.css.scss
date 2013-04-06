@@ -291,7 +291,7 @@ sidebar {
   }
 
   .submit {
-    padding-left: ($padding * 5);
+    padding-left: ($padding * 5.5);
     input[type="submit"] {
       @include button($red);
       font-size: 1em;
@@ -350,10 +350,43 @@ sidebar {
   }
 }
 
+.form-contact {
+  @extend .form-event;
+
+  input[type="text"], input[type="email"], textarea {
+    @include size(300px 30px);
+  }
+
+  textarea {
+    font-size: .9em;
+    @include size(300px 150px);
+  }
+
+  div label {
+    width: 24%;
+  }
+
+  .submit {
+    padding-left: ($padding * 8.8);
+  }
+}
+
 .alert {
+  color: $red;
+  padding: ($padding / 2);
+  margin-bottom: $margin;
   border-radius: 3px;
   border: 1px solid $red;
   background-color: $transparent-red;
+}
+
+.notice {
+  color: #c09853;
+  padding: ($padding / 2);
+  margin-bottom: $margin;
+  border-radius: 3px;
+  border: 1px solid #fbeed5;
+  background-color: #fcf8e3;
 }
 
 #map {

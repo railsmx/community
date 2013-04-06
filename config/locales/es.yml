@@ -37,6 +37,9 @@ es:
     new:
       send: 'Enviar'
       contact: 'Contacto'
+      name: 'Nombre:'
+      email: 'Correo electronico:'
+      description: 'Descripción:'
 
   mail_form:
     models:
@@ -86,6 +89,7 @@ es:
       edit: 'Modificar'
     edit:
       update_event: 'Actualizar evento'
+      edit_event_title: 'Actualizar un evento'
     show:
       event_not_found: 'Evento no encontrado'
     create:
