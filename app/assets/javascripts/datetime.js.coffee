@@ -4,14 +4,16 @@ class DateTimeInput
     endDate = (new Date())
     endDate.setDate(startDate.getDate()+180)
  
-    $('.datepicker').datepicker(
+    $('.date').datepicker(
       { 
         startDate: startDate,
         endDate: endDate,
         language: 'es',
         format: 'dd/mm/yyyy',
-        autoclose: false
+        autoclose: true
       }
     )
+
+    $('.time').inputmask('h:s t', {autoUnmask: true, placeholder: " "});
 
 App.Utilities.DateTimeInput = DateTimeInput

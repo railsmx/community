@@ -30,9 +30,13 @@ end
 
 gem 'jquery-rails'
 gem 'bourbon'
+
 #gem 'mac_generators'
 #gem 'bootstrap-datepicker-rails'
 #gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails', 
+  :require => 'bootstrap-datepicker-rails',
+  :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 group :test do
   gem 'minitest-rails'

@@ -397,3 +397,7 @@ sidebar {
   @include button($red, white);
   color: white;
 }
+
+.datapicker {
+  position: absolute;
+}

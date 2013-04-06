@@ -12,7 +12,7 @@
     </div>
     <div>
       <label><%= t('.date') %></label>
-      <%= f.text_field :date, class: 'date datepicker' %>
+      <%= f.text_field :date, class: 'date' %>
       <%= f.text_field :time, class: 'time' %>
       <%= field_error event, :date %>
     </div>
@@ -36,23 +36,11 @@
 </div>
 
 <script type="text/javascript">
-  
-  new App.Utilities.DateTimeInput;
+  document.addEventListener('page:change', function(){
+    new App.Utilities.DateTimeInput;
+  });
 
-
- /*startDate = new Date();
- endDate = (new Date())
- endDate.setDate(startDate.getDate()+180);
- 
- $('.datepicker').datepicker(
-    { 
-      startDate: startDate,
-      endDate: endDate,
-      language: 'es',
-      format: 'dd/mm/yyyy',
-      autoclose: true
-    }
-  );
-
-  $('.time').inputmask('h:s t', {autoUnmask: true, placeholder: " "});*/
+  $(function(){
+    new App.Utilities.DateTimeInput;
+  });
 </script>
