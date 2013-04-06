@@ -59,6 +59,20 @@ es:
       edit_event: 'editar'
     new:
       create_event: 'Crear evento'
+      new_event_title: 'Registrar un evento'
+    form:
+      event_name: 'Evento:'
+      place: 'Lugar:'
+      date: 'Cuando:'
+      organizer: 'Organiza:'
+      contact: 'Contacto:'
+      description: 'Descripción:'
+      ph_place: 'Dirección completa'
+      ph_contact: 'email, URL o teléfono de contacto'
+      ph_organizer: 'Persona o empresa que organiza'
+      register_event: 'Registrar'
+      back: 'regresar'
+
     index:
       not_content: 'No hay contenido disponible'
       not_recent_events: 'No hay eventos recientes'
@@ -86,6 +100,20 @@ es:
       event_not_found: 'Evento no encontrado'
     event:
       create_event: 'Crear evento'
+
+  activerecord:
+    errors:
+      models:
+        event:
+          attributes:
+            name: 
+              blank: 'este campo es requerido'
+            location: 
+              blank: 'este campo es requerido'
+            date: 
+              blank: 'este campo es requerido'
+            contact: 
+              blank: 'este campo es requerido'
 
   date:
     formats:

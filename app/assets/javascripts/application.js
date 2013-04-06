@@ -1,7 +1,10 @@
 //= require jquery
 //= require socialite
+//= require jquery.inputmask
+//= require bootstrap-datepicker
 //= require jquery_ujs
 //= require turbolinks
 //= require app
 //= require map
 //= require social-buttons
+//= require datetime

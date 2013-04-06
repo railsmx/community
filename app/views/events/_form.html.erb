@@ -1,28 +1,46 @@
+<div class="form-event">
 <%= form_for event, url: event_path(event) do |f| %>
-<div class="container">
-  <div class="page-header">  
-    <label><%= t('.event_name') %></label>
-    <%= f.text_field :name %>
-    <label><%= t('.place') %></label>
-    <%= f.text_field :location %>
-    <label><%= t('.date') %></label>
-    <%= f.text_field :date, class: 'datepicker' %>
-    <label><%= t('.time') %></label>
-    <%= f.text_field :time, class: 'time' %>
-    <label><%= t('.organizer') %></label>
-    <%= f.text_field :organizer %>
-    <label><%= t('.contact') %></label>
-    <%= f.text_field :contact %>
-    <label><%= t('.description') %></label>
-    <%= f.text_area :description, class: 'areamail'%>
-    <br>
-    <%= f.submit submit %>
-  </div>
-</div>
+    <div class="row eight">
+      <label><%= t('.event_name') %></label>
+      <%= f.text_field :name %>
+      <%= field_error event, :name %>
+    </div>
+    <div class="row eight">
+      <label><%= t('.place') %></label>
+      <%= f.text_field :location, class: 'place', placeholder: t('.ph_place') %>
+      <%= field_error event, :location %>
+    </div>
+    <div class="row eight">
+      <label><%= t('.date') %></label>
+      <%= f.text_field :date, class: 'date datepicker' %>
+      <%= f.text_field :time, class: 'time' %>
+      <%= field_error event, :date %>
+    </div>
+    <div class="row eight">  
+      <label><%= t('.organizer') %></label>
+      <%= f.text_field :organizer, placeholder: t('.ph_organizer') %>
+    </div>
+    <div class="row eight"> 
+      <label><%= t('.contact') %></label>
+      <%= f.text_field :contact, placeholder: t('.ph_contact') %>
+      <%= field_error event, :contact %>
+    </div>
+    <div class="row eight">
+      <label><%= t('.description') %></label>
+      <%= f.text_area :description, class: 'areamail'%>
+    </div>
+    <div class="submit eight">
+      <%= f.submit t('.register_event') %> o <%= link_to t('.back'), events_path %>
+    </div>
 <% end %>
+</div>
 
 <script type="text/javascript">
- startDate = new Date();
+  
+  new App.Utilities.DateTimeInput;
+
+
+ /*startDate = new Date();
  endDate = (new Date())
  endDate.setDate(startDate.getDate()+180);
  
@@ -36,5 +54,5 @@
     }
   );
 
-  $('.time').inputmask('h:s t', {autoUnmask: true, placeholder: " "});
+  $('.time').inputmask('h:s t', {autoUnmask: true, placeholder: " "});*/
 </script>
