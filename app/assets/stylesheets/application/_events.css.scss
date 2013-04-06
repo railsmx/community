@@ -94,7 +94,6 @@
         font-weight: lighter;
       }
     }
-
   }
 
   .second {
@@ -155,7 +154,6 @@
         font-family: "Helvetica";
         font-weight: lighter;
         font-size: 1.0em;
-
       }
 
       .description {
@@ -192,7 +190,6 @@
       margin: ($margin / 2) 0 ($margin / 2) $margin;
   }
 
-
   h2 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -213,3 +210,97 @@
   }
 }
 
+.event-data {
+  margin: 0 0 $margin 0;
+
+  .description-data {
+    .title {
+      color: $red;
+      font-family: "Helvetica";
+      font-weight: bold;
+      font-size: 2.0em;
+    }
+
+    .description {
+      margin: $margin 0 ($margin * 2) 0;
+      font-family: "Helvetica";
+      text-align: justify;
+    }
+  }
+
+  .where-data {
+    .location-info {
+        margin-left: 0;
+
+        .place {
+          color: $gray;
+          font-weight: bold;
+          font-size: 1.1em;
+          line-height: 1.7em;
+        }
+
+        .organizer {
+          color: $red;
+          font-family: "Helvetica";
+          font-weight: lighter;
+          font-size: 1.2em;
+        }
+
+        .contact {
+          padding-left: $padding + 5;
+          font-weight: lighter;
+          font-size: 1.2em;
+        }
+
+        .datetime {
+          padding: $padding $padding $padding 0;
+          text-align: center;
+
+          .month {
+            font-size: 1.5em;
+            color: $black;
+          }
+
+          .day {
+            font-size: 4.0em;
+            font-weight: bold;
+            color: $red;
+            line-height: .7em;
+          }
+
+          .weekday {
+            color: $gray;
+            font-size: 1.2em;
+            line-height: 1.7em;
+          }
+
+          .time {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: .7em;
+          }
+        }
+      }
+
+    .map {
+      margin-bottom: $margin;
+      height: 350px;
+
+      // This is just a test code for the shadow and the border
+      border: 1px solid $light-gray;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+      -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+      box-shadow:         3px 3px 5px -2px $light-gray;
+      //end
+    }
+  }
+}
+
+.event {
+  sidebar {
+    padding-top: ($padding * 3) !important;
+  }
+}

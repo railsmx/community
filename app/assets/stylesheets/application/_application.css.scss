@@ -265,25 +265,25 @@ sidebar {
     @include size(400px 30px);
     font-size: .8em;
     padding: 5px;
-    text-shadow: 0px 1px 0px #fff;  
-    outline: none;  
+    text-shadow: 0px 1px 0px #fff;
+    outline: none;
     -moz-box-shadow: inset 0 0 3px $light-gray;
-    -webkit-box-shadow: inset 0 0 3px $light-gray;    
+    -webkit-box-shadow: inset 0 0 3px $light-gray;
     box-shadow: inset 0 0 3px $light-gray;
-    background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe), to(#ffffff));  
-    background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);  
-    -webkit-border-radius: 3px;  
-    -moz-border-radius: 3px;  
-    border-radius: 3px;  
+    background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe), to(#ffffff));
+    background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
     border: 1px solid $light-gray;
     margin-right: ($margin / 2);
   }
 
-  input:focus, textarea:focus {  
-    -webkit-box-shadow: 0px 0px 8px $light-gray;  
-    -moz-box-shadow: 0px 0px 8px $light-gray;  
-    box-shadow: 0px 0px 8px $light-gray;  
-  }  
+  input:focus, textarea:focus {
+    -webkit-box-shadow: 0px 0px 8px $light-gray;
+    -moz-box-shadow: 0px 0px 8px $light-gray;
+    box-shadow: 0px 0px 8px $light-gray;
+  }
 
   textarea {
     font-size: .9em;
@@ -319,7 +319,7 @@ sidebar {
     .place {
       background-position: 383px center;
       background-image: image-url('marker.png');
-      background-repeat: no-repeat; 
+      background-repeat: no-repeat;
     }
 
     .field_with_errors {
@@ -329,7 +329,7 @@ sidebar {
       input {
         border: 1px solid $red !important;
       }
-      
+
       .date {
         float:left;
         margin: 0 $margin 0 0 !important;

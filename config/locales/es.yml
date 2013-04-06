@@ -15,10 +15,10 @@ es:
       blog: 'Blog'
 
   home:
-    about: 
+    about:
       who_we_are: 'Acerca de ...'
     privacy:
-      privacy: 'Privacidad'  
+      privacy: 'Privacidad'
     index:
       sign_in: 'Iniciar sesión'
       not_content: 'No hay contenido disponible'
@@ -80,7 +80,7 @@ es:
       not_content: 'No hay contenido disponible'
       not_recent_events: 'No hay eventos recientes'
       not_upcoming_events: 'No hay eventos próximos a realizarse'
-      recent_events: 'Eventos recientes'  
+      recent_events: 'Eventos recientes'
       help_text: 'Consulta los eventos que ocurren alrededor de la comunidad. Si estas organizando un evento y deseas darle promoción, registralo.'
       events: 'Eventos'
       blog: 'Blog'
@@ -92,6 +92,9 @@ es:
       edit_event_title: 'Actualizar un evento'
     show:
       event_not_found: 'Evento no encontrado'
+      where_when: 'Donde y Cuando'
+      organizer: 'Organizado por %{organize}'
+      contact: 'Contacto: %{contact}'
     create:
       invalid_event: 'Por favor revise la información del evento'
       event_created: 'Su evento ha sido creado'
@@ -110,13 +113,13 @@ es:
       models:
         event:
           attributes:
-            name: 
+            name:
               blank: 'este campo es requerido'
-            location: 
+            location:
               blank: 'este campo es requerido'
-            date: 
+            date:
               blank: 'este campo es requerido'
-            contact: 
+            contact:
               blank: 'este campo es requerido'
 
   date:
