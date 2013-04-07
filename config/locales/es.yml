@@ -65,6 +65,7 @@ es:
       new_event_title: 'Registrar un evento'
     form:
       event_name: 'Evento:'
+      address: 'Dirección:'
       place: 'Lugar:'
       date: 'Cuando:'
       organizer: 'Organiza:'
@@ -115,12 +116,14 @@ es:
           attributes:
             name:
               blank: 'este campo es requerido'
+            address:
+              blank: 'este campo es requerido'  
             location:
               blank: 'este campo es requerido'
             date:
               blank: 'este campo es requerido'
             contact:
-              blank: 'este campo es requerido'
+              blank: 'este campo es requerido' 
 
   date:
     formats:

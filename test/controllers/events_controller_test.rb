@@ -3,6 +3,7 @@ require "test_helper"
 describe EventsController do
   let(:params) {
     { name: 'MagmaConf',
+      address: 'Carretera Manzanillo-Cihuatlán kilómetro 20,Manzanillo, Colima',
       location: 'Manzanillo',
       description: 'Cool conf',
       contact: 'mg@crowdint.com',
@@ -12,6 +13,7 @@ describe EventsController do
   }
 
   let(:event) { Event.create name: 'MagmaConf',
+                address: 'Carretera Manzanillo-Cihuatlán kilómetro 20,Manzanillo, Colima',
                 location: 'Manzanillo', description: 'Cool conf',
                 contact: 'mg@crowdint.com', organizer: 'Crowdint',
                 date: Date.today + 10, identity_id: 100
@@ -205,12 +207,14 @@ describe EventsController do
     it "display first 4 upcoming event and 3 last passed events" do
       6.times do |index|
         Event.create name: "Upcomming #{index}",
+          address: 'Carretera Manzanillo-Cihuatlán kilómetro 20,Manzanillo, Colima',
           location: 'Manzanillo', description: 'Cool conf',
           contact: 'mg@crowdint.com', organizer: 'Crowdint',
           date: Date.today + (10 * (index + 1)),
           identity_id: 100
 
         Event.new(name: "Past #{index}",
+                  address: 'Carretera Manzanillo-Cihuatlán kilómetro 20,Manzanillo, Colima',
                   location: 'Manzanillo', description: 'Cool conf',
                   contact: 'mg@crowdint.com', organizer: 'Crowdint',
                   date: Date.today - (10 * (index + 1)),

@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 
   attr_accessor :time
 
-  validates :name, :date, :location, :contact, :identity_id, presence: true
+  validates :name, :date, :location, :address, :contact, :identity_id, presence: true
   validates :date, future_date: true
 
   scope :current_events, -> (counts) { where('date > ?', DateTime.now).order('date ASC').limit(counts) }

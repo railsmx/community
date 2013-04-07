@@ -38,7 +38,8 @@ gem 'bootstrap-datepicker-rails',
   :require => 'bootstrap-datepicker-rails',
   :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
-gem 'geocoder'  
+gem 'geocoder'
+#gem 'friendly_id', :github => 'norman/friendly_id', :branch => 'rails4' 
 
 group :test do
   gem 'minitest-rails'
