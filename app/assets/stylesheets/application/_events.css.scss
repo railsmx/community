@@ -240,18 +240,20 @@
         }
 
         .organizer {
+          margin: ($margin / 4) 0 0 ($margin + 5);
           color: $red;
           font-family: "Helvetica";
           font-weight: lighter;
         }
 
         .contact {
+          margin-top: ($margin / 4);
           padding-left: $padding + 5;
           font-weight: lighter;
         }
 
         .datetime {
-          padding: $padding $padding $padding 0;
+          padding: $padding ($padding * 4) $padding 0;
           text-align: center;
 
           .month {
