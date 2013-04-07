@@ -1,11 +1,11 @@
 class Map
-  constructor: (location) ->    
-    wax.tilejson('http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/geocode/' + 
+  constructor: (location) ->
+    wax.tilejson('http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/geocode/' +
       encodeURIComponent(location) + '.json', @position)
     ###
     @getLocationGoogle(location)
     ###
-    
+
   position: (position) ->
     map = mapbox.map('map')
     map.addLayer(mapbox.layer().id('examples.map-4l7djmvo'))
@@ -18,21 +18,21 @@ class Map
       position = position.results[0][0]
     else
       position.lat = position.Placemark[0].Point.coordinates[0]
-      position.lon = position.Placemark[0].Point.coordinates[1]    
+      position.lon = position.Placemark[0].Point.coordinates[1]
 
-    if position 
-      map.zoom(10).center({ lat: position.lat, lon: position.lon })
+    if position
+      map.zoom(12).center({ lat: position.lat, lon: position.lon })
       markerLayer.add_feature({
         geometry: { coordinates: [ position.lon, position.lat] },
         properties: { 'marker-color': '#000', 'marker-symbol': 'star-stroked', }
       })
     else
-      map.zoom(2).center({ lat: 24.68695241199918, lon: 3.779296875000008 })
-    
+      map.zoom(6).center({ lat: 24.686952411999, lon: 3.7792968750000 })
+
 
   getLocationGoogle: (location) ->
     geocoder = new GClientGeocoder()
     geocoder.getLocations(location, @position)
 
 
-App.Utilities.Map = Map    
+App.Utilities.Map = Map

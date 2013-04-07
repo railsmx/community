@@ -236,20 +236,18 @@
           color: $gray;
           font-weight: bold;
           font-size: 1.1em;
-          line-height: 1.7em;
+          line-height: 1.6em;
         }
 
         .organizer {
           color: $red;
           font-family: "Helvetica";
           font-weight: lighter;
-          font-size: 1.2em;
         }
 
         .contact {
           padding-left: $padding + 5;
           font-weight: lighter;
-          font-size: 1.2em;
         }
 
         .datetime {
@@ -282,9 +280,9 @@
         }
       }
 
-    .map {
-      margin-bottom: $margin;
+    #map {
       height: 350px;
+      margin-bottom: $margin;
 
       // This is just a test code for the shadow and the border
       border: 1px solid $light-gray;
