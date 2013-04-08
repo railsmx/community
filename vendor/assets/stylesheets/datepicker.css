@@ -15,9 +15,9 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
   display: inline-block;
-  border: 1px solid #ddd;
+  border: 1px solid white;
   position: absolute;
-  background-color: #fff;
+  background-color: rgba(230,76,76,0.9);
   /*.dow {
     border-top: 1px solid #ddd !important;
   }*/

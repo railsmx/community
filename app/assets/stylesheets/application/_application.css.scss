@@ -381,12 +381,12 @@ sidebar {
 }
 
 .notice {
-  color: #c09853;
+  color:  green;
   padding: ($padding / 2);
   margin-bottom: $margin;
   border-radius: 3px;
-  border: 1px solid #fbeed5;
-  background-color: #fcf8e3;
+  border: 1px solid green;
+  background-color: rgba(36,134,48,0.250);
 }
 
 #map {

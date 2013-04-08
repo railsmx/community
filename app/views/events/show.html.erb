@@ -54,7 +54,7 @@
 </div>
 
 <script type="text/javascript">
-  <% params = "'#{@event.name}', '#{truncate(@event.description, length: 40)}', #{@event.latitude}, #{@event.longitude}".html_safe %>
+  <% params = "'#{@event.name}', '#{@event.address}', #{@event.latitude}, #{@event.longitude}".html_safe %>
   document.addEventListener('page:change', function(){
     new App.Utilities.Map(<%= params %>);
   });
