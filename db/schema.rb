@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20130408152000) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "slug"
   end
 
   add_index "events", ["identity_id"], name: "index_events_on_identity_id"
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true
 
   create_table "identities", force: true do |t|
     t.string   "provider",                   null: false
