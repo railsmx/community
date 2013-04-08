@@ -40,7 +40,7 @@ gem 'bootstrap-datepicker-rails',
 
 gem 'geocoder'
 #gem "friendly_id", "~> 4.0.9"
-gem 'friendly_id', :github => 'norman/friendly_id', :branch => 'rails4' 
+#gem 'friendly_id', :github => 'norman/friendly_id', :branch => 'rails4' 
 
 group :test do
   gem 'minitest-rails'

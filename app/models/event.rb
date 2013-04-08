@@ -6,8 +6,8 @@ class Event < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
-  extend FriendlyId
-  friendly_id :name, :use => :slugged
+  #extend FriendlyId
+  #friendly_id :name, :use => :slugged
 
   attr_accessor :time
 
