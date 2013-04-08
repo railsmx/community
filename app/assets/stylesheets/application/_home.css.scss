@@ -55,6 +55,10 @@
       padding: ($padding * 1.5);
     }
   }
+
+  .notice, .alert {
+    margin-top: $margin;
+  }
 }
 
 .home, .about, .contact, .privacy, .new_event, .edit_event {

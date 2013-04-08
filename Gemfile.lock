@@ -24,6 +24,13 @@ GIT
     mail_form (1.5.0)
       actionmailer (~> 4.0.0.beta)
 
+GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: 439d0a932231b7dad2ddf6e9b74ce367061445c7
+  branch: rails4
+  specs:
+    friendly_id (4.1.0.beta.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -229,6 +236,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0.beta1)
   font-awesome-sass-rails
   foreman
+  friendly_id!
   geocoder
   gravatar_image_tag
   jbuilder (~> 1.0.1)
