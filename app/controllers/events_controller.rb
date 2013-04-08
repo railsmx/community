@@ -8,8 +8,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by_slug(params[:id])
-    
+    @event = Event.find(params[:id])
+
     redirect_to events_path, alert: t('.event_not_found') unless @event
   end
 

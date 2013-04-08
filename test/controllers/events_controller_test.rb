@@ -104,7 +104,6 @@ describe EventsController do
   end
 
   describe "update" do
-    focus
     it "should be able to update my events" do
       log_in_user
 

@@ -15,7 +15,7 @@
     <span class="organizer"><%= t('.organizer', organize: truncate(event.organizer, length: first ? 25 : 17)) %></span><br>
     <% if !past %>
       <div class="description">
-        <%= truncate event.description, length: first ? 300 : 190 %>
+        <%= truncate event.description, length: first ? 300 : 160 %>
       </div>
     <% end %>
   </div>
