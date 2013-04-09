@@ -1,11 +1,30 @@
 .content {
   padding: $padding 0 0 0;
 
+  sidebar {
+    padding: ($padding * 3) $padding 0 ($padding / 2) !important;  
+  }
+    
+  .blog {
+    margin-left: 0px;
+    
+    h3 {
+      color: $black;
+      font-weight: lighter;  
+    }
+    
+    .sidebar-blog {
+      font-size: 0.8em;
+    }
+  }
+  
+  .events {
+    padding-right: $padding;
+  }
+  
   .event-section {
-    margin-left: $margin !important;
-    margin-bottom: $margin;
+    margin-bottom: ($margin * 2);
     float: left;
-
   }
 
   .btn {
@@ -36,8 +55,9 @@
     @extend .shadow;
 
     .datetime {
-      padding: ($padding * 2) $padding ($padding * 2) 0;
+      padding: ($padding * 3) 0 ($padding * 3) 0;
       text-align: center;
+      margin-left: 0 !important;
 
       .month {
         font-size: 1.5em;
@@ -65,18 +85,18 @@
     }
 
     .main-data {
-      padding: $padding $padding $padding $padding;
+      padding: $padding 0 $padding 0;
+      margin-right: 19.7px;
 
       .title {
         color: $red;
         font-family: "Helvetica";
         font-weight: bold;
-        font-size: 3.0em;
+        font-size: 2.5em;
       }
 
       .location {
         color: $gray;
-        font-size: 1.1em;
         line-height: 0.9em;
       }
 
@@ -85,11 +105,11 @@
         font-family: "Helvetica";
         font-weight: lighter;
         font-size: 1.2em;
-        line-height: 0.9em;
+        line-height: 1.6em;
       }
 
       .description {
-        margin-top: $margin;
+        margin-top: ($margin / 2);
         color: $gray;
         font-family: "Helvetica";
         font-weight: lighter;
@@ -105,8 +125,9 @@
     @extend .shadow;
 
     .datetime {
-      padding: ($padding * 3) $padding ($padding * 3) 0;
+      padding: ($padding * 3) 0 ($padding * 3) 0;
       text-align: center;
+      margin-left: 0 !important;
 
       .month {
         font-size: 1.2em;
@@ -134,34 +155,36 @@
     }
 
     .main-data {
-      padding: $padding $padding $padding $padding;
+      padding: $padding $padding $padding 0;
 
       .title {
         color: $red;
         font-family: "Helvetica";
         font-weight: bold;
-        font-size: 2.0em;
+        font-size: 1.5em;
       }
 
       .location {
         color: $gray;
-        font-size: 1.1em;
-        line-height: 1.7em;
+        font-size: 0.9em;
+        line-height: 1.1em;
       }
-
+      
       .organizer {
         color: $red;
         text-align: left;
         font-family: "Helvetica";
         font-weight: lighter;
-        font-size: 1.0em;
+        font-size: .9em;
+        line-height: 1.9em;
       }
 
       .description {
-        margin-top: $margin;
+        margin-top: ($margin / 2);
         color: $gray;
         font-family: "Helvetica";
         font-weight: lighter;
+        font-size: .9em;
       }
     }
   }
@@ -171,7 +194,11 @@
     height: 140px;
 
     .datetime {
-      padding: $padding $padding $padding 0;
+      padding: $padding 0 $padding $padding;
+    }
+    
+    .main-data {
+      padding-left: 20px;
     }
   }
 

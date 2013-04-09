@@ -10,3 +10,4 @@
 //= require map
 //= require social-buttons
 //= require datetime
+//= require mapbox

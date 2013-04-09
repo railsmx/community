@@ -1,24 +1,28 @@
 <% title t('.events') %>
-<div class="eleven-3quarters content">
+<div class="twelve content">
   <%= display_notice %>
-  <h1>
-    <%= t('.events') %>
-    <%= display_create_event_link %>
-  </h1>
-  <p><%= t('.help_text') %></p>
+  <sidebar class="blog three">
+    <h3><%= t('.blog') %></h3>
+    <span class="sidebar_blog">
+      <%= t('.not_content') %>
+    </span>
+  </sidebar>
+  <div class="events nine">
+    <h1>
+      <%= t('.events') %>
+      <%= display_create_event_link %>
+    </h1>
+    <p><%= t('.text_current_events') %></p>
 
-  <div class="eleven-custom event-section current">
-    <%= @current_events.size > 0 ? (render partial: 'show_event', collection: @current_events, :as => :event) : t('.not_upcoming_events') %>
-  </div>
+    <div class="event-section current">
+      <%= @current_events.size > 0 ? (render partial: 'show_event', collection: @current_events, :as => :event) : t('.not_upcoming_events') %>
+    </div>
 
-  <h2><%= t('.recent_events') %></h2>
-  <div class="eleven-custom event-section past">
-    <%= @past_events.size > 0 ? (render partial: 'show_event', collection: @past_events, :as => :event) : t('.not_recent_events') %>
-  </div>
-
-  <h3><%= t('.blog') %></h3>
-  <div class="eleven-custom event-section">
-    <%= t('.not_content') %>
+    <h2><%= t('.recent_events') %></h2>
+    <p><%= t('.text_past_events') %></p>
+    <div class="event-section past">  
+      <%= @past_events.size > 0 ? (render partial: 'show_event', collection: @past_events, :as => :event) : t('.not_recent_events') %>
+    </div>
   </div>
 </div>
 

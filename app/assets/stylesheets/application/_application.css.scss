@@ -24,17 +24,33 @@ body {
   .one-half {
     @include columns(1.49);
   }
+  
+  .one-3quarters {
+    @include columns(1.75);
+  }
 
   .two {
     @include columns(2);
   }
 
+  .two-half {
+    @include columns(2.5);
+  }
+  
   .three {
     @include columns(3);
+  }
+  
+  .three-custom {
+    @include columns(3.097);
   }
 
   .four {
     @include columns(4);
+  }
+  
+  .four-half {
+    @include columns(4.38);
   }
 
   .five {
@@ -48,7 +64,7 @@ body {
   .six {
     @include columns(6);
   }
-
+  
   .seven {
     @include columns(7);
   }
@@ -99,7 +115,7 @@ header {
   .logo {
     float: left;
     font-size: 1.2em;
-    margin: 0 $margin 0 0;
+    margin: 0 20px 0 0;
   }
 
   .welcome {

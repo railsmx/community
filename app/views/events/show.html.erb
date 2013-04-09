@@ -1,12 +1,12 @@
+
+
+<%= content_for :custom_mapbox do %>
+  <% javascript_include_tag "mapbox.js", :cache => true %>  
+  <% stylesheet_link_tag 'mapbox.css' %>
+<% end %>
+
 <% title @event.name %>
 
-<%= content_for :custom_css do %>
-  <%= stylesheet_link_tag 'http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' %>
-<% end %>
-
-<%= content_for :custom_js do %>
-  <%=javascript_include_tag "http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js" %>
-<% end %>
 
 <div class="container event twelve">
   <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
@@ -52,11 +52,13 @@
 <script type="text/javascript">
   <% params = "'#{@event.name}', '#{@event.address}', #{@event.latitude}, #{@event.longitude}".html_safe %>
   document.addEventListener('page:load', function(){
+    console.log('LGO');
     new App.Utilities.Map(<%= params %>);
   });
 
   $(function(){
     new App.Utilities.Map(<%= params %>);
+    console.log('ABAJO');
   });
 </script>
 
