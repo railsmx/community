@@ -1,5 +1,13 @@
 <% title @event.name %>
 
+<%= content_for :custom_css do %>
+  <%= stylesheet_link_tag 'http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' %>
+<% end %>
+
+<%= content_for :custom_js do %>
+  <%=javascript_include_tag "http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js" %>
+<% end %>
+
 <div class="container event twelve">
   <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
 
@@ -52,13 +60,4 @@
   });
 </script>
 
-<%= content_for :custom_css do %>
-  <%= stylesheet_link_tag 'http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' %>
-  <%= stylesheet_link_tag 'http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css' %>
-<% end %>
 
-<%= content_for :custom_js do %>
-  <%=javascript_include_tag "http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js" %>
-  <%=javascript_include_tag "http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js" %>
-  <%=javascript_include_tag "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false" %>
-<% end %>

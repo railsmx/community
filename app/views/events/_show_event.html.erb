@@ -10,12 +10,13 @@
     <%= display_edit_event_link event if !past %>
     <span class="title"><%= link_to (truncate event.name, length: first ? 25 : 16), event_path(event) %></span><br>
     <span class="location">
-      <%= image_tag "pin.png", id: "maker", align: "left", size: "20x31" %>
+      <%= image_tag "pin.png", id: "maker", align: "left", size: "25x38" %>
       <%= event.location %></span><br>
+      <%= truncate event.address, length: first ? 90 : 35 %><br>
     <span class="organizer"><%= t('.organizer', organize: truncate(event.organizer, length: first ? 25 : 17)) %></span><br>
     <% if !past %>
       <div class="description">
-        <%= truncate event.description, length: first ? 300 : 160 %>
+        <%= truncate event.description, length: first ? 250 : 140 %>
       </div>
     <% end %>
   </div>

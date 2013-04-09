@@ -322,6 +322,12 @@ sidebar {
       background-repeat: no-repeat;
     }
 
+    .building {
+      background-position: 380px center;
+      background-image: image-url('building.png');
+      background-repeat: no-repeat;
+    }
+
     .field_with_errors {
       margin: 0;
       display: inline;
