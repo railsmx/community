@@ -258,57 +258,63 @@
 
   .where-data {
     .location-info {
-        margin-left: 0;
+      margin-left: 0;
+      padding-right: 10px;
 
-        .place {
-          color: $gray;
-          font-weight: bold;
-          font-size: 1.1em;
-          line-height: 1.6em;
-        }
-
-        .organizer {
-          margin: ($margin / 4) 0 0 ($margin + 5);
-          color: $red;
-          font-family: "Helvetica";
-          font-weight: lighter;
-        }
-
-        .contact {
-          margin-top: ($margin / 4);
-          padding-left: $padding + 5;
-          font-weight: lighter;
-        }
-
-        .datetime {
-          padding: $padding ($padding * 4) $padding 0;
-          text-align: center;
-
-          .month {
-            font-size: 1.5em;
-            color: $black;
-          }
-
-          .day {
-            font-size: 4.0em;
-            font-weight: bold;
-            color: $red;
-            line-height: .7em;
-          }
-
-          .weekday {
-            color: $gray;
-            font-size: 1.2em;
-            line-height: 1.7em;
-          }
-
-          .time {
-            font-size: 1.2em;
-            font-weight: bold;
-            line-height: .7em;
-          }
+      .place {
+        color: $gray;
+        font-weight: bold;
+        font-size: 0.9em;
+        line-height: 1.1em;
+        
+        .image {
+          margin-bottom: $margin;
+          margin-top: 0; 
         }
       }
+
+      .organizer {
+        margin: ($margin / 2) 0 0 ($margin + 5);
+        color: $red;
+        font-family: "Helvetica";
+        font-weight: lighter;
+      }
+
+      .contact {
+        margin-top: ($margin / 4);
+        padding-left: $padding + 5;
+        font-weight: lighter;
+      }
+
+      .datetime {
+        padding: $padding ($padding * 4) $padding 0;
+        text-align: center;
+
+        .month {
+          font-size: 1.5em;
+          color: $black;
+        }
+
+        .day {
+          font-size: 4.0em;
+          font-weight: bold;
+          color: $red;
+          line-height: .7em;
+        }
+
+        .weekday {
+          color: $gray;
+          font-size: 1.2em;
+          line-height: 1.7em;
+        }
+
+        .time {
+          font-size: 1.2em;
+          font-weight: bold;
+          line-height: .7em;
+        }
+      }
+    }
 
     #map {
       height: 350px;

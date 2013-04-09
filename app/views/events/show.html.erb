@@ -26,8 +26,9 @@
 
       <div class="location-info four">
         <div class="place">
-          <%= image_tag "pin.png", id: "maker", align: "left", size: "25x38" %>
-          <%= @event.location %>
+          <%= image_tag "pin.png", id: "maker", class: "image", align: "left", size: "25x38"%>
+          <%= @event.location %><br>
+          <%= @event.address %>
         </div>
         <div class="organizer">
           <%= t('.organizer', organize: truncate(@event.organizer, length: 25)) %>
