@@ -26,7 +26,7 @@ module ApplicationHelper
   end
 
   def display_edit_event_link(event)
-    link_to edit_event_path(event), class: "edit" do
+    link_to edit_event_path(event), class: "edit", style: "left: 0;" do
       message = t('.edit_event')
       message << " "
       message << content_tag(:div, '', :class => "icon-edit")

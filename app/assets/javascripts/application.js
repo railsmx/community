@@ -7,6 +7,7 @@
 //= require jquery.inputmask.date.extensions
 //= require socialite
 //= require app
-//= require map
 //= require social-buttons
 //= require datetime
+//= require map
+//= require utilities

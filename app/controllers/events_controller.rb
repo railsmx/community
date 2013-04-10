@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by_id(params[:id])
 
     redirect_to events_path, alert: t('.event_not_found') unless @event
   end
@@ -32,7 +32,7 @@ class EventsController < ApplicationController
   def edit
     @event = Event.my_event params[:id], current_identity
 
-    redirect_to events_path, alert: t('.event_not_found') unless @event
+    return redirect_to events_path, alert: t('.event_not_found') unless @event
 
     @event.time = @event.date.to_s(:custom_time)
     @event.date = @event.date.to_s(:custom_date)

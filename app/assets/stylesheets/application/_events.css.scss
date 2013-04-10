@@ -26,6 +26,10 @@
     margin-bottom: ($margin * 2);
     float: left;
   }
+  
+  .past-title {
+    margin-bottom: 0 !important;
+  }
 
   .btn {
     float: right;
@@ -49,7 +53,8 @@
 
   .first {
     margin: $margin 0 ($margin / 2) 0;
-    height: 240px;
+    height: 100%;
+    overflow: auto;
     border: 1px solid $light-gray;
     text-align: justify;
     @extend .shadow;
@@ -96,16 +101,31 @@
       }
 
       .location {
+        text-align: left !important;
         color: $gray;
-        line-height: 0.9em;
-      }
-
-      .organizer {
-        color: $red;
-        font-family: "Helvetica";
-        font-weight: lighter;
-        font-size: 1.2em;
-        line-height: 1.6em;
+        font-size: 1.1em;
+        line-height: 1.1em;
+        
+        .img {
+          width: 5%;
+          overflow: hidden;
+          float: left;
+        }
+        
+        .info {
+          width: 95%;
+          float: left;
+          
+          .organizer {
+            color: $red;
+            text-align: left;
+            font-family: "Helvetica";
+            font-weight: lighter;
+            font-size: .9em;
+            margin-top: ($margin / 2);
+            margin-bottom: $margin;
+          }
+        }         
       }
 
       .description {
@@ -118,7 +138,8 @@
   }
 
   .second {
-    height: 240px;
+    height: 100%;
+    overflow: auto;
     border: 1px solid $light-gray;
     text-align: justify;
     vertical-align: center;
@@ -165,20 +186,33 @@
       }
 
       .location {
+        text-align: left !important;
         color: $gray;
-        font-size: 0.9em;
+        font-size: 1em;
         line-height: 1.1em;
+        
+        .img {
+          width: 10%;
+          overflow: hidden;
+          float: left;
+        }
+        
+        .info {
+          width: 90%;
+          float: left;
+          
+          .organizer {
+            color: $red;
+            text-align: left;
+            font-family: "Helvetica";
+            font-weight: lighter;
+            font-size: .9em;
+            margin-top: ($margin / 2);
+            margin-bottom: $margin;
+          }
+        }         
       }
       
-      .organizer {
-        color: $red;
-        text-align: left;
-        font-family: "Helvetica";
-        font-weight: lighter;
-        font-size: .9em;
-        line-height: 1.9em;
-      }
-
       .description {
         margin-top: ($margin / 2);
         color: $gray;
@@ -191,7 +225,6 @@
 
   .third {
     @extend .second;
-    height: 140px;
 
     .datetime {
       padding: $padding 0 $padding $padding;
@@ -230,7 +263,7 @@
 
   .edit {
     display: none;
-    float: right;
+    position: absolute;
   }
 
   .icon-edit {
@@ -287,7 +320,7 @@
       }
 
       .datetime {
-        padding: $padding ($padding * 4) $padding 0;
+        padding: ($padding * 2) ($padding * 4) $padding 0;
         text-align: center;
 
         .month {
@@ -336,5 +369,18 @@
 .event {
   sidebar {
     padding-top: ($padding * 3) !important;
+  }
+}
+
+.blog {
+  h4 {
+    color: $gray !important;
+    margin-top: 0 !important;
+    margin-bottom: 0;
+  }
+  
+  .sidebar-blog {
+    margin-top: ($margin / 2) !important;
+    font-size: 0.8em;
   }
 }

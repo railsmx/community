@@ -104,7 +104,7 @@ body {
 }
 
 header {
-  height: 75px;
+  height: 65px;
   border-bottom: 1px solid $light-gray;
 
   .banner {
@@ -146,7 +146,8 @@ header {
 
       a {
         color: $light-red;
-        font-size: 1.4em;
+        font-size: 1.2em;
+        font-weight: lighter;
         text-decoration: none;
       }
     }
@@ -229,10 +230,18 @@ sidebar {
 
   .events, .blog {
     padding-left: 0 !important;
+    
   }
 
-  .sidebar_events, .sidebar_blog  {
+  .sidebar_events {
     font-size: 0.9em;
+  } 
+  
+  .blog {
+    .sidebar-blog {
+      margin-top: ($margin / 2) !important;
+      font-size: 0.8em !important;
+    }
   }
 
   p {
@@ -240,6 +249,7 @@ sidebar {
   }
 
   h4 {
+    margin-top: 0 !important;
     margin-bottom: 0;
   }
 

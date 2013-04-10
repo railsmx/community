@@ -19,6 +19,7 @@ describe EventsController do
                 date: Date.today + 10, identity_id: 100
   }
 
+
   describe 'new' do
     it "should display new form for logged user" do
       log_in_user

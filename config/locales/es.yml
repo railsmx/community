@@ -57,9 +57,6 @@ es:
         invalid: "Fecha invalida"
 
   events:
-    show_event:
-      organizer: 'Organizado por %{organize}'
-      edit_event: 'editar'
     new:
       create_event: 'Crear evento'
       new_event_title: 'Registrar un evento'
@@ -109,6 +106,9 @@ es:
       event_not_found: 'Evento no encontrado'
     event:
       create_event: 'Crear evento'
+      organizer: 'Organizado por %{organize}'
+      edit_event: 'editar'
+      
 
   activerecord:
     errors:
