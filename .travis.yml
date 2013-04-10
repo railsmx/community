@@ -1,3 +1,6 @@
 language: ruby
 rvm:
   - ruby-head
+
+before_script:
+  - psql -c 'create database community_test;' -U postgres
