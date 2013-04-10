@@ -3,7 +3,10 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+
+## Build
+**Branch: Working**
+[![Build Status](https://travis-ci.org/mariochavez/community.png?branch=working)](https://travis-ci.org/mariochavez/community)
 
 ## Dependencies
 This application depends on Ruby 2.0 and Ruby on Rails 4.0

@@ -11,6 +11,7 @@ test:
   database: community_test
   pool: 5
   host: localhost
+  username: <%= ENV['TRAVIS'] ? 'postgres' : '' %>
 
 production:
   adapter: postgresql
