@@ -5,7 +5,8 @@ application up and running.
 
 
 ## Build
-[![Build Status for working branch](https://travis-ci.org/mariochavez/community.png?branch=working)](https://travis-ci.org/mariochavez/community)
+**Branch: Working**
+[![Build Status](https://travis-ci.org/mariochavez/community.png?branch=working)](https://travis-ci.org/mariochavez/community)
 
 ## Dependencies
 This application depends on Ruby 2.0 and Ruby on Rails 4.0
