@@ -89,6 +89,7 @@ feature 'EventsManagement Feature Test' do
 
     click_link 'Eventos'
 
+    save_and_open_page
     page.wont_have_selector("#event_#{event1.id} a.edit")
   end
 

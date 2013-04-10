@@ -1,17 +1,13 @@
 class HomeController < ApplicationController
-  before_action :current_events, only: [:index, :privacy, :about]
+  before_action :current_events, only: [:index, :show]
   
   def index; end
 
   def show
-    pages = %w(about privacy)
+    pages = %w(acerca privacidad)
     page = params[:id] || ''
 
     return render page.downcase if pages.include?(page.downcase)
     render text: 'not found', status: 404
   end
-
-  def privacy; end
-
-  def about; end
 end

@@ -7,17 +7,17 @@ describe HomeController do
   end
 
   it "should get show with 'acerca' parameter" do
-    get :about, id: 'acerca'
+    get :show, id: 'acerca'
 
     assert_response :success
-    assert_template 'about'
+    assert_template 'acerca'
   end
 
   it "should get show with 'privacidad' parameter" do
-    get :privacy, id: 'privacidad'
+    get :show, id: 'privacidad'
 
     assert_response :success
-    assert_template 'privacy'
+    assert_template 'privacidad'
   end
 
   it "should get 404 on show with invalid parameter" do

@@ -5,7 +5,7 @@
     <div class="day"><%= event.date.strftime("%e") %></div>
     <div class="weekday"><%= localize_weekday event.date %></div>
     <div class="time"><%= localize_time event.date if event.upcoming? %></div>
-    <%= display_edit_event_link event %>
+    <%= display_edit_event_link event if event.upcoming? %>
   </div>
   <div class="<%= first ? "seven" : "three-custom" %> main-data">
     
