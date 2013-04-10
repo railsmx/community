@@ -66,6 +66,21 @@ module ApplicationHelper
     content_for(:title) { "rails.mx: #{page_title}" }
   end
 
+     def content_file(name, content = nil, options = {}, &block)
+        if content || block_given?
+          if block_given?
+            options = content if content
+            content = capture(&block)
+          end
+          if content
+            options[:flush] ? @view_flow.set(name, content) : @view_flow.append(name, content)
+          end
+          nil
+        else
+          @view_flow.get(name).presence
+        end
+      end
+
   def field_error(model, field)
     if model.errors[field].any?
       content_tag :span, class: 'error' do

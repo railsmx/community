@@ -1,12 +1,4 @@
-
-
-<% content_for :custom_mapbox do %>
-  <%= javascript_include_tag "mapbox.js" %>  
-  <%= stylesheet_link_tag 'mapbox.css' %>
-<% end %>
-
 <% title @event.name %>
-
 
 <div class="container event twelve">
   <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
@@ -52,9 +44,9 @@
 
 <script type="text/javascript">
   <% params = "#{@event.latitude}, #{@event.longitude}".html_safe %>
-  /*document.addEventListener('page:load', function(){
+  document.addEventListener('page:change', function(){
     new App.Utilities.Map(<%= params %>);
-  });*/
+  });
 
   $(function(){
     new App.Utilities.Map(<%= params %>);
