@@ -4,10 +4,11 @@ class HomeController < ApplicationController
   def index; end
 
   def show
-    pages = %w(acerca privacidad)
+    pages = %w(about privacy)
     page = params[:id] || ''
+
     return render page.downcase if pages.include?(page.downcase)
-    render text: 'Not found', status: 404
+    render text: 'not found', status: 404
   end
 
   def privacy; end

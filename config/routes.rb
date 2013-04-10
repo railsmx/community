@@ -7,8 +7,8 @@ Community::Application.routes.draw do
   get "/contacto" => "contact_form#new", as: :contact_form_new
   post "/contacto" => "contact_form#create", as: :contact_form
 
-  get "/privacidad" => "home#show"
-  get "/acerca" => "home#show"
+  get "/privacidad" => "home#privacy"
+  get "/acerca" => "home#about"
 
   if Rails.env.test?
     post '/sessions/create' => 'sessions#create'
