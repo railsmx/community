@@ -4,3 +4,6 @@ rvm:
 
 before_script:
   - psql -c 'create database community_test;' -U postgres
+
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
