@@ -9,9 +9,7 @@
     <meta name="robots" content="all" >
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
-    <% if content_for?(:custom_mapbox) %>
-      <%= yield(:custom_mapbox) %>
-    <% end %>
+    <%= yield(:custom_mapbox) if content_for?(:custom_mapbox) %>
   </head>
   <body>
     <header>

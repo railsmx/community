@@ -1,8 +1,8 @@
 
 
-<%= content_for :custom_mapbox do %>
-  <% javascript_include_tag "mapbox.js", :cache => true %>  
-  <% stylesheet_link_tag 'mapbox.css' %>
+<% content_for :custom_mapbox do %>
+  <%= javascript_include_tag "mapbox.js" %>  
+  <%= stylesheet_link_tag 'mapbox.css' %>
 <% end %>
 
 <% title @event.name %>
@@ -51,15 +51,13 @@
 </div>
 
 <script type="text/javascript">
-  <% params = "'#{@event.name}', '#{@event.address}', #{@event.latitude}, #{@event.longitude}".html_safe %>
-  document.addEventListener('page:load', function(){
-    console.log('LGO');
+  <% params = "#{@event.latitude}, #{@event.longitude}".html_safe %>
+  /*document.addEventListener('page:load', function(){
     new App.Utilities.Map(<%= params %>);
-  });
+  });*/
 
   $(function(){
     new App.Utilities.Map(<%= params %>);
-    console.log('ABAJO');
   });
 </script>
 

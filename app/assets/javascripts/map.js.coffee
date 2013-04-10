@@ -1,5 +1,5 @@
 class Map
-  constructor: (title, description, lat, lon) ->
+  constructor: (lat, lon) ->
     map = mapbox.map('map')
     map.addLayer(mapbox.layer().id('examples.map-vyofok3q'))
 
@@ -21,8 +21,6 @@ class Map
         properties: {
             'marker-color': '#FF0000',
             'marker-symbol': 'star-stroked',
-            title: title,
-            description: description
         }
     })
 
