@@ -10,6 +10,8 @@ gem 'pretty_formatter'
 
 gem 'gravatar_image_tag'
 
+gem 'twitter', github: 'sferik/twitter'
+
 gem 'mail_form', github: 'mariochavez/mail_form'
 gem 'omniauth-github'
 gem 'warden', '~> 1.2.1'

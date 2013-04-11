@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  #include TweetEvent
+
   before_action :authenticate!, except: [:index, :show]
   before_action :current_events, only: [:new, :edit, :create, :update, :show]
 
@@ -22,7 +24,13 @@ class EventsController < ApplicationController
       event.identity = current_identity
     end
 
-    return redirect_to events_path, notice: t('.event_created') if @event.save
+    if @event.save
+      #puts "URL = #{event_path.inspect}"
+      #puts "Event = #{event.inspect}"
+      #TweetEvent.update(@event, event_path)
+
+      return redirect_to events_path, notice: t('.event_created')
+    end
 
     flash.now[:alert] = t('.invalid_event')
     @event.date = params[:event][:date]
