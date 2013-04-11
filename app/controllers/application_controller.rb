@@ -26,3 +26,4 @@ class ApplicationController < ActionController::Base
     @current_events = Event.current_events(3)
   end
 end
+

@@ -1,7 +1,9 @@
 module ApplicationHelper
   def display_login_link(&block)
     unless identity_signed_in?
-      link_to t('.sign_in'), "/auth/github", class: "sign-in zocial github", style: "font-size: .8em;"
+      link_to t('.sign_in'), "/auth/github",
+        class: "sign-in zocial github",
+        style: "font-size: .8em;"
     else
       html = capture(&block) if block_given?
     end
@@ -16,9 +18,9 @@ module ApplicationHelper
   end
 
   def display_warden_message_tag
-  	content_tag :div, class: 'alert' do
-  		warden.message
-  	end if warden.message.present?
+    content_tag :div, class: 'alert' do
+      warden.message
+    end if warden.message.present?
   end
 
   def display_create_event_link
@@ -61,7 +63,7 @@ module ApplicationHelper
   def localize_time(date)
     I18n::localize(date, format: t(:short_time, scope: [:time, :formats]))
   end
-  
+
   def title(page_title)
     content_for(:title) { "rails.mx: #{page_title}" }
   end

@@ -12,7 +12,7 @@ module Community
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += Dir["#{config.root}/lib"]
 
     config.log_formatter = PrettyFormatter.formatter
   end

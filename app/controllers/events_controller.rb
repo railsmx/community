@@ -1,6 +1,4 @@
 class EventsController < ApplicationController
-  #include TweetEvent
-
   before_action :authenticate!, except: [:index, :show]
   before_action :current_events, only: [:new, :edit, :create, :update, :show]
 
@@ -25,10 +23,7 @@ class EventsController < ApplicationController
     end
 
     if @event.save
-      #puts "URL = #{event_path.inspect}"
-      #puts "Event = #{event.inspect}"
-      #TweetEvent.update(@event, event_path)
-
+      TweetEvent.update(@event, url_for(:only_path => false))
       return redirect_to events_path, notice: t('.event_created')
     end
 

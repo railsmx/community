@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   before_action :current_events, only: [:index, :show]
-  
+
   def index; end
 
   def show

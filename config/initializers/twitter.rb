@@ -8,3 +8,6 @@ begin
 rescue Exception => exc
   logger.error("Message for the log file #{exc.message}")
 end
+
+require 'TweetEvent'
+EventsController.send(:extend, TweetEvent)
