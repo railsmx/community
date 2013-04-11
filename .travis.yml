@@ -1,7 +1,7 @@
 language: ruby
 rvm:
   - ruby-head
-
+bundler_args: --without development
 before_script:
   - psql -c 'create database community_test;' -U postgres
 
