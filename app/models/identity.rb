@@ -3,8 +3,7 @@ class Identity < ActiveRecord::Base
 
   validates :uid, :provider, :username, :email, presence: true
 
-  scope :my_identity, -> (uid, provider)
-    { where(:uid => uid, :provider => provider) }
+  scope :my_identity, -> (uid, provider) { where(:uid => uid, :provider => provider) }
 
   def self.create_with_omniauth(auth)
     create! do |identity|

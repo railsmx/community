@@ -14,10 +14,8 @@ class Event < ActiveRecord::Base
     :address, :contact, :identity_id, presence: true
   validates :date, future_date: true
 
-  scope :current_events, -> (counts)
-    { where('date > ?', DateTime.now).order('date ASC').limit(counts) }
-  scope :past_events, -> (counts)
-    { where('date <= ?', DateTime.now).order('date DESC').limit(counts) }
+  scope :current_events, -> (counts) { where('date > ?', DateTime.now).order('date ASC').limit(counts) }
+  scope :past_events, -> (counts) { where('date <= ?', DateTime.now).order('date DESC').limit(counts) }
 
   def time
     return date.to_s(:custom_time) if date && date.to_s(:custom_time) != '00:00'
