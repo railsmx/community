@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   before_validation :set_date
-  after_validation :geocode, :if => :address_changed?
+  after_validation :geocode, if: :address_changed?
 
   attr_accessor :time
 
@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   geocoded_by :address
 
   #extend FriendlyId
-  #friendly_id :name, :use => :slugged
+  #friendly_id :name, use: :slugged
 
   validates :name, :date, :location,
     :address, :contact, :identity_id, presence: true
@@ -28,7 +28,7 @@ class Event < ActiveRecord::Base
 
   class << self
     def my_event(event_id, identity)
-      where(:id => event_id, :identity_id => identity.id).first
+      where(id: event_id, identity_id: identity.id).first
     end
   end
 

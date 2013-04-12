@@ -1,8 +1,8 @@
 Community::Application.routes.draw do
-  resources :events, :path => '/eventos'
+  resources :events, path: '/eventos'
 
   get "/auth/:provider/callback" => "sessions#create"
-  get "/signout" => "sessions#destroy", :as => :signout
+  get "/signout" => "sessions#destroy", as: :signout
 
   get "/contacto" => "contact_form#new", as: :contact_form_new
   post "/contacto" => "contact_form#create", as: :contact_form

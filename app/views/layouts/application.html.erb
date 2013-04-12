@@ -14,7 +14,7 @@
     <header>
       <div class="container">
         <div class="banner six">
-          <span class="logo"><%= link_to image_tag("railsmx-mini.png", :border => 0), root_path %></span>
+          <span class="logo"><%= link_to image_tag("railsmx-mini.png", border: 0), root_path %></span>
           <ul class="menu">
             <li><%= link_to t('.events'), events_path %></li>
             <li><%= link_to t('.blog'), "#" %></li>
@@ -24,7 +24,7 @@
           <%= display_login_link do %>
             <span class="user-info">
               <%= t('.welcome', user: current_identity.try(:username))  %>
-              <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), :alt => current_identity.username) %>
+              <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), alt: current_identity.username) %>
             </span>
             <%= link_to t('.sign_out'), signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
           <% end %>
