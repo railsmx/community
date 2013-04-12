@@ -7,6 +7,6 @@ module TweetEvent
       Rails.logger.debug("Sending Tweet #{event[:name]} #{url}/#{event[:id]}")
     rescue Exception => exc
       Rails.logger.debug("Message error with Twitter: #{exc.message}")
-    end    
+    end
   end
 end
