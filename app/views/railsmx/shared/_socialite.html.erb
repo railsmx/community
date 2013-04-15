@@ -21,10 +21,10 @@
 
 <script>
   document.addEventListener('page:change', function(){
-    new App.Utilities.Social();
+    new App.Utilities.Social("<%= "#{Rails.application.config.facebook_appid}" %>");
   });
 
   $(function(){
-    new App.Utilities.Social();
+    new App.Utilities.Social("<%= "#{Rails.application.config.facebook_appid}" %>");
   });
 </script>

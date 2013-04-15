@@ -1,8 +1,8 @@
 class Social
-  constructor: ->
+  constructor: (facebook_id) ->
     Socialite.load ($ '.social-buttons',
       facebook:
-        appId: '498001033582275'
+        appId: facebook_id
     )
 
 App.Utilities.Social = Social
