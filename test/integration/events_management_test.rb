@@ -10,10 +10,14 @@ feature 'EventsManagement Feature Test' do
 
     visit '/eventos'
 
+    stub_class_method(Twitter, :update) {
+      |args| args[0].must_include "MagmaConf 2013 http://www.example.com/eventos/980190963"
+    }
+
     click_link 'Registrar evento'
 
     within('#new_event') do
-      fill_in 'event_name', with: 'MagmaConf'
+      fill_in 'event_name', with: 'MagmaConf 2013'
       fill_in 'event_address', with: 'Carretera Manzanillo-Cihuatlán kilómetro 20, Manzanillo, Colima'
       fill_in 'event_location', with: 'Manzanillo, Colima'
       fill_in 'event_date', with: '06/06/2015'

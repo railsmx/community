@@ -23,7 +23,7 @@ class EventsController < ApplicationController
     end
 
     if @event.save
-      TweetEvent.update(@event, url_for(only_path: false))
+      TweetEvent.update(@event, event_url(@event))
       return redirect_to events_path, notice: t('.event_created')
     end
 

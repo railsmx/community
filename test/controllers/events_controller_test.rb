@@ -39,27 +39,19 @@ describe EventsController do
   end
 
   describe "create" do
-    it "should create new event for logged user" do
+    it "should create new event for logged user and post a tweet" do
       log_in_user
+
+      stub_class_method(Twitter, :update) {
+        |args| args[0].must_include "MagmaConf http://test.host/eventos/"
+      }
 
       post :create, event: params
 
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-    
-    it "should post a tweet when a new event is created" do
-      log_in_user
-
-      post :create, event: params
-
-      stub_tweet_event event, events_path
-
-      assert_redirected_to events_path
-      flash[:notice].wont_be_nil
-    end
-
-
+  
     it "should not create new event when not logged user" do
       post :create, event: params
 
@@ -241,12 +233,5 @@ describe EventsController do
       assigns[:current_events].size.must_equal 4
       assigns[:past_events].size.must_equal 3
     end
-  end
-end
-
-def stub_tweet_event(event = {}, url)
-  TweetEvent.class_exec(event, url) do |event, url|
-    body = -> { Twitter.update("#{event[:name]} #{url}/#{event[:id]}") }
-    define_method :update, body
   end
 end
