@@ -2,9 +2,8 @@
   width: grid-width($size);
   overflow: hidden;
   float: left;
-  margin-left: $gw-gutter;
-
-  &:last-child {
-    margin-left: 0;
+  margin-left: $margin;
+  &:first-child {
+  	margin-left: 0;
   }
 }
