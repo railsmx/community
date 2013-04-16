@@ -2,8 +2,8 @@
 <html>
   <head>
     <title><%= yield(:title).empty? ? "coderetreat" : yield(:title) %></title>
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet" type="text/css">
     <meta name="keywords" content="ruby, ruby on rails, software, comunidad, eventos, code, retreat">
     <meta name="description" content="Una practica intensiva durante todo un dia, enfocado a practicar los fundamentos del desarrollo de software. Una oportunidad para enfocarse en los fundamentos del diseño y desarrollo de codigo. Sin la presion de tener un entregable.">
     <meta name="robots" content="all" >
@@ -13,9 +13,11 @@
   <body>
     <header>
       <div class="container">
-        <div class="main-header twelve">
-          <span class="logo"><%= link_to image_tag("logo.png", border: 0), root_path %></span>
-          <ul class="menu">
+        <div class="main-header">
+          <div class="logo seven">
+            <%= link_to image_tag("logo.png", border: 0), root_path %>
+          </div>
+          <ul class="menu five">
             <li><%= link_to t('.home'), root_path %></li>
             <li><%= link_to t('.events'), events_path %></li>
             <li><%= link_to t('.blog'), "#" %></li>
@@ -29,19 +31,36 @@
       <%= yield %>
     </div>
 
-    <footer style="background-color: $gray">
+    <footer>
       <div class="container">
-        <div class="four">
-          <ul class="submenu">
-            <li><%= link_to t('.who_we_are'), "/acerca" %></li>
-            <li><%= link_to t('.contact'), contact_form_new_path %></li>
-            <li><%= link_to t('.privacy'), "/privacidad" %></li>
-          </ul>
-        </div>
-        <div class="three">
-          <span class="logo"><%= link_to (image_tag "logo.png"), root_path %></span>
+        <div class="content-footer">
+          <div class="three">
+            <span class="logo"><%= link_to (image_tag "logo.png"), root_path %></span>
+            <p><%= t('.contact_us') %></p>
+            <%= link_to t('.more_info'), "#" %>
+          </div>
+          <div class="three">
+            <p><%= t('.twitter') %></p>
+            <%= link_to '@CodeRetreatMex', 'https://twitter.com/coderetreatmex', class: "tweet", target: "_blank" %>
+            <a class="twitter-timeline" href="https://twitter.com/mendozagioo" data-widget-id="324290970462076929" data-conversation="none" data-cards="hidden" height="200">Tweets por @mendozagioo</a>
+          </div>
+          <div class="three">
+            <p><%= t('.blog') %></p>
+          </div>
+          <div class="three">
+            <p><%= t('.more') %></p>
+            <ul class="submenu">
+              <li><%= link_to t('.contact'), contact_form_new_path %></li>
+              <li><%= link_to t('.who_we_are'), "/acerca" %></li>
+              <li><%= link_to t('.privacy'), "/privacidad" %></li>
+            </ul>
+            <%= image_tag "crowdint.png" %>
+          </div>
         </div>
       </div>
     </footer>
+    <script type="text/javascript">
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
   </body>
 </html>
