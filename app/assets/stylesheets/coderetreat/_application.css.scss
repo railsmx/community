@@ -1,0 +1,393 @@
+/*
+  In this file override any css style or add new ones
+*/
+
+* {
+  @include box-sizing(border-box);
+  color: $black;
+}
+
+body {
+  margin: 0;
+  font-family: $helvetica;
+}
+
+.container {
+  width: grid-width(12);
+  overflow: hidden;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .one-half {
+    @include columns(1.49);
+  }
+
+  .one-3quarters {
+    @include columns(1.75);
+  }
+
+  .two {
+    @include columns(2);
+  }
+
+  .two-half {
+    @include columns(2.5);
+  }
+
+  .three {
+    @include columns(3);
+  }
+
+  .three-custom {
+    @include columns(3.097);
+  }
+
+  .four {
+    @include columns(4);
+  }
+
+  .four-half {
+    @include columns(4.38);
+  }
+
+  .five {
+    @include columns(5);
+  }
+
+  .five-half {
+    @include columns(5.52);
+  }
+
+  .six {
+    @include columns(6);
+  }
+
+  .seven {
+    @include columns(7);
+  }
+
+  .eight {
+    @include columns(8);
+  }
+
+  .nine {
+    @include columns(9);
+  }
+
+  .ten {
+    @include columns(10);
+  }
+
+  .eleven {
+    @include columns(11);
+  }
+
+  .eleven-custom {
+    @include columns(11.05);
+  }
+
+  .eleven-3quarters {
+    @include columns(11.75);
+  }
+
+  .twelve {
+    @include columns(12);
+  }
+
+  .content {
+    padding: 0 ($margin * 3) 0 ($margin * 3) !important;
+    background-color: #e5e4e4;
+    height: 500px;
+  }
+}
+
+header {
+  height: 100px;
+  border-bottom: 1px solid $light-gray;
+
+  .main-header {
+    padding: ($padding / 2) 0;
+    line-height: 3em;
+  }
+
+  .logo {
+    float: left;
+    margin: 0 ($margin * 9) 0 ($margin * 3);
+  }
+
+  .menu {
+    list-style-type: none;
+    margin: $margin ($margin * 2) $margin $margin;
+
+    li {
+      float: left;
+      color: $gray;
+      margin-right: ($margin * 1.5);
+
+      a {
+        color: $gray;
+        font-size: 18px;
+        font-weight: lighter;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .welcome {
+    text-align: right;
+    color: $light-gray;
+  }
+
+  #logo {
+    font-size: 24px;
+    padding-right: 10px;
+  }
+
+  a {
+    color: $light-red;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
+
+footer {
+  height: 150px;
+  border-top: 1px solid $light-gray;
+
+  .three {
+    float: right !important;
+    margin: ($margin / 2) 0 0 0 !important;
+  }
+
+  .four {
+    float: right !important;
+    margin: $margin 0 0 0 !important;
+  }
+
+  .logo {
+    font-size: 1.2em;
+  }
+
+  .submenu {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 0.8em;
+
+    li {
+      float: left;
+      color: white;
+      margin-right: ($margin / 2);
+
+      a {
+        color: $green;
+        font-family: "Myriad Pro";
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+sidebar {
+  padding: 0 ($padding * 2) 0 $padding;
+  margin-left: 0 !important;
+
+  .events, .blog {
+    padding-left: 0 !important;
+
+  }
+
+  .events {
+    .sidebar-events {
+      margin-top: ($margin / 2) !important;
+      font-size: 0.9em !important;
+    }
+  }
+
+  .blog {
+    margin-top: $margin;
+    .sidebar-blog {
+      margin-top: ($margin / 2) !important;
+      font-size: 0.8em !important;
+    }
+  }
+
+  p {
+    font-size: 0.8em;
+  }
+
+  h4 {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $light-red;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+.shadow {
+  -moz-box-shadow:    1px 3px 5px -2px $light-gray;
+  -webkit-box-shadow: 1px 3px 5px -2px $light-gray;
+  box-shadow:         1px 3px 5px -2px $light-gray;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+
+.form-event {
+  input[type="text"], input[type="email"], textarea {
+    @include size(400px 30px);
+    font-size: .8em;
+    padding: 5px;
+    text-shadow: 0px 1px 0px #fff;
+    outline: none;
+    -moz-box-shadow: inset 0 0 3px $light-gray;
+    -webkit-box-shadow: inset 0 0 3px $light-gray;
+    box-shadow: inset 0 0 3px $light-gray;
+    background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe), to(#ffffff));
+    background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid $light-gray;
+    margin-right: ($margin / 2);
+  }
+
+  input:focus, textarea:focus {
+    -webkit-box-shadow: 0px 0px 8px $light-gray;
+    -moz-box-shadow: 0px 0px 8px $light-gray;
+    box-shadow: 0px 0px 8px $light-gray;
+  }
+
+  textarea {
+    font-size: .9em;
+    @include size(400px 150px);
+  }
+
+  .submit {
+    padding-left: ($padding * 5.5);
+    input[type="submit"] {
+      @include button($red);
+      font-size: 1em;
+    }
+  }
+
+  div {
+    margin-left: 0 !important;
+    margin-top: $margin;
+
+    .date {
+      @include size(150px 30px);
+      background-position: 128px center;
+      background-image: image-url('date.png');
+      background-repeat: no-repeat;
+    }
+
+    .time {
+      @include size(150px 30px);
+      background-position: 128px center;
+      background-image: image-url('time.png');
+      background-repeat: no-repeat;
+    }
+
+    .place {
+      background-position: 383px center;
+      background-image: image-url('marker.png');
+      background-repeat: no-repeat;
+    }
+
+    .building {
+      background-position: 380px center;
+      background-image: image-url('building.png');
+      background-repeat: no-repeat;
+    }
+
+    .field_with_errors {
+      margin: 0;
+      display: inline;
+
+      input {
+        border: 1px solid $red;
+      }
+
+      .date {
+        float:left;
+        margin: 0 $margin 0 0 !important;
+      }
+    }
+
+    span {
+      font-size: .7em;
+      color: $red;
+    }
+  }
+
+  div label {
+    line-height: 2em;
+    color: $light-gray;
+    width: 15%;
+    float: left;
+  }
+}
+
+.form-contact {
+  @extend .form-event;
+
+  input[type="text"], input[type="email"], textarea {
+    @include size(300px 30px);
+  }
+
+  textarea {
+    font-size: .9em;
+    @include size(300px 150px);
+  }
+
+  .field_with_errors {
+    input {
+      border: 1px solid $light-gray !important;
+    }
+  }
+
+  div label {
+    width: 24%;
+  }
+
+  .submit {
+    padding-left: ($padding * 8.8);
+  }
+}
+
+.alert {
+  color: $red;
+  padding: ($padding / 2);
+  margin-bottom: $margin;
+  border-radius: 3px;
+  border: 1px solid $red;
+  background-color: $transparent-red;
+}
+
+.notice {
+  color:  green;
+  padding: ($padding / 2);
+  margin-bottom: $margin;
+  border-radius: 3px;
+  border: 1px solid green;
+  background-color: $transparent-green;
+}
+
+#map {
+  height: 250px;
+}
+
+.datapicker {
+  position: absolute;
+}

@@ -1,0 +1,10 @@
+@mixin columns($size) {
+  width: grid-width($size);
+  overflow: hidden;
+  float: left;
+  margin-left: $gw-gutter;
+
+  &:last-child {
+    margin-left: 0;
+  }
+}
