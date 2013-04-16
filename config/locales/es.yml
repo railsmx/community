@@ -7,6 +7,7 @@ es:
     application:
       sign_in: 'Iniciar sesión'
       sign_out: 'Cerrar sesión'
+      home: 'Inicio'
       welcome: 'Bienvenido %{user}'
       events: 'Eventos'
       who_we_are: 'Acerca de'
@@ -108,7 +109,7 @@ es:
       create_event: 'Crear evento'
       organizer: 'Organizado por %{organize}'
       edit_event: 'editar'
-      
+
 
   activerecord:
     errors:
@@ -118,13 +119,13 @@ es:
             name:
               blank: 'este campo es requerido'
             address:
-              blank: 'este campo es requerido'  
+              blank: 'este campo es requerido'
             location:
               blank: 'este campo es requerido'
             date:
               blank: 'este campo es requerido'
             contact:
-              blank: 'este campo es requerido' 
+              blank: 'este campo es requerido'
 
   date:
     formats:
