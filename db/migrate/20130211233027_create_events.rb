@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :contact, :null => false
       t.string :organizer, :null => true
       t.references :identity, :index => true
-      
+
       t.timestamps
     end
   end

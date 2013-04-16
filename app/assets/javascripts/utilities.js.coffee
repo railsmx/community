@@ -6,7 +6,7 @@ class Form
       $('.second:odd').find('a.edit').css({left: 20})
       $('.second:even, .first').find('a.edit').css({left: 0})
       pos = $(this).position()
-      a = $(this).find('a.edit') 
+      a = $(this).find('a.edit')
       toptmp = parseInt(a[0].style.left.replace('px',''), 10)
       a.css({top: (pos.top + $(this).height()) - 20, left: (pos.left + toptmp) + 20});
       a.show();
@@ -18,4 +18,4 @@ class Form
       $(this).find('a.edit').hide();
     )
 
-App.Utilities.Form = Form    
+App.Utilities.Form = Form

@@ -1,10 +1,10 @@
 class Map
   constructor: (lat, lon) ->
-    if $('#map')          
+    if $('#map')
       $.getScript("http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js", ->
         $("head").append("<link>");
         css = $("head").children(":last");
-        css.attr({ 
+        css.attr({
           rel:  "stylesheet",
           type: "text/css",
           href: "http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css"
