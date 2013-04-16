@@ -5,6 +5,7 @@
 
     .welcome-text {
       color: #fff;
+      font-family: 'Roboto';
       font-size: 50px;
       font-weight: bold;
       margin: ($margin * 7) 0 0 ($margin * 3);
@@ -19,7 +20,7 @@
 
     a {
       color: $green;
-      font-family: "Myriad Pro";
+      font-family: "Roboto";
       font-size: 14px;
       font-weight: bold;
       font-style: italic;

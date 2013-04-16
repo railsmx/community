@@ -8,8 +8,8 @@
 }
 
 body {
+  font-family: 'Roboto';
   margin: 0;
-  font-family: $helvetica;
 }
 
 .container {
@@ -129,6 +129,7 @@ header {
 
       a {
         color: $gray;
+        font-family: 'Roboto';
         font-size: 18px;
         font-weight: lighter;
         text-decoration: none;
