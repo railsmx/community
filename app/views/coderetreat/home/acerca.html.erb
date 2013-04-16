@@ -1,0 +1,24 @@
+<% title t('.who_we_are') %>
+<div class="container about">
+  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
+  <div class="content nine">
+      <h1>Acerca de rails.mx</h1>
+      <p>
+        rails.mx es un esfuerzo de Rubyistas entusiastas que 
+        buscan generar comunidad de desarrollo alrededor de Ruby on Rails.<br><br>
+        
+        Estos esfuerzos consisten en la organización de eventos presenciales y en 
+        línea. Los eventos que se llevan a cabo van desde conferencias hasta 
+        talleres y ¨hackatones¨ que ayuden a promover los conceptos, ideas, técnicas 
+        y herramientas que nos pueden ayudar a llevar a cabo proyectos exitosos.<br><br>
+        
+        rails.mx es un grupo abierto, en donde cualquier persona interesada en 
+        aportar o aprender algo nuevo, es bienvenida de participar.<br><br>
+        
+        Únete a la comunidad y particpa a traves de los diferentes mecanismos de 
+        comunición.
+      </p>
+
+      <%= image_tag "working.png", class: "image" %>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= yield(:title).empty? ? "coderetreat" : yield(:title) %></title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="keywords" content="ruby, ruby on rails, software, comunidad, eventos, code, retreat">
+    <meta name="description" content="Una practica intensiva durante todo un dia, enfocado a practicar los fundamentos del desarrollo de software. Una oportunidad para enfocarse en los fundamentos del diseño y desarrollo de codigo. Sin la presion de tener un entregable.">
+    <meta name="robots" content="all" >
+    <%= stylesheet_link_tag "coderetreat" %>
+    <%= javascript_include_tag "coderetreat" %>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="main-header twelve">
+          <span class="logo"><%= link_to image_tag("logo.png", border: 0), root_path %></span>
+          <ul class="menu">
+            <li><%= link_to t('.home'), root_path %></li>
+            <li><%= link_to t('.events'), events_path %></li>
+            <li><%= link_to t('.blog'), "#" %></li>
+            <li><%= link_to t('.contact'), "#" %></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="container <%= controller.controller_name %>">
+      <%= yield %>
+    </div>
+
+    <footer style="background-color: $gray">
+      <div class="container">
+        <div class="four">
+          <ul class="submenu">
+            <li><%= link_to t('.who_we_are'), "/acerca" %></li>
+            <li><%= link_to t('.contact'), contact_form_new_path %></li>
+            <li><%= link_to t('.privacy'), "/privacidad" %></li>
+          </ul>
+        </div>
+        <div class="three">
+          <span class="logo"><%= link_to (image_tag "logo.png"), root_path %></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
