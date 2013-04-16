@@ -1,14 +1,14 @@
 .home {
   .hero {
-    @include size(1024px 300px);
+    @include size(1100px 300px);
     background: image-url('slider.png') no-repeat;
 
     .welcome-text {
       color: #fff;
-      font-family: 'Roboto';
+      font-family: 'Roboto', sans-serif;
       font-size: 50px;
       font-weight: bold;
-      margin: ($margin * 7) 0 0 ($margin * 3);
+      margin: ($margin * 7) 0 0 ($margin * 4);
       text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
     }
   }

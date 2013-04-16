@@ -13,10 +13,10 @@ body {
 }
 
 .container {
-  width: grid-width(12);
+  width: grid-width(14);
   overflow: hidden;
   margin: 0 auto;
-
+  
   h1 {
     font-size: 32px;
   }
@@ -98,41 +98,52 @@ body {
   }
 
   .content {
-    padding: 0 ($margin * 3) 0 ($margin * 3) !important;
+    width: grid-width(14);
+    padding: 0 ($margin * 4) 0 ($margin * 4);
     background-color: #e5e4e4;
     height: 500px;
+    float: left;
   }
 }
 
 header {
+  @extend .shadow-bottom;
   height: 100px;
-  border-bottom: 1px solid $light-gray;
+  position: relative;
+  width: 100%;
 
   .main-header {
-    padding: ($padding / 2) 0;
-    line-height: 3em;
+    @include columns(12);
+    margin: ($margin / 2) ($margin * 4) ($margin / 2) ($margin * 4);
   }
 
   .logo {
     float: left;
-    margin: 0 ($margin * 9) 0 ($margin * 3);
+    margin: 0;
   }
 
   .menu {
     list-style-type: none;
-    margin: $margin ($margin * 2) $margin $margin;
+    display: inline-block;
+    padding: 0;
+    margin-left: $margin;
 
     li {
       float: left;
       color: $gray;
       margin-right: ($margin * 1.5);
+      float: right;
+      &:first-child { margin-right: 0; }
+    }
 
-      a {
-        color: $gray;
-        font-family: 'Roboto';
-        font-size: 18px;
-        font-weight: lighter;
-        text-decoration: none;
+    a {
+      color: $gray;
+      font-family: 'Roboto';
+      font-size: 18px;
+      font-weight: lighter;
+      text-decoration: none;
+      &:hover {
+        color: $green;
       }
     }
   }
@@ -146,38 +157,68 @@ header {
     font-size: 24px;
     padding-right: 10px;
   }
-
-  a {
-    color: $light-red;
-    font-size: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
 }
 
 footer {
+  @extend .shadow-top;
   height: 150px;
-  border-top: 1px solid $light-gray;
-
-  .three {
-    float: right !important;
-    margin: ($margin / 2) 0 0 0 !important;
-  }
-
-  .four {
-    float: right !important;
-    margin: $margin 0 0 0 !important;
-  }
+  position: absolute;
+  width: 100%;
 
   .logo {
     font-size: 1.2em;
+    display: block;
+    a {
+      display: block;
+    }
+    img {
+      width: 220px;
+      height: 35%;
+    }
+  }
+
+  .content-footer {
+    width: grid-width(14);
+    padding: 0 ($margin * 4) 0 ($margin * 4);
+    background-color: #fff;
+    float: left;
+    margin: ($margin * 2) 0 $margin 0;
+
+    p {
+       text-align: justify;
+       font-size: $text-size;
+       font-weight: 100;
+       font-family: 'Roboto';
+       margin: 0;
+       &:first-child { float: left; }
+    }
+
+    a {
+      color: $green;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: $text-size - 2;
+      font-family: 'Roboto';
+    }
+
+    .tweet {
+      color: $green;
+      font-size: 14px;
+      float: left;
+      margin-left: $margin / 2;
+    }
+    .timeline-header, .customisable-border { display: none; }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   .submenu {
     list-style-type: none;
     display: inline-block;
-    font-size: 0.8em;
+    padding: 0;
 
     li {
       float: left;
@@ -186,10 +227,10 @@ footer {
 
       a {
         color: $green;
-        font-family: "Myriad Pro";
-        font-size: 14px;
-        font-weight: bold;
         text-decoration: none;
+        font-weight: bold;
+        font-size: $text-size - 2;
+        font-family: 'Roboto';
       }
     }
   }
@@ -235,10 +276,19 @@ sidebar {
   }
 }
 
-.shadow {
-  -moz-box-shadow:    1px 3px 5px -2px $light-gray;
-  -webkit-box-shadow: 1px 3px 5px -2px $light-gray;
-  box-shadow:         1px 3px 5px -2px $light-gray;
+.shadow-bottom {
+  -moz-box-shadow:    1px 3px 5px -1px $light-gray;
+  -webkit-box-shadow: 1px 3px 5px -1px $light-gray;
+  box-shadow:         1px 3px 5px -1px $light-gray;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+
+.shadow-top {
+  -moz-box-shadow:    0px -3px 5px -1px $light-gray;
+  -webkit-box-shadow: 0px -3px 5px -1px $light-gray;
+  box-shadow:         0px -3px 5px -1px $light-gray;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
   border-radius: 1px;

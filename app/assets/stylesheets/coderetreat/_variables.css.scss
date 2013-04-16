@@ -2,7 +2,7 @@
   Include your variables to override bootstrap them.
   For more info look at http://twitter.github.com/bootstrap/customize.html
 */
-$gw-column: 67px;          // Column Width
+$gw-column: 60px;          // Column Width
 $gw-gutter: 20px;           // Gutter Width
 
 $margin: 20px;
@@ -16,3 +16,4 @@ $red: #DB4743;
 $light-red: #DD5B4A;
 $transparent-red: rgba(231, 129, 116, 0.25);
 $transparent-green: rgba(36,134,48,0.250);
+$text-size: 14px;
