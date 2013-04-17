@@ -6,6 +6,7 @@ gem 'rails', '4.0.0.beta1'
 
 gem 'pg'
 gem 'puma'
+gem 'dalli'
 gem 'pretty_formatter'
 
 gem 'gravatar_image_tag'

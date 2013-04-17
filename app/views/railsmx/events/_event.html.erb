@@ -1,27 +1,29 @@
-<%- first = (event_counter == 0 and event.upcoming?) %>
-<div id="event_<%= event.id %>" class="<%= !event.upcoming? ? "third second four-half" : (first ? "first" : "second four-half")%>">
-  <div class="<%= first ? "one-3quarters" : "one-half" %> datetime">
-    <div class="month"><%= localize_month(event.date).upcase %></div>
-    <div class="day"><%= event.date.strftime("%e") %></div>
-    <div class="weekday"><%= localize_weekday event.date %></div>
-    <div class="time"><%= localize_time event.date if event.upcoming? %></div>
-    <%= display_edit_event_link event if event.upcoming? %>
-  </div>
-  <div class="<%= first ? "seven" : "three-custom" %> main-data">
-    
-    <span class="title"><%= link_to event.name, event_path(event) %></span><br>
-    <div class="location">
-      <div class="img"><%= image_tag "pin.png", id: "maker", align: "left", size: "25x38" %></div>
-      <div class="info">
-        <%= event.location %><br>
-        <%= event.address %>
-        <div class="organizer"><%= t('.organizer', organize: event.organizer) %></div>
-      </div>
+<% cache [current_identity, event] do %>
+  <%- first = (event_counter == 0 and event.upcoming?) %>
+  <div id="event_<%= event.id %>" class="<%= !event.upcoming? ? "third second four-half" : (first ? "first" : "second four-half")%>">
+    <div class="<%= first ? "one-3quarters" : "one-half" %> datetime">
+      <div class="month"><%= localize_month(event.date).upcase %></div>
+      <div class="day"><%= event.date.strftime("%e") %></div>
+      <div class="weekday"><%= localize_weekday event.date %></div>
+      <div class="time"><%= localize_time event.date if event.upcoming? %></div>
+      <%= display_edit_event_link event if event.upcoming? %>
     </div>
-    <% if event.upcoming? %>
-      <div class="description">
-        <%= event.description %>
+    <div class="<%= first ? "seven" : "three-custom" %> main-data">
+
+      <span class="title"><%= link_to event.name, event_path(event) %></span><br>
+      <div class="location">
+        <div class="img"><%= image_tag "pin.png", id: "maker", align: "left", size: "25x38" %></div>
+        <div class="info">
+          <%= event.location %><br>
+          <%= event.address %>
+          <div class="organizer"><%= t('.organizer', organize: event.organizer) %></div>
+        </div>
       </div>
-    <% end %>
+      <% if event.upcoming? %>
+        <div class="description">
+          <%= simple_format event.description %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
