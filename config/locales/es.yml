@@ -28,6 +28,12 @@ es:
     index:
       sign_in: 'Iniciar sesión'
       not_content: 'No hay contenido disponible'
+      intense_practice: 'Práctica intensiva'
+      practice_descrip: 'Todo un día de práctica en el diseño modular de la programación orientada a objectos, con el objectivo de desarrollar código que minimize los costos de los cambios.'
+      focused_fundamentals: 'Enfocado a los fundamentos'
+      fundamentals_descrip: 'Una oportunidad para enfocarse en los fundamentos del diseño y desarrollo de código. Sin la presión de tener un entregable.'
+      improve_skills: 'Mejora tus habilidades'
+      skills_descrip: 'Practica todo lo que en tu trabajo diario es difícil, trabaja en par con gente desconocida y en diferentes lenguajes de programación.'
 
   shared:
     sidebar:
