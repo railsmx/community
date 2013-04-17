@@ -3,8 +3,8 @@ require "test_helper"
 describe Identity do
   let(:identity_valid) { identity_valid = Identity.find_by_uid(3345444) }
   let(:identity_invalid) { identity_invalid = Identity.new }
-  
-  let(:auth) { auth = { "provider" => 'github', "uid" => 3345444, "info" => { "nickname" => 'test_user', 
+
+  let(:auth) { auth = { "provider" => 'github', "uid" => 3345444, "info" => { "nickname" => 'test_user',
     "email" => 'test@user.com' } } }
 
   describe "Validations" do

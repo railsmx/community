@@ -108,7 +108,6 @@ es:
       create_event: 'Crear evento'
       organizer: 'Organizado por %{organize}'
       edit_event: 'editar'
-      
 
   activerecord:
     errors:
@@ -118,13 +117,13 @@ es:
             name:
               blank: 'este campo es requerido'
             address:
-              blank: 'este campo es requerido'  
+              blank: 'este campo es requerido'
             location:
               blank: 'este campo es requerido'
             date:
               blank: 'este campo es requerido'
             contact:
-              blank: 'este campo es requerido' 
+              blank: 'este campo es requerido'
 
   date:
     formats:

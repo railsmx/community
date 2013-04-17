@@ -232,12 +232,16 @@ sidebar {
     padding-left: 0 !important;
     
   }
-
-  .sidebar_events {
-    font-size: 0.9em;
-  } 
   
+  .events {
+    .sidebar-events {
+      margin-top: ($margin / 2) !important;
+      font-size: 0.9em !important;
+    }
+  }
+
   .blog {
+    margin-top: $margin;
     .sidebar-blog {
       margin-top: ($margin / 2) !important;
       font-size: 0.8em !important;

@@ -16,12 +16,10 @@
 
     <div class="event-section current">
       <%= !@current_events.empty? ? (render @current_events) : t('.not_upcoming_events') %>
-    </div> <br>
-
-    <div class="event-section past-title">
-      <h2><%= t('.recent_events') %></h2>
-      <p><%= t('.text_past_events') %></p>
     </div>
+
+    <h2><%= t('.recent_events') %></h2>
+    <p><%= t('.text_past_events') %></p>
     
     <div class="event-section past">  
       <%= !@past_events.empty? ? (render @past_events) : t('.not_recent_events') %>

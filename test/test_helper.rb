@@ -42,7 +42,24 @@ class ActiveSupport::TestCase
     identity = Identity.find id
     warden.set_user identity, scope: :identity
   end
+
+  def stub_class_method(klass, method, &block)
+    klass.class_eval do
+      def self.metaclass
+        class << self; self; end
+      end
+    end
+
+    klass.metaclass.send(:define_method, method, ->(*args) { block.call(args) })
+  end
 end
+ #ensure
+  #  klass.class_eval do
+  #    metaclass.send(:undef_method, method)
+  #    metaclass.alias_method method, :"new_#{method}"
+  #    undef_method :"new_#{method}"
+  #  end
+  #end
 
 class ActionDispatch::IntegrationTest
   include Rails.application.routes.url_helpers
@@ -68,7 +85,7 @@ class Capybara::Rails::TestCase
   end
 
   def teardown
-    
+
   end
 
   def mock_omniauth(uid = '12334')

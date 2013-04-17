@@ -24,7 +24,6 @@
   
   .event-section {
     margin-bottom: ($margin * 2);
-    float: left;
   }
   
   .past-title {
@@ -374,7 +373,7 @@
 
 .blog {
   h4 {
-    color: $gray !important;
+    color: $black;
     margin-top: 0 !important;
     margin-bottom: 0;
   }

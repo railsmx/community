@@ -39,26 +39,18 @@ describe EventsController do
   end
 
   describe "create" do
-    it "should create new event for logged user" do
+    it "should create new event for logged user and post a tweet" do
       log_in_user
+
+      stub_class_method(Twitter, :update) {
+        |args| args[0].must_include "MagmaConf http://test.host/eventos/"
+      }
 
       post :create, event: params
 
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-    
-    it "should post a tweet when a new event is created" do
-      log_in_user
-
-      post :create, event: params
-
-      stub_tweet_event event, events_path
-
-      assert_redirected_to events_path
-      flash[:notice].wont_be_nil
-    end
-
 
     it "should not create new event when not logged user" do
       post :create, event: params
@@ -125,7 +117,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-    
+
     it "should redirect to events when event not found" do
       log_in_user
 
@@ -202,14 +194,14 @@ describe EventsController do
   describe 'show' do
     it "should display an existing event" do
       get :show, id: event.id
-      
+
       assert_response :success
       assert_template :show
     end
-    
+
     it "should redirect to events when event not found" do
       get :show, id: 10
-      
+
       assert_redirected_to events_path
       flash[:alert].wont_be_nil
     end
@@ -232,21 +224,14 @@ describe EventsController do
                   date: Date.today - (10 * (index + 1)),
                   identity_id: 100).save(validate: false)
       end
-      
+
       get :index
-      
+
       assert_response :success
       assert_template :index
-      
+
       assigns[:current_events].size.must_equal 4
       assigns[:past_events].size.must_equal 3
     end
-  end
-end
-
-def stub_tweet_event(event = {}, url)
-  TweetEvent.class_exec(event, url) do |event, url|
-    body = -> { Twitter.update("#{event[:name]} #{url}/#{event[:id]}") }
-    define_method :update, body
   end
 end

@@ -24,14 +24,14 @@ module ApplicationHelper
   end
 
   def display_create_event_link
-    link_to t('.add_event'), new_event_path, :class => 'btn' if current_identity
+    link_to t('.add_event'), new_event_path, class: 'btn' if current_identity
   end
 
   def display_edit_event_link(event)
     link_to edit_event_path(event), class: "edit", style: "left: 0;" do
       message = t('.edit_event')
       message << " "
-      message << content_tag(:div, '', :class => "icon-edit")
+      message << content_tag(:div, '', class: "icon-edit")
       message.html_safe
     end if event.identity == current_identity
   end
