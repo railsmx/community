@@ -15,9 +15,9 @@ es:
       blog: 'Blog'
 
   home:
-    about:
+    acerca:
       who_we_are: 'Acerca de ...'
-    privacy:
+    privacidad:
       privacy: 'Privacidad'
     index:
       sign_in: 'Iniciar sesión'
