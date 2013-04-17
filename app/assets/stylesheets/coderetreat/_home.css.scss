@@ -49,6 +49,40 @@
 
     .right-section {
       margin: ($margin * 2) 0 ($margin * 2) $margin;
+
+      .events-sidebar {
+        height: 330px;
+        width: 295px;
+        margin: 0 ($margin / 2) ($margin / 2) 0;
+        padding: $padding;
+        overflow: auto;
+        text-align: justify;
+        vertical-align: center;
+
+        -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+        -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+        box-shadow:         3px 3px 5px -2px $light-gray;
+        border: 1px solid $light-gray;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background-color: white;
+
+        .icon-calendar {
+          font-family: 'FontAwesome';
+          color: $green;
+          font-size: $text-size * 2;
+        }
+
+        .title {
+          margin-left: ($margin / 2);
+          color: $green;
+          text-align: center;
+          font-weight: 900;
+          font-size: 22px;
+          font-family: 'Roboto';
+        }
+      }
     }
 
     h3 {

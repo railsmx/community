@@ -35,6 +35,7 @@ es:
       improve_skills: 'Mejora tus habilidades'
       skills_descrip: 'Practica todo lo que en tu trabajo diario es difícil, trabaja en par con gente desconocida y en diferentes lenguajes de programación.'
       more_information: 'Más información...'
+      upcoming_events: 'Próximos eventos'
 
   shared:
     sidebar:
