@@ -16,7 +16,7 @@ body {
   width: grid-width(14);
   overflow: hidden;
   margin: 0 auto;
-  
+
   h1 {
     font-size: 32px;
   }
@@ -114,7 +114,7 @@ header {
 
   .main-header {
     @include columns(12);
-    margin: ($margin / 2) ($margin * 4) ($margin / 2) ($margin * 4);
+    margin: ($margin / 2) ($margin * 4) ($margin / 2) ($margin * 4) !important;
   }
 
   .logo {
@@ -126,36 +126,30 @@ header {
     list-style-type: none;
     display: inline-block;
     padding: 0;
-    margin-left: $margin;
+    margin: ($margin * 1.5) 0 ($margin * 1.5) $margin;
 
     li {
       float: left;
       color: $gray;
       margin-right: ($margin * 1.5);
       float: right;
-      &:first-child { margin-right: 0; }
+
+      &:first-child {
+        margin-right: 0;
+      }
     }
 
     a {
       color: $gray;
       font-family: 'Roboto';
       font-size: 18px;
-      font-weight: lighter;
+      font-weight: 400;
       text-decoration: none;
+
       &:hover {
         color: $green;
       }
     }
-  }
-
-  .welcome {
-    text-align: right;
-    color: $light-gray;
-  }
-
-  #logo {
-    font-size: 24px;
-    padding-right: 10px;
   }
 }
 
@@ -280,18 +274,12 @@ sidebar {
   -moz-box-shadow:    1px 3px 5px -1px $light-gray;
   -webkit-box-shadow: 1px 3px 5px -1px $light-gray;
   box-shadow:         1px 3px 5px -1px $light-gray;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
 }
 
 .shadow-top {
   -moz-box-shadow:    0px -3px 5px -1px $light-gray;
   -webkit-box-shadow: 0px -3px 5px -1px $light-gray;
   box-shadow:         0px -3px 5px -1px $light-gray;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
 }
 
 .form-event {
