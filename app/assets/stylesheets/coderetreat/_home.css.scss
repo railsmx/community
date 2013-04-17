@@ -15,7 +15,8 @@
 
   .content {
     p {
-      text-align: justify;
+      color: $text-color;
+      font-size: $text-size;
     }
 
     a {
@@ -25,16 +26,20 @@
       font-weight: bold;
       font-style: italic;
     }
+
+    .top-section {
+      overflow: hidden;
+      padding: $margin 0 $margin 0;
+      border-bottom: 1px solid $text-color;
+    }
+
+    h3 {
+      color: $header1-color;
+      font-weight: bold;
+    }
   }
 
   .notice, .alert {
     margin-top: $margin;
   }
 }
-
-.home, .about, .contact, .privacy, .new_event, .edit_event {
-  sidebar {
-    padding-top: ($padding * 3) !important;
-  }
-}
-

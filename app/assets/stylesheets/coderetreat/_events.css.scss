@@ -1,277 +1,273 @@
-.content {
-  padding: $padding 0 0 0;
+.events {
+  .content {
+    padding: $padding 0 0 0;
 
-  sidebar {
-    padding: ($padding * 3) $padding 0 ($padding / 2) !important;  
-  }
-    
-  .blog {
-    margin-left: 0px;
-    
-    h3 {
-      color: $black;
-      font-weight: lighter;  
+    sidebar {
+      padding: ($padding * 3) $padding 0 ($padding / 2) !important;
     }
-    
-    .sidebar-blog {
-      font-size: 0.8em;
-    }
-  }
-  
-  .events {
-    padding-right: $padding;
-  }
-  
-  .event-section {
-    margin-bottom: ($margin * 2);
-    float: left;
-  }
-  
-  .past-title {
-    margin-bottom: 0 !important;
-  }
 
-  .btn {
-    float: right;
-    color: #fff;
-    margin-top: ($margin / 4);
-  }
+    .blog {
+      margin-left: 0px;
 
-  a {
-    color: $light-red;
-    text-decoration: none;
-  }
-
-  .shadow {
-    -moz-box-shadow:    3px 3px 5px -2px $light-gray;
-    -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
-    box-shadow:         3px 3px 5px -2px $light-gray;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-
-  .first {
-    margin: $margin 0 ($margin / 2) 0;
-    height: 100%;
-    overflow: auto;
-    border: 1px solid $light-gray;
-    text-align: justify;
-    @extend .shadow;
-
-    .datetime {
-      padding: ($padding * 3) 0 ($padding * 3) 0;
-      text-align: center;
-      margin-left: 0 !important;
-
-      .month {
-        font-size: 1.5em;
+      h3 {
         color: $black;
-      }
-
-      .day {
-        font-size: 4.0em;
-        font-weight: bold;
-        color: $red;
-        line-height: .7em;
-      }
-
-      .weekday {
-        color: $gray;
-        font-size: 1.2em;
-        line-height: 1.7em;
-      }
-
-      .time {
-        font-size: 1.2em;
-        font-weight: bold;
-        line-height: .7em;
-      }
-    }
-
-    .main-data {
-      padding: $padding 0 $padding 0;
-      margin-right: 19.7px;
-
-      .title {
-        color: $red;
-        font-family: "Helvetica";
-        font-weight: bold;
-        font-size: 2.5em;
-      }
-
-      .location {
-        text-align: left !important;
-        color: $gray;
-        font-size: 1.1em;
-        line-height: 1.1em;
-        
-        .img {
-          width: 5%;
-          overflow: hidden;
-          float: left;
-        }
-        
-        .info {
-          width: 95%;
-          float: left;
-          
-          .organizer {
-            color: $red;
-            text-align: left;
-            font-family: "Helvetica";
-            font-weight: lighter;
-            font-size: .9em;
-            margin-top: ($margin / 2);
-            margin-bottom: $margin;
-          }
-        }         
-      }
-
-      .description {
-        margin-top: ($margin / 2);
-        color: $gray;
-        font-family: "Helvetica";
         font-weight: lighter;
       }
-    }
-  }
 
-  .second {
-    height: 100%;
-    overflow: auto;
-    border: 1px solid $light-gray;
-    text-align: justify;
-    vertical-align: center;
-    @extend .shadow;
-
-    .datetime {
-      padding: ($padding * 3) 0 ($padding * 3) 0;
-      text-align: center;
-      margin-left: 0 !important;
-
-      .month {
-        font-size: 1.2em;
-        color: $black;
-      }
-
-      .day {
-        font-size: 3.0em;
-        font-weight: bold;
-        color: $red;
-        line-height: .7em;
-      }
-
-      .weekday {
-        color: $gray;
-        font-size: 1.0em;
-        line-height: 1.7em;
-      }
-
-      .time {
-        font-size: 1.0em;
-        font-weight: bold;
-        line-height: .7em;
+      .sidebar-blog {
+        font-size: 0.8em;
       }
     }
 
-    .main-data {
-      padding: $padding $padding $padding 0;
+    .events {
+      padding-right: $padding;
+    }
 
-      .title {
-        color: $red;
-        font-family: "Helvetica";
-        font-weight: bold;
-        font-size: 1.5em;
-      }
+    .event-section {
+      margin-bottom: ($margin * 2);
+      float: left;
+    }
 
-      .location {
-        text-align: left !important;
-        color: $gray;
-        font-size: 1em;
-        line-height: 1.1em;
-        
-        .img {
-          width: 10%;
-          overflow: hidden;
-          float: left;
+    .past-title {
+      margin-bottom: 0 !important;
+    }
+
+    .btn {
+      float: right;
+      color: #fff;
+      margin-top: ($margin / 4);
+    }
+
+    a {
+      color: $light-red;
+      text-decoration: none;
+    }
+
+    .shadow {
+      -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+      -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+      box-shadow:         3px 3px 5px -2px $light-gray;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+
+    .first {
+      margin: $margin 0 ($margin / 2) 0;
+      height: 100%;
+      overflow: auto;
+      border: 1px solid $light-gray;
+      text-align: justify;
+      @extend .shadow;
+
+      .datetime {
+        padding: ($padding * 3) 0 ($padding * 3) 0;
+        text-align: center;
+        margin-left: 0 !important;
+
+        .month {
+          font-size: 1.5em;
+          color: $black;
         }
-        
-        .info {
-          width: 90%;
-          float: left;
-          
-          .organizer {
-            color: $red;
-            text-align: left;
-            font-family: "Helvetica";
-            font-weight: lighter;
-            font-size: .9em;
-            margin-top: ($margin / 2);
-            margin-bottom: $margin;
+
+        .day {
+          font-size: 4.0em;
+          font-weight: bold;
+          color: $red;
+          line-height: .7em;
+        }
+
+        .weekday {
+          color: $gray;
+          font-size: 1.2em;
+          line-height: 1.7em;
+        }
+
+        .time {
+          font-size: 1.2em;
+          font-weight: bold;
+          line-height: .7em;
+        }
+      }
+
+      .main-data {
+        padding: $padding 0 $padding 0;
+        margin-right: 19.7px;
+
+        .title {
+          color: $red;
+          font-family: "Helvetica";
+          font-weight: bold;
+          font-size: 2.5em;
+        }
+
+        .location {
+          text-align: left !important;
+          color: $gray;
+          font-size: 1.1em;
+          line-height: 1.1em;
+
+          .img {
+            width: 5%;
+            overflow: hidden;
+            float: left;
           }
-        }         
+
+          .info {
+            width: 95%;
+            float: left;
+
+            .organizer {
+              color: $red;
+              text-align: left;
+              font-family: "Helvetica";
+              font-weight: lighter;
+              font-size: .9em;
+              margin-top: ($margin / 2);
+              margin-bottom: $margin;
+            }
+          }
+        }
+
+        .description {
+          margin-top: ($margin / 2);
+          color: $gray;
+          font-family: "Helvetica";
+          font-weight: lighter;
+        }
       }
-      
-      .description {
-        margin-top: ($margin / 2);
-        color: $gray;
-        font-family: "Helvetica";
-        font-weight: lighter;
-        font-size: .9em;
+    }
+
+    .second {
+      height: 100%;
+      overflow: auto;
+      border: 1px solid $light-gray;
+      text-align: justify;
+      vertical-align: center;
+      @extend .shadow;
+
+      .datetime {
+        padding: ($padding * 3) 0 ($padding * 3) 0;
+        text-align: center;
+        margin-left: 0 !important;
+
+        .month {
+          font-size: 1.2em;
+          color: $black;
+        }
+
+        .day {
+          font-size: 3.0em;
+          font-weight: bold;
+          color: $red;
+          line-height: .7em;
+        }
+
+        .weekday {
+          color: $gray;
+          font-size: 1.0em;
+          line-height: 1.7em;
+        }
+
+        .time {
+          font-size: 1.0em;
+          font-weight: bold;
+          line-height: .7em;
+        }
+      }
+
+      .main-data {
+        padding: $padding $padding $padding 0;
+
+        .title {
+          color: $red;
+          font-family: "Helvetica";
+          font-weight: bold;
+          font-size: 1.5em;
+        }
+
+        .location {
+          text-align: left !important;
+          color: $gray;
+          font-size: 1em;
+          line-height: 1.1em;
+
+          .img {
+            width: 10%;
+            overflow: hidden;
+            float: left;
+          }
+
+          .info {
+            width: 90%;
+            float: left;
+
+            .organizer {
+              color: $red;
+              text-align: left;
+              font-family: "Helvetica";
+              font-weight: lighter;
+              font-size: .9em;
+              margin-top: ($margin / 2);
+              margin-bottom: $margin;
+            }
+          }
+        }
+
+        .description {
+          margin-top: ($margin / 2);
+          color: $gray;
+          font-family: "Helvetica";
+          font-weight: lighter;
+          font-size: .9em;
+        }
       }
     }
-  }
 
-  .third {
-    @extend .second;
+    .third {
+      @extend .second;
 
-    .datetime {
-      padding: $padding 0 $padding $padding;
+      .datetime {
+        padding: $padding 0 $padding $padding;
+      }
+
+      .main-data {
+        padding-left: 20px;
+      }
     }
-    
-    .main-data {
-      padding-left: 20px;
+
+    .current > :nth-child(even) {
+        margin: ($margin / 2) 0 ($margin / 2) 0;
+    }
+
+    .current > :nth-child(odd):not(.first) {
+        margin: ($margin / 2) 0 ($margin / 2) $margin;
+    }
+
+    .past > :nth-child(odd) {
+        margin: ($margin / 2) 0 ($margin / 2) 0;
+    }
+
+    .past > :nth-child(even) {
+        margin: ($margin / 2) 0 ($margin / 2) $margin;
+    }
+
+    h2 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .edit {
+      display: none;
+      position: absolute;
+    }
+
+    .icon-edit {
+      color: $red;
     }
   }
 
-  .current > :nth-child(even) {
-      margin: ($margin / 2) 0 ($margin / 2) 0;
-  }
-
-  .current > :nth-child(odd):not(.first) {
-      margin: ($margin / 2) 0 ($margin / 2) $margin;
-  }
-
-  .past > :nth-child(odd) {
-      margin: ($margin / 2) 0 ($margin / 2) 0;
-  }
-
-  .past > :nth-child(even) {
-      margin: ($margin / 2) 0 ($margin / 2) $margin;
-  }
-
-  h2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: $red;
-    margin: 0;
-  }
-
-  .edit {
-    display: none;
-    position: absolute;
-  }
-
-  .icon-edit {
-    color: $red;
-  }
-}
-
-.event-data {
+  .event-data {
   margin: 0 0 $margin 0;
 
   .description-data {
@@ -299,10 +295,10 @@
         font-weight: bold;
         font-size: 0.9em;
         line-height: 1.1em;
-        
+
         .image {
           margin-bottom: $margin;
-          margin-top: 0; 
+          margin-top: 0;
         }
       }
 
@@ -365,22 +361,4 @@
     }
   }
 }
-
-.event {
-  sidebar {
-    padding-top: ($padding * 3) !important;
-  }
-}
-
-.blog {
-  h4 {
-    color: $black;
-    margin-top: 0 !important;
-    margin-bottom: 0;
-  }
-  
-  .sidebar-blog {
-    margin-top: ($margin / 2) !important;
-    font-size: 0.8em;
-  }
 }

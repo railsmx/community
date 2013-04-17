@@ -17,48 +17,20 @@ body {
   overflow: hidden;
   margin: 0 auto;
 
-  h1 {
-    font-size: 32px;
-  }
-
-  .one-half {
-    @include columns(1.49);
-  }
-
-  .one-3quarters {
-    @include columns(1.75);
-  }
-
   .two {
     @include columns(2);
-  }
-
-  .two-half {
-    @include columns(2.5);
   }
 
   .three {
     @include columns(3);
   }
 
-  .three-custom {
-    @include columns(3.097);
-  }
-
   .four {
     @include columns(4);
   }
 
-  .four-half {
-    @include columns(4.38);
-  }
-
   .five {
     @include columns(5);
-  }
-
-  .five-half {
-    @include columns(5.52);
   }
 
   .six {
@@ -83,14 +55,6 @@ body {
 
   .eleven {
     @include columns(11);
-  }
-
-  .eleven-custom {
-    @include columns(11.05);
-  }
-
-  .eleven-3quarters {
-    @include columns(11.75);
   }
 
   .twelve {
