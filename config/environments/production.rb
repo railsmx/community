@@ -15,7 +15,7 @@ Community::Application.configure do
   config.action_controller.perform_caching = true
 
   config.cache_store = :dalli_store,
-    ENV["MEMCACHIER_SERVERS"].split(","),
+    ENV["MEMCACHIER_SERVERS"],
     { username: ENV["MEMCACHIER_USERNAME"],
       password: ENV["MEMCACHIER_PASSWORD"] }
 
