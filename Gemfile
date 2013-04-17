@@ -33,16 +33,11 @@ end
 gem 'jquery-rails'
 gem 'bourbon'
 
-#gem 'mac_generators'
-#gem 'bootstrap-datepicker-rails'
-#gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails',
   :require => 'bootstrap-datepicker-rails',
   :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 gem 'geocoder'
-#gem "friendly_id", "~> 4.0.9"
-#gem 'friendly_id', :github => 'norman/friendly_id', :branch => 'rails4'
 
 group :test do
   gem 'minitest-rails'
@@ -57,6 +52,8 @@ group :development do
   gem 'foreman'
   gem 'cane'
   gem 'brakeman'
+  gem 'better_errors'
+  gem 'meta_request'
 end
 
 gem 'font-awesome-sass-rails'
