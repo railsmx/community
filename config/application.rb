@@ -17,3 +17,12 @@ module Community
     config.log_formatter = PrettyFormatter.formatter
   end
 end
+
+module AssetsInitializers
+  class Railtie < Rails::Railtie
+    initializer "assets_initializers.initialize_rails",
+      :group => :assets do |app|
+      require "#{Rails.root}/config/initializers/community.rb"
+    end
+  end
+end
