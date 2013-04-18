@@ -118,6 +118,91 @@ footer {
   position: absolute;
   width: 100%;
 
+  .container {
+    .content-footer {
+      width: grid-width(14);
+      padding: 0 ($margin * 4) 0 ($margin * 4);
+      background-color: #fff;
+      float: left;
+      margin: ($margin * 2) 0 $margin 0;
+
+      p {
+         text-align: justify;
+         font-size: $text-size;
+         font-weight: 100;
+         font-family: 'Roboto';
+         margin: 0;
+         &:first-child { float: left; }
+      }
+
+      a {
+        color: $green;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: $text-size - 2;
+        font-family: 'Roboto';
+      }
+
+      .tweet_link {
+        color: $green;
+        font-size: 14px;
+        float: left;
+        margin-left: $margin / 2;
+      }
+      .timeline-header, .customisable-border { display: none; }
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .twitter {
+        background-color: $light-red !important;
+      }
+
+      .three {
+        .tweet {
+          float: left;
+
+          .each_tweet {
+            color: $text-color;
+            float: left;
+            width: 100%;
+            margin-top: 15px;
+          }
+
+          .ago {
+            @extend .each_tweet;
+            font-size: 12px;
+            margin-top: 5px;
+          }
+
+          ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+              list-style: none;
+
+              p {
+                display: block;
+
+                a {
+                  font-weight: normal;
+                  color: $text-color;
+                }
+              }
+
+              .tweet_text {
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .logo {
     font-size: 1.2em;
     display: block;
@@ -127,48 +212,6 @@ footer {
     img {
       width: 220px;
       height: 35%;
-    }
-  }
-
-  .content-footer {
-    width: grid-width(14);
-    padding: 0 ($margin * 4) 0 ($margin * 4);
-    background-color: #fff;
-    float: left;
-    margin: ($margin * 2) 0 $margin 0;
-
-    p {
-       text-align: justify;
-       font-size: $text-size;
-       font-weight: 100;
-       font-family: 'Roboto';
-       margin: 0;
-       &:first-child { float: left; }
-    }
-
-    a {
-      color: $green;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: $text-size - 2;
-      font-family: 'Roboto';
-    }
-
-    .tweet {
-      color: $green;
-      font-size: 14px;
-      float: left;
-      margin-left: $margin / 2;
-    }
-    .timeline-header, .customisable-border { display: none; }
-
-    img {
-      display: block;
-      margin: 0 auto;
-    }
-
-    .twitter {
-      background-color: $light-red !important;
     }
   }
 
