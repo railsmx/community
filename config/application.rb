@@ -15,14 +15,8 @@ module Community
     config.autoload_paths += Dir["#{config.root}/lib"]
 
     config.log_formatter = PrettyFormatter.formatter
-  end
-end
 
-module AssetsInitializers
-  class Railtie < Rails::Railtie
-    initializer "assets_initializers.initialize_rails",
-      :group => :assets do |app|
-      require "#{Rails.root}/config/initializers/community.rb"
-    end
+    require "#{Rails.root}/config/initializers/community.rb"
+    #config.assets.precompile += ["railsmx.css", "railsmx.js"]
   end
 end
