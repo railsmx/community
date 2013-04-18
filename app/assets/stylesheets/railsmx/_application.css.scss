@@ -267,6 +267,10 @@ sidebar {
 .container {
   &.social {
     overflow: visible !important;
+
+    &:after {
+      clear: both;
+    }
   }
 }
 
