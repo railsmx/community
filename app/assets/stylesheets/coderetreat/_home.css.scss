@@ -82,7 +82,7 @@
           &:last-child {
             margin-top: 0;
             border-bottom: none;
-            padding-bottom: $padding;
+            padding-bottom: 0;
           }
 
           .img {
@@ -116,6 +116,7 @@
           .date {
             margin-left: 25px;
             line-height: 2.0em;
+            font-weight: 500;
           }
 
           .link {

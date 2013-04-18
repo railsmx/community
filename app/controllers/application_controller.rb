@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_events
-    @current_events = Event.current_events(3)
+    @current_events = Event.current_events(2)
   end
 end
 
