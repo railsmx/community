@@ -32,7 +32,7 @@
     .top-section {
       overflow: hidden;
       padding: $padding 0 $padding 0;
-      border-bottom: 1px solid $gray;
+      border-bottom: 1px solid $light-gray;
     }
 
     .left-section {
@@ -74,37 +74,53 @@
           font-family: 'Roboto';
         }
 
-        .img {
-          width: 20px;
-          overflow: hidden;
-          float: left;
-          margin-top: ($margin / 3);
-        }
+        .event {
+          margin-top: 20px;
+          border-bottom: 1px solid $light-gray;
+          padding-bottom: $padding;
 
-        a {
-          color: $green;
-          font-family: "Roboto";
-          font-size: $text-size;
-          font-weight: 400;
-          font-style: italic;
-          text-decoration: none;
-          float: right;
-        }
+          &:last-child {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: $padding;
+          }
 
-        h3 {margin: 20px 0 5px 0;}
+          .img {
+            width: 20px;
+            overflow: hidden;
+            float: left;
+            margin-top: ($margin / 3);
+          }
 
-        h4 {
-          color: $text-color;
-          text-align: left;
-          font-weight: 400;
-          font-size: $text-size;
-          font-family: 'Roboto';
-          margin: 0;
-        }
+          a {
+            color: $green;
+            font-family: "Roboto";
+            font-size: $text-size;
+            font-weight: 400;
+            font-style: italic;
+            text-decoration: none;
+            float: right;
+          }
 
-        .date {
-          margin-left: 25px;
-          line-height: 2.0em;
+          h3 {margin: 20px 0 5px 0;}
+
+          h4 {
+            color: $text-color;
+            text-align: left;
+            font-weight: 400;
+            font-size: $text-size;
+            font-family: 'Roboto';
+            margin: 0;
+          }
+
+          .date {
+            margin-left: 25px;
+            line-height: 2.0em;
+          }
+
+          .link {
+            overflow: hidden;
+          }
         }
       }
 
