@@ -56,11 +56,12 @@
               <li><%= link_to t('.who_we_are'), "/acerca" %></li>
               <li><%= link_to t('.privacy'), "/privacidad" %></li>
             </ul>
-            <%= image_tag "crowdint.png" %>
+            <%= link_to (image_tag "crowdint.png"), "http://www.crowdint.com" %>
           </div>
         </div>
       </div>
     </footer>
+
     <script type='text/javascript'>
       jQuery(function($){
         $(".tweet").tweet({
@@ -68,7 +69,7 @@
           join_text: "auto",
           avatar_size: 32,
           count: 2,
-          auto_join_text_default: "", 
+          auto_join_text_default: "",
           auto_join_text_ed: "",
           auto_join_text_ing: "",
           auto_join_text_reply: "",
