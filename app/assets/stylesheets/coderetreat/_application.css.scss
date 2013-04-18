@@ -166,6 +166,10 @@ footer {
       display: block;
       margin: 0 auto;
     }
+
+    .twitter {
+      background-color: $light-red !important;
+    }
   }
 
   .submenu {
@@ -389,3 +393,4 @@ sidebar {
 .datapicker {
   position: absolute;
 }
+.timeline-header h1.summary{display: none;}

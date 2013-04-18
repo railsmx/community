@@ -18,10 +18,10 @@
             <%= link_to image_tag("logo.png", border: 0), root_path %>
           </div>
           <ul class="menu five">
-            <li><%= link_to t('.home'), root_path %></li>
-            <li><%= link_to t('.events'), events_path %></li>
-            <li><%= link_to t('.blog'), "#" %></li>
-            <li><%= link_to t('.contact'), "#" %></li>
+            <li><%= link_to t('.menu-contact'), "#" %></li>
+            <li><%= link_to t('.menu-blog'), "#" %></li>
+            <li><%= link_to t('.menu-events'), events_path %></li>
+            <li><%= link_to t('.menu-home'), root_path %></li>
           </ul>
         </div>
       </div>
@@ -42,7 +42,13 @@
           <div class="three">
             <p><%= t('.twitter') %></p>
             <%= link_to '@CodeRetreatMex', 'https://twitter.com/coderetreatmex', class: "tweet", target: "_blank" %>
-            <a class="twitter-timeline" href="https://twitter.com/mendozagioo" data-widget-id="324290970462076929" data-conversation="none" data-cards="hidden" height="200">Tweets por @mendozagioo</a>
+
+            <!--
+            <blockquote class="twitter-tweet">
+              <a href="https://twitter.com/twitterapi/status/112652479837110273" data-cards="hidden" height="200" width="300" align="left" lang="es" data-chrome="noheader noborders nofooter noauthor transparent noactions" >November 7, 2011</a>
+            </blockquote>-->
+            
+            <a class="twitter-timeline" href="https://twitter.com/mendozagioo" data-widget-id="324290970462076929" data-conversation="none" data-cards="hidden" height="200" data-chrome="noheader noborders nofooter noauthor transparent" count="2">Tweets por @mendozagioo</a>
           </div>
           <div class="three">
             <p><%= t('.blog') %></p>
@@ -59,8 +65,84 @@
         </div>
       </div>
     </footer>
+
+    
+    <!--<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>-->
+    
     <script type="text/javascript">
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+      /*function relative_time(time_value) {  
+        var values = time_value.split(" ");  
+        time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];  
+        var parsed_date = Date.parse(time_value);  
+        var relative_to = (arguments.length > 1) ? arguments[1] : new Date();  
+        var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);  
+        delta = delta + (relative_to.getTimezoneOffset() * 60);  
+        
+        var r = '';  
+        if (delta < 60) {  
+              r = 'a minute ago';  
+        } else if(delta < 120) {  
+              r = 'couple of minutes ago';  
+        } else if(delta < (45*60)) {  
+              r = (parseInt(delta / 60)).toString() + ' minutes ago';  
+        } else if(delta < (90*60)) {  
+              r = 'an hour ago';  
+        } else if(delta < (24*60*60)) {  
+              r = '' + (parseInt(delta / 3600)).toString() + ' hours ago';  
+        } else if(delta < (48*60*60)) {  
+              r = '1 day ago';  
+        } else {  
+              r = (parseInt(delta / 86400)).toString() + ' days ago';  
+        }  
+        
+            return r;  
+        }  
+        
+      });*/
+    </script>
+    
+    <!--<script src="http://widgets.twimg.com/j/2/widget.js"></script>-->
+    <!--
+    <script type="text/javascript">
+      new TWTR.widget({
+        version: 2,
+        type: 'profile',
+        rpp: 2,
+        interval: 30000,
+        width: 'auto',
+        height: 300,
+        theme: {
+          shell: {
+            background: '#F0F0F0',
+            color: '#000000'
+          },
+          tweets: {
+            background: '#F0F0F0',
+            color: '#000000',
+            links: '#AA0000'
+          }
+        },
+        features: {
+          scrollbar: false,
+          loop: true,
+          live: false,
+          hashtags: true,
+          timestamp: true,
+          avatars: false,
+          behavior: 'all'
+        }
+      }).render().setUser('mendozagioo').start();
+    </script>
+    -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#twitter-widget-0").load(function() {
+          //$(this.contentDocument).find("body").addClass("hola");
+          $(this).find('a.u-url').hide()
+        });
+      });
     </script>
   </body>
 </html>

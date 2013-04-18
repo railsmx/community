@@ -1,14 +1,5 @@
-<sidebar class="three">
-  <div class="events">
-    <h4><%= t('.coming_events') %></h4>
-    <div class="sidebar-events">
-      <%= !current_events.empty? ? (render partial: 'shared/event', collection: current_events) : t('.not_content') %>
-    </div>
-  </div>
-  <div class="blog">
-    <h4><%= t('.blog') %></h4>
-    <div class="sidebar-blog">
-      <%= t('.not_content') %>
-    </div>    
-  </div>
-</sidebar>
+<div class="events-sidebar">
+  <span class="icon-calendar"><%= "" %></span>
+  <span class="title"><%= t('.coming_events') %></span><br>
+  <%= !current_events.empty? ? (render partial: 'shared/event', collection: current_events) : t('.not_content') %>
+</div>

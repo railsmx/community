@@ -34,9 +34,6 @@
   </section>
 
   <section class="right-section four">
-    <div class="events-sidebar">
-      <span class="icon-calendar"><%= "" %></span>
-      <span class="title"><%= t('.upcoming_events') %></span><br>
-    </div>
+    <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
   </section>
 </div>
