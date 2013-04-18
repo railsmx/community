@@ -264,6 +264,12 @@ sidebar {
   }
 }
 
+.container {
+  &.social {
+    overflow: visible !important;
+  }
+}
+
 .social-buttons {
   display: inline-block;
   list-style-type: none;
