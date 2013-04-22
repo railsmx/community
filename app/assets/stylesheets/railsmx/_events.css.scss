@@ -54,7 +54,7 @@
   }
 
   .first {
-    margin: $margin 0 ($margin / 2) 0;
+    margin: $margin 3px ($margin / 2) 0;
     height: 100%;
     overflow: auto;
     border: 1px solid $light-gray;
@@ -93,7 +93,7 @@
 
     .main-data {
       padding: $padding 0 $padding 0;
-      margin-right: 19.7px;
+      margin-right: $margin - 4;
 
       .title {
         color: $red;
@@ -241,7 +241,7 @@
   }
 
   .current > :nth-child(odd):not(.first) {
-      margin: ($margin / 2) 0 ($margin / 2) $margin;
+      margin: ($margin / 2) 4px ($margin / 2) $margin - 4;
   }
 
   .past > :nth-child(odd) {
