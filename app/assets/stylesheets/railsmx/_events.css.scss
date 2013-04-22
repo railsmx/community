@@ -238,6 +238,7 @@
 
   .current > :nth-child(even) {
       margin: ($margin / 2) 0 ($margin / 2) 0;
+      clear: left;
   }
 
   .current > :nth-child(odd):not(.first) {
