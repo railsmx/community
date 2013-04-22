@@ -1,32 +1,39 @@
 <% title t('.events') %>
-<div class="twelve content">
+<div class="content twelve">
   <%= display_notice %>
+
   <sidebar class="blog three">
     <h4><%= t('.blog') %></h4>
     <div class="sidebar-blog">
       <%= t('.not_content') %>
     </div>
   </sidebar>
-  <div class="events nine">
+
+  <section class="events-section nine">
     <h1>
       <%= t('.events') %>
       <%= display_create_event_link %>
     </h1>
     <p><%= t('.text_current_events') %></p>
 
-    <div class="event-section current">
-      <%= !@current_events.empty? ? (render @current_events) : t('.not_upcoming_events') %>
+    <div class="event-row current">
+      <% cache [current_identity, @current_events] do %>
+        <%= @current_events.any? ? (render partial: 'event', collection: @current_events) : t('.not_upcoming_events') %>
+      <% end %>
     </div> <br>
 
-    <div class="event-section past-title">
+    <div class="event-row past-title">
       <h2><%= t('.recent_events') %></h2>
       <p><%= t('.text_past_events') %></p>
     </div>
-    
-    <div class="event-section past">  
-      <%= !@past_events.empty? ? (render @past_events) : t('.not_recent_events') %>
+
+    <div class="event-row past">
+      <% cache @past_events do %>
+        <%= @past_events.any? ? (render partial: 'event', collection: @past_events) : t('.not_recent_events') %>
+      <% end %>
     </div>
-  </div>
+  </section>
+
 </div>
 
 <script>

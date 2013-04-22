@@ -1,32 +1,36 @@
+.container {
 .content {
   padding: $padding 0 0 0;
+  background-color: $light-gray;
 
   sidebar {
-    padding: ($padding * 3) $padding 0 ($padding / 2) !important;  
+    padding: ($padding * 3) $padding 0 ($padding / 2) !important;
   }
-    
+
   .blog {
     margin-left: 0px;
-    
+
     h3 {
       color: $black;
-      font-weight: lighter;  
+      font-weight: lighter;
     }
-    
+
     .sidebar-blog {
       font-size: 0.8em;
     }
   }
-  
-  .events {
+
+  .events-section {
     padding-right: $padding;
+
+    .event-row {
+      margin-bottom: ($margin * 2);
+      float: left;
+      overflow: hidden;
+      background-color: $light-red;
+    }
   }
-  
-  .event-section {
-    margin-bottom: ($margin * 2);
-    float: left;
-  }
-  
+
   .past-title {
     margin-bottom: 0 !important;
   }
@@ -105,17 +109,17 @@
         color: $gray;
         font-size: 1.1em;
         line-height: 1.1em;
-        
+
         .img {
           width: 5%;
           overflow: hidden;
           float: left;
         }
-        
+
         .info {
           width: 95%;
           float: left;
-          
+
           .organizer {
             color: $red;
             text-align: left;
@@ -125,7 +129,7 @@
             margin-top: ($margin / 2);
             margin-bottom: $margin;
           }
-        }         
+        }
       }
 
       .description {
@@ -190,17 +194,17 @@
         color: $gray;
         font-size: 1em;
         line-height: 1.1em;
-        
+
         .img {
           width: 10%;
           overflow: hidden;
           float: left;
         }
-        
+
         .info {
           width: 90%;
           float: left;
-          
+
           .organizer {
             color: $red;
             text-align: left;
@@ -210,9 +214,9 @@
             margin-top: ($margin / 2);
             margin-bottom: $margin;
           }
-        }         
+        }
       }
-      
+
       .description {
         margin-top: ($margin / 2);
         color: $gray;
@@ -229,7 +233,7 @@
     .datetime {
       padding: $padding 0 $padding $padding;
     }
-    
+
     .main-data {
       padding-left: 20px;
     }
@@ -299,10 +303,10 @@
         font-weight: bold;
         font-size: 0.9em;
         line-height: 1.1em;
-        
+
         .image {
           margin-bottom: $margin;
-          margin-top: 0; 
+          margin-top: 0;
         }
       }
 
@@ -378,9 +382,10 @@
     margin-top: 0 !important;
     margin-bottom: 0;
   }
-  
+
   .sidebar-blog {
     margin-top: ($margin / 2) !important;
     font-size: 0.8em;
   }
+}
 }

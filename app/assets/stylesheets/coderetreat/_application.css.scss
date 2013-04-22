@@ -89,12 +89,12 @@ header {
     list-style-type: none;
     display: inline-block;
     padding: 0;
-    margin: ($margin * 1.5) 0 ($margin * 1.5) $margin;
+    margin: ($margin * 1.5) 0 ($margin * 2.5) $margin;
 
     li {
       float: left;
       color: $gray;
-      margin-right: ($margin * 1.5);
+      margin-right: ($margin * 2.5);
       float: right;
 
       &:first-child {margin-right: 0;}
@@ -126,10 +126,18 @@ footer {
       float: left;
       margin: ($margin * 2) 0 $margin 0;
 
+      h4 {
+        font-size: $text-size - 2;
+        float: left;
+        font-weight: bold;
+        color: $gray;
+        margin: 0;
+      }
+
       p {
          text-align: justify;
          font-size: $text-size;
-         font-weight: 100;
+         font-weight: 300;
          font-family: 'Roboto';
          margin: 0;
          &:first-child { float: left; }
@@ -145,7 +153,7 @@ footer {
 
       .tweet_link {
         color: $green;
-        font-size: 14px;
+        font-size: $text-size - 2;
         float: left;
         margin-left: $margin / 2;
       }
@@ -217,7 +225,6 @@ footer {
 
   .submenu {
     list-style-type: none;
-    display: inline-block;
     padding: 0;
 
     li {
