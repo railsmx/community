@@ -1,10 +1,6 @@
 GIT
   remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
-<<<<<<< HEAD
   revision: ede3601c97b83de53b51335339983dd8a6d22093
-=======
-  revision: 4dbdbc405229725ab800daa14b2a74878214f58b
->>>>>>> cb84f048529609d8849e5ca8cdc2375d075f294b
   specs:
     bootstrap-datepicker-rails (1.0.0.4)
       railties (>= 3.0)
@@ -66,14 +62,10 @@ GEM
       tzinfo (~> 0.3.33)
     addressable (2.3.4)
     arel (4.0.0.beta2)
-<<<<<<< HEAD
-    atomic (1.1.7)
-=======
     atomic (1.1.8)
     better_errors (0.8.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
->>>>>>> cb84f048529609d8849e5ca8cdc2375d075f294b
     bourbon (3.1.3)
       sass (>= 3.2.0)
       thor
@@ -105,10 +97,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
-<<<<<<< HEAD
-=======
     dalli (2.6.2)
->>>>>>> cb84f048529609d8849e5ca8cdc2375d075f294b
     dotenv (0.7.0)
     erubis (2.7.0)
     execjs (1.4.0)
