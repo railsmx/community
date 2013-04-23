@@ -2,31 +2,33 @@
   padding: $padding 0 0 0;
 
   sidebar {
-    padding: ($padding * 3) $padding 0 ($padding / 2) !important;  
+    padding: ($padding * 3) $padding 0 ($padding / 2) !important;
   }
-    
+
   .blog {
     margin-left: 0px;
-    
+
     h3 {
       color: $black;
-      font-weight: lighter;  
+      font-weight: lighter;
     }
-    
+
     .sidebar-blog {
       font-size: 0.8em;
     }
   }
-  
-  .events {
+
+  .events-section {
     padding-right: $padding;
+
+    .event-row {
+      width: 100%;
+      margin-bottom: ($margin * 2);
+      float: left;
+      overflow: hidden;
+    }
   }
-  
-  .event-section {
-    margin-bottom: ($margin * 2);
-    float: left;
-  }
-  
+
   .past-title {
     margin-bottom: 0 !important;
   }
@@ -52,7 +54,7 @@
   }
 
   .first {
-    margin: $margin 0 ($margin / 2) 0;
+    margin: $margin 3px ($margin / 2) 0;
     height: 100%;
     overflow: auto;
     border: 1px solid $light-gray;
@@ -91,7 +93,7 @@
 
     .main-data {
       padding: $padding 0 $padding 0;
-      margin-right: 19.7px;
+      margin-right: $margin - 4;
 
       .title {
         color: $red;
@@ -105,27 +107,26 @@
         color: $gray;
         font-size: 1.1em;
         line-height: 1.1em;
-        
+
         .img {
           width: 5%;
           overflow: hidden;
           float: left;
         }
-        
+
         .info {
           width: 95%;
           float: left;
-          
+
           .organizer {
             color: $red;
             text-align: left;
             font-family: "Helvetica";
             font-weight: lighter;
             font-size: .9em;
-            margin-top: ($margin / 2);
-            margin-bottom: $margin;
+            margin: ($margin / 2) 0 ($margin / 2) 0;
           }
-        }         
+        }
       }
 
       .description {
@@ -186,35 +187,35 @@
       }
 
       .location {
+        overflow: hidden;
         text-align: left !important;
         color: $gray;
         font-size: 1em;
         line-height: 1.1em;
-        
+
         .img {
           width: 10%;
           overflow: hidden;
           float: left;
         }
-        
+
         .info {
           width: 90%;
           float: left;
-          
+
           .organizer {
             color: $red;
             text-align: left;
             font-family: "Helvetica";
             font-weight: lighter;
             font-size: .9em;
-            margin-top: ($margin / 2);
-            margin-bottom: $margin;
+            margin: ($margin / 2) 0 ($margin / 2) 0;;
           }
-        }         
+        }
       }
-      
+
       .description {
-        margin-top: ($margin / 2);
+        overflow: hidden;
         color: $gray;
         font-family: "Helvetica";
         font-weight: lighter;
@@ -229,7 +230,7 @@
     .datetime {
       padding: $padding 0 $padding $padding;
     }
-    
+
     .main-data {
       padding-left: 20px;
     }
@@ -237,10 +238,11 @@
 
   .current > :nth-child(even) {
       margin: ($margin / 2) 0 ($margin / 2) 0;
+      clear: left;
   }
 
   .current > :nth-child(odd):not(.first) {
-      margin: ($margin / 2) 0 ($margin / 2) $margin;
+      margin: ($margin / 2) 4px ($margin / 2) $margin - 4;
   }
 
   .past > :nth-child(odd) {
@@ -299,10 +301,10 @@
         font-weight: bold;
         font-size: 0.9em;
         line-height: 1.1em;
-        
+
         .image {
           margin-bottom: $margin;
-          margin-top: 0; 
+          margin-top: 0;
         }
       }
 
@@ -378,7 +380,7 @@
     margin-top: 0 !important;
     margin-bottom: 0;
   }
-  
+
   .sidebar-blog {
     margin-top: ($margin / 2) !important;
     font-size: 0.8em;

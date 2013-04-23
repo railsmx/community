@@ -4,7 +4,7 @@
     <title><%= yield(:title).empty? ? "rails.mx" : yield(:title) %></title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta name="keywords" content="ruby, ruby on rails, ror, comunidad, eventos, magmaconf">
-    <meta name="description" content="Una comunidad de desarrolladores mexicanos e hispanohablantes. 
+    <meta name="description" content="Una comunidad de desarrolladores mexicanos e hispanohablantes.
     Un punto de encuentro para compartir experiencias y mejores prácticas sobre el mundo de rails.">
     <meta name="robots" content="all" >
     <%= stylesheet_link_tag "railsmx" %>
@@ -35,7 +35,7 @@
     <div class="container <%= controller.controller_name %>">
       <%= yield %>
     </div>
-    <div class="container">
+    <div class="container social">
       <%= render partial: 'shared/socialite' %>
     </div>
 

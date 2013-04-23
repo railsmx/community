@@ -3,9 +3,9 @@ class DateTimeInput
     startDate = new Date()
     endDate = (new Date())
     endDate.setDate(startDate.getDate()+180)
- 
+
     $('.date').datepicker(
-      { 
+      {
         startDate: startDate,
         endDate: endDate,
         language: 'es',

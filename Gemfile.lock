@@ -1,6 +1,10 @@
 GIT
   remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
+<<<<<<< HEAD
   revision: ede3601c97b83de53b51335339983dd8a6d22093
+=======
+  revision: 4dbdbc405229725ab800daa14b2a74878214f58b
+>>>>>>> cb84f048529609d8849e5ca8cdc2375d075f294b
   specs:
     bootstrap-datepicker-rails (1.0.0.4)
       railties (>= 3.0)
@@ -62,7 +66,14 @@ GEM
       tzinfo (~> 0.3.33)
     addressable (2.3.4)
     arel (4.0.0.beta2)
+<<<<<<< HEAD
     atomic (1.1.7)
+=======
+    atomic (1.1.8)
+    better_errors (0.8.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+>>>>>>> cb84f048529609d8849e5ca8cdc2375d075f294b
     bourbon (3.1.3)
       sass (>= 3.2.0)
       thor
@@ -94,6 +105,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+<<<<<<< HEAD
+=======
+    dalli (2.6.2)
+>>>>>>> cb84f048529609d8849e5ca8cdc2375d075f294b
     dotenv (0.7.0)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -124,12 +139,15 @@ GEM
     json (1.7.7)
     jwt (0.1.8)
       multi_json (>= 1.5)
-    launchy (2.2.0)
+    launchy (2.3.0)
       addressable (~> 2.3)
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.3)
+      rack-contrib
+      railties
     method_source (0.8.1)
     mime-types (1.22)
     minitest (4.7.1)
@@ -185,6 +203,8 @@ GEM
     puma (1.6.3)
       rack (~> 1.2)
     rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0.beta1)
@@ -230,7 +250,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    temple (0.6.3)
+    temple (0.6.4)
     terminal-table (1.4.5)
     thor (0.18.1)
     thread_safe (0.1.0)
@@ -254,11 +274,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
   bootstrap-datepicker-rails!
   bourbon
   brakeman
   cane
   coffee-rails (~> 4.0.0.beta1)
+  dalli
   font-awesome-sass-rails
   foreman
   geocoder
@@ -267,6 +289,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   mail_form!
+  meta_request
   minitest-colorize
   minitest-focus
   minitest-rails

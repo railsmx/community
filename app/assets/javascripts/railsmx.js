@@ -5,7 +5,7 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es
 //= require jquery.inputmask
 //= require jquery.inputmask.date.extensions
-//= require socialite
+//= require socialite.min
 //= require app
 //= require social-buttons
 //= require datetime

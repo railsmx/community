@@ -23,7 +23,7 @@ describe HomeController do
   it "should get 404 on show with invalid parameter" do
     get :show, id: 'invalid'
 
-    assert_response 404    
+    assert_response 404
   end
 
 end

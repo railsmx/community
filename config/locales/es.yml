@@ -23,9 +23,9 @@ es:
       more: 'MÁS'
 
   home:
-    about:
+    acerca:
       who_we_are: 'Acerca de ...'
-    privacy:
+    privacidad:
       privacy: 'Privacidad'
     index:
       sign_in: 'Iniciar sesión'
@@ -124,7 +124,10 @@ es:
       create_event: 'Crear evento'
       organizer: 'Organizado por %{organize}'
       edit_event: 'editar'
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb84f048529609d8849e5ca8cdc2375d075f294b
 
   activerecord:
     errors:

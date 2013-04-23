@@ -85,7 +85,7 @@ class Capybara::Rails::TestCase
   end
 
   def teardown
-    
+
   end
 
   def mock_omniauth(uid = '12334')

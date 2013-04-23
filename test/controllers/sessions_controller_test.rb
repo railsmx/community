@@ -39,7 +39,7 @@ describe SessionsController do
   describe 'destroy' do
     it 'success logout' do
       delete :destroy
-      
+
       assert_redirected_to root_path
     end
   end
