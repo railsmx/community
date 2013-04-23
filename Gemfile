@@ -16,7 +16,7 @@ gem 'twitter', github: 'sferik/twitter'
 gem 'mail_form', github: 'mariochavez/mail_form'
 gem 'omniauth-github'
 gem 'warden', '~> 1.2.1'
-gem 'crowdblog', path:  "vendor/engine/crowdblog"
+gem 'crowdblog', github:  'FerPerales/crowdblog', branch: 'rails4-userless'
 
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'

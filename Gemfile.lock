@@ -1,4 +1,21 @@
 GIT
+  remote: git://github.com/FerPerales/crowdblog.git
+  revision: d28afd6dccb760dbb1625eb966386156bb33b695
+  branch: rails4-userless
+  specs:
+    crowdblog (0.3.2)
+      carrierwave
+      colorize
+      gravtastic
+      jbuilder
+      jquery-rails
+      rails (= 4.0.0.beta1)
+      redcarpet
+      slim
+      sprockets-rails
+      state_machine
+
+GIT
   remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
   revision: 4dbdbc405229725ab800daa14b2a74878214f58b
   specs:
@@ -32,21 +49,6 @@ GIT
       faraday (~> 0.8, < 0.10)
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
-
-PATH
-  remote: vendor/engine/crowdblog
-  specs:
-    crowdblog (0.3.2)
-      carrierwave
-      colorize
-      gravtastic
-      jbuilder
-      jquery-rails
-      rails (= 4.0.0.beta1)
-      redcarpet
-      slim
-      sprockets-rails
-      state_machine
 
 GEM
   remote: https://rubygems.org/
