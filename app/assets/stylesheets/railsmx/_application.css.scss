@@ -24,7 +24,7 @@ body {
   .one-half {
     @include columns(1.49);
   }
-
+  
   .one-3quarters {
     @include columns(1.75);
   }
@@ -36,11 +36,11 @@ body {
   .two-half {
     @include columns(2.5);
   }
-
+  
   .three {
     @include columns(3);
   }
-
+  
   .three-custom {
     @include columns(3.097);
   }
@@ -48,7 +48,7 @@ body {
   .four {
     @include columns(4);
   }
-
+  
   .four-half {
     @include columns(4.38);
   }
@@ -64,7 +64,7 @@ body {
   .six {
     @include columns(6);
   }
-
+  
   .seven {
     @include columns(7);
   }
@@ -230,9 +230,9 @@ sidebar {
 
   .events, .blog {
     padding-left: 0 !important;
-
+    
   }
-
+  
   .events {
     .sidebar-events {
       margin-top: ($margin / 2) !important;
@@ -264,22 +264,11 @@ sidebar {
   }
 }
 
-.container {
-  &.social {
-    overflow: visible !important;
-
-    &:after {
-      clear: both;
-    }
-  }
-}
-
 .social-buttons {
   display: inline-block;
   list-style-type: none;
   margin: ($margin * 2) 0 0 ($margin * 16) !important;
   padding: 0;
-  overflow: visible !important;
 
   li {
     float: left;
@@ -409,7 +398,7 @@ sidebar {
     @include size(300px 150px);
   }
 
-  .field_with_errors {
+  .field_with_errors {  
     input {
       border: 1px solid $light-gray !important;
     }
