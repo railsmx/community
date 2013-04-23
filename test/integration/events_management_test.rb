@@ -8,12 +8,17 @@ feature 'EventsManagement Feature Test' do
   scenario 'As logged user I should be able to create an event' do
     login_user
 
-    visit '/events'
+    visit '/eventos'
+
+    stub_class_method(Twitter, :update) {
+      |args| args[0].must_include "MagmaConf 2013 http://www.example.com/eventos/980190963"
+    }
 
     click_link 'Registrar evento'
 
     within('#new_event') do
-      fill_in 'event_name', with: 'MagmaConf'
+      fill_in 'event_name', with: 'MagmaConf 2013'
+      fill_in 'event_address', with: 'Carretera Manzanillo-Cihuatlán kilómetro 20, Manzanillo, Colima'
       fill_in 'event_location', with: 'Manzanillo, Colima'
       fill_in 'event_date', with: '06/06/2015'
       fill_in 'event_time', with: '18:00'
@@ -30,7 +35,7 @@ feature 'EventsManagement Feature Test' do
   scenario 'An event should not be created if it has invalid info' do
     login_user
 
-    visit '/events'
+    visit '/eventos'
 
     click_link 'Registrar evento'
 
@@ -55,7 +60,7 @@ feature 'EventsManagement Feature Test' do
     click_link 'Eventos'
 
     within("#event_#{event.id}") do
-      click_link 'Editar evento'
+      click_link 'editar'
     end
 
     click_button 'Actualizar evento'
@@ -104,6 +109,7 @@ def add_event(identity_id = '12334')
   Event.create name: "MagmaConf #{events_count}",
     description: 'Conferencias',
     date: DateTime.now + 100, location: 'Manzanillo Colima',
+    address: 'Carretera Manzanillo-Cihuatlán kilómetro 20, Manzanillo, Colima',
     contact: 'http://magmaconf.com', organizer: 'Crowdint',
     identity_id: identity_id
 end

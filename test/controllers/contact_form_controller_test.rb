@@ -3,7 +3,7 @@ require "test_helper"
 describe ContactFormController do
   it "should get new" do
   	get :new
-  	
+
   	assert_response :success
     assert_template :new
   end
@@ -13,9 +13,9 @@ describe ContactFormController do
       ActionMailer::Base.deliveries = []
 
   	  post :create, contact_form: { name: 'hce', email: 'xhce911@gmail.com', message: 'testing' }
-  	
+
   	  assert_response :redirect
-  	  assert_redirected_to root_path 
+  	  assert_redirected_to root_path
 
   	  ActionMailer::Base.deliveries.size.must_equal 1
     end
@@ -24,7 +24,7 @@ describe ContactFormController do
 	  ActionMailer::Base.deliveries = []
 
   	  post :create, contact_form: { name: '', email: '', message: 'testing' }
-  	
+
   	  assert_response :success
   	  assert_template :new
 

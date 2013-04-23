@@ -1,38 +1,40 @@
 class Map
-  constructor: (location) ->    
-    wax.tilejson('http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/geocode/' + 
-      encodeURIComponent(location) + '.json', @position)
-    ###
-    @getLocationGoogle(location)
-    ###
-    
-  position: (position) ->
-    map = mapbox.map('map')
-    map.addLayer(mapbox.layer().id('examples.map-4l7djmvo'))
+  constructor: (lat, lon) ->
+    if $('#map')
+      $.getScript("http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js", ->
+        $("head").append("<link>");
+        css = $("head").children(":last");
+        css.attr({
+          rel:  "stylesheet",
+          type: "text/css",
+          href: "http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css"
+        });
 
-    markerLayer = mapbox.markers.layer()
-    mapbox.markers.interaction(markerLayer)
-    map.addLayer(markerLayer)
+        map = mapbox.map('map')
+        map.addLayer(mapbox.layer().id('examples.map-vyofok3q'))
 
-    if position and position.results and position.results.length
-      position = position.results[0][0]
-    else
-      position.lat = position.Placemark[0].Point.coordinates[0]
-      position.lon = position.Placemark[0].Point.coordinates[1]    
+        map.ui.zoomer.add()
+        map.ui.zoombox.add()
+        map.ui.fullscreen.add()
 
-    if position 
-      map.zoom(10).center({ lat: position.lat, lon: position.lon })
-      markerLayer.add_feature({
-        geometry: { coordinates: [ position.lon, position.lat] },
-        properties: { 'marker-color': '#000', 'marker-symbol': 'star-stroked', }
-      })
-    else
-      map.zoom(2).center({ lat: 24.68695241199918, lon: 3.779296875000008 })
-    
+        markerLayer = mapbox.markers.layer()
 
-  getLocationGoogle: (location) ->
-    geocoder = new GClientGeocoder()
-    geocoder.getLocations(location, @position)
+        mapbox.markers.interaction(markerLayer)
+        map.addLayer(markerLayer);
+
+        map.zoom(10).center({ lat: lat, lon: lon })
+
+        markerLayer.add_feature({
+            geometry: {
+                coordinates: [lon, lat]
+            },
+            properties: {
+                'marker-color': '#FF0000',
+                'marker-symbol': 'star-stroked',
+            }
+        })
+      )
 
 
-App.Utilities.Map = Map    
+
+App.Utilities.Map = Map

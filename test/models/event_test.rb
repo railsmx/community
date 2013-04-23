@@ -6,10 +6,11 @@ describe Event do
 
   it "must be invalid without attributes" do
     event.valid?.must_equal false
-    event.errors.size.must_equal 6
+    event.errors.size.must_equal 7
     event.errors[:name].wont_be_nil
     event.errors[:description].wont_be_nil
     event.errors[:date].wont_be_nil
+    event.errors[:address].wont_be_nil
     event.errors[:location].wont_be_nil
     event.errors[:contact].wont_be_nil
     event.errors[:identity_id].wont_be_nil
@@ -18,6 +19,7 @@ describe Event do
   it "must be invalid when date is not in future" do
     event.tap do |e|
       e.name = 'Magmaconf'
+      e.address = 'Carretera Manzanillo-Cihuatlán kilómetro 20, Manzanillo, Colima'
       e.location = 'Manzanillo'
       e.contact = 'Crowdint'
       e.identity = identity
@@ -33,6 +35,7 @@ describe Event do
     event.tap do |e|
       e.name = 'MagmaConf'
       e.date = Date.today + 2
+      e.address = 'Carretera Manzanillo-Cihuatlán kilómetro 20, Manzanillo, Colima'
       e.location = 'Manzanillo'
       e.identity = identity
       e.contact = 'CrowdInt'

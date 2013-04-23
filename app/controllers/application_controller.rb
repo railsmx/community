@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  prepend_view_path "app/views/#{Rails.application.config.theme}"
+
   protect_from_forgery with: :exception
 
   helper_method :current_identity, :identity_signed_in?, :warden
@@ -26,3 +28,4 @@ class ApplicationController < ActionController::Base
     @current_events = Event.current_events(3)
   end
 end
+

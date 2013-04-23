@@ -13,7 +13,6 @@ describe SessionsController do
       post :create
 
       assert_redirected_to root_path
-      flash[:notice].wont_be_nil
       Identity.my_identity('11223344', 'github').wont_be_empty
     end
 
@@ -23,7 +22,6 @@ describe SessionsController do
       post :create
 
       assert_redirected_to root_path
-      flash[:notice].wont_be_nil
     end
 
     it 'rejected authentication' do
@@ -41,9 +39,8 @@ describe SessionsController do
   describe 'destroy' do
     it 'success logout' do
       delete :destroy
-      
+
       assert_redirected_to root_path
-      flash[:notice].wont_be_nil
     end
   end
 end

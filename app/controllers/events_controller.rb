@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate!, except: [:index, :show]
+  before_action :current_events, only: [:new, :edit, :create, :update, :show]
 
   def index
     @current_events = Event.current_events(4)
@@ -7,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by_id params[:id]
+    @event = Event.find_by_id(params[:id])
 
     redirect_to events_path, alert: t('.event_not_found') unless @event
   end
@@ -21,7 +22,10 @@ class EventsController < ApplicationController
       event.identity = current_identity
     end
 
-    return redirect_to events_path, notice: t('.event_created') if @event.save
+    if @event.save
+      TweetEvent.update(@event, event_url(@event))
+      return redirect_to events_path, notice: t('.event_created')
+    end
 
     flash.now[:alert] = t('.invalid_event')
     @event.date = params[:event][:date]
@@ -31,7 +35,7 @@ class EventsController < ApplicationController
   def edit
     @event = Event.my_event params[:id], current_identity
 
-    redirect_to events_path, alert: t('.event_not_found') unless @event
+    return redirect_to events_path, alert: t('.event_not_found') unless @event
 
     @event.time = @event.date.to_s(:custom_time)
     @event.date = @event.date.to_s(:custom_date)
@@ -69,6 +73,7 @@ class EventsController < ApplicationController
   end
 
   def create_params
-    params.require(:event).permit(:name, :location, :description, :contact, :organizer, :date, :time)
+    params.require(:event).permit(:name, :address, :location,
+      :description, :contact, :organizer, :date, :time)
   end
 end

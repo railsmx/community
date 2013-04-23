@@ -6,9 +6,12 @@ gem 'rails', '4.0.0.beta1'
 
 gem 'pg'
 gem 'puma'
+gem 'dalli'
 gem 'pretty_formatter'
 
 gem 'gravatar_image_tag'
+
+gem 'twitter', github: 'sferik/twitter'
 
 gem 'mail_form', github: 'mariochavez/mail_form'
 gem 'omniauth-github'
@@ -30,9 +33,12 @@ end
 
 gem 'jquery-rails'
 gem 'bourbon'
-#gem 'mac_generators'
-#gem 'bootstrap-datepicker-rails'
-#gem 'bootstrap-sass'
+
+gem 'bootstrap-datepicker-rails',
+  :require => 'bootstrap-datepicker-rails',
+  :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
+gem 'geocoder'
 
 group :test do
   gem 'minitest-rails'
@@ -45,6 +51,10 @@ end
 group :development do
   gem 'pry-rails'
   gem 'foreman'
+  gem 'cane'
+  gem 'brakeman'
+  gem 'better_errors'
+  gem 'meta_request'
 end
 
 gem 'font-awesome-sass-rails'

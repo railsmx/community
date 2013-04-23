@@ -3,6 +3,7 @@ require "test_helper"
 describe EventsController do
   let(:params) {
     { name: 'MagmaConf',
+      address: 'Carretera Manzanillo-Cihuatlán kilómetro 20,Manzanillo, Colima',
       location: 'Manzanillo',
       description: 'Cool conf',
       contact: 'mg@crowdint.com',
@@ -12,10 +13,12 @@ describe EventsController do
   }
 
   let(:event) { Event.create name: 'MagmaConf',
+                address: 'Carretera Manzanillo-Cihuatlán kilómetro 20,Manzanillo, Colima',
                 location: 'Manzanillo', description: 'Cool conf',
                 contact: 'mg@crowdint.com', organizer: 'Crowdint',
                 date: Date.today + 10, identity_id: 100
   }
+
 
   describe 'new' do
     it "should display new form for logged user" do
@@ -36,8 +39,12 @@ describe EventsController do
   end
 
   describe "create" do
-    it "should create new event for logged user" do
+    it "should create new event for logged user and post a tweet" do
       log_in_user
+
+      stub_class_method(Twitter, :update) {
+        |args| args[0].must_include "MagmaConf http://test.host/eventos/"
+      }
 
       post :create, event: params
 
@@ -102,7 +109,6 @@ describe EventsController do
   end
 
   describe "update" do
-    focus
     it "should be able to update my events" do
       log_in_user
 
@@ -111,7 +117,7 @@ describe EventsController do
       assert_redirected_to events_path
       flash[:notice].wont_be_nil
     end
-    
+
     it "should redirect to events when event not found" do
       log_in_user
 
@@ -188,14 +194,14 @@ describe EventsController do
   describe 'show' do
     it "should display an existing event" do
       get :show, id: event.id
-      
+
       assert_response :success
       assert_template :show
     end
-    
+
     it "should redirect to events when event not found" do
       get :show, id: 10
-      
+
       assert_redirected_to events_path
       flash[:alert].wont_be_nil
     end
@@ -205,23 +211,25 @@ describe EventsController do
     it "display first 4 upcoming event and 3 last passed events" do
       6.times do |index|
         Event.create name: "Upcomming #{index}",
+          address: 'Carretera Manzanillo-Cihuatlán kilómetro 20,Manzanillo, Colima',
           location: 'Manzanillo', description: 'Cool conf',
           contact: 'mg@crowdint.com', organizer: 'Crowdint',
           date: Date.today + (10 * (index + 1)),
           identity_id: 100
 
         Event.new(name: "Past #{index}",
+                  address: 'Carretera Manzanillo-Cihuatlán kilómetro 20,Manzanillo, Colima',
                   location: 'Manzanillo', description: 'Cool conf',
                   contact: 'mg@crowdint.com', organizer: 'Crowdint',
                   date: Date.today - (10 * (index + 1)),
                   identity_id: 100).save(validate: false)
       end
-      
+
       get :index
-      
+
       assert_response :success
       assert_template :index
-      
+
       assigns[:current_events].size.must_equal 4
       assigns[:past_events].size.must_equal 3
     end

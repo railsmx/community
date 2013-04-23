@@ -15,10 +15,10 @@ es:
       blog: 'Blog'
 
   home:
-    about: 
+    acerca:
       who_we_are: 'Acerca de ...'
-    privacy:
-      privacy: 'Privacidad'  
+    privacidad:
+      privacy: 'Privacidad'
     index:
       sign_in: 'Iniciar sesión'
       not_content: 'No hay contenido disponible'
@@ -37,6 +37,9 @@ es:
     new:
       send: 'Enviar'
       contact: 'Contacto'
+      name: 'Nombre:'
+      email: 'Correo electronico:'
+      description: 'Descripción:'
 
   mail_form:
     models:
@@ -54,17 +57,30 @@ es:
         invalid: "Fecha invalida"
 
   events:
-    show_event:
-      organizer: 'Organizado por %{organize}'
-      edit_event: 'editar'
     new:
       create_event: 'Crear evento'
+      new_event_title: 'Registrar un evento'
+    form:
+      event_name: 'Evento:'
+      address: 'Dirección:'
+      place: 'Lugar:'
+      date: 'Cuando:'
+      organizer: 'Organiza:'
+      contact: 'Contacto:'
+      description: 'Descripción:'
+      ph_place: 'Dirección completa'
+      ph_contact: 'email, URL o teléfono de contacto'
+      ph_organizer: 'Persona o empresa que organiza'
+      register_event: 'Registrar'
+      back: 'regresar'
+
     index:
       not_content: 'No hay contenido disponible'
       not_recent_events: 'No hay eventos recientes'
       not_upcoming_events: 'No hay eventos próximos a realizarse'
-      recent_events: 'Eventos recientes'  
-      help_text: 'Consulta los eventos que ocurren alrededor de la comunidad. Si estas organizando un evento y deseas darle promoción, registralo.'
+      recent_events: 'Eventos recientes'
+      text_current_events: 'Consulta los eventos que ocurren alrededor de la comunidad. Si estas organizando un evento y deseas darle promoción, registralo.'
+      text_past_events: 'Estos son los eventos de la comunidad que ya se llevaron acabo.'
       events: 'Eventos'
       blog: 'Blog'
       add_event: 'Registrar evento'
@@ -72,8 +88,12 @@ es:
       edit: 'Modificar'
     edit:
       update_event: 'Actualizar evento'
+      edit_event_title: 'Actualizar un evento'
     show:
       event_not_found: 'Evento no encontrado'
+      where_when: 'Donde y cuando'
+      organizer: 'Organizado por %{organize}'
+      contact: 'Contacto: %{contact}'
     create:
       invalid_event: 'Por favor revise la información del evento'
       event_created: 'Su evento ha sido creado'
@@ -86,6 +106,24 @@ es:
       event_not_found: 'Evento no encontrado'
     event:
       create_event: 'Crear evento'
+      organizer: 'Organizado por %{organize}'
+      edit_event: 'editar'
+
+  activerecord:
+    errors:
+      models:
+        event:
+          attributes:
+            name:
+              blank: 'este campo es requerido'
+            address:
+              blank: 'este campo es requerido'
+            location:
+              blank: 'este campo es requerido'
+            date:
+              blank: 'este campo es requerido'
+            contact:
+              blank: 'este campo es requerido'
 
   date:
     formats:
