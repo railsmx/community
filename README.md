@@ -14,12 +14,6 @@ application up and running.
 **Branch: Master**
 [![Build Status](https://travis-ci.org/mariochavez/community.png?branch=master)](https://travis-ci.org/mariochavez/community)
 
-**Branch: Coderetreat**
-[![Build Status](https://travis-ci.org/mariochavez/community.png?branch=coderetreat)](https://travis-ci.org/mariochavez/community)
-
-**Branch: Master**
-[![Build Status](https://travis-ci.org/mariochavez/community.png?branch=master)](https://travis-ci.org/mariochavez/community)
-
 ## Dependencies
 This application depends on Ruby 2.0 and Ruby on Rails 4.0
 
