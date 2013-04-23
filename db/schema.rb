@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130408152000) do
+ActiveRecord::Schema.define(version: 20130423181246) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "crowdblog_assets", force: true do |t|
+    t.integer  "post_id"
+    t.string   "attachment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "crowdblog_posts", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "permalink"
+    t.datetime "published_at"
+    t.integer  "author_id"
+    t.string   "state"
+    t.integer  "publisher_id"
+    t.boolean  "ready_for_review"
+    t.datetime "marked_for_review_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "crowdblog_users", force: true do |t|
+    t.string "email"
+    t.string "name"
+  end
 
   create_table "events", force: true do |t|
     t.string   "name",        null: false
