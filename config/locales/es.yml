@@ -25,6 +25,9 @@ es:
   home:
     acerca:
       who_we_are: 'Acerca de ...'
+      about_coderetreat: 'ACERCA DEL CODE RETREAT'
+      history: 'HISTORIA'
+      oragnize_coderetreat: 'ORGANIZA TU CODE RETREAT'
     privacidad:
       privacy: 'Privacidad'
     index:
