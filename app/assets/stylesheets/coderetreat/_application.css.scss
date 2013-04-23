@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+section, div, article {
+  overflow: hidden;
+}
+
 .container {
   width: grid-width(14);
   overflow: hidden;

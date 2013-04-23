@@ -13,6 +13,56 @@
     }
   }
 
+  .about {
+    .content {
+      background: white;
+    }
+
+    .line {
+      width: 25%;
+      height: 1px;
+      margin-top: $margin * 3;
+      float: left;
+      background: $light-gray;
+    }
+
+    h1 {
+      float: left;
+      margin: 0;
+      font-family: "Roboto";
+      color: $green;
+      font-size: $text-size * 2;
+      text-align: center;
+      width: 50%;
+      margin-top: ($margin * 2);
+    }
+
+    section {
+      float: left;
+
+      h2 {
+        color: $text-color;
+        font-family: "Roboto";
+        font-weight: 300;
+        margin-top: $margin * 1.5;
+      }
+
+      .right-column {
+        .image {
+          margin-top: $margin * 7;
+        }
+
+        h2 { text-align: right; }
+      }
+
+      p {
+        color: #494949;
+      }
+
+      &:last-child { margin-bottom: ($margin * 2); }
+    }
+  }
+
   .content {
     p {
       color: $text-color;
@@ -23,7 +73,7 @@
     a {
       color: $green;
       font-family: "Roboto";
-      font-size: 14px;
+      font-size: $text-size;
       font-weight: bold;
       font-style: italic;
       text-decoration: none;
