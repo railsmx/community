@@ -1,5 +1,4 @@
 Crowdblog.user_class = 'Identity'
 
-Crowdblog.user_class.class_eval do
-  define_method :is_publisher?, -> { true }
-end
+Rails.application.config.discus_key = '434324234'
+Rails.application.config.publishers = 'angel.solorio@crowdint.com, etc@crowdint.com'

@@ -13,4 +13,8 @@ class Identity < ActiveRecord::Base
       identity.email = auth["info"]["email"]
 		end
 	end
+
+  def is_publisher?
+    Rails.application.config.publishers.include? self.email
+  end
 end
