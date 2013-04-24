@@ -1,6 +1,13 @@
 GIT
-  remote: git://github.com/FerPerales/crowdblog.git
-  revision: d28afd6dccb760dbb1625eb966386156bb33b695
+  remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
+  revision: 4dbdbc405229725ab800daa14b2a74878214f58b
+  specs:
+    bootstrap-datepicker-rails (1.0.0.4)
+      railties (>= 3.0)
+
+GIT
+  remote: git://github.com/crowdint/crowdblog.git
+  revision: c3ed5941a3c38e5f11591ccfecb22bf9ca035d84
   branch: rails4-userless
   specs:
     crowdblog (0.3.2)
@@ -14,13 +21,6 @@ GIT
       slim
       sprockets-rails
       state_machine
-
-GIT
-  remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
-  revision: 4dbdbc405229725ab800daa14b2a74878214f58b
-  specs:
-    bootstrap-datepicker-rails (1.0.0.4)
-      railties (>= 3.0)
 
 GIT
   remote: git://github.com/heroku/rails3_serve_static_assets.git
