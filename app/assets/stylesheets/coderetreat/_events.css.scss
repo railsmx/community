@@ -1,29 +1,9 @@
 .events {
   .content {
-    padding: $padding 0 0 0;
+    background-color: white;
 
-    sidebar {
-      padding: ($padding * 3) $padding 0 ($padding / 2) !important;
-    }
-
-    .blog {
-      margin-left: 0px;
-
-      h3 {
-        color: $black;
-        font-weight: lighter;
-      }
-
-      .sidebar-blog {
-        font-size: 0.8em;
-      }
-    }
-
-    .events {
-      padding-right: $padding;
-    }
-
-    .event-section {
+    .row {
+      width: 100%;
       margin-bottom: ($margin * 2);
       float: left;
     }
@@ -39,7 +19,7 @@
     }
 
     a {
-      color: $light-red;
+      color: $green;
       text-decoration: none;
     }
 
@@ -53,6 +33,7 @@
     }
 
     .first {
+      width: 99%;
       margin: $margin 0 ($margin / 2) 0;
       height: 100%;
       overflow: auto;
@@ -61,9 +42,11 @@
       @extend .shadow;
 
       .datetime {
+        width: 20%;
         padding: ($padding * 3) 0 ($padding * 3) 0;
         text-align: center;
         margin-left: 0 !important;
+        float: left;
 
         .month {
           font-size: 1.5em;
@@ -73,8 +56,8 @@
         .day {
           font-size: 4.0em;
           font-weight: bold;
-          color: $red;
-          line-height: .7em;
+          color: $green;
+          line-height: .9em;
         }
 
         .weekday {
@@ -86,16 +69,18 @@
         .time {
           font-size: 1.2em;
           font-weight: bold;
-          line-height: .7em;
+          line-height: .9em;
         }
       }
 
       .main-data {
+        width: 80%;
         padding: $padding 0 $padding 0;
-        margin-right: 19.7px;
+        margin: 0;
+        float: left;
 
         .title {
-          color: $red;
+          color: $green;
           font-family: "Helvetica";
           font-weight: bold;
           font-size: 2.5em;
@@ -118,7 +103,7 @@
             float: left;
 
             .organizer {
-              color: $red;
+              color: $green;
               text-align: left;
               font-family: "Helvetica";
               font-weight: lighter;
@@ -139,6 +124,8 @@
     }
 
     .second {
+      width: 457px;
+      float: left;
       height: 100%;
       overflow: auto;
       border: 1px solid $light-gray;
@@ -147,7 +134,9 @@
       @extend .shadow;
 
       .datetime {
-        padding: ($padding * 3) 0 ($padding * 3) 0;
+        width: 25%;
+        padding: ($padding * 3) $padding ($padding * 3) $padding;
+        float: left;
         text-align: center;
         margin-left: 0 !important;
 
@@ -159,8 +148,8 @@
         .day {
           font-size: 3.0em;
           font-weight: bold;
-          color: $red;
-          line-height: .7em;
+          color: $green;
+          line-height: .9em;
         }
 
         .weekday {
@@ -172,15 +161,17 @@
         .time {
           font-size: 1.0em;
           font-weight: bold;
-          line-height: .7em;
+          line-height: .9em;
         }
       }
 
       .main-data {
+        width: 75%;
         padding: $padding $padding $padding 0;
+        float: left;
 
         .title {
-          color: $red;
+          color: $green;
           font-family: "Helvetica";
           font-weight: bold;
           font-size: 1.5em;
@@ -203,7 +194,7 @@
             float: left;
 
             .organizer {
-              color: $red;
+              color: $green;
               text-align: left;
               font-family: "Helvetica";
               font-weight: lighter;
@@ -252,9 +243,14 @@
         margin: ($margin / 2) 0 ($margin / 2) $margin;
     }
 
+    h1 {
+      color: $header1-color;
+    }
+
     h2 {
       margin-top: 0px;
       margin-bottom: 0px;
+      color: $header1-color;
     }
 
     .edit {
@@ -268,7 +264,7 @@
   }
 
   .event-data {
-  margin: 0 0 $margin 0;
+    margin: 0 0 $margin 0;
 
   .description-data {
     .title {
