@@ -279,6 +279,7 @@
         font-family: "Roboto";
         text-align: justify;
         font-weight: 300;
+        color: $text-color;
       }
     }
 
@@ -289,16 +290,18 @@
 
       .location-info {
         margin-left: 0;
+        width: 40%;
+        float: left;
 
         .place {
           color: $gray;
           font-weight: bold;
           font-size: 0.9em;
           line-height: 1.1em;
+          margin-bottom: $margin / 4;
 
           .image {
-            margin-bottom: $margin;
-            margin-top: 0;
+            margin: 0;
           }
 
           .loc {
@@ -364,9 +367,10 @@
 
       #map {
         height: 350px;
-        margin-bottom: $margin;
+        margin: 0 3px $margin 0;
+        width: 59%;
+        float: right;
 
-        // This is just a test code for the shadow and the border
         border: 1px solid $light-gray;
         border-radius: 3px;
         -webkit-border-radius: 3px;
@@ -374,7 +378,6 @@
         -moz-box-shadow:    3px 3px 5px -2px $light-gray;
         -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
         box-shadow:         3px 3px 5px -2px $light-gray;
-        //end
       }
     }
   }
