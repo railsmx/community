@@ -7,3 +7,5 @@ Rails.application.config.assets.precompile += ["#{theme.downcase}.css", "#{theme
 
 # Facebook_AppID
 Rails.application.config.facebook_appid = ENV['FACEBOOK_APPID']
+
+Rails.application.config.contact_email = ENV['CONTACT_EMAIL']
