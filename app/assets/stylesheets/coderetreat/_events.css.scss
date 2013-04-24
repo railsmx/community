@@ -1,6 +1,11 @@
 .events {
   .content {
     background-color: white;
+    padding: 0 ($padding * 3.5);
+
+    h1, h2, h3, h4, p, {
+      padding: 0 ($margin / 2);
+    }
 
     .row {
       width: 100%;
@@ -10,6 +15,11 @@
 
     .past-title {
       margin-bottom: 0 !important;
+    }
+
+    .advice {
+      color: $text-color;
+      padding: 0 ($margin / 2);
     }
 
     .btn {
@@ -33,13 +43,12 @@
     }
 
     .first {
-      width: 99%;
-      margin: $margin 0 ($margin / 2) 0;
+      @extend .shadow;
+      margin: ($margin / 2);
       height: 100%;
       overflow: auto;
       border: 1px solid $light-gray;
       text-align: justify;
-      @extend .shadow;
 
       .datetime {
         width: 20%;
@@ -124,7 +133,8 @@
     }
 
     .second {
-      width: 457px;
+      width: 460px;
+      margin: ($margin / 2);
       float: left;
       height: 100%;
       overflow: auto;
@@ -134,8 +144,8 @@
       @extend .shadow;
 
       .datetime {
-        width: 25%;
-        padding: ($padding * 3) $padding ($padding * 3) $padding;
+        width: 30%;
+        padding: ($padding * 2) $padding ($padding * 2) $padding;
         float: left;
         text-align: center;
         margin-left: 0 !important;
@@ -166,7 +176,7 @@
       }
 
       .main-data {
-        width: 75%;
+        width: 70%;
         padding: $padding $padding $padding 0;
         float: left;
 
@@ -217,30 +227,15 @@
 
     .third {
       @extend .second;
+      margin: ($margin / 2);
 
       .datetime {
-        padding: ($padding * 1.5)$padding;
+        padding: ($padding * 1.5) $padding;
       }
 
       .main-data {
-        padding-left: 20px;
+        padding-left: $padding;
       }
-    }
-
-    .current > :nth-child(even) {
-        margin: ($margin / 2) 0 ($margin / 2) 0;
-    }
-
-    .current > :nth-child(odd):not(.first) {
-        margin: ($margin / 2) 0 ($margin / 2) $margin;
-    }
-
-    .past > :nth-child(odd) {
-        margin: ($margin / 2) 0 ($margin / 2) 0;
-    }
-
-    .past > :nth-child(even) {
-        margin: ($margin / 2) 0 ($margin / 2) $margin;
     }
 
     h1 {
