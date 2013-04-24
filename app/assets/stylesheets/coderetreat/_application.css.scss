@@ -332,7 +332,7 @@ sidebar {
   .submit {
     padding-left: ($padding * 5.5);
     input[type="submit"] {
-      @include button($red);
+      @include button($green);
       font-size: 1em;
     }
   }
@@ -392,6 +392,107 @@ sidebar {
     color: $light-gray;
     width: 15%;
     float: left;
+  }
+}
+
+.contact_form {
+  .contact {
+    padding: ($margin * 2) ($margin * 4) ($margin * 2) ($margin * 4);
+
+    .events-sidebar {
+      @extend .box-shadow;
+      width: 25%;
+      float: left;
+      margin: 0 $margin $margin 0;
+      padding: $padding;
+      overflow: auto;
+      text-align: justify;
+      vertical-align: center;
+
+      .icon-calendar {
+        font-family: 'FontAwesome';
+        color: $green;
+        font-size: $text-size * 2;
+      }
+
+      .title {
+        margin-left: ($margin / 2);
+        color: $green;
+        text-align: center;
+        font-weight: 900;
+        font-size: 22px;
+        font-family: 'Roboto';
+      }
+
+      .event {
+        margin-top: 20px;
+        border-bottom: 1px solid $light-gray;
+        padding-bottom: $padding;
+
+        &:last-child {
+          margin-top: 0;
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+
+        .img {
+          width: 20px;
+          overflow: hidden;
+          float: left;
+          margin-top: ($margin / 3);
+        }
+
+        a {
+          color: $green;
+          font-family: "Roboto";
+          font-size: $text-size;
+          font-weight: 400;
+          font-style: italic;
+          text-decoration: none;
+          float: right;
+        }
+
+        h3 { margin: 20px 0 5px 0; }
+
+        h4 {
+          color: $text-color;
+          text-align: left;
+          font-weight: 400;
+          font-size: $text-size;
+          font-family: 'Roboto';
+          margin: 0;
+        }
+
+        .date {
+          margin-left: 25px;
+          line-height: 2.0em;
+          font-weight: 500;
+        }
+
+        .link {
+          overflow: hidden;
+        }
+      }
+    }
+
+    .box-shadow {
+      -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+      -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+      box-shadow:         3px 3px 5px -2px $light-gray;
+      border: 1px solid $light-gray;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background-color: white;
+    }
+
+    .content {
+      width: 72%;
+      float: right;
+      padding: $margin;
+
+      h1 { margin: 0; }
+    }
   }
 }
 
