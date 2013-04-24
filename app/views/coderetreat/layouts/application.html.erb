@@ -18,7 +18,7 @@
             <%= link_to image_tag("logo.png", border: 0), root_path %>
           </div>
           <ul class="menu five">
-            <li><%= link_to t('.menu-contact'), "#" %></li>
+            <li><%= link_to t('.menu-contact'), contact_form_new_path %></li>
             <li><%= link_to t('.menu-blog'), "#" %></li>
             <li><%= link_to t('.menu-events'), events_path %></li>
             <li><%= link_to t('.menu-home'), root_path %></li>
@@ -37,7 +37,7 @@
           <div class="three">
             <span class="logo"><%= link_to (image_tag "logo.png"), root_path %></span>
             <p><%= t('.contact_us') %></p>
-            <%= link_to t('.more_info'), "#" %>
+            <%= link_to t('.more_info'), contact_form_new_path %>
           </div>
           <div class="three">
             <h4><%= t('.twitter') %></h4>
