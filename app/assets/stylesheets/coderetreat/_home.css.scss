@@ -125,12 +125,12 @@
         }
 
         .event {
-          margin-top: 20px;
+          margin-top: $margin;
           border-bottom: 1px solid $light-gray;
           padding-bottom: $padding;
 
           &:last-child {
-            margin-top: 0;
+            margin-top: $margin;
             border-bottom: none;
             padding-bottom: 0;
           }
@@ -152,19 +152,18 @@
             float: right;
           }
 
-          h3 {margin: 20px 0 5px 0;}
+          h3 { margin: 0 0 5px 0; }
 
           h4 {
             color: $text-color;
             text-align: left;
-            font-weight: 400;
+            font-weight: 300;
             font-size: $text-size;
             font-family: 'Roboto';
             margin: 0;
           }
 
           .date {
-            margin-left: 25px;
             line-height: 2.0em;
             font-weight: 500;
           }
