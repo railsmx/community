@@ -264,97 +264,97 @@
   }
 
   .event-data {
-    margin: 0 0 $margin 0;
+    margin: ($margin * 2) 0;
 
-  .description-data {
-    .title {
-      color: $red;
-      font-family: "Helvetica";
-      font-weight: bold;
-      font-size: 2.0em;
-    }
-
-    .description {
-      margin: $margin 0 ($margin * 2) 0;
-      font-family: "Helvetica";
-      text-align: justify;
-    }
-  }
-
-  .where-data {
-    .location-info {
-      margin-left: 0;
-      padding-right: 10px;
-
-      .place {
-        color: $gray;
-        font-weight: bold;
-        font-size: 0.9em;
-        line-height: 1.1em;
-
-        .image {
-          margin-bottom: $margin;
-          margin-top: 0;
-        }
-      }
-
-      .organizer {
-        margin: ($margin / 2) 0 0 ($margin + 5);
-        color: $red;
+    .description-data {
+      .title {
+        color: $green;
         font-family: "Helvetica";
-        font-weight: lighter;
+        font-weight: bold;
+        font-size: 2.0em;
       }
 
-      .contact {
-        margin-top: ($margin / 4);
-        padding-left: $padding + 5;
-        font-weight: lighter;
-      }
-
-      .datetime {
-        padding: ($padding * 2) ($padding * 4) $padding 0;
-        text-align: center;
-
-        .month {
-          font-size: 1.5em;
-          color: $black;
-        }
-
-        .day {
-          font-size: 4.0em;
-          font-weight: bold;
-          color: $red;
-          line-height: .7em;
-        }
-
-        .weekday {
-          color: $gray;
-          font-size: 1.2em;
-          line-height: 1.7em;
-        }
-
-        .time {
-          font-size: 1.2em;
-          font-weight: bold;
-          line-height: .7em;
-        }
+      .description {
+        margin: $margin 0 ($margin * 2) 0;
+        font-family: "Helvetica";
+        text-align: justify;
       }
     }
 
-    #map {
-      height: 350px;
-      margin-bottom: $margin;
+    .where-data {
+      .location-info {
+        margin-left: 0;
+        padding-right: 10px;
 
-      // This is just a test code for the shadow and the border
-      border: 1px solid $light-gray;
-      border-radius: 3px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      -moz-box-shadow:    3px 3px 5px -2px $light-gray;
-      -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
-      box-shadow:         3px 3px 5px -2px $light-gray;
-      //end
+        .place {
+          color: $gray;
+          font-weight: bold;
+          font-size: 0.9em;
+          line-height: 1.1em;
+
+          .image {
+            margin-bottom: $margin;
+            margin-top: 0;
+          }
+        }
+
+        .organizer {
+          margin: ($margin / 2) 0 0 ($margin + 5);
+          color: $green;
+          font-family: "Helvetica";
+          font-weight: lighter;
+        }
+
+        .contact {
+          margin-top: ($margin / 4);
+          padding-left: $padding + 5;
+          font-weight: lighter;
+        }
+
+        .datetime {
+          padding: ($padding * 2) ($padding * 4) $padding 0;
+          text-align: center;
+
+          .month {
+            font-size: 1.5em;
+            color: $black;
+          }
+
+          .day {
+            font-size: 4.0em;
+            font-weight: bold;
+            color: $green;
+            line-height: .9em;
+          }
+
+          .weekday {
+            color: $gray;
+            font-size: 1.2em;
+            line-height: 1.7em;
+          }
+
+          .time {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: .9em;
+          }
+        }
+      }
+
+      #map {
+        height: 350px;
+        margin-bottom: $margin;
+
+        // This is just a test code for the shadow and the border
+        border: 1px solid $light-gray;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+        -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+        box-shadow:         3px 3px 5px -2px $light-gray;
+        //end
+      }
     }
   }
-}
 }
