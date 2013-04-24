@@ -247,46 +247,6 @@ footer {
   }
 }
 
-sidebar {
-  padding: 0 ($padding * 2) 0 $padding;
-  margin-left: 0 !important;
-
-  .events, .blog {
-    padding-left: 0 !important;
-
-  }
-
-  .events {
-    .sidebar-events {
-      margin-top: ($margin / 2) !important;
-      font-size: 0.9em !important;
-    }
-  }
-
-  .blog {
-    margin-top: $margin;
-    .sidebar-blog {
-      margin-top: ($margin / 2) !important;
-      font-size: 0.8em !important;
-    }
-  }
-
-  p {
-    font-size: 0.8em;
-  }
-
-  h4 {
-    margin-top: 0 !important;
-    margin-bottom: 0;
-  }
-
-  a {
-    color: $light-red;
-    font-weight: bold;
-    text-decoration: none;
-  }
-}
-
 .shadow-bottom {
   -moz-box-shadow:    1px 3px 5px -1px $light-gray;
   -webkit-box-shadow: 1px 3px 5px -1px $light-gray;
