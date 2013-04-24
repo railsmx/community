@@ -219,7 +219,7 @@
       @extend .second;
 
       .datetime {
-        padding: $padding 0 $padding $padding;
+        padding: ($padding * 1.5)$padding;
       }
 
       .main-data {
@@ -269,22 +269,26 @@
     .description-data {
       .title {
         color: $green;
-        font-family: "Helvetica";
+        font-family: "Roboto";
         font-weight: bold;
         font-size: 2.0em;
       }
 
       .description {
         margin: $margin 0 ($margin * 2) 0;
-        font-family: "Helvetica";
+        font-family: "Roboto";
         text-align: justify;
+        font-weight: 300;
       }
     }
 
     .where-data {
+      h2 {
+        color: $green;
+      }
+
       .location-info {
         margin-left: 0;
-        padding-right: 10px;
 
         .place {
           color: $gray;
@@ -296,19 +300,36 @@
             margin-bottom: $margin;
             margin-top: 0;
           }
+
+          .loc {
+            font-family: "Roboto";
+            font-weight: 900;
+            font-size: $text-size + 2;
+            color: $header1-color;
+            display: inline;
+          }
+
+          .add {
+            font-family: "Roboto";
+            font-weight: 400;
+            color: $text-color;
+            display: inline;
+            line-height: 1.2em;
+          }
         }
 
         .organizer {
-          margin: ($margin / 2) 0 0 ($margin + 5);
+          margin-left: ($margin + 5);
           color: $green;
-          font-family: "Helvetica";
+          font-family: "Roboto";
           font-weight: lighter;
+          line-height: 1.2em;
         }
 
         .contact {
-          margin-top: ($margin / 4);
           padding-left: $padding + 5;
           font-weight: lighter;
+          line-height: 1.7em;
         }
 
         .datetime {

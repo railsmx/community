@@ -13,11 +13,15 @@
   <div class="where-data">
     <h2> <%= t('.where_when') %></h2><br>
 
-    <div class="location-info four">
+    <div class="location-info five">
       <div class="place">
         <%= image_tag "pin.png", id: "maker", class: "image", align: "left", size: "25x38"%>
-        <%= @event.location %><br>
-        <%= @event.address %>
+        <div class="loc">
+          <%= @event.location %>
+        </div><br>
+        <div class="add">
+          <%= @event.address %>
+        </div>
       </div>
       <div class="organizer">
         <%= t('.organizer', organize: truncate(@event.organizer, length: 25)) %>
@@ -34,7 +38,7 @@
       </div><br>
     </div>
 
-    <div id="map"class="map five"></div>
+    <div id="map"class="map seven"></div>
   </div>
 </div>
 
