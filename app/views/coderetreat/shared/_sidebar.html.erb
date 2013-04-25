@@ -1,5 +1,9 @@
 <div class="events-sidebar">
   <span class="icon-calendar"><%= "" %></span>
   <span class="title"><%= t('.coming_events') %></span><br>
-  <%= !current_events.empty? ? (render partial: 'shared/event', collection: current_events) : t('.not_content') %>
+  <% if !current_events.empty? %>
+    <%= render partial: 'shared/event', collection: current_events %>
+  <% else %>
+    <div class="advice"><%= t('.not_content') %></div>
+  <% end %>
 </div>

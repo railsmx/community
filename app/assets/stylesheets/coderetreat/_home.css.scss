@@ -171,6 +171,11 @@
       font-family: 'Roboto';
     }
 
+    .advice {
+      margin-top: $margin;
+      text-align: center;
+    }
+
     .event {
       margin-top: $margin;
       border-bottom: 1px solid $light-gray;

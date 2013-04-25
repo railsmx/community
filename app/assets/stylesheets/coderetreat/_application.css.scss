@@ -384,6 +384,11 @@ footer {
         font-family: 'Roboto';
       }
 
+      .advice {
+        margin-top: $margin;
+        text-align: center;
+      }
+
       .event {
         margin-top: 20px;
         border-bottom: 1px solid $light-gray;
@@ -449,6 +454,7 @@ footer {
       width: 67%;
       float: right;
       padding: $margin;
+      background-color: white;
 
       h1 {
         margin: 0;
@@ -518,4 +524,7 @@ footer {
 .datapicker {
   position: absolute;
 }
-.timeline-header h1.summary{display: none;}
+
+.timeline-header h1.summary {
+  display: none;
+}
