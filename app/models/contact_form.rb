@@ -5,7 +5,7 @@ class ContactForm < MailForm::Base
 
   validates_format_of :email, with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
-   def headers
+  def headers
     {
       subject: "Correo de contacto de #{Rails.application.config.theme.capitalize}",
       to: Rails.application.config.contact_email,

@@ -10,18 +10,18 @@ describe ContactFormController do
 
   describe "post create" do
     it "should redirect with valid fields" do
-      ActionMailer::Base.deliveries = []
+      stub_method(ContactForm, :deliver) {
+        true
+      }
 
   	  post :create, contact_form: { name: 'hce', email: 'xhce911@gmail.com', message: 'testing' }
 
   	  assert_response :redirect
   	  assert_redirected_to root_path
-
-  	  ActionMailer::Base.deliveries.size.must_equal 1
     end
 
     it "should render new form with invalid fields" do
-	  ActionMailer::Base.deliveries = []
+      ActionMailer::Base.deliveries = []
 
   	  post :create, contact_form: { name: '', email: '', message: 'testing' }
 
