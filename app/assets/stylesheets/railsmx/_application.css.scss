@@ -265,6 +265,7 @@ sidebar {
 }
 
 .social-buttons {
+  float: none !important;
   display: inline-block;
   list-style-type: none;
   margin: ($margin * 2) 0 0 ($margin * 16) !important;

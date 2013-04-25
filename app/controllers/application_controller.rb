@@ -1,4 +1,15 @@
 class ApplicationController < ActionController::Base
+
+def crowdblog_current_user
+  current_identity
+end
+
+def crowdblog_authenticate_user!
+  authenticate!
+end
+
+helper_method :crowdblog_current_user, :crowdblog_authenticate_user!
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   prepend_view_path "app/views/#{Rails.application.config.theme}"

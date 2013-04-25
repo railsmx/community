@@ -7,8 +7,8 @@ class ContactForm < MailForm::Base
 
    def headers
     {
-      subject: "Correo de prueba",
-      to: "test.blog.mx@gmail.com",
+      subject: "Correo de contacto de #{Rails.application.config.theme.capitalize}",
+      to: Rails.application.config.contact_email,
       from: %("#{name}" <#{email}>)
     }
   end
