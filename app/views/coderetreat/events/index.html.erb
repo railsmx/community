@@ -9,7 +9,7 @@
 
   <div class="row current">
     <% if !@current_events.empty? %>
-      <%= render @current_events %>
+      <%= render partial: 'event', collection: @current_events, locals: { event_count: @current_events.length } %>
     <% else %>
       <div class="advice">
         <%= t('.not_upcoming_events') %>
@@ -41,4 +41,12 @@
   $(function(){
     new App.Utilities.Form
   });
+
+  $(function(){
+    $('.contenedor').masonry({
+      // options
+      itemSelector : '.second',
+      columnWidth : 240
+    });
+  });  
 </script>

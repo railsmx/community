@@ -1,4 +1,8 @@
 <%- first = (event_counter == 0 and event.upcoming?) %>
+<% if event_counter == 1 %>
+  <div class="contenedor">
+<% end %>
+
 <div id="event_<%= event.id %>" class="<%= !event.upcoming? ? "third" : (first ? "first" : "second")%>">
   <div class="datetime">
     <div class="month"><%= localize_month(event.date).upcase %></div>
@@ -24,3 +28,7 @@
     <% end %>
   </div>
 </div>
+
+<% if event_counter == event_count %>
+  </div>
+<% end %>
