@@ -46,6 +46,17 @@ Before starting the application export Github OAuth keys as follow:
 
 These keys are being used in the omniauth.rb initializer
 
+## SMTP
+For SMTP it uses ActionMailer with SendGrid Account
+
+Before starting the application export SendGrid account keys as follow:
+
+    export APP_DOMAIN = app_name_domain
+    export SENDGRID_USERNAME = sendgrid_username
+    export SENDGRID_PASSWORD = sendgrid_password
+    
+These keys are being used in the smtp_setup.rb initializer
+
 ## Twitter
 For use twitter it uses gem Twitter with OAuth Access and Tokens 
 
