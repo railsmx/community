@@ -28,9 +28,10 @@
         margin-bottom: ($margin * 2);
       }
 
-      .group {
+      #group {
         width: 100%;
         margin-bottom: ($margin * 2);
+        display: inline-block;
       }
 
       h1, h2, p {
@@ -51,6 +52,7 @@
     a {
       color: $light-red;
       text-decoration: none;
+      padding-right: 20px;
     }
 
     .shadow {
@@ -63,7 +65,7 @@
     }
 
     .first {
-      width: 97.4%;
+      width: 97%;
       margin: ($margin / 2);
       border: 1px solid $light-gray;
       text-align: justify;
@@ -150,7 +152,8 @@
     }
 
     .second {
-      width: 375px;
+      width: 47.2%;
+      float: left;
       margin: $margin / 2;
       border: 1px solid $light-gray;
       text-align: justify;
@@ -240,6 +243,7 @@
 
     .third {
       @extend .second;
+      float: left;
       margin: $margin / 2;
 
       .datetime {
@@ -332,7 +336,7 @@
             font-size: 4.0em;
             font-weight: bold;
             color: $red;
-            line-height: .7em;
+            line-height: .9em;
           }
 
           .weekday {
@@ -344,7 +348,7 @@
           .time {
             font-size: 1.2em;
             font-weight: bold;
-            line-height: .7em;
+            line-height: .9em;
           }
         }
       }
