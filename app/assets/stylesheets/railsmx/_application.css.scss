@@ -8,8 +8,12 @@
 }
 
 body {
+  font-family: "Helvetica";
   margin: 0;
-  font-family: $helvetica;
+}
+
+section, div, article {
+  overflow: hidden;
 }
 
 .container {
@@ -242,6 +246,7 @@ sidebar {
 
   .blog {
     margin-top: $margin;
+    
     .sidebar-blog {
       margin-top: ($margin / 2) !important;
       font-size: 0.8em !important;

@@ -1,35 +1,47 @@
 <% title t('.events') %>
-<div class="content twelve">
+<div class="content">
   <%= display_notice %>
 
-  <sidebar class="blog three">
+  <sidebar class="blog">
     <h4><%= t('.blog') %></h4>
     <div class="sidebar-blog">
       <%= t('.not_content') %>
     </div>
   </sidebar>
 
-  <section class="events-section nine">
+  <section class="events-section">
     <h1>
       <%= t('.events') %>
       <%= display_create_event_link %>
     </h1>
     <p><%= t('.text_current_events') %></p>
 
-    <div class="event-row current">
+    <div class="row current">
       <% cache [current_identity, @current_events] do %>
-        <%= @current_events.any? ? (render partial: 'event', collection: @current_events) : t('.not_upcoming_events') %>
+        <% if !@current_events.empty? %>
+          <%= render partial: 'event', collection: @current_events, locals: { event_count: @current_events.length } %>
+        <% else %>
+          <div class="advice">
+            <%= t('.not_upcoming_events') %>
+          </div>
+        <% end %>
       <% end %>
-    </div> <br>
+    </div>
 
-    <div class="event-row past-title">
+    <div class="row past-title">
       <h2><%= t('.recent_events') %></h2>
       <p><%= t('.text_past_events') %></p>
     </div>
 
-    <div class="event-row past">
+    <div class="row past">
       <% cache @past_events do %>
-        <%= @past_events.any? ? (render partial: 'event', collection: @past_events) : t('.not_recent_events') %>
+        <% if !@past_events.empty? %>
+          <%= render partial: 'event', collection: @past_events, locals: { event_count: @past_events.length } %>
+        <% else %>
+          <div class="advice">
+            <%= t('.not_recent_events') %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </section>
@@ -43,5 +55,13 @@
 
   $(function(){
     new App.Utilities.Form
+  });
+
+  $(function(){
+    $('.group').masonry({
+      // options
+      itemSelector : '.second',
+      columnWidth : 120
+    });
   });
 </script>

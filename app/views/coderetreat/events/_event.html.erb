@@ -11,6 +11,7 @@
     <div class="time"><%= localize_time event.date if event.upcoming? %></div>
     <%= display_edit_event_link event if event.upcoming? %>
   </div>
+  
   <div class="main-data">
     <span class="title"><%= link_to event.name, event_path(event) %></span><br>
     <div class="location">
