@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Crowd Blog
+    = stylesheet_link_tag    :crowdblog, media: 'all'
+    = javascript_include_tag :crowdblog
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = csrf_meta_tags
+
+    = yield :scripts
+
+  body
+    .container
+      .row= render '/crowdblog/application/navbar'
+      .row= render '/crowdblog/application/notices'
+      .row= yield
