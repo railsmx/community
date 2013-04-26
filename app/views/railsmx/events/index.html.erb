@@ -2,10 +2,12 @@
 <div class="content twelve">
   <%= display_notice %>
 
-  <sidebar class="blog three">
-    <h4><%= t('.blog') %></h4>
-    <div class="sidebar-blog">
-      <%= t('.not_content') %>
+  <sidebar class="three">
+    <div class="blog">
+      <h4><%= t('.blog') %></h4>
+      <div class="sidebar-blog">
+        <%= !@current_posts.empty? ? (render partial: 'shared/post', collection: @current_posts) : t('.not_content') %>
+      </div>
     </div>
   </sidebar>
 
