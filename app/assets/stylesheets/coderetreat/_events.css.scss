@@ -51,9 +51,7 @@
     .first {
       @extend .shadow;
       margin: ($margin / 2);
-      //height: 100%;
       width: 98%;
-      //display: inline-block;
       border: 1px solid $light-gray;
       text-align: justify;
 
