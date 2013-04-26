@@ -64,6 +64,15 @@ module ApplicationHelper
     I18n::localize(date, format: t(:short_time, scope: [:time, :formats]))
   end
 
+  def date_published_post(date)
+    message = localize_month(date)
+    message << " "
+    message << date.strftime("%e")
+    message << ", "
+    message << date.strftime("%Y")
+    message.html_safe
+  end
+
   def title(page_title)
     content_for(:title) { "rails.mx: #{page_title}" }
   end
