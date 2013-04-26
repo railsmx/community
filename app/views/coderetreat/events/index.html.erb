@@ -15,7 +15,7 @@
         <%= t('.not_upcoming_events') %>
       </div>
     <% end %>
-  </div> <br>
+  </div>
 
   <div class="row past-title">
     <h2><%= t('.recent_events') %></h2>
@@ -24,7 +24,7 @@
 
   <div class="row past">
     <% if !@past_events.empty? %>
-      <%= render @past_events %>
+      <%= render partial: 'event', collection: @past_events, locals: { event_count: @past_events.length } %>
     <% else %>
       <div class="advice">
         <%= t('.not_recent_events') %>
