@@ -51,6 +51,12 @@ es:
         message: "Mensaje enviado"
         name: "Nombre"
 
+  crowdblog:
+    posts:
+      index:
+        blog: "Blog"
+        coming_events: 'Próximos Eventos'
+
   activerecord:
     errors:
       messages:
