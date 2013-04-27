@@ -21,26 +21,208 @@
       padding-right: ($padding / 2);
       float: left;
 
-      .current { margin-bottom: 0; }
-
       .row {
         width: 100%;
         margin-bottom: ($margin * 2);
+
+        #group {
+          width: 100%;
+          display: inline-block;
+        }
+
+        .first {
+          @extend .shadow;
+          width: 97%;
+          margin: ($margin / 2);
+          border: 1px solid $light-gray;
+          text-align: justify;
+
+          .datetime {
+            width: 20%;
+            float: left;
+            padding: ($padding * 3) 0;
+            text-align: center;
+            margin-left: 0 !important;
+
+            .month {
+              font-size: 1.5em;
+              color: $black;
+            }
+
+            .day {
+              font-size: 4.0em;
+              font-weight: bold;
+              color: $red;
+              line-height: .9em;
+            }
+
+            .weekday {
+              color: $gray;
+              font-size: 1.2em;
+              line-height: 1.7em;
+            }
+
+            .time {
+              font-size: 1.2em;
+              font-weight: bold;
+              line-height: .9em;
+            }
+          }
+
+          .main-data {
+            width: 80%;
+            float: left;
+            padding: $padding $padding $padding 0;
+
+            .title {
+              color: $red;
+              font-family: "Helvetica";
+              font-weight: bold;
+              font-size: 2.5em;
+            }
+
+            .location {
+              text-align: left !important;
+              color: $gray;
+              font-size: 1.1em;
+              line-height: 1.1em;
+
+              .img {
+                width: 5%;
+                overflow: hidden;
+                float: left;
+              }
+
+              .info {
+                width: 95%;
+                float: left;
+
+                .organizer {
+                  color: $red;
+                  text-align: left;
+                  font-family: "Helvetica";
+                  font-weight: lighter;
+                  font-size: .9em;
+                  margin: ($margin / 2) 0;
+                }
+              }
+            }
+
+            .description {
+              margin-top: ($margin / 2);
+              color: $gray;
+              font-family: "Helvetica";
+              font-weight: lighter;
+
+              p { padding: 0; }
+            }
+          }
+        }
+
+        .second {
+          @extend .shadow;
+          width: 47.2%;
+          float: left;
+          margin: $margin / 2;
+          border: 1px solid $light-gray;
+          text-align: justify;
+
+          .datetime {
+            width: 25%;
+            float: left;
+            padding: ($padding * 3) 0;
+            text-align: center;
+            margin-left: 0 !important;
+
+            .month {
+              font-size: 1.2em;
+              color: $black;
+            }
+
+            .day {
+              font-size: 3.0em;
+              font-weight: bold;
+              color: $red;
+              line-height: .9em;
+            }
+
+            .weekday {
+              color: $gray;
+              font-size: 1.0em;
+              line-height: 1.7em;
+            }
+
+            .time {
+              font-size: 1.0em;
+              font-weight: bold;
+              line-height: .9em;
+            }
+          }
+
+          .main-data {
+            width: 75%;
+            float: left;
+            padding: $padding $padding $padding 0;
+
+            .title {
+              color: $red;
+              font-family: "Helvetica";
+              font-weight: bold;
+              font-size: 1.5em;
+            }
+
+            .location {
+              overflow: hidden;
+              text-align: left !important;
+              color: $gray;
+              font-size: 1em;
+              line-height: 1.1em;
+
+              .img {
+                width: 10%;
+                overflow: hidden;
+                float: left;
+              }
+
+              .info {
+                width: 90%;
+                float: left;
+
+                .organizer {
+                  color: $red;
+                  text-align: left;
+                  font-family: "Helvetica";
+                  font-weight: lighter;
+                  font-size: .9em;
+                  margin: ($margin / 2) 0;
+                }
+              }
+            }
+
+            .description {
+              overflow: hidden;
+              color: $gray;
+              font-family: "Helvetica";
+              font-weight: lighter;
+              font-size: .9em;
+
+              p { padding: 0; }
+            }
+          }
+        }
+
+        .third {
+          @extend .second;
+
+          .datetime { padding: $padding 0 $padding $padding !important; }
+
+          .main-data { padding-left: 20px !important; }
+        }
       }
 
-      #group {
-        width: 100%;
-        margin-bottom: ($margin * 2);
-        display: inline-block;
-      }
+      .past-title { margin-bottom: 0 !important; }
 
-      h1, h2, p {
-        padding: 0 ($padding / 2);
-      }
-    }
-
-    .past-title {
-      margin-bottom: 0 !important;
+      h1, h2, p { padding: 0 ($padding / 2); }
     }
 
     .btn {
@@ -64,197 +246,6 @@
       border-radius: 3px;
     }
 
-    .first {
-      width: 97%;
-      margin: ($margin / 2);
-      border: 1px solid $light-gray;
-      text-align: justify;
-      @extend .shadow;
-
-      .datetime {
-        width: 20%;
-        float: left;
-        padding: ($padding * 3) 0 ($padding * 3) 0;
-        text-align: center;
-        margin-left: 0 !important;
-
-        .month {
-          font-size: 1.5em;
-          color: $black;
-        }
-
-        .day {
-          font-size: 4.0em;
-          font-weight: bold;
-          color: $red;
-          line-height: .9em;
-        }
-
-        .weekday {
-          color: $gray;
-          font-size: 1.2em;
-          line-height: 1.7em;
-        }
-
-        .time {
-          font-size: 1.2em;
-          font-weight: bold;
-          line-height: .9em;
-        }
-      }
-
-      .main-data {
-        width: 80%;
-        float: left;
-        padding: $padding 0;
-
-        .title {
-          color: $red;
-          font-family: "Helvetica";
-          font-weight: bold;
-          font-size: 2.5em;
-        }
-
-        .location {
-          text-align: left !important;
-          color: $gray;
-          font-size: 1.1em;
-          line-height: 1.1em;
-
-          .img {
-            width: 5%;
-            overflow: hidden;
-            float: left;
-          }
-
-          .info {
-            width: 95%;
-            float: left;
-
-            .organizer {
-              color: $red;
-              text-align: left;
-              font-family: "Helvetica";
-              font-weight: lighter;
-              font-size: .9em;
-              margin: ($margin / 2) 0 ($margin / 2) 0;
-            }
-          }
-        }
-
-        .description {
-          margin-top: ($margin / 2);
-          color: $gray;
-          font-family: "Helvetica";
-          font-weight: lighter;
-        }
-      }
-    }
-
-    .second {
-      width: 47.2%;
-      float: left;
-      margin: $margin / 2;
-      border: 1px solid $light-gray;
-      text-align: justify;
-      @extend .shadow;
-
-      .datetime {
-        width: 25%;
-        float: left;
-        padding: ($padding * 3) 0 ($padding * 3) 0;
-        text-align: center;
-        margin-left: 0 !important;
-
-        .month {
-          font-size: 1.2em;
-          color: $black;
-        }
-
-        .day {
-          font-size: 3.0em;
-          font-weight: bold;
-          color: $red;
-          line-height: .9em;
-        }
-
-        .weekday {
-          color: $gray;
-          font-size: 1.0em;
-          line-height: 1.7em;
-        }
-
-        .time {
-          font-size: 1.0em;
-          font-weight: bold;
-          line-height: .9em;
-        }
-      }
-
-      .main-data {
-        width: 75%;
-        float: left;
-        padding: $padding $padding $padding 0;
-
-        .title {
-          color: $red;
-          font-family: "Helvetica";
-          font-weight: bold;
-          font-size: 1.5em;
-        }
-
-        .location {
-          overflow: hidden;
-          text-align: left !important;
-          color: $gray;
-          font-size: 1em;
-          line-height: 1.1em;
-
-          .img {
-            width: 10%;
-            overflow: hidden;
-            float: left;
-          }
-
-          .info {
-            width: 90%;
-            float: left;
-
-            .organizer {
-              color: $red;
-              text-align: left;
-              font-family: "Helvetica";
-              font-weight: lighter;
-              font-size: .9em;
-              margin: ($margin / 2) 0 ($margin / 2) 0;;
-            }
-          }
-        }
-
-        .description {
-          overflow: hidden;
-          color: $gray;
-          font-family: "Helvetica";
-          font-weight: lighter;
-          font-size: .9em;
-        }
-      }
-    }
-
-    .third {
-      @extend .second;
-      float: left;
-      margin: $margin / 2;
-
-      .datetime {
-        padding: $padding 0 $padding $padding;
-      }
-
-      .main-data {
-        padding-left: 20px;
-      }
-    }
-
     h2 {
       margin-top: 0px;
       margin-bottom: 0px;
@@ -263,6 +254,7 @@
     h1, h2, h3, h4, h5, h6 {
       color: $red;
       margin: 0;
+      padding: 0;
     }
 
     .edit {
@@ -357,7 +349,6 @@
         height: 350px;
         margin-bottom: $margin;
 
-        // This is just a test code for the shadow and the border
         border: 1px solid $light-gray;
         border-radius: 3px;
         -webkit-border-radius: 3px;
@@ -365,7 +356,6 @@
         -moz-box-shadow:    3px 3px 5px -2px $light-gray;
         -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
         box-shadow:         3px 3px 5px -2px $light-gray;
-        //end
       }
     }
   }

@@ -1,11 +1,11 @@
 <% cache [current_identity, event] do %>
   <%- first = (event_counter == 0 and event.upcoming?) %>
 
-  <% if event_counter == 1 or !event.upcoming? %>
+  <% if (event_counter == 1 and event.upcoming?) or (event_counter == 0 and !event.upcoming?) %>
     <div id="group">
   <% end %>
 
-  <div id="event_<%= event.id %>" class="<%= !event.upcoming? ? "second" : (first ? "first" : "second")%>">
+  <div id="event_<%= event.id %>" class="<%= !event.upcoming? ? "third" : (first ? "first" : "second")%>">
     <div class="datetime">
       <div class="month"><%= localize_month(event.date).upcase %></div>
       <div class="day"><%= event.date.strftime("%e") %></div>
