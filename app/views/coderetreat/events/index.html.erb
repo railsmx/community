@@ -1,0 +1,52 @@
+<% title t('.events') %>
+<div class="content">
+  <%= display_notice %>
+  <h1>
+    <%= t('.events') %>
+    <%= display_create_event_link %>
+  </h1>
+  <p><%= t('.text_current_events') %></p>
+
+  <div class="row current">
+    <% if !@current_events.empty? %>
+      <%= render partial: 'event', collection: @current_events, locals: { event_count: @current_events.length } %>
+    <% else %>
+      <div class="advice">
+        <%= t('.not_upcoming_events') %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row past-title">
+    <h2><%= t('.recent_events') %></h2>
+    <p><%= t('.text_past_events') %></p>
+  </div>
+
+  <div class="row past">
+    <% if !@past_events.empty? %>
+      <%= render partial: 'event', collection: @past_events, locals: { event_count: @past_events.length } %>
+    <% else %>
+      <div class="advice">
+        <%= t('.not_recent_events') %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('page:change', function(){
+    new App.Utilities.Form
+  });
+
+  $(function(){
+    new App.Utilities.Form
+  });
+
+  $(function(){
+    $('.contenedor').masonry({
+      // options
+      itemSelector : '.second',
+      columnWidth : 240
+    });
+  });  
+</script>

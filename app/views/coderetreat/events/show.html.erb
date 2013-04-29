@@ -1,0 +1,56 @@
+<% title @event.name %>
+
+<div class="content event-data">
+  <div class="description-data">
+    <div class="title">
+      <%= @event.name %>
+    </div>
+    <div class="description">
+      <%= @event.description %>
+    </div>
+  </div>
+
+  <div class="where-data">
+    <h2> <%= t('.where_when') %></h2><br>
+
+    <div class="location-info five">
+      <div class="place">
+        <%= image_tag "pin.png", id: "maker", class: "image", align: "left", size: "25x38"%>
+        <div class="loc">
+          <%= @event.location %>
+        </div><br>
+        <div class="add">
+          <%= @event.address %>
+        </div>
+      </div>
+      <div class="organizer">
+        <%= t('.organizer', organize: truncate(@event.organizer, length: 25)) %>
+      </div>
+      <div class="contact">
+        <%= t('.contact', contact: truncate(@event.contact, length: 25)) %>
+      </div>
+
+      <div class="datetime">
+        <div class="month"><%= localize_month(@event.date).upcase %></div>
+        <div class="day"><%= @event.date.strftime("%e") %></div>
+        <div class="weekday"><%= localize_weekday @event.date %></div>
+        <div class="time"><%= localize_time @event.date %></div>
+      </div><br>
+    </div>
+
+    <div id="map"class="map seven"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  <% params = "#{@event.latitude}, #{@event.longitude}".html_safe %>
+  document.addEventListener('page:change', function(){
+    new App.Utilities.Map(<%= params %>);
+  });
+
+  $(function(){
+    new App.Utilities.Map(<%= params %>);
+  });
+</script>
+
+

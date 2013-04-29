@@ -52,6 +52,10 @@ module ApplicationHelper
     I18n::localize(date, format: t(:long_date, scope: [:date, :formats]))
   end
 
+  def localize_short_date(date)
+    I18n::localize(date, format: t(:custom_short, scope: [:date, :formats]))
+  end
+
   def localize_month(date)
     I18n::localize(date, format: t(:month_name, scope: [:date, :formats]))
   end

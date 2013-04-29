@@ -1,0 +1,51 @@
+<div class="form-event">
+  <%= form_for event, url: event_path(event) do |f| %>
+    <div>
+      <label><%= t('.event_name') %></label>
+      <%= f.text_field :name %>
+      <%= field_error event, :name %>
+    </div>
+    <div>
+      <label><%= t('.place') %></label>
+      <%= f.text_field :location, class: 'building', placeholder: t('.ph_place') %>
+      <%= field_error event, :location %>
+    </div>
+    <div>
+      <label><%= t('.address') %></label>
+      <%= f.text_field :address, class: 'place' %>
+      <%= field_error event, :address %>
+    </div>
+    <div>
+      <label><%= t('.date') %></label>
+      <%= f.text_field :date, class: 'date' %>
+      <%= f.text_field :time, class: 'time' %>
+      <%= field_error event, :date %>
+    </div>
+    <div>
+      <label><%= t('.organizer') %></label>
+      <%= f.text_field :organizer, placeholder: t('.ph_organizer') %>
+    </div>
+    <div>
+      <label><%= t('.contact') %></label>
+      <%= f.text_field :contact, placeholder: t('.ph_contact') %>
+      <%= field_error event, :contact %>
+    </div>
+    <div>
+      <label><%= t('.description') %></label>
+      <%= f.text_area :description, class: 'areamail'%>
+    </div>
+    <div class="submit">
+      <%= f.submit submit %> o <%= link_to t('.back'), events_path %>
+    </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('page:change', function(){
+    new App.Utilities.DateTimeInput;
+  });
+
+  $(function(){
+    new App.Utilities.DateTimeInput;
+  });
+</script>

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130423181246) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "crowdblog_assets", force: true do |t|
     t.integer  "post_id"
     t.string   "attachment"
@@ -52,11 +55,9 @@ ActiveRecord::Schema.define(version: 20130423181246) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "slug"
   end
 
   add_index "events", ["identity_id"], name: "index_events_on_identity_id"
-  add_index "events", ["slug"], name: "index_events_on_slug", unique: true
 
   create_table "identities", force: true do |t|
     t.string   "provider",                   null: false

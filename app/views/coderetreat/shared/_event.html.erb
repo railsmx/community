@@ -1,0 +1,20 @@
+<div class="event">
+  <h3><%= event.name %></h3>
+  <div class="location">
+    <div class="img">
+      <%= image_tag "pin.png", id: "maker", align: "left", size: "20x30" %>
+    </div>
+    <div class="info">
+      <h4>
+        <%= event.location %><br>
+        <%= event.address %><br>
+        <span class="date">
+          <%= localize_short_date event.date %>
+        </span>
+      </h4>
+    </div>
+  </div>
+  <div class="link">
+    <%= link_to t('.details'), event_path(event) %>
+  </div>
+</div>

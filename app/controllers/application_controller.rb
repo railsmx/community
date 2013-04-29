@@ -36,7 +36,7 @@ helper_method :crowdblog_current_user, :crowdblog_authenticate_user!
   end
 
   def current_events
-    @current_events = Event.current_events(3)
+    @current_events = Event.current_events(2)
   end
 
   def current_posts

@@ -1,388 +1,428 @@
-.content {
-  padding: $padding 0 0 0;
+.events {
+  .content {
+    padding: $padding 0 0 0;
 
-  sidebar {
-    padding: ($padding * 3) $padding 0 ($padding / 2) !important;
-  }
+    sidebar {
+      width: 22%;
 
-  .blog {
-    margin-left: 0px;
+      .blog {
+        width: 100%;
+        float: left;
+        padding-top: ($padding * 2.75);
 
-    h3 {
-      color: $black;
-      font-weight: lighter;
+        h4 { color: $black; }
+
+        .sidebar-blog { font-size: 0.8em; }
+      }
     }
 
-    .sidebar-blog {
-      font-size: 0.8em;
-    }
-  }
-
-  .events-section {
-    padding-right: $padding;
-
-    .event-row {
-      width: 100%;
-      margin-bottom: ($margin * 2);
+    .events-section {
+      width: 78%;
+      padding-right: ($padding / 2);
       float: left;
-      overflow: hidden;
-    }
-  }
 
-  .past-title {
-    margin-bottom: 0 !important;
-  }
+      .row {
+        width: 100%;
+        margin-bottom: ($margin * 2);
 
-  .btn {
-    float: right;
-    color: #fff;
-    margin-top: ($margin / 4);
-  }
-
-  a {
-    color: $light-red;
-    text-decoration: none;
-  }
-
-  .shadow {
-    -moz-box-shadow:    3px 3px 5px -2px $light-gray;
-    -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
-    box-shadow:         3px 3px 5px -2px $light-gray;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-
-  .first {
-    margin: $margin 3px ($margin / 2) 0;
-    height: 100%;
-    overflow: auto;
-    border: 1px solid $light-gray;
-    text-align: justify;
-    @extend .shadow;
-
-    .datetime {
-      padding: ($padding * 3) 0 ($padding * 3) 0;
-      text-align: center;
-      margin-left: 0 !important;
-
-      .month {
-        font-size: 1.5em;
-        color: $black;
-      }
-
-      .day {
-        font-size: 4.0em;
-        font-weight: bold;
-        color: $red;
-        line-height: .7em;
-      }
-
-      .weekday {
-        color: $gray;
-        font-size: 1.2em;
-        line-height: 1.7em;
-      }
-
-      .time {
-        font-size: 1.2em;
-        font-weight: bold;
-        line-height: .7em;
-      }
-    }
-
-    .main-data {
-      padding: $padding 0 $padding 0;
-      margin-right: $margin - 4;
-
-      .title {
-        color: $red;
-        font-family: "Helvetica";
-        font-weight: bold;
-        font-size: 2.5em;
-      }
-
-      .location {
-        text-align: left !important;
-        color: $gray;
-        font-size: 1.1em;
-        line-height: 1.1em;
-
-        .img {
-          width: 5%;
-          overflow: hidden;
-          float: left;
+        #group {
+          width: 100%;
+          display: inline-block;
         }
 
-        .info {
-          width: 95%;
-          float: left;
+        .first {
+          @extend .shadow;
+          width: 97%;
+          margin: ($margin / 2);
+          border: 1px solid $light-gray;
+          text-align: justify;
+          overflow: hidden;
 
-          .organizer {
-            color: $red;
-            text-align: left;
-            font-family: "Helvetica";
-            font-weight: lighter;
-            font-size: .9em;
-            margin: ($margin / 2) 0 ($margin / 2) 0;
+          .datetime {
+            width: 20%;
+            float: left;
+            padding: ($padding * 3) 0;
+            text-align: center;
+            margin-left: 0 !important;
+
+            .month {
+              font-size: 1.5em;
+              color: $black;
+            }
+
+            .day {
+              font-size: 4.0em;
+              font-weight: bold;
+              color: $red;
+              line-height: .9em;
+            }
+
+            .weekday {
+              color: $gray;
+              font-size: 1.2em;
+              line-height: 1.7em;
+            }
+
+            .time {
+              font-size: 1.2em;
+              font-weight: bold;
+              line-height: .9em;
+            }
+          }
+
+          .main-data {
+            width: 80%;
+            float: left;
+            padding: $padding $padding $padding 0;
+
+            .title {
+              color: $red;
+              font-family: "Helvetica";
+              font-weight: bold;
+              font-size: 2.5em;
+            }
+
+            .location {
+              text-align: left !important;
+              color: $gray;
+              font-size: 1.1em;
+              line-height: 1.1em;
+
+              .img {
+                width: 5%;
+                overflow: hidden;
+                float: left;
+              }
+
+              .info {
+                width: 95%;
+                float: left;
+
+                .organizer {
+                  color: $red;
+                  text-align: left;
+                  font-family: "Helvetica";
+                  font-weight: lighter;
+                  font-size: .9em;
+                  margin: ($margin / 2) 0;
+                }
+              }
+            }
+
+            .description {
+              margin-top: ($margin / 2);
+              color: $gray;
+              font-family: "Helvetica";
+              font-weight: lighter;
+
+              p { padding: 0; }
+            }
           }
         }
-      }
 
-      .description {
-        margin-top: ($margin / 2);
-        color: $gray;
-        font-family: "Helvetica";
-        font-weight: lighter;
-      }
-    }
-  }
-
-  .second {
-    height: 100%;
-    overflow: auto;
-    border: 1px solid $light-gray;
-    text-align: justify;
-    vertical-align: center;
-    @extend .shadow;
-
-    .datetime {
-      padding: ($padding * 3) 0 ($padding * 3) 0;
-      text-align: center;
-      margin-left: 0 !important;
-
-      .month {
-        font-size: 1.2em;
-        color: $black;
-      }
-
-      .day {
-        font-size: 3.0em;
-        font-weight: bold;
-        color: $red;
-        line-height: .7em;
-      }
-
-      .weekday {
-        color: $gray;
-        font-size: 1.0em;
-        line-height: 1.7em;
-      }
-
-      .time {
-        font-size: 1.0em;
-        font-weight: bold;
-        line-height: .7em;
-      }
-    }
-
-    .main-data {
-      padding: $padding $padding $padding 0;
-
-      .title {
-        color: $red;
-        font-family: "Helvetica";
-        font-weight: bold;
-        font-size: 1.5em;
-      }
-
-      .location {
-        overflow: hidden;
-        text-align: left !important;
-        color: $gray;
-        font-size: 1em;
-        line-height: 1.1em;
-
-        .img {
-          width: 10%;
-          overflow: hidden;
+        .second {
+          @extend .shadow;
+          width: 47.2%;
           float: left;
-        }
+          margin: $margin / 2;
+          border: 1px solid $light-gray;
+          text-align: justify;
 
-        .info {
-          width: 90%;
-          float: left;
+          .datetime {
+            width: 25%;
+            float: left;
+            padding: ($padding * 3) 0;
+            text-align: center;
+            margin-left: 0 !important;
 
-          .organizer {
-            color: $red;
-            text-align: left;
-            font-family: "Helvetica";
-            font-weight: lighter;
-            font-size: .9em;
-            margin: ($margin / 2) 0 ($margin / 2) 0;;
+            .month {
+              font-size: 1.2em;
+              color: $black;
+            }
+
+            .day {
+              font-size: 3.0em;
+              font-weight: bold;
+              color: $red;
+              line-height: .9em;
+            }
+
+            .weekday {
+              color: $gray;
+              font-size: 1.0em;
+              line-height: 1.7em;
+            }
+
+            .time {
+              font-size: 1.0em;
+              font-weight: bold;
+              line-height: .9em;
+            }
+          }
+
+          .main-data {
+            width: 75%;
+            float: left;
+            padding: $padding $padding $padding 0;
+
+            .title {
+              color: $red;
+              font-family: "Helvetica";
+              font-weight: bold;
+              font-size: 1.5em;
+            }
+
+            .location {
+              overflow: hidden;
+              text-align: left !important;
+              color: $gray;
+              font-size: 1em;
+              line-height: 1.1em;
+
+              .img {
+                width: 10%;
+                overflow: hidden;
+                float: left;
+              }
+
+              .info {
+                width: 90%;
+                float: left;
+
+                .organizer {
+                  color: $red;
+                  text-align: left;
+                  font-family: "Helvetica";
+                  font-weight: lighter;
+                  font-size: .9em;
+                  margin: ($margin / 2) 0;
+                }
+              }
+            }
+
+            .description {
+              overflow: hidden;
+              color: $gray;
+              font-family: "Helvetica";
+              font-weight: lighter;
+              font-size: .9em;
+
+              p { padding: 0; }
+            }
           }
         }
-      }
 
-      .description {
-        overflow: hidden;
-        color: $gray;
-        font-family: "Helvetica";
-        font-weight: lighter;
-        font-size: .9em;
-      }
-    }
-  }
+        .third {
+          @extend .second;
 
-  .third {
-    @extend .second;
+          .datetime { padding: $padding 0 $padding $padding !important; }
 
-    .datetime {
-      padding: $padding 0 $padding $padding;
-    }
-
-    .main-data {
-      padding-left: 20px;
-    }
-  }
-
-  .current > :nth-child(even) {
-      margin: ($margin / 2) 0 ($margin / 2) 0;
-      clear: left;
-  }
-
-  .current > :nth-child(odd):not(.first) {
-      margin: ($margin / 2) 4px ($margin / 2) $margin - 4;
-  }
-
-  .past > :nth-child(odd) {
-      margin: ($margin / 2) 0 ($margin / 2) 0;
-  }
-
-  .past > :nth-child(even) {
-      margin: ($margin / 2) 0 ($margin / 2) $margin;
-  }
-
-  h2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: $red;
-    margin: 0;
-  }
-
-  .edit {
-    display: none;
-    position: absolute;
-  }
-
-  .icon-edit {
-    color: $red;
-  }
-}
-
-.event-data {
-  margin: 0 0 $margin 0;
-
-  .description-data {
-    .title {
-      color: $red;
-      font-family: "Helvetica";
-      font-weight: bold;
-      font-size: 2.0em;
-    }
-
-    .description {
-      margin: $margin 0 ($margin * 2) 0;
-      font-family: "Helvetica";
-      text-align: justify;
-    }
-  }
-
-  .where-data {
-    .location-info {
-      margin-left: 0;
-      padding-right: 10px;
-
-      .place {
-        color: $gray;
-        font-weight: bold;
-        font-size: 0.9em;
-        line-height: 1.1em;
-
-        .image {
-          margin-bottom: $margin;
-          margin-top: 0;
+          .main-data { padding-left: 20px !important; }
         }
       }
 
-      .organizer {
-        margin: ($margin / 2) 0 0 ($margin + 5);
-        color: $red;
-        font-family: "Helvetica";
-        font-weight: lighter;
-      }
+      .past-title { margin-bottom: 0 !important; }
 
-      .contact {
-        margin-top: ($margin / 4);
-        padding-left: $padding + 5;
-        font-weight: lighter;
-      }
-
-      .datetime {
-        padding: ($padding * 2) ($padding * 4) $padding 0;
-        text-align: center;
-
-        .month {
-          font-size: 1.5em;
-          color: $black;
-        }
-
-        .day {
-          font-size: 4.0em;
-          font-weight: bold;
-          color: $red;
-          line-height: .7em;
-        }
-
-        .weekday {
-          color: $gray;
-          font-size: 1.2em;
-          line-height: 1.7em;
-        }
-
-        .time {
-          font-size: 1.2em;
-          font-weight: bold;
-          line-height: .7em;
-        }
-      }
+      h1, h2, p { padding: 0 ($padding / 2); }
     }
 
-    #map {
-      height: 350px;
-      margin-bottom: $margin;
+    .btn {
+      float: right;
+      color: #fff;
+      margin-top: ($margin / 4);
+      font-size: 14px;
+    }
 
-      // This is just a test code for the shadow and the border
-      border: 1px solid $light-gray;
-      border-radius: 3px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
+    a {
+      color: $light-red;
+      text-decoration: none;
+      padding-right: 20px;
+    }
+
+    .shadow {
       -moz-box-shadow:    3px 3px 5px -2px $light-gray;
       -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
       box-shadow:         3px 3px 5px -2px $light-gray;
-      //end
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+
+    h2 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $red;
+      margin: 0;
+      padding: 0;
+    }
+
+    .edit {
+      display: none;
+      position: absolute;
+    }
+
+    .icon-edit {
+      color: $red;
     }
   }
-}
 
-.event {
-  sidebar {
-    padding-top: ($padding * 3) !important;
+  .event-data {
+    margin: 0 !important;
+    padding: $padding ($padding * 2) 0 ($padding / 2);
+    float: left;
+    width: 78%;
+
+    .description-data {
+      .title {
+        color: $red;
+        font-family: "Helvetica";
+        font-weight: bold;
+        font-size: 2.0em;
+      }
+
+      .description {
+        margin: $margin 0 ($margin * 2) 0;
+        font-family: "Helvetica";
+        text-align: justify;
+
+        p { margin-top: 0; }
+      }
+    }
+
+    .where-data {
+      .location-info {
+        margin-left: 0;
+        padding-right: 10px;
+
+        .place {
+          color: $gray;
+          font-weight: bold;
+          font-size: 0.9em;
+          line-height: 1.1em;
+
+          .image {
+            margin-bottom: $margin;
+            margin-top: 0;
+          }
+        }
+
+        .organizer {
+          margin: ($margin / 2) 0 0 $margin + 5;
+          color: $red;
+          font-family: "Helvetica";
+          font-weight: lighter;
+        }
+
+        .contact {
+          margin-top: ($margin / 4);
+          padding-left: $padding + 5;
+          font-weight: lighter;
+        }
+
+        .datetime {
+          padding: ($padding * 2) ($padding * 4) $padding 0;
+          text-align: center;
+
+          .month {
+            font-size: 1.5em;
+            color: $black;
+          }
+
+          .day {
+            font-size: 4.0em;
+            font-weight: bold;
+            color: $red;
+            line-height: .9em;
+          }
+
+          .weekday {
+            color: $gray;
+            font-size: 1.2em;
+            line-height: 1.7em;
+          }
+
+          .time {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: .9em;
+          }
+        }
+      }
+
+      #map {
+        height: 350px;
+        margin-bottom: $margin;
+
+        border: 1px solid $light-gray;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+        -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+        box-shadow:         3px 3px 5px -2px $light-gray;
+      }
+    }
   }
-}
 
-.blog {
-  h4 {
-    color: $black;
-    margin-top: 0 !important;
-    margin-bottom: 0;
+  .event {
+    sidebar {
+      width: 22%;
+      padding-top: ($padding * 3.5) !important;
+    }
   }
 
-  .sidebar-blog {
-    margin-top: ($margin / 2) !important;
-    font-size: 0.8em;
+  .new_event {
+    sidebar {
+      padding-top: $padding * 2 !important;
+
+      .events {
+        padding-left: 0 !important;
+
+        .sidebar-events {
+          margin-top: ($margin / 2) !important;
+
+          p {
+            font-family: "Helvetica" !important;
+            font-size: 0.8em !important;
+            margin-top: 0;
+          }
+        }
+      }
+
+      .blog {
+        padding-left: 0 !important;
+        padding-top: $padding / 2;
+
+        h4 { margin-top: 0 !important; }
+
+        .sidebar-blog {
+          margin-top: ($margin / 2) !important;
+          font-size: 0.8em !important;
+        }
+      }
+    }
+
+    .right-section {
+      width: 78%;
+      float: left;
+      padding-left: 10px;
+    }
+  }
+
+  .edit_event {
+    sidebar {
+      padding-top: $padding * 2.75 !important;
+
+      .blog { padding-top: $padding / 2; }
+    }
+
+    .right-section {
+      float: left;
+      width: 78%;
+      padding: 10px 20px 20px 10px;
+    }
   }
 }

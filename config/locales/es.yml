@@ -7,21 +7,39 @@ es:
     application:
       sign_in: 'Iniciar sesión'
       sign_out: 'Cerrar sesión'
+      menu-home: 'Inicio'
+      menu-events: 'Eventos'
+      menu-blog: 'Blog'
+      menu-contact: 'Contacto'
       welcome: 'Bienvenido %{user}'
       events: 'Eventos'
       who_we_are: 'Acerca de'
       contact: 'Contacto'
       privacy: 'Privacidad'
-      blog: 'Blog'
+      contact_us: 'Si deseas organizar un Code Retreat o necesitas ayuda para organizarlo, ponte en contacto con nosotros.'
+      more_info: 'Más información...'
+      blog: 'BLOG'
+      twitter: 'TWITTER'
+      more: 'MÁS'
 
   home:
     acerca:
       who_we_are: 'Acerca de ...'
+      about_coderetreat: 'ACERCA DEL CODE RETREAT'
+      history: 'HISTORIA'
+      oragnize_coderetreat: 'ORGANIZA TU CODE RETREAT'
     privacidad:
       privacy: 'Privacidad'
     index:
       sign_in: 'Iniciar sesión'
       not_content: 'No hay contenido disponible'
+      intense_practice: 'Práctica intensiva'
+      practice_descrip: 'Todo un día de práctica en el diseño modular de la programación orientada a objectos, con el objectivo de desarrollar código que minimize los costos de los cambios.'
+      focused_fundamentals: 'Enfocado a los fundamentos'
+      fundamentals_descrip: 'Una oportunidad para enfocarse en los fundamentos del diseño y desarrollo de código. Sin la presión de tener un entregable.'
+      improve_skills: 'Mejora tus habilidades'
+      skills_descrip: 'Practica todo lo que en tu trabajo diario es difícil, trabaja en par con gente desconocida y en diferentes lenguajes de programación.'
+      more_information: 'Más información...'
 
   shared:
     sidebar:
@@ -30,6 +48,7 @@ es:
       not_content: 'No hay contenido disponible'
     event:
       organizer: 'Organizado por %{organize}'
+      details: 'Ver detalles ...'
     event_show:
       event_not_available: 'Evento no disponible'
 
@@ -139,6 +158,7 @@ es:
       long_date: "El %d de %B de %Y"
       month_name: "%B"
       day_name: "%A"
+      custom_short: "%A %d de %B"
 
     day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
     abbr_day_names: [Dom, Lun, Mar, Vie, Jue, Vie, Sab]
