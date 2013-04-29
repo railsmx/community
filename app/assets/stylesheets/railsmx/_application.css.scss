@@ -28,7 +28,7 @@ section, div, article {
   .one-half {
     @include columns(1.49);
   }
-  
+
   .one-3quarters {
     @include columns(1.75);
   }
@@ -40,11 +40,11 @@ section, div, article {
   .two-half {
     @include columns(2.5);
   }
-  
+
   .three {
     @include columns(3);
   }
-  
+
   .three-custom {
     @include columns(3.097);
   }
@@ -52,7 +52,7 @@ section, div, article {
   .four {
     @include columns(4);
   }
-  
+
   .four-half {
     @include columns(4.38);
   }
@@ -68,7 +68,7 @@ section, div, article {
   .six {
     @include columns(6);
   }
-  
+
   .seven {
     @include columns(7);
   }
@@ -234,9 +234,8 @@ sidebar {
 
   .events, .blog {
     padding-left: 0 !important;
-    
   }
-  
+
   .events {
     .sidebar-events {
       margin-top: ($margin / 2) !important;
@@ -245,11 +244,9 @@ sidebar {
   }
 
   .blog {
-    margin-top: $margin;
-    
     .sidebar-blog {
       margin-top: ($margin / 2) !important;
-      font-size: 0.8em !important;
+      font-size: 0.9em !important;
     }
   }
 
@@ -269,12 +266,23 @@ sidebar {
   }
 }
 
+.container {
+  &.social {
+    overflow: visible !important;
+
+    &:after {
+      clear: both;
+    }
+  }
+}
+
 .social-buttons {
   float: none !important;
   display: inline-block;
   list-style-type: none;
   margin: ($margin * 2) 0 0 ($margin * 16) !important;
   padding: 0;
+  overflow: visible !important;
 
   li {
     float: left;
@@ -306,8 +314,8 @@ sidebar {
     -moz-box-shadow: inset 0 0 3px $light-gray;
     -webkit-box-shadow: inset 0 0 3px $light-gray;
     box-shadow: inset 0 0 3px $light-gray;
-    background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe), to(#ffffff));
-    background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
+    background: -webkit-gradient(linear, left top, left bottombottom, from(#fff), to(#fff));
+    background: -moz-linear-gradient(top,  #fff,  #fff);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -404,7 +412,7 @@ sidebar {
     @include size(300px 150px);
   }
 
-  .field_with_errors {  
+  .field_with_errors {
     input {
       border: 1px solid $light-gray !important;
     }

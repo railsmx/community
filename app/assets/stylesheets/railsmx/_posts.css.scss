@@ -1,0 +1,34 @@
+.posts {
+
+  .container {
+    sidebar {
+      padding: ($padding * 3) $padding 0 ($padding / 2) !important;
+
+      .events {
+        margin-top: $margin;
+      }
+    }
+  }
+
+  .content {
+    .info {
+      margin-bottom: ($margin * 2);
+    }
+    .blog {
+      h3 {
+        font-size: 1em;
+        font-weight: lighter;
+        color: $light-gray
+      }
+
+      .post {
+        margin-bottom: ($margin * 2)
+      }
+
+      .body {
+        font-size: .9em;
+      }
+    }
+  }
+
+}

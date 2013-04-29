@@ -61,9 +61,15 @@
   }
 }
 
-.home, .about, .contact, .privacy, .new_event, .edit_event {
+.home {
   sidebar {
     padding-top: ($padding * 3) !important;
+  }
+}
+
+.about, .contact, .privacy, .new_event, .edit_event {
+  sidebar {
+    padding-top: ($padding * 4) !important;
   }
 }
 

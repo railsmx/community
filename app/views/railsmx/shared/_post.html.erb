@@ -1,0 +1,6 @@
+<% cache post do %>
+  <p class="posts">
+    <%= link_to post.title, main_app.events_path %><br>
+    <%= truncate post.body, length: 80 %><p>
+  </p>
+<% end %>

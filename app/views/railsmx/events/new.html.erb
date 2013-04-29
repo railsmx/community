@@ -1,6 +1,6 @@
 <% title t('.new_event_title') %>
 <div class="container new_event">
-  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
+  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
 
   <div class="content nine">
     <%= display_alert %>

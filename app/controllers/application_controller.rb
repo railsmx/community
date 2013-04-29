@@ -38,5 +38,9 @@ helper_method :crowdblog_current_user, :crowdblog_authenticate_user!
   def current_events
     @current_events = Event.current_events(2)
   end
+
+  def current_posts
+    @current_posts = Crowdblog::Post.last_published(3)
+  end
 end
 

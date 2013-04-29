@@ -42,7 +42,7 @@ describe EventsController do
     it "should create new event for logged user and post a tweet" do
       log_in_user
 
-      stub_class_method(Twitter, :update) {
+      stub_method_instance(Twitter, :update) {
         |args| args[0].must_include "MagmaConf http://test.host/eventos/"
       }
 

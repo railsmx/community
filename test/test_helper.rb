@@ -43,7 +43,7 @@ class ActiveSupport::TestCase
     warden.set_user identity, scope: :identity
   end
 
-  def stub_class_method(klass, method, &block)
+  def stub_method_instance(klass, method, &block)
     klass.class_eval do
       def self.metaclass
         class << self; self; end
@@ -51,6 +51,10 @@ class ActiveSupport::TestCase
     end
 
     klass.metaclass.send(:define_method, method, ->(*args) { block.call(args) })
+  end
+
+  def stub_method(klass, method, &block)
+    klass.send(:define_method, method, ->(*args) { block.call(args) })
   end
 end
  #ensure

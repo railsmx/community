@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate!, except: [:index, :show]
   before_action :current_events, only: [:new, :edit, :create, :update, :show]
+  before_action :current_posts, only: [:index, :new, :edit, :create, :update, :show]
 
   def index
     @current_events = Event.current_events(4)
