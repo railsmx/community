@@ -1,6 +1,6 @@
 <% cache event do %>
   <p class="event">
-    <%= link_to event.name, main_app.events_path %><br>
+    <%= link_to event.name, main_app.event_path(event) %><br>
     <%= truncate event.description, length: 80 %><p>
     <%= localize_long_date event.date %><br>
     <%= event.location %><br>
