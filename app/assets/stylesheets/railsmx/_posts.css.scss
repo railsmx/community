@@ -8,17 +8,63 @@
         margin-top: $margin;
       }
     }
+
+    .profile {
+      margin-left: 0 !important;
+
+      .profile {
+        margin-top: $margin;
+      }
+
+      .author {
+        margin-top: ($margin);
+      }
+
+      h3 {
+        color: $light-red;
+      }
+
+      .avatar {
+        text-align: center;
+      }
+
+      .published {
+        text-align: center;
+        margin: ($margin / 8) 0;
+      }
+
+      .published-date {
+        text-align: center;
+        font-size: 1em;
+        font-weight: lighter;
+        color: $light-gray
+      }
+
+      sidebar {
+        padding: $padding $padding 0 ($padding / 2) !important;
+
+        .events {
+          margin-top: $margin;
+        }
+      }
+    }
   }
 
   .content {
+
     .info {
       margin-bottom: ($margin * 2);
     }
+
     .blog {
       h3 {
         font-size: 1em;
         font-weight: lighter;
         color: $light-gray
+      }
+
+      .post-title {
+        margin-bottom: $margin;
       }
 
       .post {
@@ -27,6 +73,10 @@
 
       .body {
         font-size: .9em;
+      }
+
+      .author {
+        margin-bottom: $margin;
       }
     }
   }

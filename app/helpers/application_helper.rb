@@ -81,7 +81,11 @@ module ApplicationHelper
     content_for(:title) { "rails.mx: #{page_title}" }
   end
 
- def content_file(name, content = nil, options = {}, &block)
+  def custom_url_for(options = {})
+    content_for(:url_for) { url_for(options) } unless options.empty?
+  end
+
+  def content_file(name, content = nil, options = {}, &block)
     if content || block_given?
       if block_given?
         options = content if content
