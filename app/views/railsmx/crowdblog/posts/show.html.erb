@@ -1,0 +1,28 @@
+<%- title @post.title %>
+<%- custom_url_for(main_app.post_path(only_path: false)) %>
+<div class="container">
+  <div class="profile three">
+    <div class="author">
+      <div class="avatar">
+        <%= gravatar_image_tag(@post.author.email.gsub('spam', @post.author.username), alt: @post.author.username, gravatar: { size: 56 }) %>
+      </div>
+      <h3 class="published"><%= @post.author.username %></h3>
+      <div class="published-date">
+         Publicado<br>
+         <%= date_published_post(@post.published_at) %>
+      </div>
+    </div>
+    <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+  </div>
+
+  <div class="content nine">
+    <% cache @post do %>
+      <div class="blog">
+        <h1 class="post-title"><%= link_to @post.title, main_app.post_path(*@post.url_params) %>.</h1>
+        <div class="body">
+          <%= @post.html_body %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
