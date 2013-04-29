@@ -12,10 +12,6 @@ body {
   margin: 0;
 }
 
-section, div, article {
-  overflow: hidden;
-}
-
 .container {
   width: grid-width(12);
   overflow: hidden;
@@ -104,6 +100,7 @@ section, div, article {
   .content {
     margin-left: $gw-gutter !important;
     padding-right: $gw-gutter;
+    overflow: hidden;
   }
 }
 
@@ -229,34 +226,42 @@ footer {
 }
 
 sidebar {
-  padding: 0 ($padding * 2) 0 $padding;
+  width: 22%;
+  font-family: "Helvetica";
+  padding: 0 ($padding / 2);
   margin-left: 0 !important;
-
-  .events, .blog {
-    padding-left: 0 !important;
-  }
+  float: left;
 
   .events {
+    padding-left: 0 !important;
+
     .sidebar-events {
       margin-top: ($margin / 2) !important;
-      font-size: 0.9em !important;
+
+      p {
+        font-family: "Helvetica" !important;
+        font-size: 0.8em !important;
+        margin-top: 0;
+      }
     }
   }
 
   .blog {
+    padding-left: 0 !important;
+    padding-top: $padding / 2;
+
+    h4 { margin-top: 0 !important; }
+
     .sidebar-blog {
       margin-top: ($margin / 2) !important;
-      font-size: 0.9em !important;
+      font-size: 0.8em !important;
     }
   }
 
-  p {
-    font-size: 0.8em;
-  }
-
   h4 {
-    margin-top: 0 !important;
+    margin-top: ($margin / 2) !important;
     margin-bottom: 0;
+    color: $black !important;
   }
 
   a {
@@ -302,7 +307,9 @@ sidebar {
   border-radius: 1px;
 }
 
-
+.new_event {
+  margin: 0 $margin;
+}
 
 .form-event {
   input[type="text"], input[type="email"], textarea {
@@ -397,6 +404,12 @@ sidebar {
     color: $light-gray;
     width: 15%;
     float: left;
+  }
+}
+
+.contact_form {
+  .contact {
+    .right-section { h1 { color: $red; } }
   }
 }
 

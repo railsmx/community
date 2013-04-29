@@ -71,5 +71,11 @@
   sidebar {
     padding-top: ($padding * 4) !important;
   }
+
+  .right-section {
+    float: left;
+    width: 78%;
+    padding-left: 10px;
+  }
 }
 

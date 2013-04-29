@@ -2,22 +2,22 @@
   .content {
     padding: $padding 0 0 0;
 
-    .blog {
-      width: 23%;
-      float: left;
-      padding: ($padding * 3) ($padding / 2) 0 ($padding / 2) !important;
+    sidebar {
+      width: 22%;
 
-      h4 {
-        color: $black;
-      }
+      .blog {
+        width: 100%;
+        float: left;
+        padding-top: ($padding * 2.75);
 
-      .sidebar-blog {
-        font-size: 0.8em;
+        h4 { color: $black; }
+
+        .sidebar-blog { font-size: 0.8em; }
       }
     }
 
     .events-section {
-      width: 77%;
+      width: 78%;
       padding-right: ($padding / 2);
       float: left;
 
@@ -36,6 +36,7 @@
           margin: ($margin / 2);
           border: 1px solid $light-gray;
           text-align: justify;
+          overflow: hidden;
 
           .datetime {
             width: 20%;
@@ -229,6 +230,7 @@
       float: right;
       color: #fff;
       margin-top: ($margin / 4);
+      font-size: 14px;
     }
 
     a {
@@ -268,7 +270,10 @@
   }
 
   .event-data {
-    margin: 0 0 $margin 0;
+    margin: 0 !important;
+    padding: $padding ($padding * 2) 0 ($padding / 2);
+    float: left;
+    width: 78%;
 
     .description-data {
       .title {
@@ -282,6 +287,8 @@
         margin: $margin 0 ($margin * 2) 0;
         font-family: "Helvetica";
         text-align: justify;
+
+        p { margin-top: 0; }
       }
     }
 
@@ -303,7 +310,7 @@
         }
 
         .organizer {
-          margin: ($margin / 2) 0 0 ($margin + 5);
+          margin: ($margin / 2) 0 0 $margin + 5;
           color: $red;
           font-family: "Helvetica";
           font-weight: lighter;
@@ -362,7 +369,60 @@
 
   .event {
     sidebar {
-      padding-top: ($padding * 3) !important;
+      width: 22%;
+      padding-top: ($padding * 3.5) !important;
+    }
+  }
+
+  .new_event {
+    sidebar {
+      padding-top: $padding * 2 !important;
+
+      .events {
+        padding-left: 0 !important;
+
+        .sidebar-events {
+          margin-top: ($margin / 2) !important;
+
+          p {
+            font-family: "Helvetica" !important;
+            font-size: 0.8em !important;
+            margin-top: 0;
+          }
+        }
+      }
+
+      .blog {
+        padding-left: 0 !important;
+        padding-top: $padding / 2;
+
+        h4 { margin-top: 0 !important; }
+
+        .sidebar-blog {
+          margin-top: ($margin / 2) !important;
+          font-size: 0.8em !important;
+        }
+      }
+    }
+
+    .right-section {
+      width: 78%;
+      float: left;
+      padding-left: 10px;
+    }
+  }
+
+  .edit_event {
+    sidebar {
+      padding-top: $padding * 2.75 !important;
+
+      .blog { padding-top: $padding / 2; }
+    }
+
+    .right-section {
+      float: left;
+      width: 78%;
+      padding: 10px 20px 20px 10px;
     }
   }
 }
