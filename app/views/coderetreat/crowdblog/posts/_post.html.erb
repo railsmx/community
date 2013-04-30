@@ -1,0 +1,9 @@
+<% cache post do %>
+  <div class="post" id="<%= "post_#{post.id}" %>">
+    <h2 class="post-title"><%= link_to post.title, main_app.post_path(*post.url_params) %></h2>
+    <h3 class="author"><%= "#{date_published_post(post.published_at)} por #{post.author.username}" %></h3>
+    <div class="body">
+      <%= post.html_body %>
+    </div>
+  </div>
+<% end %>

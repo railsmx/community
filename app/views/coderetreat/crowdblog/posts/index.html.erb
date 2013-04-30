@@ -1,0 +1,25 @@
+<% title t('.blog') %>
+<div class="content">
+  <section class="left-section">
+  	<sidebar>
+      <div class="events">
+        <h4><%= t('.coming_events') %></h4>
+        <div class="sidebar-events">
+          <%= !@current_events.empty? ? (render partial: 'shared/event', collection: @current_events) : t('.not_content') %>
+        </div>
+      </div>
+    </sidebar>
+  </section>
+
+  <section class="right-section">
+    <div class="info">
+      <h1>Blog</h1>
+      <p>Colección de posts con temas relacionados con el lenguaje Ruby, el framework Ruby On Rails y desarrollo wen en general.
+        Los posts han sido creados y publicados mediantes contribuciones de
+        la comunidad</p>
+    </div>
+    <div class="blog">
+      <%= render @posts %>
+    </div>
+  </section>
+</div>
