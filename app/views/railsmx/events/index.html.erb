@@ -2,16 +2,18 @@
 <div class="content">
   <%= display_notice %>
 
-  <sidebar>
-    <div class="blog">
-      <h4><%= t('.blog') %></h4>
-      <div class="sidebar-blog">
-        <%= !@current_posts.empty? ? (render partial: 'shared/post', collection: @current_posts) : t('.not_content') %>
+  <section class="left-section">
+    <sidebar>
+      <div class="blog">
+        <h4><%= t('.blog') %></h4>
+        <div class="sidebar-blog">
+          <%= !@current_posts.empty? ? (render partial: 'shared/post', collection: @current_posts) : t('.not_content') %>
+        </div>
       </div>
-    </div>
-  </sidebar>
+    </sidebar>
+  </section>
 
-  <section class="events-section">
+  <section class="right-section">
     <h1>
       <%= t('.events') %>
       <%= display_create_event_link %>

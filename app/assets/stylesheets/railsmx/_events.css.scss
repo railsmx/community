@@ -3,23 +3,11 @@
     padding: $padding 0 0 0;
 
     sidebar {
-      width: 22%;
-
-      .blog {
-        width: 100%;
-        float: left;
-        padding-top: ($padding * 2.75);
-
-        h4 { color: $black; }
-
-        .sidebar-blog { font-size: 0.8em; }
-      }
+      .blog { padding-top: ($padding * 2.75); }
     }
 
-    .events-section {
-      width: 78%;
-      padding-right: ($padding / 2);
-      float: left;
+    .right-section {
+      padding-right: $padding / 2;
 
       .row {
         width: 100%;
@@ -31,7 +19,7 @@
         }
 
         .first {
-          @extend .shadow;
+          @extend .box-shadow;
           width: 97%;
           margin: ($margin / 2);
           border: 1px solid $light-gray;
@@ -121,7 +109,7 @@
         }
 
         .second {
-          @extend .shadow;
+          @extend .box-shadow;
           width: 47.2%;
           float: left;
           margin: $margin / 2;
@@ -239,15 +227,6 @@
       padding-right: 20px;
     }
 
-    .shadow {
-      -moz-box-shadow:    3px 3px 5px -2px $light-gray;
-      -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
-      box-shadow:         3px 3px 5px -2px $light-gray;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-    }
-
     h2 {
       margin-top: 0px;
       margin-bottom: 0px;
@@ -264,151 +243,116 @@
       position: absolute;
     }
 
-    .icon-edit {
-      color: $red;
-    }
-  }
-
-  .event-data {
-    margin: 0 !important;
-    padding: $padding ($padding * 2) 0 ($padding / 2);
-    float: left;
-    width: 78%;
-
-    .description-data {
-      .title {
-        color: $red;
-        font-family: "Helvetica";
-        font-weight: bold;
-        font-size: 2.0em;
-      }
-
-      .description {
-        margin: $margin 0 ($margin * 2) 0;
-        font-family: "Helvetica";
-        text-align: justify;
-
-        p { margin-top: 0; }
-      }
-    }
-
-    .where-data {
-      .location-info {
-        margin-left: 0;
-        padding-right: 10px;
-
-        .place {
-          color: $gray;
-          font-weight: bold;
-          font-size: 0.9em;
-          line-height: 1.1em;
-
-          .image {
-            margin-bottom: $margin;
-            margin-top: 0;
-          }
-        }
-
-        .organizer {
-          margin: ($margin / 2) 0 0 $margin + 5;
-          color: $red;
-          font-family: "Helvetica";
-          font-weight: lighter;
-        }
-
-        .contact {
-          margin-top: ($margin / 4);
-          padding-left: $padding + 5;
-          font-weight: lighter;
-        }
-
-        .datetime {
-          padding: ($padding * 2) ($padding * 4) $padding 0;
-          text-align: center;
-
-          .month {
-            font-size: 1.5em;
-            color: $black;
-          }
-
-          .day {
-            font-size: 4.0em;
-            font-weight: bold;
-            color: $red;
-            line-height: .9em;
-          }
-
-          .weekday {
-            color: $gray;
-            font-size: 1.2em;
-            line-height: 1.7em;
-          }
-
-          .time {
-            font-size: 1.2em;
-            font-weight: bold;
-            line-height: .9em;
-          }
-        }
-      }
-
-      #map {
-        height: 350px;
-        margin-bottom: $margin;
-
-        border: 1px solid $light-gray;
-        border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -moz-box-shadow:    3px 3px 5px -2px $light-gray;
-        -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
-        box-shadow:         3px 3px 5px -2px $light-gray;
-      }
-    }
+    .icon-edit { color: $red; }
   }
 
   .event {
-    sidebar {
-      width: 22%;
-      padding-top: ($padding * 3.5) !important;
+    .left-section {
+      sidebar {
+        padding-top: ($padding * 3) !important;
+
+        .blog { padding-top: $padding / 2 !important; }
+      }
+    }
+
+    .right-section {
+      .description-data {
+        .title {
+          color: $red;
+          font-family: "Helvetica";
+          font-weight: bold;
+          font-size: 2.0em;
+        }
+
+        .description {
+          margin: $margin 0 ($margin * 2) 0;
+          font-family: "Helvetica";
+          text-align: justify;
+
+          p { margin-top: 0; }
+        }
+      }
+
+      .where-data {
+        .location-info {
+          margin-left: 0;
+          padding-right: 10px;
+
+          .place {
+            color: $gray;
+            font-weight: bold;
+            font-size: 0.9em;
+            line-height: 1.1em;
+
+            .image {
+              margin-bottom: $margin;
+              margin-top: 0;
+            }
+          }
+
+          .organizer {
+            margin: ($margin / 2) 0 0 $margin + 5;
+            color: $red;
+            font-family: "Helvetica";
+            font-weight: lighter;
+          }
+
+          .contact {
+            margin-top: ($margin / 4);
+            padding-left: $padding + 5;
+            font-weight: lighter;
+          }
+
+          .datetime {
+            padding: ($padding * 2) ($padding * 4) $padding 0;
+            text-align: center;
+
+            .month {
+              font-size: 1.5em;
+              color: $black;
+            }
+
+            .day {
+              font-size: 4.0em;
+              font-weight: bold;
+              color: $red;
+              line-height: .9em;
+            }
+
+            .weekday {
+              color: $gray;
+              font-size: 1.2em;
+              line-height: 1.7em;
+            }
+
+            .time {
+              font-size: 1.2em;
+              font-weight: bold;
+              line-height: .9em;
+            }
+          }
+        }
+
+        #map {
+          @extend .box-shadow;
+          height: 350px;
+          margin-bottom: $margin;
+
+          border: 1px solid $light-gray;
+        }
+      }
     }
   }
 
   .new_event {
     sidebar {
-      padding-top: $padding * 2 !important;
+      padding-top: $padding * 2.5 !important;
 
-      .events {
-        padding-left: 0 !important;
-
-        .sidebar-events {
-          margin-top: ($margin / 2) !important;
-
-          p {
-            font-family: "Helvetica" !important;
-            font-size: 0.8em !important;
-            margin-top: 0;
-          }
-        }
-      }
-
-      .blog {
-        padding-left: 0 !important;
-        padding-top: $padding / 2;
-
-        h4 { margin-top: 0 !important; }
-
-        .sidebar-blog {
-          margin-top: ($margin / 2) !important;
-          font-size: 0.8em !important;
-        }
-      }
+      .blog { padding-top: $padding / 2; }
     }
 
     .right-section {
-      width: 78%;
-      float: left;
-      padding-left: 10px;
+      p { text-align: justify; }
     }
   }
 
@@ -420,9 +364,16 @@
     }
 
     .right-section {
-      float: left;
-      width: 78%;
-      padding: 10px 20px 20px 10px;
+      p { text-align: justify; }
     }
+  }
+
+  .box-shadow {
+    -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+    -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+    box-shadow:         3px 3px 5px -2px $light-gray;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
   }
 }

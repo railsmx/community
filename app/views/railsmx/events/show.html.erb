@@ -1,9 +1,11 @@
 <% title @event.name %>
 <% cache @event do %>
-  <div class="container event twelve">
-    <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+  <div class="content event">
+    <section class="left-section">
+      <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+    </section>
 
-    <div class="event-data content">
+    <section class="right-section event-data">
       <div class="description-data">
         <div class="title">
           <%= @event.name %>
@@ -39,7 +41,7 @@
 
         <div id="map"class="map five"></div>
       </div>
-    </div>
+    </section>
   </div>
 <% end %>
 
