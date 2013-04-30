@@ -1,84 +1,96 @@
 .posts {
+  .content {
+    padding-top: $padding;
 
-  .container {
-    sidebar {
-      padding: ($padding * 3) $padding 0 ($padding / 2) !important;
-
-      .events {
-        margin-top: $margin;
-      }
+    a {
+      color: $red;
+      text-decoration: none;
     }
 
-    .profile {
+    h1, h2, h3, h4, h5, h6 { color: $red; }
+
+    .left-section {
+      width: 22%;
+      float: left;
       margin-left: 0 !important;
 
-      .profile {
-        margin-top: $margin;
-      }
-
       .author {
-        margin-top: ($margin);
-      }
+        padding: $padding ($padding / 2) 0 ($padding / 2);
 
-      h3 {
-        color: $light-red;
-      }
+        h3 { color: $light-red; }
 
-      .avatar {
-        text-align: center;
-      }
+        .avatar { text-align: center; }
 
-      .published {
-        text-align: center;
-        margin: ($margin / 8) 0;
-      }
+        .published {
+          text-align: center;
+          margin: ($margin / 8) 0;
+        }
 
-      .published-date {
-        text-align: center;
-        font-size: 1em;
-        font-weight: lighter;
-        color: $light-gray
+        .published-date {
+          text-align: center;
+          font-size: 1em;
+          font-weight: lighter;
+          color: $light-gray
+        }
       }
 
       sidebar {
-        padding: $padding $padding 0 ($padding / 2) !important;
+        width: 100%;
+        padding-top: $padding !important;
 
         .events {
-          margin-top: $margin;
+          padding-left: 0 !important;
+
+          .sidebar-events {
+            margin-top: ($margin / 2) !important;
+
+            p {
+              font-family: "Helvetica" !important;
+              font-size: 0.8em !important;
+              margin-top: 0;
+            }
+          }
+        }
+
+        .blog {
+          padding-left: 0 !important;
+          padding-top: $padding / 2;
+
+          h4 { margin-top: 0 !important; }
+
+          .sidebar-blog {
+            margin-top: ($margin / 2) !important;
+            font-size: 0.8em !important;
+          }
         }
       }
     }
-  }
 
-  .content {
+    .right-section {
+      width: 78%;
+      float: left;
+      padding-left: 10px;
 
-    .info {
-      margin-bottom: ($margin * 2);
-    }
+      p { text-align: justify; }
 
-    .blog {
-      h3 {
+      .info h1 {
+          margin: ($margin / 2) 0;
+      }
+
+      .post { padding-top: $padding; }
+
+      p { margin-top: 0 !important; }
+
+      .post-title { margin: ($margin / 2) 0 !important; }
+
+      .body { font-size: .9em; }
+
+      .author {
+        margin: ($margin / 2) 0;
         font-size: 1em;
         font-weight: lighter;
         color: $light-gray
       }
-
-      .post-title {
-        margin-bottom: $margin;
-      }
-
-      .post {
-        margin-bottom: ($margin * 2)
-      }
-
-      .body {
-        font-size: .9em;
-      }
-
-      .author {
-        margin-bottom: $margin;
-      }
     }
   }
-
 }

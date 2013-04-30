@@ -1,7 +1,7 @@
 <%- title @post.title %>
 <%- custom_url_for(main_app.post_path(only_path: false)) %>
-<div class="container">
-  <div class="profile three">
+<div class="content">
+  <section class="left-section">
     <div class="author">
       <div class="avatar">
         <%= gravatar_image_tag(@post.author.email.gsub('spam', @post.author.username), alt: @post.author.username, gravatar: { size: 56 }) %>
@@ -13,16 +13,14 @@
       </div>
     </div>
     <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
-  </div>
+  </section>
 
-  <div class="content nine">
+  <section class="right-section">
     <% cache @post do %>
-      <div class="blog">
-        <h1 class="post-title"><%= link_to @post.title, main_app.post_path(*@post.url_params) %>.</h1>
-        <div class="body">
-          <%= @post.html_body %>
-        </div>
+      <h1 class="post-title"><%= link_to @post.title, main_app.post_path(*@post.url_params) %></h1>
+      <div class="body">
+        <%= @post.html_body %>
       </div>
     <% end %>
-  </div>
+  </section>
 </div>
