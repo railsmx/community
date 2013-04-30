@@ -12,9 +12,7 @@ body {
   margin: 0;
 }
 
-section, div, article {
-  overflow: hidden;
-}
+section, div, article { overflow: hidden; }
 
 .container {
   width: grid-width(14);
@@ -68,7 +66,7 @@ section, div, article {
   .content {
     width: grid-width(14);
     padding: 0 ($margin * 4) 0 ($margin * 4);
-    background-color: #e5e4e4;
+    background-color: white;
     float: left;
   }
 }
@@ -247,6 +245,84 @@ footer {
   }
 }
 
+.events-sidebar {
+  @extend .box-shadow;
+  width: 30%;
+  float: left;
+  margin: 0 ($margin / 2) $margin 0;
+  padding: $padding;
+  overflow: auto;
+  text-align: justify;
+  vertical-align: center;
+
+  .icon-calendar {
+    font-family: 'FontAwesome';
+    color: $green;
+    font-size: $text-size * 2;
+  }
+
+  .title {
+    margin-left: ($margin / 2);
+    color: $green;
+    text-align: center;
+    font-weight: 900;
+    font-size: 22px;
+    font-family: 'Roboto';
+  }
+
+  .advice {
+    margin-top: $margin;
+    text-align: center;
+  }
+
+  .event {
+    margin-top: 20px;
+    border-bottom: 1px solid $light-gray;
+    padding-bottom: $padding;
+
+    &:last-child {
+      margin-top: $margin;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .img {
+      width: 20px;
+      overflow: hidden;
+      float: left;
+      margin-top: ($margin / 3);
+    }
+
+    a {
+      color: $green;
+      font-family: "Roboto";
+      font-size: $text-size;
+      font-weight: 400;
+      font-style: italic;
+      text-decoration: none;
+      float: right;
+    }
+
+    h3 { margin: 0 0 5px 0; }
+
+    h4 {
+      color: $text-color;
+      text-align: left;
+      font-weight: 300;
+      font-size: $text-size;
+      font-family: "Roboto";
+      margin: 0;
+    }
+
+    .date {
+      line-height: 2.0em;
+      font-weight: 500;
+    }
+
+    .link { overflow: hidden; }
+  }
+}
+
 .shadow-bottom {
   -moz-box-shadow:    1px 3px 5px -1px $light-gray;
   -webkit-box-shadow: 1px 3px 5px -1px $light-gray;
@@ -331,9 +407,7 @@ footer {
       margin: 0;
       display: inline;
 
-      input {
-        border: 1px solid $red;
-      }
+      input { border: 1px solid $red; }
 
       .date {
         float:left;
@@ -355,89 +429,10 @@ footer {
   }
 }
 
+
 .contact_form {
   .contact {
     padding: ($margin * 2) ($margin * 4) ($margin * 2) ($margin * 4);
-
-    .events-sidebar {
-      @extend .box-shadow;
-      width: 30%;
-      float: left;
-      margin: 0 $margin $margin 0;
-      padding: $padding;
-      overflow: auto;
-      text-align: justify;
-      vertical-align: center;
-
-      .icon-calendar {
-        font-family: 'FontAwesome';
-        color: $green;
-        font-size: $text-size * 2;
-      }
-
-      .title {
-        margin-left: ($margin / 2);
-        color: $green;
-        text-align: center;
-        font-weight: 900;
-        font-size: 22px;
-        font-family: 'Roboto';
-      }
-
-      .advice {
-        margin-top: $margin;
-        text-align: center;
-      }
-
-      .event {
-        margin-top: 20px;
-        border-bottom: 1px solid $light-gray;
-        padding-bottom: $padding;
-
-        &:last-child {
-          margin-top: $margin;
-          border-bottom: none;
-          padding-bottom: 0;
-        }
-
-        .img {
-          width: 20px;
-          overflow: hidden;
-          float: left;
-          margin-top: ($margin / 3);
-        }
-
-        a {
-          color: $green;
-          font-family: "Roboto";
-          font-size: $text-size;
-          font-weight: 400;
-          font-style: italic;
-          text-decoration: none;
-          float: right;
-        }
-
-        h3 { margin: 0 0 5px 0; }
-
-        h4 {
-          color: $text-color;
-          text-align: left;
-          font-weight: 300;
-          font-size: $text-size;
-          font-family: "Roboto";
-          margin: 0;
-        }
-
-        .date {
-          line-height: 2.0em;
-          font-weight: 500;
-        }
-
-        .link {
-          overflow: hidden;
-        }
-      }
-    }
 
     .box-shadow {
       -moz-box-shadow:    3px 3px 5px -2px $light-gray;
@@ -450,10 +445,10 @@ footer {
       background-color: white;
     }
 
-    .content {
-      width: 67%;
+    .right-section {
+      width: 68%;
       float: right;
-      padding: $margin;
+      padding: 0 0 $margin ($margin / 2);
       background-color: white;
 
       h1 {
@@ -475,9 +470,7 @@ footer {
 .form-contact {
   @extend .form-event;
 
-  input[type="text"], input[type="email"], textarea {
-    @include size(300px 30px);
-  }
+  input[type="text"], input[type="email"], textarea { @include size(300px 30px); }
 
   textarea {
     font-size: .9em;
@@ -485,18 +478,12 @@ footer {
   }
 
   .field_with_errors {
-    input {
-      border: 1px solid $light-gray !important;
-    }
+    input { border: 1px solid $light-gray !important; }
   }
 
-  div label {
-    width: 24%;
-  }
+  div label { width: 24%; }
 
-  .submit {
-    padding-left: ($padding * 7);
-  }
+  .submit { padding-left: ($padding * 7.5); }
 }
 
 .alert {
@@ -517,14 +504,6 @@ footer {
   background-color: $transparent-green;
 }
 
-#map {
-  height: 250px;
-}
+.datapicker { position: absolute; }
 
-.datapicker {
-  position: absolute;
-}
-
-.timeline-header h1.summary {
-  display: none;
-}
+.timeline-header h1.summary { display: none; }
