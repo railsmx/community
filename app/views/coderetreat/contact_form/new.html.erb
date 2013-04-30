@@ -1,8 +1,8 @@
 <% title t('.contact') %>
-<div class="container contact">
+<div class="content contact">
   <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
 
-  <div class="content">
+  <section class="right-section">
     <h1>Contactanos</h1>
     <p> Agradecemos de antemano sus comentarios. A la brevedad posible nos comunicaremos con usted.</p>
     <div class="form-contact">
@@ -12,7 +12,7 @@
           <%= f.text_field :name %>
         </div>
 
-        <div>  
+        <div>
           <%= f.label t('.email') %>
           <%= f.email_field :email %>
         </div>
@@ -27,5 +27,5 @@
         </div>
       <%end %>
     </div>
-  </div>
+  </section>
 </div>
