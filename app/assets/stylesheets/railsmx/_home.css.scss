@@ -31,9 +31,13 @@
   }
 
   .content {
-    sidebar { padding-top: ($padding * 3.5) !important; }
-
     p { text-align: justify; }
+
+    h1, h2, h3, h4, h5, h6 { color: $red; }
+  }
+
+  .home-index {
+    sidebar { padding-top: ($padding * 3.5) !important; }
 
     .image-left {
       float: left;
@@ -44,8 +48,6 @@
       float: right;
       margin-left: ($margin / 2);
     }
-
-    h1, h2, h3, h4, h5, h6 { color: $red; }
 
     .image { padding: ($padding * 1.5); }
   }
