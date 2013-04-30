@@ -1,6 +1,9 @@
 <% title t('.who_we_are') %>
 <div class="content about">
-  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+  <section class="left-section">
+    <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+  </section>
+
   <section class="right-section">
       <h1>Acerca de rails.mx</h1>
       <p>

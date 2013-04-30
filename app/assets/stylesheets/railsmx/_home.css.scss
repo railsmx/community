@@ -19,9 +19,7 @@
         color: $red;
       }
 
-      &.button {
-        margin-top: $margin;
-      }
+      &.button { margin-top: $margin; }
     }
 
     .btn-large {
@@ -33,9 +31,9 @@
   }
 
   .content {
-    p {
-      text-align: justify;
-    }
+    sidebar { padding-top: ($padding * 3.5) !important; }
+
+    p { text-align: justify; }
 
     .image-left {
       float: left;
@@ -47,35 +45,40 @@
       margin-left: ($margin / 2);
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      color: $red;
+    h1, h2, h3, h4, h5, h6 { color: $red; }
+
+    .image { padding: ($padding * 1.5); }
+  }
+
+  .notice, .alert { margin-top: $margin; }
+}
+
+.about, .contact, .privacy {
+  sidebar { padding-top: ($padding * 4.5) !important; }
+}
+
+.contact_form {
+  h1 { color: $red; }
+
+  .contact {
+    .form-contact {
+      @extend .form-event;
+      padding-left: 0;
+
+      input[type="text"], input[type="email"], textarea { @include size(300px 30px); }
+
+      textarea {
+        font-size: .9em;
+        @include size(300px 150px);
+      }
+
+      .field_with_errors {
+        input { border: 1px solid $light-gray !important; }
+      }
+
+      div label { width: 24%; }
+
+      .submit { padding-left: ($padding * 9); }
     }
-
-    .image {
-      padding: ($padding * 1.5);
-    }
-  }
-
-  .notice, .alert {
-    margin-top: $margin;
   }
 }
-
-.home {
-  sidebar {
-    padding-top: ($padding * 3) !important;
-  }
-}
-
-.about, .contact, .privacy, .new_event, .edit_event {
-  sidebar {
-    padding-top: ($padding * 4) !important;
-  }
-
-  .right-section {
-    float: left;
-    width: 78%;
-    padding-left: 10px;
-  }
-}
-

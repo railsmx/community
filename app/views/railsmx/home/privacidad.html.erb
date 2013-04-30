@@ -1,6 +1,8 @@
 <% title t('.privacy') %>
 <div class="content privacy">
-  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+  <section class="left-section">
+    <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+  </section>
 
   <section class="right-section">
     <h1>Política y Privacidad</h1>
