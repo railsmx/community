@@ -17,90 +17,52 @@ body {
   overflow: hidden;
   margin: 0 auto;
 
-  h1 {
-    font-size: 32px;
-  }
+  h1 { font-size: 32px; }
 
-  .one-half {
-    @include columns(1.49);
-  }
+  .two { @include columns(2); }
 
-  .one-3quarters {
-    @include columns(1.75);
-  }
+  .three { @include columns(3); }
 
-  .two {
-    @include columns(2);
-  }
+  .four { @include columns(4); }
 
-  .two-half {
-    @include columns(2.5);
-  }
+  .five { @include columns(5); }
 
-  .three {
-    @include columns(3);
-  }
+  .six { @include columns(6); }
 
-  .three-custom {
-    @include columns(3.097);
-  }
+  .seven { @include columns(7); }
 
-  .four {
-    @include columns(4);
-  }
+  .eight { @include columns(8); }
 
-  .four-half {
-    @include columns(4.38);
-  }
+  .nine { @include columns(9); }
 
-  .five {
-    @include columns(5);
-  }
+  .ten { @include columns(10); }
 
-  .five-half {
-    @include columns(5.52);
-  }
+  .eleven { @include columns(11); }
 
-  .six {
-    @include columns(6);
-  }
-
-  .seven {
-    @include columns(7);
-  }
-
-  .eight {
-    @include columns(8);
-  }
-
-  .nine {
-    @include columns(9);
-  }
-
-  .ten {
-    @include columns(10);
-  }
-
-  .eleven {
-    @include columns(11);
-  }
-
-  .eleven-custom {
-    @include columns(11.05);
-  }
-
-  .eleven-3quarters {
-    @include columns(11.75);
-  }
-
-  .twelve {
-    @include columns(12);
-  }
+  .twelve { @include columns(12); }
 
   .content {
     margin-left: $gw-gutter !important;
     padding-right: $gw-gutter;
     overflow: hidden;
+
+    .left-section {
+      width: 22%;
+      float: left;
+      margin-left: 0 !important;
+    }
+
+    .right-section {
+      width: 78%;
+      float: left;
+      padding-left: 10px;
+    }
+  }
+
+  &.social {
+    overflow: visible !important;
+
+    &:after { clear: both; }
   }
 }
 
@@ -226,15 +188,10 @@ footer {
 }
 
 sidebar {
-  width: 22%;
-  font-family: "Helvetica";
-  padding: 0 ($padding / 2);
-  margin-left: 0 !important;
   float: left;
+  padding: 0 $padding 0 ($padding / 2);
 
   .events {
-    padding-left: 0 !important;
-
     .sidebar-events {
       margin-top: ($margin / 2) !important;
 
@@ -247,24 +204,16 @@ sidebar {
   }
 
   .blog {
-    padding-left: 0 !important;
     padding-top: $padding / 2;
-
-    h4 { margin-top: 0 !important; }
 
     .sidebar-blog {
       margin-top: ($margin / 2) !important;
       font-size: 0.8em !important;
     }
-
-    h4 {
-      margin-top: $margin !important;
-    }
   }
 
   h4 {
-    margin-top: ($margin / 2) !important;
-    margin-bottom: 0;
+    margin: 0 !important;
     color: $black !important;
   }
 
@@ -273,49 +222,13 @@ sidebar {
     font-weight: bold;
     text-decoration: none;
   }
-}
 
-.container {
-  &.social {
-    overflow: visible !important;
-
-    &:after {
-      clear: both;
-    }
-  }
-}
-
-.social-buttons {
-  float: none !important;
-  display: inline-block;
-  list-style-type: none;
-  margin: ($margin * 2) 0 0 ($margin * 16) !important;
-  padding: 0;
-  overflow: visible !important;
-
-  li {
-    float: left;
-  }
-
-  .facebook-like {
-    padding-left: $padding;
-  }
-}
-
-.shadow {
-  -moz-box-shadow:    1px 3px 5px -2px $light-gray;
-  -webkit-box-shadow: 1px 3px 5px -2px $light-gray;
-  box-shadow:         1px 3px 5px -2px $light-gray;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-}
-
-.new_event {
-  margin: 0 $margin;
+  p { text-align: left !important; }
 }
 
 .form-event {
+  padding: 0 ($padding / 2);
+
   input[type="text"], input[type="email"], textarea {
     @include size(400px 30px);
     font-size: .8em;
@@ -387,9 +300,7 @@ sidebar {
       margin: 0;
       display: inline;
 
-      input {
-        border: 1px solid $red;
-      }
+      input { border: 1px solid $red; }
 
       .date {
         float:left;
@@ -411,37 +322,17 @@ sidebar {
   }
 }
 
-.contact_form {
-  .contact {
-    .right-section { h1 { color: $red; } }
-  }
-}
+.social-buttons {
+  float: none !important;
+  display: inline-block;
+  list-style-type: none;
+  margin: ($margin * 2) 0 0 ($margin * 16) !important;
+  padding: 0;
+  overflow: visible !important;
 
-.form-contact {
-  @extend .form-event;
+  li { float: left; }
 
-  input[type="text"], input[type="email"], textarea {
-    @include size(300px 30px);
-  }
-
-  textarea {
-    font-size: .9em;
-    @include size(300px 150px);
-  }
-
-  .field_with_errors {
-    input {
-      border: 1px solid $light-gray !important;
-    }
-  }
-
-  div label {
-    width: 24%;
-  }
-
-  .submit {
-    padding-left: ($padding * 8.8);
-  }
+  .facebook-like { padding-left: $padding; }
 }
 
 .alert {
@@ -462,15 +353,6 @@ sidebar {
   background-color: rgba(36,134,48,0.250);
 }
 
-#map {
-  height: 250px;
-}
+.btn { @include button($red, white); }
 
-.btn {
-  @include button($red, white);
-  color: white;
-}
-
-.datapicker {
-  position: absolute;
-}
+.datapicker { position: absolute; }
