@@ -7,7 +7,9 @@
     }
 
     .right-section {
-      padding-right: $padding / 2;
+      padding: 0 $padding / 2 0 0;
+
+      p { text-align: justify; }
 
       .row {
         width: 100%;
@@ -29,12 +31,12 @@
           .datetime {
             width: 20%;
             float: left;
-            padding: ($padding * 3) 0;
+            padding: ($padding * 3) $padding;
             text-align: center;
             margin-left: 0 !important;
 
             .month {
-              font-size: 1.5em;
+              font-size: 1.2em;
               color: $black;
             }
 
@@ -47,12 +49,12 @@
 
             .weekday {
               color: $gray;
-              font-size: 1.2em;
+              font-size: 1.1em;
               line-height: 1.7em;
             }
 
             .time {
-              font-size: 1.2em;
+              font-size: 1.1em;
               font-weight: bold;
               line-height: .9em;
             }
@@ -114,17 +116,16 @@
           float: left;
           margin: $margin / 2;
           border: 1px solid $light-gray;
-          text-align: justify;
 
           .datetime {
-            width: 25%;
+            width: 30%;
             float: left;
-            padding: ($padding * 3) 0;
+            padding: ($padding * 3) $padding;
             text-align: center;
             margin-left: 0 !important;
 
             .month {
-              font-size: 1.2em;
+              font-size: 1.0em;
               color: $black;
             }
 
@@ -142,14 +143,14 @@
             }
 
             .time {
-              font-size: 1.0em;
+              font-size: 0.9em;
               font-weight: bold;
               line-height: .9em;
             }
           }
 
           .main-data {
-            width: 75%;
+            width: 70%;
             float: left;
             padding: $padding $padding $padding 0;
 
@@ -207,6 +208,8 @@
 
           .main-data { padding-left: 20px !important; }
         }
+
+        .advice { padding-left: $padding / 2; }
       }
 
       .past-title { margin-bottom: 0 !important; }
@@ -256,6 +259,8 @@
     }
 
     .right-section {
+      padding-left: $padding / 2;
+
       .description-data {
         .title {
           color: $red;
@@ -265,15 +270,19 @@
         }
 
         .description {
-          margin: $margin 0 ($margin * 2) 0;
+          margin: $margin 0 0 0;
           font-family: "Helvetica";
           text-align: justify;
 
-          p { margin-top: 0; }
+          p {
+            margin-top: 0;
+            padding-left: 0;
+          }
         }
       }
 
       .where-data {
+        h2 { padding-left: 0; }
         .location-info {
           margin-left: 0;
           padding-right: 10px;
