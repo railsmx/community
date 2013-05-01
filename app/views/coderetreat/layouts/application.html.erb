@@ -16,13 +16,13 @@
       <div class="container">
         <div class="main-header">
           <div class="logo seven">
-            <%= link_to image_tag("logo.png", border: 0), root_path %>
+            <%= link_to image_tag("logo.png", border: 0), main_app.root_path %>
           </div>
           <ul class="menu five">
-            <li><%= link_to t('.menu-contact'), contact_form_new_path %></li>
-            <li><%= link_to t('.menu-blog'), "#" %></li>
-            <li><%= link_to t('.menu-events'), events_path %></li>
-            <li><%= link_to t('.menu-home'), root_path %></li>
+            <li><%= link_to t('.menu-contact'), main_app.contact_form_new_path %></li>
+            <li><%= link_to t('.menu-blog'), crowdblog.root_path %></li>
+            <li><%= link_to t('.menu-events'), main_app.events_path %></li>
+            <li><%= link_to t('.menu-home'), main_app.root_path %></li>
           </ul>
         </div>
       </div>
@@ -36,9 +36,9 @@
       <div class="container">
         <div class="content-footer">
           <div class="three">
-            <span class="logo"><%= link_to (image_tag "logo.png"), root_path %></span>
+            <span class="logo"><%= link_to (image_tag "logo.png"), main_app.root_path %></span>
             <p><%= t('.contact_us') %></p>
-            <%= link_to t('.more_info'), contact_form_new_path %>
+            <%= link_to t('.more_info'), main_app.contact_form_new_path %>
           </div>
           <div class="three">
             <h4><%= t('.twitter') %></h4>
@@ -53,7 +53,7 @@
           <div class="three">
             <h4><%= t('.more') %></h4>
             <ul class="submenu">
-              <li><%= link_to t('.contact'), contact_form_new_path %></li>
+              <li><%= link_to t('.contact'), main_app.contact_form_new_path %></li>
               <li><%= link_to t('.who_we_are'), "/acerca" %></li>
               <li><%= link_to t('.privacy'), "/privacidad" %></li>
             </ul>

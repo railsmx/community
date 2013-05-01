@@ -109,6 +109,8 @@
   .privacy {
     padding: ($margin * 2) ($margin * 4);
 
+    sidebar { margin-top: $margin * 3; }
+
     .right-section {
       width: 68%;
       float: right;

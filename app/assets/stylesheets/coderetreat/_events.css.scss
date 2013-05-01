@@ -378,4 +378,26 @@
       }
     }
   }
+
+  .edit-event {
+    padding: ($padding * 2) ($padding * 4);
+
+    sidebar { margin-top: $margin * 3; }
+
+    .right-section {
+      width: 68%;
+      float: right;
+      padding-left: ($padding / 2);
+
+      h1 {
+        margin-top: 0;
+        padding: 0;
+      }
+
+      p {
+        text-align: justify;
+        padding: 0;
+      }
+    }
+  }
 }

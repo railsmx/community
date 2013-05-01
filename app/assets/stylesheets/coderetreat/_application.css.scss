@@ -434,16 +434,7 @@ footer {
   .contact {
     padding: ($margin * 2) ($margin * 4) ($margin * 2) ($margin * 4);
 
-    .box-shadow {
-      -moz-box-shadow:    3px 3px 5px -2px $light-gray;
-      -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
-      box-shadow:         3px 3px 5px -2px $light-gray;
-      border: 1px solid $light-gray;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-      background-color: white;
-    }
+    sidebar { margin-top: $margin * 2.5; }
 
     .right-section {
       width: 68%;
@@ -507,3 +498,14 @@ footer {
 .datapicker { position: absolute; }
 
 .timeline-header h1.summary { display: none; }
+
+.box-shadow {
+  -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+  -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+  box-shadow:         3px 3px 5px -2px $light-gray;
+  border: 1px solid $light-gray;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: white;
+}
