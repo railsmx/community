@@ -29,12 +29,6 @@
           color: $light-gray
         }
       }
-
-      sidebar {
-        padding-top: $padding !important;
-
-        .blog { padding-top: ($padding / 2) !important; }
-      }
     }
 
     .right-section {
@@ -56,6 +50,22 @@
         font-weight: lighter;
         color: $light-gray
       }
+    }
+  }
+
+  .posts-index {
+    sidebar {
+      padding-top: $padding * 3 !important;
+
+      .blog { padding-top: ($padding / 2) !important; }
+    }
+  }
+
+  .post-show {
+    sidebar {
+      padding-top: $padding * 2 !important;
+
+      .blog { padding-top: ($padding / 2) !important; }
     }
   }
 }
