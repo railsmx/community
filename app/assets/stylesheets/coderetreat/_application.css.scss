@@ -166,12 +166,24 @@ footer {
         margin: 0 auto;
       }
 
-      .twitter {
-        background-color: $light-red !important;
-      }
-
       .three {
+        &:not(:first-child) { padding-top: $padding; }
+
+        .logo {
+          padding-top: 0 !important;
+          font-size: 1.2em;
+          display: block;
+
+          a { display: block; }
+
+          img {
+            width: 220px;
+            height: 35%;
+          }
+        }
+
         .tweet {
+          margin-top: $margin / 2;
           float: left;
 
           .each_tweet {
@@ -203,43 +215,68 @@ footer {
                 }
               }
 
-              .tweet_text {
-                margin-top: 20px;
-              }
+              .tweet_text { margin-top: 20px; }
             }
           }
         }
-      }
-    }
-  }
 
-  .logo {
-    font-size: 1.2em;
-    display: block;
-    a {
-      display: block;
-    }
-    img {
-      width: 220px;
-      height: 35%;
-    }
-  }
+        .post {
+          font-family: 'Roboto';
+          font-size: $text-size;
+          color: $text-color;
+          margin-top: $margin / 2;
 
-  .submenu {
-    list-style-type: none;
-    padding: 0;
+          .post-title {
+            font-size: $text-size + 2;
+            font-weight: 700;
+            color: $header1-color;
+            margin-top: $margin / 2;
+          }
 
-    li {
-      float: left;
-      color: white;
-      margin-right: ($margin / 2);
+          .post-date {
+            font-weight: 300;
+            font-style: italic;
+            margin-top: $margin / 2;
+          }
 
-      a {
-        color: $green;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: $text-size - 2;
-        font-family: 'Roboto';
+          .post-body {
+            font-weight: 300;
+            text-align: justify;
+            margin-top: $margin / 2;
+          }
+
+          .details {
+            font-style: italic;
+            margin-top: $margin / 2;
+          }
+        }
+
+        .submenu {
+          list-style-type: none;
+          padding: 0;
+          margin-top: $margin / 2;
+          overflow: hidden;
+
+          li {
+            float: left;
+            color: white;
+            margin-right: ($margin / 2);
+
+            a {
+              color: $green;
+              text-decoration: none;
+              font-weight: bold;
+              font-size: $text-size;
+              font-family: 'Roboto';
+            }
+          }
+        }
+
+        .advice {
+          margin-top: $margin / 2;
+          font-size: $text-size;
+          font-weight: 300;
+        }
       }
     }
   }
@@ -453,6 +490,7 @@ footer {
         color: $text-color;
         font-family: "Roboto";
         font-weight: 300;
+        text-align: justify;
       }
     }
   }

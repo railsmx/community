@@ -1,0 +1,16 @@
+<% cache post do %>
+  <div class="post">
+    <div class="post-title">
+      <%= post.title %>
+    </div>
+    <div class="post-date">
+    	<%= "#{date_published_post(post.published_at)}" %>
+    </div>
+    <div class="post-body">
+    	<%= truncate post.body, length: 80 %>
+    </div>
+    <div class="details">
+      <%= link_to t('.details'), main_app.post_path(*post.url_params) %>
+    </div>
+  </div>
+<% end %>

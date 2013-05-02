@@ -21,6 +21,7 @@ es:
       blog: 'BLOG'
       twitter: 'TWITTER'
       more: 'MÁS'
+      not_content: "No hay contenido disponible"
 
   home:
     acerca:
@@ -46,6 +47,8 @@ es:
       coming_events: 'Próximos Eventos'
       blog: 'Blog'
       not_content: 'No hay contenido disponible'
+    post:
+      details: 'Ver detalles...'
     event:
       organizer: 'Organizado por %{organize}'
       details: 'Ver detalles ...'

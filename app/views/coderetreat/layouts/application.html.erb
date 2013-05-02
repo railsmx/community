@@ -48,10 +48,19 @@
             </div>
           </div>
           <div class="three">
-            <h4><%= t('.blog') %></h4>
+            <h4><%= t('.blog') %></h4><br>
+            <% cache @current_posts do %>
+              <% if !@current_posts.empty? %>
+                <%= (render partial: 'shared/post', collection: @current_posts) %>
+              <% else %>
+                <div class="advice">
+                  <%= t('.not_content') %>
+                </div>
+              <% end %>
+            <% end %>
           </div>
           <div class="three">
-            <h4><%= t('.more') %></h4>
+            <h4><%= t('.more') %></h4><br>
             <ul class="submenu">
               <li><%= link_to t('.contact'), main_app.contact_form_new_path %></li>
               <li><%= link_to t('.who_we_are'), "/acerca" %></li>
