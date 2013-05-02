@@ -76,8 +76,13 @@ es:
   crowdblog:
     posts:
       index:
-        blog: "Blog"
+        blog: 'Blog'
         coming_events: 'Próximos Eventos'
+        not_content: 'No hay contenido disponible'
+    admin:
+      posts:
+        index:
+          not_logged: 'Usuario NO registrado'
 
   activerecord:
     errors:
