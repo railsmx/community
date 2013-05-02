@@ -26,8 +26,7 @@ class Form
 class Highligh
   constructor: ->
     $.getScript("http://yandex.st/highlightjs/6.1/highlight.min.js", ->
-      hljs.initHighlightingOnLoad()
-      console.log("run file")
+      hljs.initHighlighting()
     )
 
 
