@@ -23,4 +23,12 @@ class Form
       columnWidth : 240
     });
 
+class Highligh
+  constructor: ->
+    $.getScript("http://yandex.st/highlightjs/6.1/highlight.min.js", ->
+      hljs.initHighlighting()
+    )
+
+
 App.Utilities.Form = Form
+App.Utilities.Highligh = Highligh
