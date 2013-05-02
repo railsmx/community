@@ -9,11 +9,11 @@
   </div>
 
   <div class="blog">
-  <% cache @current_posts do %>
-    <h4><%= t('.blog') %></h4>
-    <div class="sidebar-blog">
-      <%= !current_posts.empty? ? (render partial: 'shared/post', collection: current_posts) : t('.not_content') %>
-    </div>
-  <% end %>
+    <% cache @current_posts do %>
+      <h4><%= t('.blog') %></h4>
+      <div class="sidebar-blog">
+        <%= !current_posts.empty? ? (render partial: 'shared/post', collection: current_posts) : t('.not_content') %>
+      </div>
+    <% end %>
   </div>
 </sidebar>
