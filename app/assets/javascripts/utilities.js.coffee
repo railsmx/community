@@ -18,4 +18,9 @@ class Form
       $(this).find('a.edit').hide();
     )
 
+    $('.group').masonry({
+      itemSelector : '.third',
+      columnWidth : 240
+    });
+
 App.Utilities.Form = Form
