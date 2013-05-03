@@ -18,3 +18,5 @@
 .rbenv-version
 .DS_Store
 tags
+
+public/crowdblog/
