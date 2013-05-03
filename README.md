@@ -57,6 +57,18 @@ Before starting the application export SendGrid account keys as follow:
     
 These keys are being used in the smtp_setup.rb initializer
 
+## Memcachier
+
+For cache it uses MemCachier will work with Dalli
+
+Before starting the application you’ll need to pass the proper credentials to Dalli as follow:
+
+    export ENV["MEMCACHIER_SERVERS"] = memcachier_servers
+    export ENV["MEMCACHIER_USERNAME"] = memcachier_username
+    export ENV["MEMCACHIER_PASSWORD"] = memcachier_password
+    
+These keys are being used is the production.rb environment    
+
 ## Twitter
 For use twitter it uses gem Twitter with OAuth Access and Tokens 
 
