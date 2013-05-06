@@ -18,6 +18,8 @@ gem 'omniauth-github'
 gem 'warden', '~> 1.2.1'
 gem 'crowdblog', github:  'crowdint/crowdblog', branch: 'rails4-userless'
 
+gem "friendly_id", github: 'FriendlyId/friendly_id', branch: 'rails4'
+
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
