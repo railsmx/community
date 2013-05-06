@@ -36,7 +36,7 @@ helper_method :crowdblog_current_user, :crowdblog_authenticate_user!
   end
 
   def crowdblog_authenticate?
-    return redirect_to main_app.root_path unless identity_signed_in?
+    return redirect_to crowdblog.root_path unless identity_signed_in?
     Rails.application.config.publishers.delete(' ').split(",").include? current_identity.email
   end
   

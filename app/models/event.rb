@@ -7,8 +7,8 @@ class Event < ActiveRecord::Base
   belongs_to :identity
   geocoded_by :address
 
-  #extend FriendlyId
-  #friendly_id :name, use: :slugged
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   validates :name, :date, :location, :address, :contact, :identity_id, presence: true
   validates :date, future_date: true
@@ -27,7 +27,11 @@ class Event < ActiveRecord::Base
 
   class << self
     def my_event(event_id, identity)
-      where(id: event_id, identity_id: identity.id).first
+      begin
+        where(identity_id: identity).find(event_id)
+      rescue ActiveRecord::RecordNotFound
+        nil
+      end
     end
   end
 
