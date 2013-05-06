@@ -1,7 +1,7 @@
 class Crowdblog::PostsController < ApplicationController
   layout 'application'
   before_action :current_events
-  before_action :current_posts, only: [:show, :index]
+  before_action :current_posts
 
   def index
     @posts = Crowdblog::Post.published_and_ordered
