@@ -78,7 +78,7 @@ module ApplicationHelper
   end
 
   def title(page_title)
-    content_for(:title) { "#{ENV['THEME'].downcase}: #{page_title}" }
+    content_for(:title) { "#{ENV['THEME'].downcase} : #{page_title}" }
   end
 
   def custom_url_for(options = {})
