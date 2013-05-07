@@ -362,6 +362,8 @@
 
     .right-section {
       p { text-align: justify; }
+
+      .building, .place, .date, .time { padding-right: $padding; }
     }
   }
 
@@ -374,6 +376,8 @@
 
     .right-section {
       p { text-align: justify; }
+
+      .building, .place, .date, .time { padding-right: $padding; }
     }
   }
 
