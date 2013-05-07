@@ -19,7 +19,9 @@
         la comunidad</p>
     </div>
     <div class="blog">
-      <%= render @posts %>
+      <% cache @posts do %>
+          <%= render @posts %>
+      <% end %>
     </div>
   </section>
 </div>
