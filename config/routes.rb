@@ -6,7 +6,7 @@ Community::Application.routes.draw do
 # We ask that you don't use the :as option here, as Forem relies on it being the default of "crowdblog"
   mount Crowdblog::Engine => '/blog', as: :crowdblog
 
-  get '/:year/:month/:day/:id(.:format)', to: 'crowdblog/posts#show', as: 'post',
+  get '/blog/:year/:month/:day/:id(.:format)', to: 'crowdblog/posts#show', as: 'post',
     constraints: { year: /\d+/ }
 
   resources :events, path: '/eventos'
