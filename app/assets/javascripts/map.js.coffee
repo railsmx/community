@@ -22,7 +22,7 @@ class Map
         mapbox.markers.interaction(markerLayer)
         map.addLayer(markerLayer);
 
-        map.zoom(10).center({ lat: lat, lon: lon })
+        map.zoom(15).center({ lat: lat, lon: lon })
 
         markerLayer.add_feature({
             geometry: {
@@ -34,7 +34,5 @@ class Map
             }
         })
       )
-
-
 
 App.Utilities.Map = Map
