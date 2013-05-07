@@ -35,6 +35,10 @@ describe Identity do
   end
 
   describe "Publishers login validation" do
+    before do
+      Rails.application.config.publishers = 'test@user.com'
+    end
+
     it "must be able to login if current identity is publisher" do
       identity_valid.is_publisher?.must_equal true
     end

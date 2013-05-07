@@ -2,7 +2,8 @@ require 'test_helper'
 
 feature 'BlogManagement Feature Test' do
   background do
-    mock_omniauth_blog(12334, 'test@user.com')
+    mock_omniauth(12334, 'test@user.com')
+    Rails.application.config.publishers = 'test@user.com'
   end
 
   scenario "when current user is publisher" do
@@ -14,7 +15,7 @@ feature 'BlogManagement Feature Test' do
   end
 
   scenario "when current user isn't publisher" do
-    mock_omniauth_blog(12263, 'test2@user.com')
+    mock_omniauth(12263, 'test2@user.com')
 
     login_user
 
@@ -28,13 +29,4 @@ def login_user
   visit '/'
 
   find('.sign-in').click
-end
-
-def mock_omniauth_blog(uid = '12334', email)
-  OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
-    { 'provider' => 'github', 'uid' => uid,
-      'info' => { 'nickname' => 'Test user', 'email' => email }
-    }
-  )
 end

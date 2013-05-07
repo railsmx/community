@@ -7,14 +7,14 @@ class Identity < ActiveRecord::Base
 
   def self.create_with_omniauth(auth)
     create! do |identity|
-  		identity.provider = auth["provider"]
-  		identity.uid = auth["uid"]
-  		identity.username = auth["info"]["nickname"]
-      identity.email = auth["info"]["email"]
-		end
-	end
+      identity.provider = auth['provider']
+      identity.uid = auth['uid']
+      identity.username = auth['info']['nickname']
+      identity.email = auth['info']['email']
+    end
+  end
 
   def is_publisher?
-    Rails.application.config.publishers.delete(' ').split(",").include? self.email
+    Rails.application.config.publishers.delete(' ').split(',').include? self.email
   end
 end

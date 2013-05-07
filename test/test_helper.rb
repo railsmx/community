@@ -1,12 +1,12 @@
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../../config/environment', __FILE__)
 
-require "rails/test_help"
-require "minitest/autorun"
-require "minitest/rails"
-require "minitest/focus"
-require "minitest/colorize"
-require "minitest/rails/capybara"
+require 'rails/test_help'
+require 'minitest/autorun'
+require 'minitest/rails'
+require 'minitest/focus'
+require 'minitest/colorize'
+require 'minitest/rails/capybara'
 
 class ActiveSupport::TestCase
   include Warden::Test::Helpers
@@ -57,23 +57,9 @@ class ActiveSupport::TestCase
     klass.send(:define_method, method, ->(*args) { block.call(args) })
   end
 end
- #ensure
-  #  klass.class_eval do
-  #    metaclass.send(:undef_method, method)
-  #    metaclass.alias_method method, :"new_#{method}"
-  #    undef_method :"new_#{method}"
-  #  end
-  #end
-
-class ActionDispatch::IntegrationTest
-  include Rails.application.routes.url_helpers
-  include Capybara::RSpecMatchers
-  include Capybara::DSL
-  include Warden::Test::Helpers
-
-end
 
 class Capybara::Rails::TestCase
+
   def self.prepare
     # Add anything that you need before suite starts
   end
@@ -92,11 +78,11 @@ class Capybara::Rails::TestCase
 
   end
 
-  def mock_omniauth(uid = '12334')
+  def mock_omniauth(uid = '12334', email = 'test@user.com')
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
       { 'provider' => 'github', 'uid' => uid,
-        'info' => { 'nickname' => 'Test user', 'email' => 'test@user.com' }
+        'info' => { 'nickname' => 'Test user', 'email' => email }
       }
     )
   end
