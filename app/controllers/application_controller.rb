@@ -36,16 +36,22 @@ helper_method :crowdblog_current_user, :crowdblog_authenticate_user!
   end
 
   def crowdblog_authenticate?
-    return redirect_to crowdblog.root_path unless identity_signed_in?
-    Rails.application.config.publishers.delete(' ').split(",").include? current_identity.email
+    redirect_to crowdblog.root_path unless crowdblog_is_publisher?
   end
-  
+
   def current_events
     @current_events = Event.current_events(2)
   end
 
   def current_posts
     @current_posts = Crowdblog::Post.last_published(3)
+  end
+
+  def crowdblog_is_publisher?
+    Rails.application.config.publishers
+    .delete(' ')
+    .split(",")
+    .include?(current_identity.email)
   end
 end
 
