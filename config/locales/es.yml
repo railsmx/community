@@ -64,6 +64,14 @@ es:
       description: 'Descripción:'
 
   mail_form:
+    errors:
+      models:
+        contact_form:
+          attributes:
+            name:
+              blank: "Campo vacio"
+            email:
+              invalid: "Correo electronico invalido"
     models:
       contact_form: "Forma para contactar"
       name: "Nombre"
