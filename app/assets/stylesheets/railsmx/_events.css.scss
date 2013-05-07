@@ -353,21 +353,7 @@
     }
   }
 
-  .new_event {
-    sidebar {
-      padding-top: $padding * 2.75 !important;
-
-      .blog { padding-top: $padding / 2; }
-    }
-
-    .right-section {
-      p { text-align: justify; }
-
-      .building, .place, .date, .time { padding-right: $padding; }
-    }
-  }
-
-  .edit_event {
+  .new-event, .edit-event {
     sidebar {
       padding-top: $padding * 2.75 !important;
 

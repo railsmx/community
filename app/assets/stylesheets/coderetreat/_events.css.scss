@@ -380,7 +380,7 @@
     }
   }
 
-  .edit-event {
+  .edit-event, .new-event {
     padding: ($padding * 2) ($padding * 4);
 
     sidebar { margin-top: $margin * 3; }
@@ -399,6 +399,8 @@
         text-align: justify;
         padding: 0;
       }
+
+      .building, .place, .date, .time { padding-right: $padding; }
     }
   }
 }
