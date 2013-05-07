@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/FriendlyId/friendly_id.git
+  revision: 903f2fac79774edb119a7f6baa2396ab7c555d47
+  branch: rails4
+  specs:
+    friendly_id (4.1.0.beta.2)
+
+GIT
   remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
   revision: ede3601c97b83de53b51335339983dd8a6d22093
   specs:
@@ -297,6 +304,7 @@ DEPENDENCIES
   dalli
   font-awesome-sass-rails
   foreman
+  friendly_id!
   geocoder
   gravatar_image_tag
   jbuilder (~> 1.0.1)

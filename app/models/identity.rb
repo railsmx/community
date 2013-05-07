@@ -15,6 +15,6 @@ class Identity < ActiveRecord::Base
 	end
 
   def is_publisher?
-    Rails.application.config.publishers.include? self.email
+    Rails.application.config.publishers.delete(' ').split(",").include? self.email
   end
 end

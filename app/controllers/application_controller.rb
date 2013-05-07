@@ -5,7 +5,7 @@ def crowdblog_current_user
 end
 
 def crowdblog_authenticate_user!
-  authenticate!
+  crowdblog_authenticate?
 end
 
 helper_method :crowdblog_current_user, :crowdblog_authenticate_user!
@@ -35,6 +35,11 @@ helper_method :crowdblog_current_user, :crowdblog_authenticate_user!
     redirect_to root_path, notice: t('.not_logged') unless identity_signed_in?
   end
 
+  def crowdblog_authenticate?
+    return redirect_to crowdblog.root_path unless identity_signed_in?
+    Rails.application.config.publishers.delete(' ').split(",").include? current_identity.email
+  end
+  
   def current_events
     @current_events = Event.current_events(2)
   end
