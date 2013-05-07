@@ -75,7 +75,7 @@
       }
 
       .field_with_errors {
-        input { border: 1px solid $light-gray !important; }
+        input { border: 1px solid $red !important; }
       }
 
       div label { width: 24%; }
