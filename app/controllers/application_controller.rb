@@ -40,7 +40,8 @@ class ApplicationController < ActionController::Base
   end
 
   def crowdblog_authenticate_user!
-    redirect_to crowdblog.root_path unless identity_signed_in? and current_identity.is_publisher?
+    redirect_to crowdblog.root_path unless
+      identity_signed_in? and current_identity.is_publisher?
   end
 end
 

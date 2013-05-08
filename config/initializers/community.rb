@@ -1,5 +1,4 @@
 theme = ENV['THEME'] || ''
-
 theme = ENV['THEME'] = 'railsmx' if Rails.env.test?
 
 Rails.application.config.theme = theme.downcase
