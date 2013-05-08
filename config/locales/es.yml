@@ -145,6 +145,8 @@ es:
       organizer: 'Organizado por %{organize}'
       edit_event: 'editar'
 
+  subject_mail: "Correo de contacto de %{app}"
+
   activerecord:
     errors:
       messages:
