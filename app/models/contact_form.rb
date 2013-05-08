@@ -7,7 +7,7 @@ class ContactForm < MailForm::Base
 
   def headers
     {
-      subject: I18n.t('.subject_mail', app: ENV['THEME']),
+      subject: I18n.t('.subject_mail', app: ENV['THEME'].downcase),
       to: Rails.application.config.contact_email,
       from: %("#{name}" <#{email}>)
     }
