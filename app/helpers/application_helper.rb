@@ -48,28 +48,16 @@ module ApplicationHelper
     end if flash[:notice]
   end
 
-  def localize_long_date(date)
-    I18n::localize(date, format: t(:long_date, scope: [:date, :formats]))
+  def localize_date(date, format)
+    I18n::localize(date, format: t(format, scope: [:date, :formats]))
   end
 
-  def localize_short_date(date)
-    I18n::localize(date, format: t(:custom_short, scope: [:date, :formats]))
-  end
-
-  def localize_month(date)
-    I18n::localize(date, format: t(:month_name, scope: [:date, :formats]))
-  end
-
-  def localize_weekday(date)
-    I18n::localize(date, format: t(:day_name, scope: [:date, :formats]))
-  end
-
-  def localize_time(date)
-    I18n::localize(date, format: t(:short_time, scope: [:time, :formats]))
+  def localize_time(date, format)
+    I18n::localize(date, format: t(format, scope: [:time, :formats]))
   end
 
   def date_published_post(date)
-    message = localize_month(date)
+    message = localize_date(date, :month_name)
     message << " "
     message << date.strftime("%e")
     message << ", "

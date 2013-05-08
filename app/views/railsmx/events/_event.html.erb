@@ -7,10 +7,10 @@
 
   <div id="event_<%= event.id %>" class="<%= !event.upcoming? ? "third" : (first ? "first" : "second")%>">
     <div class="datetime">
-      <div class="month"><%= localize_month(event.date).upcase %></div>
+      <div class="month"><%= localize_date(event.date, :month_name).upcase %></div>
       <div class="day"><%= event.date.strftime("%e") %></div>
-      <div class="weekday"><%= localize_weekday event.date %></div>
-      <div class="time"><%= localize_time event.date if event.upcoming? %></div>
+      <div class="weekday"><%= localize_date(event.date, :day_name) %></div>
+      <div class="time"><%= localize_time(event.date, :short_time) if event.upcoming? %></div>
       <%= display_edit_event_link event if event.upcoming? %>
     </div>
 
