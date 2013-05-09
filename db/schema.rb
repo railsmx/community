@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130507142525) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "crowdblog_assets", force: true do |t|
     t.integer  "post_id"
     t.string   "attachment"
