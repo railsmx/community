@@ -22,6 +22,17 @@
         <%= @post.html_body %>
       </div>
     <% end %>
+    <div id="disqus_thread"></div>
+    <script>
+      <%- shortname = Rails.application.config.discus_key %>
+      document.addEventListener('page:change', function(){
+        new App.Utilities.DisQus("<%= shortname %>")
+      });
+
+      $(function(){
+        new App.Utilities.DisQus("<%= shortname %>")
+      });
+    </script>
   </section>
 </div>
 <script>
