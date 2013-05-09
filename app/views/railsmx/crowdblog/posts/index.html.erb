@@ -14,12 +14,14 @@
   <section class="right-section">
     <div class="info">
       <h1>Blog</h1>
-      <p>Colección de posts con temas relacionados con el lenguaje Ruby, el framework Ruby On Rails y desarrollo wen en general.
+      <p>Colección de posts con temas relacionados con el lenguaje Ruby, el framework Ruby On Rails y desarrollo web en general.
         Los posts han sido creados y publicados mediantes contribuciones de
         la comunidad</p>
     </div>
     <div class="blog">
-      <%= render @posts %>
+      <% cache @posts do %>
+          <%= render @posts %>
+      <% end %>
     </div>
   </section>
 </div>

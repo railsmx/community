@@ -12,16 +12,19 @@
         <div>
           <%= f.label t('.name') %>
           <%= f.text_field :name, maxlength: 30 %>
+          <%= field_error @contact_form, :name %>
         </div>
 
         <div>
           <%= f.label t('.email') %>
           <%= f.email_field :email, maxlength: 40 %>
+          <%= field_error @contact_form, :email %>
         </div>
 
         <div>
           <%= f.label t('.description') %>
           <%= f.text_area :message, maxlength: 250 %>
+          <%= field_error @contact_form, :message %>
         </div>
 
         <div class="submit">

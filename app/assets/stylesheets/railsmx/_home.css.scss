@@ -67,15 +67,11 @@
       @extend .form-event;
       padding-left: 0;
 
-      input[type="text"], input[type="email"], textarea { @include size(300px 30px); }
+      input[type="text"], input[type="email"] { @include size(300px 30px); }
 
       textarea {
         font-size: .9em;
         @include size(300px 150px);
-      }
-
-      .field_with_errors {
-        input { border: 1px solid $light-gray !important; }
       }
 
       div label { width: 24%; }

@@ -60,10 +60,22 @@ es:
       send: 'Enviar'
       contact: 'Contacto'
       name: 'Nombre:'
-      email: 'Correo electronico:'
+      email: 'Correo electrónico:'
       description: 'Descripción:'
+    create:
+      message_sent: "Su mensaje de contacto se ha enviado"
 
   mail_form:
+    errors:
+      models:
+        contact_form:
+          attributes:
+            name:
+              blank: "Campo vacío"
+            email:
+              invalid: "Correo electrónico inválido"
+            message:
+              blank: 'Mensaje vacío'
     models:
       contact_form: "Forma para contactar"
       name: "Nombre"
@@ -82,12 +94,7 @@ es:
     admin:
       posts:
         index:
-          not_logged: 'Usuario NO registrado'
-
-  activerecord:
-    errors:
-      messages:
-        invalid: "Fecha invalida"
+          not_logged: 'Usuario no registrado'
 
   events:
     new:
@@ -142,8 +149,12 @@ es:
       organizer: 'Organizado por %{organize}'
       edit_event: 'editar'
 
+  subject_mail: "Correo de contacto de %{app}"
+
   activerecord:
     errors:
+      messages:
+        invalid: "Fecha invalida"
       models:
         event:
           attributes:
