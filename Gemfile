@@ -7,18 +7,15 @@ gem 'rails', '4.0.0.beta1'
 gem 'pg'
 gem 'puma'
 gem 'dalli'
-gem 'pretty_formatter'
-
-gem 'gravatar_image_tag'
-
-gem 'twitter', github: 'sferik/twitter'
-
-gem 'mail_form', github: 'mariochavez/mail_form'
-gem 'omniauth-github'
 gem 'warden', '~> 1.2.1'
+gem 'omniauth-github'
+gem 'pretty_formatter'
+gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'rails4'
+gem 'mail_form', github: 'mariochavez/mail_form'
 gem 'crowdblog', github:  'crowdint/crowdblog', branch: 'rails4-userless'
 
-gem "friendly_id", github: 'FriendlyId/friendly_id', branch: 'rails4'
+gem 'gravatar_image_tag'
+gem 'twitter', github: 'sferik/twitter'
 
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
@@ -32,14 +29,15 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0.beta1'
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'bourbon'
+  gem 'bootstrap-datepicker-rails',
+    :require => 'bootstrap-datepicker-rails',
+    github: 'Nerian/bootstrap-datepicker-rails'
+  gem 'font-awesome-sass-rails'
 end
 
 gem 'jquery-rails'
-gem 'bourbon'
-
-gem 'bootstrap-datepicker-rails',
-  :require => 'bootstrap-datepicker-rails',
-  :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 gem 'geocoder'
 
@@ -60,23 +58,9 @@ group :development do
   gem 'meta_request'
 end
 
-gem 'font-awesome-sass-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.0.1'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano', group: :development
-
-# To use debugger
-# gem 'debugger'
-
+#gem 'jbuilder', '~> 1.0.1'

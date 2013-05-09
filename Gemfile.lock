@@ -307,7 +307,6 @@ DEPENDENCIES
   friendly_id!
   geocoder
   gravatar_image_tag
-  jbuilder (~> 1.0.1)
   jquery-rails
   launchy
   mail_form!
