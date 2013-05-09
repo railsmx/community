@@ -1,0 +1,14 @@
+<% title t('.new_event_title') %>
+<div class="content new-event">
+  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
+
+  <section class="right-section">
+    <%= display_alert %>
+    <h1><%= t('.new_event_title') %> </h1>
+    <p>
+      Por favor llena la información de forma para resgistrar tu evento. Mientras más detallada sea la información proporcionada
+      mayor interés se podrá generar para los posibles asistentes.
+    </p><br>
+    <%= render partial: 'form', locals: { event: @event, submit: t('.create_event') } %>
+  </section>
+</div>

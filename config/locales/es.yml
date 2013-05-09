@@ -7,29 +7,51 @@ es:
     application:
       sign_in: 'Iniciar sesión'
       sign_out: 'Cerrar sesión'
+      menu-home: 'Inicio'
+      menu-events: 'Eventos'
+      menu-blog: 'Blog'
+      menu-contact: 'Contacto'
       welcome: 'Bienvenido %{user}'
       events: 'Eventos'
       who_we_are: 'Acerca de'
       contact: 'Contacto'
       privacy: 'Privacidad'
-      blog: 'Blog'
+      contact_us: 'Si deseas organizar un Code Retreat o necesitas ayuda para organizarlo, ponte en contacto con nosotros.'
+      more_info: 'Más información...'
+      blog: 'BLOG'
+      twitter: 'TWITTER'
+      more: 'MÁS'
+      not_content: "No hay contenido disponible"
 
   home:
     acerca:
       who_we_are: 'Acerca de ...'
+      about_coderetreat: 'ACERCA DEL CODE RETREAT'
+      history: 'HISTORIA'
+      oragnize_coderetreat: 'ORGANIZA TU CODE RETREAT'
     privacidad:
       privacy: 'Privacidad'
     index:
       sign_in: 'Iniciar sesión'
       not_content: 'No hay contenido disponible'
+      intense_practice: 'Práctica intensiva'
+      practice_descrip: 'Todo un día de práctica en el diseño modular de la programación orientada a objectos, con el objectivo de desarrollar código que minimize los costos de los cambios.'
+      focused_fundamentals: 'Enfocado a los fundamentos'
+      fundamentals_descrip: 'Una oportunidad para enfocarse en los fundamentos del diseño y desarrollo de código. Sin la presión de tener un entregable.'
+      improve_skills: 'Mejora tus habilidades'
+      skills_descrip: 'Practica todo lo que en tu trabajo diario es difícil, trabaja en par con gente desconocida y en diferentes lenguajes de programación.'
+      more_information: 'Más información...'
 
   shared:
     sidebar:
       coming_events: 'Próximos Eventos'
       blog: 'Blog'
       not_content: 'No hay contenido disponible'
+    post:
+      details: 'Ver detalles...'
     event:
       organizer: 'Organizado por %{organize}'
+      details: 'Ver detalles ...'
     event_show:
       event_not_available: 'Evento no disponible'
 
@@ -38,10 +60,20 @@ es:
       send: 'Enviar'
       contact: 'Contacto'
       name: 'Nombre:'
-      email: 'Correo electronico:'
+      email: 'Correo electrónico:'
       description: 'Descripción:'
+    create:
+      message_sent: "Su mensaje de contacto se ha enviado"
 
   mail_form:
+    errors:
+      models:
+        contact_form:
+          attributes:
+            name:
+              blank: "Campo vacío"
+            email:
+              invalid: "Correo electrónico inválido"
     models:
       contact_form: "Forma para contactar"
       name: "Nombre"
@@ -51,10 +83,16 @@ es:
         message: "Mensaje enviado"
         name: "Nombre"
 
-  activerecord:
-    errors:
-      messages:
-        invalid: "Fecha invalida"
+  crowdblog:
+    posts:
+      index:
+        blog: 'Blog'
+        coming_events: 'Próximos Eventos'
+        not_content: 'No hay contenido disponible'
+    admin:
+      posts:
+        index:
+          not_logged: 'Usuario no registrado'
 
   events:
     new:
@@ -109,8 +147,12 @@ es:
       organizer: 'Organizado por %{organize}'
       edit_event: 'editar'
 
+  subject_mail: "Correo de contacto de %{app}"
+
   activerecord:
     errors:
+      messages:
+        invalid: "Fecha invalida"
       models:
         event:
           attributes:
@@ -133,6 +175,7 @@ es:
       long_date: "El %d de %B de %Y"
       month_name: "%B"
       day_name: "%A"
+      custom_short: "%A %d de %B"
 
     day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
     abbr_day_names: [Dom, Lun, Mar, Vie, Jue, Vie, Sab]

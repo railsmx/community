@@ -1,0 +1,6 @@
+<% cache post do %>
+  <p class="posts">
+    <%= link_to post.title, main_app.post_path(*post.url_params) %><br>
+    <%= "Por #{post.author.username}, #{date_published_post(post.published_at)}" %>
+  </p>
+<% end %>

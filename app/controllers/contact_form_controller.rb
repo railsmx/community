@@ -1,5 +1,6 @@
 class ContactFormController < ApplicationController
   before_action :current_events, only: [:create]
+  before_action :current_posts
 
   def new
     current_events

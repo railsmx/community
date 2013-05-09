@@ -24,11 +24,11 @@ module ApplicationHelper
   end
 
   def display_create_event_link
-    link_to t('.add_event'), new_event_path, class: 'btn' if current_identity
+    link_to t('.add_event'), main_app.new_event_path, class: 'btn' if current_identity
   end
 
   def display_edit_event_link(event)
-    link_to edit_event_path(event), class: "edit", style: "left: 0;" do
+    link_to main_app.edit_event_path(event), class: "edit", style: "left: 0;" do
       message = t('.edit_event')
       message << " "
       message << content_tag(:div, '', class: "icon-edit")
@@ -48,40 +48,30 @@ module ApplicationHelper
     end if flash[:notice]
   end
 
-  def localize_long_date(date)
-    I18n::localize(date, format: t(:long_date, scope: [:date, :formats]))
+  def localize_date(date, format)
+    I18n::localize(date, format: t(format, scope: [:date, :formats]))
   end
 
-  def localize_month(date)
-    I18n::localize(date, format: t(:month_name, scope: [:date, :formats]))
+  def localize_time(date, format)
+    I18n::localize(date, format: t(format, scope: [:time, :formats]))
   end
 
-  def localize_weekday(date)
-    I18n::localize(date, format: t(:day_name, scope: [:date, :formats]))
-  end
-
-  def localize_time(date)
-    I18n::localize(date, format: t(:short_time, scope: [:time, :formats]))
+  def date_published_post(date)
+    message = localize_date(date, :month_name)
+    message << " "
+    message << date.strftime("%e")
+    message << ", "
+    message << date.strftime("%Y")
+    message.html_safe
   end
 
   def title(page_title)
-    content_for(:title) { "rails.mx: #{page_title}" }
+    content_for(:title) { "#{ENV['THEME'].downcase} : #{page_title}" }
   end
 
-     def content_file(name, content = nil, options = {}, &block)
-        if content || block_given?
-          if block_given?
-            options = content if content
-            content = capture(&block)
-          end
-          if content
-            options[:flush] ? @view_flow.set(name, content) : @view_flow.append(name, content)
-          end
-          nil
-        else
-          @view_flow.get(name).presence
-        end
-      end
+  def custom_url_for(options = {})
+    content_for(:url_for) { url_for(options) } unless options.empty?
+  end
 
   def field_error(model, field)
     if model.errors[field].any?

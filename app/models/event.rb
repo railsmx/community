@@ -7,15 +7,19 @@ class Event < ActiveRecord::Base
   belongs_to :identity
   geocoded_by :address
 
-  #extend FriendlyId
-  #friendly_id :name, use: :slugged
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
-  validates :name, :date, :location,
-    :address, :contact, :identity_id, presence: true
+  validates :name, :date, :location, :address, :contact, :identity_id,
+    presence: true
   validates :date, future_date: true
 
-  scope :current_events, -> (counts) { where('date > ?', DateTime.now).order('date ASC').limit(counts) }
-  scope :past_events, -> (counts) { where('date <= ?', DateTime.now).order('date DESC').limit(counts) }
+  scope :current_events,
+    -> (counts) { where('date > ?', DateTime.now)
+                  .order('date ASC').limit(counts) }
+  scope :past_events,
+    -> (counts) { where('date <= ?', DateTime.now)
+                  .order('date DESC').limit(counts) }
 
   def time
     return date.to_s(:custom_time) if date && date.to_s(:custom_time) != '00:00'
@@ -28,7 +32,11 @@ class Event < ActiveRecord::Base
 
   class << self
     def my_event(event_id, identity)
-      where(id: event_id, identity_id: identity.id).first
+      begin
+        where(identity_id: identity).find(event_id)
+      rescue ActiveRecord::RecordNotFound
+        nil
+      end
     end
   end
 

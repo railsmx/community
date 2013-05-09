@@ -1,0 +1,95 @@
+.posts {
+  .content {
+    padding: $padding ($padding * 4);
+
+    a {
+      color: $green;
+      text-decoration: none;
+    }
+
+    .right-section {
+      padding-left: 10px;
+
+      h1, h2, h3, h4, h5, h6 { color: $green; }
+
+      .info {
+        h1 { margin: ($margin / 2) 0; }
+
+        p { color: $black; }
+      }
+
+      .post { padding-top: $padding; }
+
+      p {
+        margin-top: 0 !important;
+        font-weight: 300;
+        text-align: justify;
+        color: $black;
+      }
+
+      .post-title { margin: ($margin / 2) 0 !important; }
+
+      .author {
+        margin: ($margin / 2) 0;
+        font-weight: 300;
+        color: $light-gray;
+      }
+    }
+  }
+
+  .post-show {
+    .left-section {
+      width: 30%;
+      float: left;
+
+      .author {
+        padding: $padding $padding 0 ($padding / 2);
+
+        h3 { color: $green; }
+
+        .avatar { text-align: center; }
+
+        .published {
+          text-align: center;
+          margin: ($margin / 8) 0;
+        }
+
+        .published-date {
+          text-align: center;
+          font-weight: lighter;
+          color: $light-gray
+        }
+      }
+
+      sidebar {
+        width: 100%;
+        margin-top: $margin * 2;
+      }
+    }
+
+    .right-section {
+      width: 68%;
+      float: right;
+      padding-left: $padding / 2;
+    }
+  }
+
+  .posts-index {
+    sidebar {
+      width: 30%;
+      float: left;
+      margin-top: $margin * 3;
+    }
+
+    .right-section {
+      width: 68%;
+      float: right;
+    }
+    p {
+      color: $text-color;
+      font-family: "Roboto";
+      font-weight: 300;
+      text-align: justify;
+    }
+  }
+}

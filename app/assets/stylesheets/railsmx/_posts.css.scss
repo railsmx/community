@@ -1,0 +1,71 @@
+.posts {
+  .content {
+    padding-top: $padding;
+
+    a {
+      color: $red;
+      text-decoration: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 { color: $red; }
+
+    .left-section {
+      .author {
+        padding: $padding $padding 0 ($padding / 2);
+
+        h3 { color: $light-red; }
+
+        .avatar { text-align: center; }
+
+        .published {
+          text-align: center;
+          margin: ($margin / 8) 0;
+        }
+
+        .published-date {
+          text-align: center;
+          font-size: 1em;
+          font-weight: lighter;
+          color: $light-gray
+        }
+      }
+    }
+
+    .right-section {
+      p { text-align: justify; }
+
+      .info h1 { margin: ($margin / 2) 0; }
+
+      .post { padding-top: $padding; }
+
+      p { margin-top: 0 !important; }
+
+      .post-title { margin: ($margin / 2) 0 !important; }
+
+      .body { font-size: .9em; }
+
+      .author {
+        margin: ($margin / 2) 0;
+        font-size: 1em;
+        font-weight: lighter;
+        color: $light-gray
+      }
+    }
+  }
+
+  .posts-index {
+    sidebar {
+      padding-top: $padding * 3 !important;
+
+      .blog { padding-top: ($padding / 2) !important; }
+    }
+  }
+
+  .post-show {
+    sidebar {
+      padding-top: $padding * 2 !important;
+
+      .blog { padding-top: ($padding / 2) !important; }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= yield(:title).empty? ? ENV['THEME'] : yield(:title) %></title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:900,700,500,400,300,100" rel="stylesheet" type="text/css">
+    <meta name="keywords" content="ruby, ruby on rails, software, comunidad, eventos, code, retreat">
+    <meta name="description" content="Una practica intensiva durante todo un dia, enfocado a practicar los fundamentos del desarrollo de software. Una oportunidad para enfocarse en los fundamentos del diseño y desarrollo de codigo. Sin la presion de tener un entregable.">
+    <meta name="robots" content="all" >
+    <%= stylesheet_link_tag "coderetreat" %>
+    <%= javascript_include_tag "coderetreat" %>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="main-header">
+          <div class="logo seven">
+            <%= link_to image_tag("logo.png", border: 0), main_app.root_path %>
+          </div>
+          <ul class="menu five">
+            <li><%= link_to t('.menu-contact'), main_app.contact_form_new_path %></li>
+            <li><%= link_to t('.menu-blog'), crowdblog.root_path %></li>
+            <li><%= link_to t('.menu-events'), main_app.events_path %></li>
+            <li><%= link_to t('.menu-home'), main_app.root_path %></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="container <%= controller.controller_name %>">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="content-footer">
+          <div class="three">
+            <span class="logo"><%= link_to (image_tag "logo.png"), main_app.root_path %></span>
+            <p><%= t('.contact_us') %></p>
+            <%= link_to t('.more_info'), main_app.contact_form_new_path %>
+          </div>
+          <div class="three">
+            <h4><%= t('.twitter') %></h4>
+            <%= link_to '@CodeRetreatMex', 'https://twitter.com/coderetreatmex', class: "tweet_link", target: "_blank" %>
+            <div class="tweet">
+              <!-- Here is added the tweets -->
+            </div>
+          </div>
+          <div class="three">
+            <h4><%= t('.blog') %></h4><br>
+            <% cache @current_posts do %>
+              <% if !@current_posts.empty? %>
+                <%= (render partial: 'shared/post', collection: @current_posts) %>
+              <% else %>
+                <div class="advice">
+                  <%= t('.not_content') %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="three">
+            <h4><%= t('.more') %></h4><br>
+            <ul class="submenu">
+              <li><%= link_to t('.contact'), main_app.contact_form_new_path %></li>
+              <li><%= link_to t('.who_we_are'), "/acerca" %></li>
+              <li><%= link_to t('.privacy'), "/privacidad" %></li>
+            </ul>
+            <%= link_to (image_tag "crowdint.png"), "http://www.crowdint.com" %>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type='text/javascript'>
+      jQuery(function($){
+        $(".tweet").tweet({
+          username: "coderetreatmex",
+          join_text: "auto",
+          avatar_size: 32,
+          count: 2,
+          auto_join_text_default: "",
+          auto_join_text_ed: "",
+          auto_join_text_ing: "",
+          auto_join_text_reply: "",
+          auto_join_text_url: "",
+          loading_text: "loading tweets..."
+        });
+      });
+    </script>
+  </body>
+</html>

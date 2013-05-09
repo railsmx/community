@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title><%= yield(:title).empty? ? "rails.mx" : yield(:title) %></title>
+    <title><%= yield(:title).empty? ? "#{ENV['THEME'].downcase}" : yield(:title) %></title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta name="keywords" content="ruby, ruby on rails, ror, comunidad, eventos, magmaconf">
     <meta name="description" content="Una comunidad de desarrolladores mexicanos e hispanohablantes.
     Un punto de encuentro para compartir experiencias y mejores prácticas sobre el mundo de rails.">
     <meta name="robots" content="all" >
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag "railsmx" %>
     <%= javascript_include_tag "railsmx" %>
   </head>
@@ -14,10 +15,10 @@
     <header>
       <div class="container">
         <div class="banner six">
-          <span class="logo"><%= link_to image_tag("railsmx-mini.png", border: 0), root_path %></span>
+          <span class="logo"><%= link_to image_tag("railsmx-mini.png", border: 0),main_app.root_path %></span>
           <ul class="menu">
-            <li><%= link_to t('.events'), events_path %></li>
-            <li><%= link_to t('.blog'), crowdblog.root_path %></li>
+            <li><%= link_to t('.menu-events'), main_app.events_path %></li>
+            <li><%= link_to t('.menu-blog'), crowdblog.root_path %></li>
           </ul>
         </div>
         <div class="welcome six">
@@ -26,7 +27,7 @@
               <%= t('.welcome', user: current_identity.try(:username))  %>
               <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), alt: current_identity.username) %>
             </span>
-            <%= link_to t('.sign_out'), signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
+            <%= link_to t('.sign_out'), main_app.signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
           <% end %>
         </div>
       </div>
@@ -44,7 +45,7 @@
         <div class="four">
           <ul class="submenu">
             <li><%= link_to t('.who_we_are'), "/acerca" %></li>
-            <li><%= link_to t('.contact'), contact_form_new_path %></li>
+            <li><%= link_to t('.contact'), main_app.contact_form_new_path %></li>
             <li><%= link_to t('.privacy'), "/privacidad" %></li>
           </ul>
         </div>

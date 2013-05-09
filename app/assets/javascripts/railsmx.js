@@ -11,3 +11,4 @@
 //= require datetime
 //= require map
 //= require utilities
+//= require masonry.min

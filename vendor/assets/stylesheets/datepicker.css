@@ -61,15 +61,15 @@
   border-radius: 4px;
 }
 .datepicker td.day:hover {
-  background: #eeeeee;
+  background: rgba(231, 129, 116, 0.8);
   cursor: pointer;
 }
 .datepicker td.day.disabled {
-  color: #eeeeee;
+  color: #999999;
 }
 .datepicker td.old,
 .datepicker td.new {
-  color: #999999;
+  color: #eeeeee;
 }
 .datepicker td.active,
 .datepicker td.active:hover {

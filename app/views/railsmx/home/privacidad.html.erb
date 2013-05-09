@@ -1,120 +1,122 @@
 <% title t('.privacy') %>
-<div class="container privacy">
-  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
+<div class="content privacy">
+  <section class="left-section">
+    <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+  </section>
 
-  <div class="content nine">
-  <h1>Política y Privacidad</h1>
-  <p>Esta Política de Privacidad rige la manera en que rails.mx recopila, utiliza,
-    mantiene y divulga la información recogida de los usuarios (cada "Usuario")
-    del sitio web http://rails.mx (de ahora en adelante, el "Sitio"). Esta
-    política de privacidad se aplica para el sitio y todos los productos y
-    servicios ofrecidos por rails.mx.
-    <p></p>
-    <h4>Información de identificación personal</h4>
-    <p>Podemos recopilar información personal de identificación del usuario en
-      una variedad de maneras, incluyendo pero no limitado a, cuando los usuarios
-      visitan nuestro sitio, se registran en el sitio, llenan un formulario,
-      y en relación con otras actividades, servicios, funciones o recursos que
-      ponen a disposición en nuestro sitio. A los usuarios se les puede pedir,
-      nombre, dirección de correo electrónico. Los usuarios pueden, no obstante,
-      visitar nuestro sitio de forma anónima. Recogeremos información de identificación
-      personal de los usuarios sólo si ellos someten voluntariamente tal información
-      a nosotros. Los usuarios pueden negarse a suministrar información personal
-      de identificación, solo que eso puede evitar la participación en determinadas
-      actividades relacionadas con la web.</p>
-    <h4>Identificación no personal de información</h4>
-    <p>Podemos recopilar información de identificación no personal sobre los
-      usuarios cuando interactúan con nuestro sitio. La información de identificación
-      no personal puede incluir el nombre del navegador, el tipo de equipo e
-      información técnica sobre los usuarios mediante la conexión a nuestro sitio,
-      tales como el sistema operativo y los proveedores de servicios de Internet
-      utilizados y otra información similar.</p>
-    <h4>Cookies del navegador</h4>
-    <p>Nuestro sitio puede utilizar "cookies" para mejorar la experiencia del
-      usuario. El navegador web del usuario guarda cookies en su disco duro para
-      propósitos de registro y, a veces para rastrear información sobre ellos.
-      El usuario puede optar por configurar su navegador para rechazar las cookies,
-      o para que le avise cuando se envíen cookies. Si lo hacen, ten en cuenta
-      que algunas partes del sitio pueden no funcionar correctamente.</p>
-    <h4>¿Cómo podemos utilizar la información recogida?</h4>
-    <p>rails.mx recopila y utiliza la información de usuario personal para los
-      siguientes fines:</p>
-    <ul>
-      <li>Para personalizar la experiencia del usuario
-        <br> Podemos utilizar la información en conjunto para comprender cómo nuestros
-        usuarios como un grupo utilizan los servicios y recursos proporcionados
-        en nuestro sitio.</li>
+  <section class="right-section">
+    <h1>Política y Privacidad</h1>
+    <p>Esta Política de Privacidad rige la manera en que rails.mx recopila, utiliza,
+      mantiene y divulga la información recogida de los usuarios (cada "Usuario")
+      del sitio web http://rails.mx (de ahora en adelante, el "Sitio"). Esta
+      política de privacidad se aplica para el sitio y todos los productos y
+      servicios ofrecidos por rails.mx.
+      <p></p>
+      <h4>Información de identificación personal</h4>
+      <p>Podemos recopilar información personal de identificación del usuario en
+        una variedad de maneras, incluyendo pero no limitado a, cuando los usuarios
+        visitan nuestro sitio, se registran en el sitio, llenan un formulario,
+        y en relación con otras actividades, servicios, funciones o recursos que
+        ponen a disposición en nuestro sitio. A los usuarios se les puede pedir,
+        nombre, dirección de correo electrónico. Los usuarios pueden, no obstante,
+        visitar nuestro sitio de forma anónima. Recogeremos información de identificación
+        personal de los usuarios sólo si ellos someten voluntariamente tal información
+        a nosotros. Los usuarios pueden negarse a suministrar información personal
+        de identificación, solo que eso puede evitar la participación en determinadas
+        actividades relacionadas con la web.</p>
+      <h4>Identificación no personal de información</h4>
+      <p>Podemos recopilar información de identificación no personal sobre los
+        usuarios cuando interactúan con nuestro sitio. La información de identificación
+        no personal puede incluir el nombre del navegador, el tipo de equipo e
+        información técnica sobre los usuarios mediante la conexión a nuestro sitio,
+        tales como el sistema operativo y los proveedores de servicios de Internet
+        utilizados y otra información similar.</p>
+      <h4>Cookies del navegador</h4>
+      <p>Nuestro sitio puede utilizar "cookies" para mejorar la experiencia del
+        usuario. El navegador web del usuario guarda cookies en su disco duro para
+        propósitos de registro y, a veces para rastrear información sobre ellos.
+        El usuario puede optar por configurar su navegador para rechazar las cookies,
+        o para que le avise cuando se envíen cookies. Si lo hacen, ten en cuenta
+        que algunas partes del sitio pueden no funcionar correctamente.</p>
+      <h4>¿Cómo podemos utilizar la información recogida?</h4>
+      <p>rails.mx recopila y utiliza la información de usuario personal para los
+        siguientes fines:</p>
+      <ul>
+        <li>Para personalizar la experiencia del usuario
+          <br> Podemos utilizar la información en conjunto para comprender cómo nuestros
+          usuarios como un grupo utilizan los servicios y recursos proporcionados
+          en nuestro sitio.</li>
+        <br>
+        <li>Para mejorar nuestro sitio
+          <br> Nos esforzamos continuamente para mejorar nuestro sitio web basado en
+          la información y la retroalimentación que recibimos de ti.</li>
+        <br>
+        <li>Para administrar un contenido, promoción, encuesta o característica del
+          sitio
+          <br> Para enviar al usuario información que accedió a recibir acerca de los
+          temas que creemos será de interés para ellos.</li>
+        <br>
+        <li>Para enviar correos electrónicos periódicos
+          <br> La dirección de correo electrónico que los usuarios proporciona sólo será
+          utilizada para responder a sus preguntas, y/u otras peticiones o preguntas.
+          Si el usuario decide optar a nuestra lista de correo, recibirá correos
+          electrónicos que pueden incluir noticias de la organización, actualizaciones
+          de productos relacionados o servicio de información, etc. Si en cualquier
+          momento el usuario desea dejar de recibir futuros correos electrónicos,
+          incluímos detalladas instrucciones para darse de baja en la parte inferior
+          de cada correo electrónico o el usuario puede contactar con nosotros a
+          través de nuestro sitio.</li>
+        <br>
+      </ul>
+      <h4>¿Cómo protegemos su información?</h4>
+      <p>Adoptamos la recopilación de datos propia, almacenamiento y procesamiento
+        de las prácticas y medidas de seguridad para proteger contra el acceso
+        no autorizado, alteración, divulgación o destrucción de su información
+        personal, nombre de usuario, contraseña, información de transacciones y
+        los datos almacenados en nuestro Sitio.</p>
+      <h4>Compartir su información personal</h4>
+      <p>Nosotros no vendemos, intercambiamos, o alquilamos la información de identificación
+        personal de Usuarios a terceros. Podemos compartir información demográfica
+        genérica no vinculados a ninguna información de identificación personal
+        de los visitantes y usuarios con nuestros socios, afiliados y anunciantes
+        de confianza para los fines previstos arriba. Podemos utilizar servicios
+        de proveedores terceros que nos ayuden a operar nuestro Sitio o administrar
+        las actividades en nuestro nombre, como el envío de boletines informativos
+        o encuestas. Podemos compartir su información con estas terceras partes
+        para los fines limitados.</p>
+      <h4>Sitios web de terceros</h4>
+      <p>Los usuarios pueden encontrar publicidad o contenido de nuestro sitio
+        que enlace a los sitios y servicios de nuestros socios, proveedores, anunciantes,
+        patrocinadores, licenciatarios y terceros. Nosotros no controlamos el contenido
+        o enlaces que aparecen en estos sitios y no somos responsables de las prácticas
+        empleadas por sitios web vinculados hacia o desde nuestro sitio. Además,
+        estos sitios o servicios, incluyendo su contenido y enlaces, puede cambiar
+        constantemente. Estos sitios y servicios pueden tener sus propias políticas
+        de privacidad y políticas de servicio al cliente. Navegar e interactuar
+        en cualquier otro sitio web, incluyendo sitios web que tienen un enlace
+        a nuestro sitio, está sujeta a términos propios de ese sitio web y sus
+        políticas.</p>
+      <h4>Cambios en esta política de privacidad</h4>
+      <p>rails.mx tiene la facultad de actualizar esta política de privacidad en
+        cualquier momento. Cuando lo hacemos, vamos a anotar la fecha de actualización
+        en la parte inferior de esta página. Animamos a los usuarios a revisar
+        con frecuencia esta página para cualquier cambio y mantenerse informado
+        acerca de cómo estamos ayudando a proteger la información personal que
+        recopilamos. Tú reconoces y aceptas que es tu responsabilidad revisar esta
+        política de privacidad de forma periódica y tomar conciencia de las modificaciones.</p>
+      <h4>Tu aceptación de estos términos</h4>
+      <p>Al usar este sitio, expresas tu aceptación de esta política. Si no estás
+        de acuerdo con esta política, por favor no utilices nuestro Sitio. El uso
+        continuado del Sitio después de la publicación de cambios a esta política
+        será considerado como su aceptación de dichos cambios.</p>
+      <h4>Contacta con nosotros</h4>
+      <p>Si tienes alguna pregunta sobre esta Política de Privacidad, las prácticas
+        de este sitio, o sus relaciones con este sitio, por favor contacta con
+        nosotros en:</p>rails.mx
+      <br> http://rails.mx/contacto
+      <br> contacto@rails.mx
+      <br> Este documento fue actualizado por última vez el 13 de enero 2011
+      </p.textifier>
       <br>
-      <li>Para mejorar nuestro sitio
-        <br> Nos esforzamos continuamente para mejorar nuestro sitio web basado en
-        la información y la retroalimentación que recibimos de ti.</li>
-      <br>
-      <li>Para administrar un contenido, promoción, encuesta o característica del
-        sitio
-        <br> Para enviar al usuario información que accedió a recibir acerca de los
-        temas que creemos será de interés para ellos.</li>
-      <br>
-      <li>Para enviar correos electrónicos periódicos
-        <br> La dirección de correo electrónico que los usuarios proporciona sólo será
-        utilizada para responder a sus preguntas, y/u otras peticiones o preguntas.
-        Si el usuario decide optar a nuestra lista de correo, recibirá correos
-        electrónicos que pueden incluir noticias de la organización, actualizaciones
-        de productos relacionados o servicio de información, etc. Si en cualquier
-        momento el usuario desea dejar de recibir futuros correos electrónicos,
-        incluímos detalladas instrucciones para darse de baja en la parte inferior
-        de cada correo electrónico o el usuario puede contactar con nosotros a
-        través de nuestro sitio.</li>
-      <br> 
-    </ul>
-    <h4>¿Cómo protegemos su información?</h4>
-    <p>Adoptamos la recopilación de datos propia, almacenamiento y procesamiento
-      de las prácticas y medidas de seguridad para proteger contra el acceso
-      no autorizado, alteración, divulgación o destrucción de su información
-      personal, nombre de usuario, contraseña, información de transacciones y
-      los datos almacenados en nuestro Sitio.</p>
-    <h4>Compartir su información personal</h4>
-    <p>Nosotros no vendemos, intercambiamos, o alquilamos la información de identificación
-      personal de Usuarios a terceros. Podemos compartir información demográfica
-      genérica no vinculados a ninguna información de identificación personal
-      de los visitantes y usuarios con nuestros socios, afiliados y anunciantes
-      de confianza para los fines previstos arriba. Podemos utilizar servicios
-      de proveedores terceros que nos ayuden a operar nuestro Sitio o administrar
-      las actividades en nuestro nombre, como el envío de boletines informativos
-      o encuestas. Podemos compartir su información con estas terceras partes
-      para los fines limitados.</p>
-    <h4>Sitios web de terceros</h4>
-    <p>Los usuarios pueden encontrar publicidad o contenido de nuestro sitio
-      que enlace a los sitios y servicios de nuestros socios, proveedores, anunciantes,
-      patrocinadores, licenciatarios y terceros. Nosotros no controlamos el contenido
-      o enlaces que aparecen en estos sitios y no somos responsables de las prácticas
-      empleadas por sitios web vinculados hacia o desde nuestro sitio. Además,
-      estos sitios o servicios, incluyendo su contenido y enlaces, puede cambiar
-      constantemente. Estos sitios y servicios pueden tener sus propias políticas
-      de privacidad y políticas de servicio al cliente. Navegar e interactuar
-      en cualquier otro sitio web, incluyendo sitios web que tienen un enlace
-      a nuestro sitio, está sujeta a términos propios de ese sitio web y sus
-      políticas.</p>
-    <h4>Cambios en esta política de privacidad</h4>
-    <p>rails.mx tiene la facultad de actualizar esta política de privacidad en
-      cualquier momento. Cuando lo hacemos, vamos a anotar la fecha de actualización
-      en la parte inferior de esta página. Animamos a los usuarios a revisar
-      con frecuencia esta página para cualquier cambio y mantenerse informado
-      acerca de cómo estamos ayudando a proteger la información personal que
-      recopilamos. Tú reconoces y aceptas que es tu responsabilidad revisar esta
-      política de privacidad de forma periódica y tomar conciencia de las modificaciones.</p>
-    <h4>Tu aceptación de estos términos</h4>
-    <p>Al usar este sitio, expresas tu aceptación de esta política. Si no estás
-      de acuerdo con esta política, por favor no utilices nuestro Sitio. El uso
-      continuado del Sitio después de la publicación de cambios a esta política
-      será considerado como su aceptación de dichos cambios.</p>
-    <h4>Contacta con nosotros</h4>
-    <p>Si tienes alguna pregunta sobre esta Política de Privacidad, las prácticas
-      de este sitio, o sus relaciones con este sitio, por favor contacta con
-      nosotros en:</p>rails.mx
-    <br> http://rails.mx/contacto
-    <br> contacto@rails.mx
-    <br> Este documento fue actualizado por última vez el 13 de enero 2011
-    </p.textifier>
-    <br>
-</div>
+  </section>
 </div>

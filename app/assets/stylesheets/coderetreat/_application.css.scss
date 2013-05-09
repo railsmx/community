@@ -1,0 +1,547 @@
+/*
+  In this file override any css style or add new ones
+*/
+
+* {
+  @include box-sizing(border-box);
+  color: $black;
+}
+
+body {
+  font-family: 'Roboto';
+  margin: 0;
+}
+
+section, div, article { overflow: hidden; }
+
+.container {
+  width: grid-width(14);
+  overflow: hidden;
+  margin: 0 auto;
+
+  .two {
+    @include columns(2);
+  }
+
+  .three {
+    @include columns(3);
+  }
+
+  .four {
+    @include columns(4);
+  }
+
+  .five {
+    @include columns(5);
+  }
+
+  .six {
+    @include columns(6);
+  }
+
+  .seven {
+    @include columns(7);
+  }
+
+  .eight {
+    @include columns(8);
+  }
+
+  .nine {
+    @include columns(9);
+  }
+
+  .ten {
+    @include columns(10);
+  }
+
+  .eleven {
+    @include columns(11);
+  }
+
+  .twelve {
+    @include columns(12);
+  }
+
+  .content {
+    width: grid-width(14);
+    padding: 0 ($margin * 4) 0 ($margin * 4);
+    background-color: white;
+    float: left;
+  }
+}
+
+header {
+  @extend .shadow-bottom;
+  height: 100px;
+  position: relative;
+  width: 100%;
+
+  .main-header {
+    @include columns(12);
+    margin: ($margin / 2) ($margin * 4) ($margin / 2) ($margin * 4) !important;
+  }
+
+  .logo {
+    float: left;
+    margin: 0;
+  }
+
+  .menu {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0;
+    margin: ($margin * 1.5) 0 ($margin * 2.5) $margin;
+
+    li {
+      float: left;
+      color: $gray;
+      margin-right: ($margin * 2.5);
+      float: right;
+
+      &:first-child {margin-right: 0;}
+    }
+
+    a {
+      color: $gray;
+      font-family: 'Roboto';
+      font-size: 18px;
+      font-weight: 400;
+      text-decoration: none;
+
+      &:hover {color: $green;}
+    }
+  }
+}
+
+footer {
+  @extend .shadow-top;
+  height: 150px;
+  position: absolute;
+  width: 100%;
+
+  .container {
+    .content-footer {
+      width: grid-width(14);
+      padding: 0 ($margin * 4) 0 ($margin * 4);
+      background-color: #fff;
+      float: left;
+      margin: ($margin * 2) 0 $margin 0;
+
+      h4 {
+        font-size: $text-size - 2;
+        float: left;
+        font-weight: bold;
+        color: $gray;
+        margin: 0;
+      }
+
+      p {
+         text-align: justify;
+         font-size: $text-size;
+         font-weight: 300;
+         font-family: 'Roboto';
+         margin: 0;
+         &:first-child { float: left; }
+      }
+
+      a {
+        color: $green;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: $text-size - 2;
+        font-family: 'Roboto';
+      }
+
+      .tweet_link {
+        color: $green;
+        font-size: $text-size - 2;
+        float: left;
+        margin-left: $margin / 2;
+      }
+      .timeline-header, .customisable-border { display: none; }
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .three {
+        &:not(:first-child) { padding-top: $padding; }
+
+        .logo {
+          padding-top: 0 !important;
+          font-size: 1.2em;
+          display: block;
+
+          a { display: block; }
+
+          img {
+            width: 220px;
+            height: 35%;
+          }
+        }
+
+        .tweet {
+          margin-top: $margin / 2;
+          float: left;
+
+          .each_tweet {
+            color: $text-color;
+            float: left;
+            width: 100%;
+            margin-top: 15px;
+          }
+
+          .ago {
+            @extend .each_tweet;
+            font-size: 12px;
+            margin-top: 5px;
+          }
+
+          ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+              list-style: none;
+
+              p {
+                display: block;
+
+                a {
+                  font-weight: normal;
+                  color: $text-color;
+                }
+              }
+
+              .tweet_text { margin-top: 20px; }
+            }
+          }
+        }
+
+        .post {
+          font-family: 'Roboto';
+          font-size: $text-size;
+          color: $text-color;
+          margin-top: $margin / 2;
+
+          .post-title {
+            font-size: $text-size + 2;
+            font-weight: 700;
+            color: $header1-color;
+          }
+
+          .post-date {
+            font-weight: 300;
+            font-style: italic;
+            margin-top: $margin / 2;
+          }
+
+          .post-body {
+            font-weight: 300;
+            text-align: justify;
+            margin-top: $margin / 2;
+          }
+
+          .details {
+            font-style: italic;
+            margin-top: $margin / 2;
+          }
+        }
+
+        .submenu {
+          list-style-type: none;
+          padding: 0;
+          margin-top: $margin / 2;
+          overflow: hidden;
+
+          li {
+            float: left;
+            color: white;
+            margin-right: ($margin / 2);
+
+            a {
+              color: $green;
+              text-decoration: none;
+              font-weight: bold;
+              font-size: $text-size;
+              font-family: 'Roboto';
+            }
+          }
+        }
+
+        .advice {
+          margin-top: $margin / 2;
+          font-size: $text-size;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+.events-sidebar {
+  @extend .box-shadow;
+  width: 30%;
+  float: left;
+  margin: 0 ($margin / 2) $margin 0;
+  padding: $padding;
+  overflow: auto;
+  vertical-align: center;
+
+  .icon-calendar {
+    font-family: 'FontAwesome';
+    color: $green;
+    font-size: $text-size * 2;
+  }
+
+  .title {
+    margin-left: ($margin / 2);
+    color: $green;
+    text-align: center;
+    font-weight: 900;
+    font-size: 22px;
+    font-family: 'Roboto';
+  }
+
+  .advice {
+    margin-top: $margin;
+    text-align: center;
+  }
+
+  .event {
+    margin-top: 20px;
+    border-bottom: 1px solid $light-gray;
+    padding-bottom: $padding;
+
+    &:last-child {
+      margin-top: $margin;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .img {
+      width: 20px;
+      overflow: hidden;
+      float: left;
+      margin-top: ($margin / 3);
+    }
+
+    a {
+      color: $green;
+      font-family: "Roboto";
+      font-size: $text-size;
+      font-weight: 400;
+      font-style: italic;
+      text-decoration: none;
+      float: right;
+    }
+
+    h3 { margin: 0 0 5px 0; }
+
+    h4 {
+      color: $text-color;
+      text-align: left;
+      font-weight: 300;
+      font-size: $text-size;
+      font-family: "Roboto";
+      margin: 0;
+    }
+
+    .date {
+      line-height: 2.0em;
+      font-weight: 500;
+    }
+
+    .link { overflow: hidden; }
+  }
+}
+
+.shadow-bottom {
+  -moz-box-shadow:    1px 3px 5px -1px $light-gray;
+  -webkit-box-shadow: 1px 3px 5px -1px $light-gray;
+  box-shadow:         1px 3px 5px -1px $light-gray;
+}
+
+.shadow-top {
+  -moz-box-shadow:    0px -3px 5px -1px $light-gray;
+  -webkit-box-shadow: 0px -3px 5px -1px $light-gray;
+  box-shadow:         0px -3px 5px -1px $light-gray;
+}
+
+.form-event {
+  input[type="text"], input[type="email"], textarea {
+    @include size(400px 30px);
+    font-size: .8em;
+    padding: 5px;
+    text-shadow: 0px 1px 0px #fff;
+    outline: none;
+    -moz-box-shadow: inset 0 0 3px $light-gray;
+    -webkit-box-shadow: inset 0 0 3px $light-gray;
+    box-shadow: inset 0 0 3px $light-gray;
+    background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe), to(#ffffff));
+    background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid $light-gray;
+    margin-right: ($margin / 2);
+  }
+
+  input:focus, textarea:focus {
+    -webkit-box-shadow: 0px 0px 8px $light-gray;
+    -moz-box-shadow: 0px 0px 8px $light-gray;
+    box-shadow: 0px 0px 8px $light-gray;
+  }
+
+  textarea {
+    font-size: .9em;
+    @include size(400px 150px);
+  }
+
+  .submit {
+    padding-left: ($padding * 5.5);
+    input[type="submit"] {
+      @include button($green);
+      font-size: 1em;
+    }
+  }
+
+  div {
+    margin-left: 0 !important;
+    margin-top: $margin;
+
+    .date {
+      @include size(150px 30px);
+      background-position: 128px center;
+      background-image: image-url('date.png');
+      background-repeat: no-repeat;
+    }
+
+    .time {
+      @include size(150px 30px);
+      background-position: 128px center;
+      background-image: image-url('time.png');
+      background-repeat: no-repeat;
+    }
+
+    .place {
+      background-position: 383px center;
+      background-image: image-url('marker.png');
+      background-repeat: no-repeat;
+    }
+
+    .building {
+      background-position: 380px center;
+      background-image: image-url('building.png');
+      background-repeat: no-repeat;
+    }
+
+    .field_with_errors {
+      margin: 0;
+      display: inline;
+
+      input { border: 1px solid $red; }
+
+      .date {
+        float:left;
+        margin: 0 $margin 0 0 !important;
+      }
+    }
+
+    span {
+      font-size: .7em;
+      color: $red;
+    }
+  }
+
+  div label {
+    line-height: 2em;
+    color: $light-gray;
+    width: 15%;
+    float: left;
+  }
+}
+
+
+.contact_form {
+  .contact {
+    padding: ($margin * 2) ($margin * 4) ($margin * 2) ($margin * 4);
+
+    sidebar { margin-top: $margin * 2.5; }
+
+    .right-section {
+      width: 68%;
+      float: right;
+      padding: 0 0 $margin ($margin / 2);
+      background-color: white;
+
+      h1 {
+        margin: 0;
+        color: $header1-color;
+        font-family: "Roboto";
+        text-align: center;
+      }
+
+      p {
+        color: $text-color;
+        font-family: "Roboto";
+        font-weight: 300;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+.form-contact {
+  @extend .form-event;
+
+  input[type="text"], input[type="email"], textarea { @include size(300px 30px); }
+
+  textarea {
+    font-size: .9em;
+    @include size(300px 150px);
+  }
+
+  .field_with_errors {
+    input { border: 1px solid $light-gray !important; }
+  }
+
+  div label { width: 24%; }
+
+  .submit { padding-left: ($padding * 7.5); }
+}
+
+.alert {
+  color: $red;
+  padding: ($padding / 2);
+  margin-bottom: $margin;
+  border-radius: 3px;
+  border: 1px solid $red;
+  background-color: $transparent-red;
+}
+
+.notice {
+  color:  green;
+  padding: ($padding / 2);
+  margin-bottom: $margin;
+  border-radius: 3px;
+  border: 1px solid green;
+  background-color: $transparent-green;
+}
+
+.datapicker { position: absolute; }
+
+.timeline-header h1.summary { display: none; }
+
+.box-shadow {
+  -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+  -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+  box-shadow:         3px 3px 5px -2px $light-gray;
+  border: 1px solid $light-gray;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: white;
+}

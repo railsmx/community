@@ -33,4 +33,18 @@ describe Identity do
       lambda { Identity.create_with_omniauth([]) }.must_raise TypeError
     end
   end
+
+  describe "Publishers login validation" do
+    before do
+      Rails.application.config.publishers = 'test@user.com'
+    end
+
+    it "must be able to login if current identity is publisher" do
+      identity_valid.is_publisher?.must_equal true
+    end
+
+    it "must not be able to login if current identity isn't publisher" do
+      identity_invalid.is_publisher?.must_equal false
+    end
+  end
 end

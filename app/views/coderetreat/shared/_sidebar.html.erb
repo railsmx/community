@@ -1,0 +1,11 @@
+<sidebar class="events-sidebar">
+  <% cache @current_events do %>
+    <span class="icon-calendar"><%= "" %></span>
+    <span class="title"><%= t('.coming_events') %></span><br>
+    <% if !current_events.empty? %>
+      <%= render partial: 'shared/event', collection: current_events %>
+    <% else %>
+      <div class="advice"><%= t('.not_content') %></div>
+    <% end %>
+  <% end %>
+</sidebar>

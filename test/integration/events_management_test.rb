@@ -11,7 +11,7 @@ feature 'EventsManagement Feature Test' do
     visit '/eventos'
 
     stub_method_instance(Twitter, :update) {
-      |args| args[0].must_include "MagmaConf 2013 http://www.example.com/eventos/980190963"
+      |args| args[0].must_include "MagmaConf 2013 http://www.example.com/eventos/magmaconf-2013"
     }
 
     click_link 'Registrar evento'

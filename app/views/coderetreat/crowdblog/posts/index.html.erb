@@ -1,0 +1,28 @@
+<% title t('.blog') %>
+<div class="content posts-index">
+  <sidebar class="events-sidebar">
+    <span class="icon-calendar"><%= "" %></span>
+    <span class="title"><%= t('.coming_events') %></span><br>
+    <% if !@current_events.empty? %>
+      <%= (render partial: 'shared/event', collection: @current_events) %>
+    <% else %>
+      <div class="advice">
+      	<%= t('.not_content') %>
+      </div>
+    <% end %>
+  </sidebar>
+
+  <section class="right-section">
+    <div class="info">
+      <h1>Blog</h1>
+      <p>
+        Colección de posts con temas relacionados con el lenguaje Ruby, el framework Ruby On Rails y desarrollo wen en general.
+        Los posts han sido creados y publicados mediantes contribuciones de
+        la comunidad
+      </p>
+    </div>
+    <div class="blog">
+      <%= render @posts %>
+    </div>
+  </section>
+</div>

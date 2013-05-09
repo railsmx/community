@@ -2,17 +2,17 @@
   <%= form_for event, url: event_path(event) do |f| %>
     <div>
       <label><%= t('.event_name') %></label>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, maxlength: 40 %>
       <%= field_error event, :name %>
     </div>
     <div>
       <label><%= t('.place') %></label>
-      <%= f.text_field :location, class: 'building' %>
+      <%= f.text_field :location, class: 'building', maxlength: 30 %>
       <%= field_error event, :location %>
     </div>
     <div>
       <label><%= t('.address') %></label>
-      <%= f.text_field :address, class: 'place', placeholder: t('.ph_place') %>
+      <%= f.text_field :address, class: 'place', maxlength: 70, placeholder: t('.ph_place') %>
       <%= field_error event, :address %>
     </div>
     <div>
@@ -23,16 +23,16 @@
     </div>
     <div>
       <label><%= t('.organizer') %></label>
-      <%= f.text_field :organizer, placeholder: t('.ph_organizer') %>
+      <%= f.text_field :organizer, maxlength: 30, placeholder: t('.ph_organizer') %>
     </div>
     <div>
       <label><%= t('.contact') %></label>
-      <%= f.text_field :contact, placeholder: t('.ph_contact') %>
+      <%= f.text_field :contact, maxlength: 30, placeholder: t('.ph_contact') %>
       <%= field_error event, :contact %>
     </div>
     <div>
       <label><%= t('.description') %></label>
-      <%= f.text_area :description, class: 'areamail'%>
+      <%= f.text_area :description, class: 'areamail', maxlength: 250 %>
     </div>
     <div class="submit">
       <%= f.submit submit %> o <%= link_to t('.back'), events_path %>

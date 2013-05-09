@@ -1,0 +1,31 @@
+<% title t('.contact') %>
+<div class="content contact">
+  <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
+
+  <section class="right-section">
+    <h1>Contáctanos</h1>
+    <p> Agradecemos de antemano sus comentarios. A la brevedad posible nos comunicaremos con usted.</p>
+    <div class="form-contact">
+      <%= form_for @contact_form, url: contact_form_path  do |f| %>
+        <div>
+          <%= f.label t('.name') %>
+          <%= f.text_field :name, maxlength: 30 %>
+        </div>
+
+        <div>
+          <%= f.label t('.email') %>
+          <%= f.email_field :email, maxlength: 40 %>
+        </div>
+
+        <div>
+          <%= f.label t('.description') %>
+          <%= f.text_area :message, maxlength: 250 %>
+        </div>
+
+        <div class="submit">
+          <%= f.submit t('.send') %>
+        </div>
+      <%end %>
+    </div>
+  </section>
+</div>

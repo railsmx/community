@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate!, except: [:index, :show]
-  before_action :current_events, only: [:new, :edit, :create, :update, :show]
+  before_action :current_events, except: [:index, :delete]
+  before_action :current_posts, except: [:delete]
 
   def index
     @current_events = Event.current_events(4)
@@ -8,7 +9,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by_id(params[:id])
+    @event = begin
+      Event.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      nil
+    end
 
     redirect_to events_path, alert: t('.event_not_found') unless @event
   end

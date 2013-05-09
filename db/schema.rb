@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130423181246) do
+ActiveRecord::Schema.define(version: 20130507142525) do
 
   create_table "crowdblog_assets", force: true do |t|
     t.integer  "post_id"

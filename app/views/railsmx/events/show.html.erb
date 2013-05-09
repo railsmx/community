@@ -1,9 +1,11 @@
 <% title @event.name %>
 <% cache @event do %>
-  <div class="container event twelve">
-    <%= render partial: 'shared/sidebar', locals: { current_events: @current_events } %>
+  <div class="content event">
+    <section class="left-section">
+      <%= render partial: 'shared/sidebar', locals: { current_events: @current_events, current_posts: @current_posts } %>
+    </section>
 
-    <div class="event-data content nine">
+    <section class="right-section event-data">
       <div class="description-data">
         <div class="title">
           <%= @event.name %>
@@ -30,16 +32,16 @@
           </div>
 
           <div class="datetime">
-            <div class="month"><%= localize_month(@event.date).upcase %></div>
+            <div class="month"><%= localize_date(@event.date, :month_name).upcase %></div>
             <div class="day"><%= @event.date.strftime("%e") %></div>
-            <div class="weekday"><%= localize_weekday @event.date %></div>
-            <div class="time"><%= localize_time @event.date %></div>
+            <div class="weekday"><%= localize_date(@event.date, :day_name) %></div>
+            <div class="time"><%= localize_time(@event.date, :short_time) %></div>
           </div><br>
         </div>
 
         <div id="map"class="map five"></div>
       </div>
-    </div>
+    </section>
   </div>
 <% end %>
 
