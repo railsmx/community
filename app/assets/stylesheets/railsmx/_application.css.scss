@@ -267,6 +267,7 @@ sidebar {
   div {
     margin-left: 0 !important;
     margin-top: $margin;
+    overflow: hidden;
 
     .date {
       @include size(150px 30px);
@@ -296,9 +297,10 @@ sidebar {
 
     .field_with_errors {
       margin: 0;
-      display: inline;
+      display: inline-block;
+      float: left;
 
-      input { border: 1px solid $red; }
+      input, textarea { border: 1px solid $red; }
 
       .date {
         float:left;
@@ -306,9 +308,12 @@ sidebar {
       }
     }
 
-    span {
+    .error {
       font-size: .7em;
       color: $red;
+      float: left;
+      margin: ($margin / 4);
+      float: left;
     }
   }
 

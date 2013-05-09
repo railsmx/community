@@ -24,6 +24,7 @@
         <div>
           <%= f.label t('.description') %>
           <%= f.text_area :message, maxlength: 250 %>
+          <%= field_error @contact_form, :message %>
         </div>
 
         <div class="submit">
