@@ -29,6 +29,15 @@ class Highligh
       hljs.initHighlighting()
     )
 
+class DisQus
+  constructor: (name) ->
+    dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + name + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
 
 App.Utilities.Form = Form
 App.Utilities.Highligh = Highligh
+App.Utilities.DisQus = DisQus
