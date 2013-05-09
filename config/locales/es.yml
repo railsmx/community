@@ -62,6 +62,8 @@ es:
       name: 'Nombre:'
       email: 'Correo electrónico:'
       description: 'Descripción:'
+    create:
+      message_sent: "Su mensaje de contacto se ha enviado"
 
   mail_form:
     errors:
@@ -90,7 +92,7 @@ es:
     admin:
       posts:
         index:
-          not_logged: 'Usuario NO registrado'
+          not_logged: 'Usuario no registrado'
 
   events:
     new:
