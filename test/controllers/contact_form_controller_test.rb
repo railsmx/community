@@ -23,7 +23,7 @@ describe ContactFormController do
     it "should render new form with invalid fields" do
       ActionMailer::Base.deliveries = []
 
-  	  post :create, contact_form: { name: '', email: '', message: 'testing' }
+  	  post :create, contact_form: { name: '', email: '', message: '' }
 
   	  assert_response :success
   	  assert_template :new

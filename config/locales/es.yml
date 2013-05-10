@@ -74,6 +74,8 @@ es:
               blank: "Campo vacío"
             email:
               invalid: "Correo electrónico inválido"
+            message:
+              blank: 'Mensaje vacío'
     models:
       contact_form: "Forma para contactar"
       name: "Nombre"
