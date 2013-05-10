@@ -21,7 +21,7 @@ es:
       blog: 'BLOG'
       twitter: 'TWITTER'
       more: 'MÁS'
-      not_content: "No hay contenido disponible"
+      not_content: 'No hay contenido disponible'
 
   home:
     acerca:
@@ -63,7 +63,7 @@ es:
       email: 'Correo electrónico:'
       description: 'Descripción:'
     create:
-      message_sent: "Su mensaje de contacto se ha enviado"
+      message_sent: 'Su mensaje de contacto se ha enviado'
 
   mail_form:
     errors:
@@ -71,19 +71,19 @@ es:
         contact_form:
           attributes:
             name:
-              blank: "Campo vacío"
+              blank: 'Campo vacío'
             email:
-              invalid: "Correo electrónico inválido"
+              invalid: 'Correo electrónico inválido'
             message:
               blank: 'Mensaje vacío'
     models:
-      contact_form: "Forma para contactar"
-      name: "Nombre"
+      contact_form: 'Forma para contactar'
+      name: 'Nombre'
     attributes:
       contact_form:
-        email: "E-mail"
-        message: "Mensaje enviado"
-        name: "Nombre"
+        email: 'E-mail'
+        message: 'Mensaje enviado'
+        name: 'Nombre'
 
   crowdblog:
     posts:
@@ -149,12 +149,12 @@ es:
       organizer: 'Organizado por %{organize}'
       edit_event: 'editar'
 
-  subject_mail: "Correo de contacto de %{app}"
+  subject_mail: 'Correo de contacto de %{app}'
 
   activerecord:
     errors:
       messages:
-        invalid: "Fecha invalida"
+        invalid: 'Fecha invalida'
       models:
         event:
           attributes:
@@ -171,13 +171,13 @@ es:
 
   date:
     formats:
-      default: "%Y-%m-%d"
-      short: "%b %d"
-      long: "%B %d, %Y"
-      long_date: "El %d de %B de %Y"
-      month_name: "%B"
-      day_name: "%A"
-      custom_short: "%A %d de %B"
+      default: '%Y-%m-%d'
+      short: '%b %d'
+      long: '%B %d, %Y'
+      long_date: 'El %d de %B de %Y'
+      month_name: '%B'
+      day_name: '%A'
+      custom_short: '%A %d de %B'
 
     day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
     abbr_day_names: [Dom, Lun, Mar, Vie, Jue, Vie, Sab]
@@ -192,10 +192,10 @@ es:
 
   time:
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      short: "%d %b %H:%M"
-      long: "%B %d, %Y %H:%M"
-      short_time: "%l:%M %p"
+      default: '%a, %d %b %Y %H:%M:%S %z'
+      short: '%d %b %H:%M'
+      long: '%B %d, %Y %H:%M'
+      short_time: '%l:%M %p'
 
-    am: "AM"
-    pm: "PM"
+    am: 'AM'
+    pm: 'PM'
