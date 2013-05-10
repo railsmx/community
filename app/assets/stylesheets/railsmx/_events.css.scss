@@ -316,6 +316,13 @@
               margin-bottom: $margin;
               margin-top: 0;
             }
+
+            .loc { overflow: hidden; }
+
+            .add {
+              overflow: hidden;
+              font-weight: lighter;
+            }
           }
 
           .organizer {
