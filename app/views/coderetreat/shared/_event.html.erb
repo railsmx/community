@@ -9,7 +9,7 @@
         <%= event.location %><br>
         <%= event.address %><br>
         <span class="date">
-          <%= localize_short_date event.date %>
+          <%= localize_date(event.date, :custom_short) %>
         </span>
       </h4>
     </div>

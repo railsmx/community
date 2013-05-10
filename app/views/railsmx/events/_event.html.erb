@@ -19,8 +19,8 @@
       <div class="location">
         <div class="img"><%= image_tag "pin.png", id: "maker", align: "left", size: "25x38" %></div>
         <div class="info">
-          <%= event.location %><br>
-          <%= event.address %>
+          <div class="place"><%= event.location %></div>
+          <div class="address"><%= event.address %></div>
           <div class="organizer"><%= t('.organizer', organize: event.organizer) %></div>
         </div>
       </div>
