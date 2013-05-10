@@ -57,6 +57,25 @@ Before starting the application export SendGrid account keys as follow:
 
 These keys are being used in the smtp_setup.rb initializer
 
+## Publishers
+For publisher it uses Crowdblog
+
+Before starting the application export publishers key as follow:
+
+    export PUBLISHERS = "for_each_publisher_with_comma"
+    
+These key is being used in the crowdblog.rb initializer
+
+## Disqus
+
+For disqus it uses Crowdblog
+
+Before starting the application export disqus shortname key as follow:
+
+    export DISQUS_KEY = shortname
+
+These key is being used in the crowdblog.rb initializer
+
 ## Memcachier
 
 For cache it uses MemCachier which will work with Dalli
