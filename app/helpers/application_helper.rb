@@ -52,8 +52,8 @@ module ApplicationHelper
     I18n::localize(date, format: t(format, scope: [:date, :formats]))
   end
 
-  def localize_time(date, format)
-    I18n::localize(date, format: t(format, scope: [:time, :formats]))
+  def localize_time(time, format)
+    I18n::localize(time, format: t(format, scope: [:time, :formats]))
   end
 
   def date_published_post(date)
