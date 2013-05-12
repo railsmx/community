@@ -271,6 +271,20 @@ footer {
           }
         }
 
+        .user-info {
+          img {
+            margin: 0;
+            float: right;
+          }
+
+          .sign-out {
+            font-size: .8em;
+            margin: ($margin / 10) $margin;
+            color: #494949;
+            float: right;
+          }
+        }
+
         .advice {
           margin-top: $margin / 2;
           font-size: $text-size;

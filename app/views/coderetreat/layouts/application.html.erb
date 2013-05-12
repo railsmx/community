@@ -66,6 +66,14 @@
               <li><%= link_to t('.who_we_are'), "/acerca" %></li>
               <li><%= link_to t('.privacy'), "/privacidad" %></li>
             </ul>
+            <% if identity_signed_in? %>
+              <%= display_login_link do %>
+                <span class="user-info">
+                  <%= link_to t('.sign_out'), main_app.signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
+                  <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), alt: current_identity.username) %>
+                </span>
+              <% end %>
+            <% end %>
             <%= link_to (image_tag "crowdint.png"), "http://www.crowdint.com" %>
           </div>
         </div>
