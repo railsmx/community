@@ -429,26 +429,26 @@ footer {
     .date {
       @include size(150px 30px);
       background-position: 128px center;
-      background-image: image-url('date.png');
+      background-image: image-url('date-green.png');
       background-repeat: no-repeat;
     }
 
     .time {
       @include size(150px 30px);
       background-position: 128px center;
-      background-image: image-url('time.png');
+      background-image: image-url('time-green.png');
       background-repeat: no-repeat;
     }
 
     .place {
       background-position: 383px center;
-      background-image: image-url('marker.png');
+      background-image: image-url('marker-green.png');
       background-repeat: no-repeat;
     }
 
     .building {
       background-position: 380px center;
-      background-image: image-url('building.png');
+      background-image: image-url('building-green.png');
       background-repeat: no-repeat;
     }
 
