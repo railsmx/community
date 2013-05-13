@@ -16,25 +16,21 @@
     <div class="location-info five">
       <div class="place">
         <%= image_tag "pin.png", id: "maker", class: "image", align: "left", size: "25x38"%>
-        <div class="loc">
-          <%= @event.location %>
-        </div><br>
-        <div class="add">
-          <%= @event.address %>
-        </div>
+        <div class="loc"><%= @event.location %></div><br>
+        <div class="add"><%= @event.address %></div>
       </div>
       <div class="organizer">
-        <%= t('.organizer', organize: truncate(@event.organizer, length: 25)) %>
+        <%= t('.organizer', organize: @event.organizer) %>
       </div>
       <div class="contact">
-        <%= t('.contact', contact: truncate(@event.contact, length: 25)) %>
+        <%= t('.contact', contact: @event.contact) %>
       </div>
 
       <div class="datetime">
-        <div class="month"><%= localize_month(@event.date).upcase %></div>
+        <div class="month"><%= localize_date(@event.date, :month_name).upcase %></div>
         <div class="day"><%= @event.date.strftime("%e") %></div>
-        <div class="weekday"><%= localize_weekday @event.date %></div>
-        <div class="time"><%= localize_time @event.date %></div>
+        <div class="weekday"><%= localize_date(@event.date, :day_name) %></div>
+        <div class="time"><%= localize_time(@event.date, :short_time) %></div>
       </div><br>
     </div>
 

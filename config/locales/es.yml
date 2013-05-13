@@ -159,15 +159,15 @@ es:
         event:
           attributes:
             name:
-              blank: 'este campo es requerido'
+              blank: 'campo requerido'
             address:
-              blank: 'este campo es requerido'
+              blank: 'campo requerido'
             location:
-              blank: 'este campo es requerido'
+              blank: 'campo requerido'
             date:
-              blank: 'este campo es requerido'
+              blank: 'campo requerido'
             contact:
-              blank: 'este campo es requerido'
+              blank: 'campo requerido'
 
   date:
     formats:

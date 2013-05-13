@@ -8,7 +8,7 @@ class Form
       pos = $(this).position()
       a = $(this).find('a.edit')
       toptmp = parseInt(a[0].style.left.replace('px',''), 10)
-      a.css({top: (pos.top + $(this).height()) - 20, left: (pos.left + toptmp) + 20});
+      a.css({top: (pos.top + $(this).height()) - 25, left: (pos.left + toptmp) + 20});
       a.show();
     )
 

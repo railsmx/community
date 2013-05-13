@@ -32,6 +32,7 @@
       float: right;
       color: #fff;
       margin-top: ($margin / 4);
+      font-size: 14px;
     }
 
     a {
@@ -115,6 +116,8 @@
           .info {
             width: 95%;
             float: left;
+
+            .place { font-weight: 700 }
 
             .organizer {
               color: $green;
@@ -204,6 +207,8 @@
           .info {
             width: 90%;
             float: left;
+
+            .place { font-weight: 700 }
 
             .organizer {
               color: $green;

@@ -21,14 +21,14 @@
         <div class="location-info four">
           <div class="place">
             <%= image_tag "pin.png", id: "maker", class: "image", align: "left", size: "25x38"%>
-            <%= @event.location %><br>
-            <%= @event.address %>
+            <div class="loc"><%= @event.location %></div>
+            <div class="add"><%= @event.address %></div>
           </div>
           <div class="organizer">
-            <%= t('.organizer', organize: truncate(@event.organizer, length: 25)) %>
+            <%= t('.organizer', organize: @event.organizer) %>
           </div>
           <div class="contact">
-            <%= t('.contact', contact: truncate(@event.contact, length: 25)) %>
+            <%= t('.contact', contact: @event.contact) %>
           </div>
 
           <div class="datetime">

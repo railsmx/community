@@ -271,6 +271,20 @@ footer {
           }
         }
 
+        .user-info {
+          img {
+            margin: 0;
+            float: right;
+          }
+
+          .sign-out {
+            font-size: .8em;
+            margin: ($margin / 10) $margin;
+            color: #494949;
+            float: right;
+          }
+        }
+
         .advice {
           margin-top: $margin / 2;
           font-size: $text-size;
@@ -415,26 +429,26 @@ footer {
     .date {
       @include size(150px 30px);
       background-position: 128px center;
-      background-image: image-url('date.png');
+      background-image: image-url('date-green.png');
       background-repeat: no-repeat;
     }
 
     .time {
       @include size(150px 30px);
       background-position: 128px center;
-      background-image: image-url('time.png');
+      background-image: image-url('time-green.png');
       background-repeat: no-repeat;
     }
 
     .place {
       background-position: 383px center;
-      background-image: image-url('marker.png');
+      background-image: image-url('marker-green.png');
       background-repeat: no-repeat;
     }
 
     .building {
       background-position: 380px center;
-      background-image: image-url('building.png');
+      background-image: image-url('building-green.png');
       background-repeat: no-repeat;
     }
 
@@ -447,7 +461,7 @@ footer {
 
       .date {
         float:left;
-        margin: 0 $margin 0 0 !important;
+        margin: 0 ($margin / 2) 0 0 !important;
       }
     }
 
@@ -455,7 +469,7 @@ footer {
       font-size: .7em;
       color: $red;
       float: left;
-      margin: ($margin / 4)
+      margin: ($margin / 4) ($margin / 4) ($margin / 4) 0;
     }
   }
 
@@ -533,6 +547,8 @@ footer {
 .datapicker { position: absolute; }
 
 .timeline-header h1.summary { display: none; }
+
+.btn { @include button($green, white); }
 
 .box-shadow {
   -moz-box-shadow:    3px 3px 5px -2px $light-gray;

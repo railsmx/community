@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title><%= yield(:title).empty? ? ENV['THEME'] : yield(:title) %></title>
+    <title><%= yield(:title).empty? ? "#{ENV['THEME'].downcase}" : yield(:title) %></title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <link href="http://fonts.googleapis.com/css?family=Roboto:900,700,500,400,300,100" rel="stylesheet" type="text/css">
     <meta name="keywords" content="ruby, ruby on rails, software, comunidad, eventos, code, retreat">
     <meta name="description" content="Una practica intensiva durante todo un dia, enfocado a practicar los fundamentos del desarrollo de software. Una oportunidad para enfocarse en los fundamentos del diseño y desarrollo de codigo. Sin la presion de tener un entregable.">
     <meta name="robots" content="all" >
+    <%= favicon_link_tag "favicon-#{ENV['THEME'].downcase}.ico" %>
     <%= stylesheet_link_tag "coderetreat" %>
     <%= javascript_include_tag "coderetreat" %>
   </head>
@@ -66,6 +67,14 @@
               <li><%= link_to t('.who_we_are'), "/acerca" %></li>
               <li><%= link_to t('.privacy'), "/privacidad" %></li>
             </ul>
+            <% if identity_signed_in? %>
+              <%= display_login_link do %>
+                <span class="user-info">
+                  <%= link_to t('.sign_out'), main_app.signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
+                  <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), alt: current_identity.username) %>
+                </span>
+              <% end %>
+            <% end %>
             <%= link_to (image_tag "crowdint.png"), "http://www.crowdint.com" %>
           </div>
         </div>
