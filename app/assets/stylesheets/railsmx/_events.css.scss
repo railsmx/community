@@ -33,6 +33,7 @@
             width: 20%;
             float: left;
             padding: ($padding * 3) $padding;
+            padding: (($padding * 3) + 5) ($padding) ($padding * 3) ($padding);
             text-align: center;
             margin-left: 0 !important;
 
@@ -129,7 +130,7 @@
           .datetime {
             width: 30%;
             float: left;
-            padding: ($padding * 3) $padding;
+            padding: (($padding * 3) - 10) $padding ($padding * 3) $padding;
             text-align: center;
             margin-left: 0 !important;
 
