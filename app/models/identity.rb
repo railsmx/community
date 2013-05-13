@@ -15,6 +15,11 @@ class Identity < ActiveRecord::Base
   end
 
   def is_publisher?
+    if Rails.application.config.publishers.nil?
+      Rails.logger.info "Variable 'publishers' no inicializada..."
+      return false;
+    end
+
     Rails.application.config.publishers.delete(' ').split(',').include? email
   end
 end
