@@ -117,6 +117,8 @@
             width: 95%;
             float: left;
 
+            .place { font-weight: 700 }
+
             .organizer {
               color: $green;
               text-align: left;
@@ -205,6 +207,8 @@
           .info {
             width: 90%;
             float: left;
+
+            .place { font-weight: 700 }
 
             .organizer {
               color: $green;
