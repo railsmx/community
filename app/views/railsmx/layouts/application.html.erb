@@ -54,6 +54,6 @@
         </div>
       </div>
     </footer>
-    <%= render partial: '/shared/ga' %>
+    <%= render partial: '/shared/ga' if Rails.env.production? %>
   </body>
 </html>
