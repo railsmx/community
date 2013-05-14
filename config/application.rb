@@ -17,6 +17,5 @@ module Community
     config.log_formatter = PrettyFormatter.formatter
 
     require "#{Rails.root}/config/initializers/community.rb"
-    #config.assets.precompile += ["railsmx.css", "railsmx.js"]
   end
 end
