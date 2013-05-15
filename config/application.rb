@@ -16,6 +16,7 @@ module Community
 
     config.log_formatter = PrettyFormatter.formatter
 
+    Rails.application.config.assets.precompile += ["crowdblog.css", "crowdblog.js"]
     require "#{Rails.root}/config/initializers/community.rb"
   end
 end
