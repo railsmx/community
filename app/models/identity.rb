@@ -1,7 +1,7 @@
 class Identity < ActiveRecord::Base
   has_many :events
 
-  validates :uid, :provider, :username, :email, presence: true
+  validates :uid, :provider, :username, presence: true
 
   scope :my_identity, -> (uid, provider) { where(uid: uid, provider: provider) }
 
