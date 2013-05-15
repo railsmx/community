@@ -206,6 +206,7 @@ GEM
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)
+    newrelic_rpm (3.6.2.96)
     nokogiri (1.5.9)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -332,6 +333,7 @@ DEPENDENCIES
   minitest-focus
   minitest-rails
   minitest-rails-capybara
+  newrelic_rpm
   omniauth-github
   pg
   pretty_formatter
