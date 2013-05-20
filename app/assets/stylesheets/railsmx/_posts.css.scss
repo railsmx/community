@@ -42,12 +42,24 @@
 
       .post-title { margin: ($margin / 2) 0 0 0 !important; }
 
-      .body { font-size: .9em; }
+      .body { 
+        font-size: .9em; 
+
+        blockquote {
+          background: #ececec;
+          padding: 20px;
+          font-style: italic;
+    
+          p {
+              margin: 0;
+            }
+        }
+      }
 
       .author {
         margin: 0 0 $margin 0;
-        font-size: 1em;
-        font-weight: lighter;
+        font-size: .9em;
+        font-weight: 300;
         color: $light-gray
       }
     }
@@ -72,4 +84,6 @@
       margin-top: ($margin * 2)
     }
   }
+
+
 }
