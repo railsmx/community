@@ -141,6 +141,33 @@ header {
 
 }
 
+.menu {
+  list-style-type: none;
+  margin: 0 0 0 $margin;
+
+  li {
+    float: left;
+    color: $red;
+    margin-right: ($margin / 2);
+
+    &:after {
+      content: '|';
+      margin-left: ($margin / 2);
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+
+    a {
+      color: $light-red;
+      font-size: 1.2em;
+      font-weight: lighter;
+      text-decoration: none;
+    }
+  }
+}
+
 footer {
   height: 75px;
   border-top: 1px solid $light-gray;
