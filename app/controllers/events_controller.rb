@@ -9,13 +9,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = begin
-      Event.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      nil
-    end
+    @event = Event.find(params[:id])
+    #@event = begin
+    #  Event.find(params[:id])
+    #rescue ActiveRecord::RecordNotFound
+    #  nil
+    #end
 
-    redirect_to events_path, alert: t('.event_not_found') unless @event
+    #redirect_to events_path, alert: t('.event_not_found') unless @event
   end
 
   def new

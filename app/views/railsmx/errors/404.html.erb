@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300'" rel="stylesheet" type="text/css">
+    <title>404 Not Found</title>
+    <%= favicon_link_tag "favicon-#{ENV['THEME'].downcase}.ico" %>
+    <%= stylesheet_link_tag "railsmx" %>
+  </head>
+  <body>
+   	<div style="width: 1024px; margin: 0 auto; margin-top:100px; text-align:center">
+   		<%= image_tag "railsmx-big.png", width: 300 %>
+   		<p style="font-size: 2em; margin-bottom:0">
+   			Lo sentimos la página<br> que estas buscando
+   			no la pudimos encontrar.</p>
+   		<h1 style="font-size: 10em; margin:0; color:#db4743">404</h1>
+   		Podria interesarte:<br>
+			<ul class="menu" style="width:300px; margin: 0 auto; margin-top:20px">
+				<li><%= link_to 'Inicio', main_app.root_path %></li>
+				<li><%= link_to 'Eventos', main_app.events_path %></li>
+				<li><%= link_to 'Blog', crowdblog.root_path %></li>
+			</ul>
+   	</div>
+  </body>
+</html>

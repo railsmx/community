@@ -1,14 +1,20 @@
 class ApplicationController < ActionController::Base
+  if Rails.env.production?
+    rescue_from ActionController::RoutingError, 
+                ActiveRecord::RecordNotFound, 
+                with: lambda { |exception| render_error 404 }
+  end
 
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   prepend_view_path "app/views/#{Rails.application.config.theme}"
 
   protect_from_forgery with: :exception
 
   helper_method :current_identity, :identity_signed_in?, :warden,
-    :crowdblog_current_user, :crowdblog_authenticate_user!
+    :crowdblog_current_user, :crowdblog_authenticate_user!  
 
+  def raise_not_found!
+    raise ActionController::RoutingError.new("No route matches #{params[:unmatched_route]}")
+  end
 
   protected
   def warden
@@ -42,6 +48,10 @@ class ApplicationController < ActionController::Base
   def crowdblog_authenticate_user!
     redirect_to crowdblog.root_path unless
       identity_signed_in? and current_identity.is_publisher?
+  end
+
+  def render_error(status)
+    render template: "errors/#{status}", layout: false
   end
 end
 
