@@ -7,7 +7,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 pre code {
   font-size: 12px;
   display: block; padding: 10px;
-  background: #F0F0F0;
+  background: rgba(236, 232, 232, 0.43);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
