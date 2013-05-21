@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  rescue_from Exception, :with => :server_error
+
   if Rails.env.production?
     rescue_from ActionController::RoutingError, 
                 ActiveRecord::RecordNotFound, 
@@ -52,6 +54,10 @@ class ApplicationController < ActionController::Base
 
   def render_error(status)
     render template: "errors/#{status}", status: status, layout: false
+  end
+
+  def server_error(exception)
+    ExceptionNotifier::Notifier.exception_notification(request.env, exception).deliver
   end
 end
 
