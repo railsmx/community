@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
   end
 
   def render_error(status)
-    render template: "errors/#{status}", layout: false
+    render template: "errors/#{status}", status: status, layout: false
   end
 end
 
