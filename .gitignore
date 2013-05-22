@@ -19,4 +19,4 @@
 .DS_Store
 tags
 public/crowdblog/
-newrelic.yml
+.env

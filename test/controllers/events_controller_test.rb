@@ -198,13 +198,6 @@ describe EventsController do
       assert_response :success
       assert_template :show
     end
-
-    it "should redirect to events when event not found" do
-      get :show, id: 10
-
-      assert_redirected_to events_path
-      flash[:alert].wont_be_nil
-    end
   end
 
   describe 'index' do

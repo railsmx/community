@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   prepend_view_path "app/views/#{Rails.application.config.theme}"
 
   protect_from_forgery with: :exception
@@ -9,8 +7,17 @@ class ApplicationController < ActionController::Base
   helper_method :current_identity, :identity_signed_in?, :warden,
     :crowdblog_current_user, :crowdblog_authenticate_user!
 
+  if Rails.env.production?
+    rescue_from ActionController::RoutingError,
+                ActiveRecord::RecordNotFound,
+                with: lambda { |exception| render_error 404 }
+  end
 
   protected
+  def raise_not_found!
+    raise ActionController::RoutingError.new("No route matches #{params[:unmatched_route]}")
+  end
+
   def warden
     request.env['warden']
   end
@@ -42,6 +49,10 @@ class ApplicationController < ActionController::Base
   def crowdblog_authenticate_user!
     redirect_to crowdblog.root_path unless
       identity_signed_in? and current_identity.is_publisher?
+  end
+
+  def render_error(status)
+    render template: "errors/#{status}", status: status, layout: false
   end
 end
 

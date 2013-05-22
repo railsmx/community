@@ -9,6 +9,6 @@ class HomeController < ApplicationController
     page = params[:id] || ''
 
     return render page.downcase if pages.include?(page.downcase)
-    render text: 'not found', status: 404
+    render_error 404
   end
 end

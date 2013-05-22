@@ -14,7 +14,7 @@ describe Identity do
 
     it "must be invalid" do
       identity_invalid.valid?.must_equal false
-      identity_invalid.errors.size.must_equal 4
+      identity_invalid.errors.size.must_equal 3
       identity_invalid.errors[:uid].wont_be_nil
       identity_invalid.errors[:provider].wont_be_nil
       identity_invalid.errors[:username].wont_be_nil
