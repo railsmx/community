@@ -3,6 +3,6 @@ if Rails.env.production?
   email: {
     email_prefix: "#{ENV['THEME'].downcase} Exception Notifier ",
     sender_address: %{"notifier" <errors@rails.mx>},
-    exception_recipients: ENV['EMAIL_NOTIFIER'].split(',')
+    exception_recipients: ENV['EXCEPTION_RECIPIENTS'].split(',')
   }
 end
