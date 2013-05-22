@@ -56,8 +56,8 @@ class ApplicationController < ActionController::Base
     render template: "errors/#{status}", status: status, layout: false
   end
 
-  def server_error(exception)
-    ExceptionNotifier::Notifier.exception_notification(request.env, exception).deliver
-  end
+  #def server_error(exception)
+  #  ExceptionNotifier::Notifier.exception_notification(request.env, exception).deliver
+  #end
 end
 
