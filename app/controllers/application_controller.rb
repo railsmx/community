@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   prepend_view_path "app/views/#{Rails.application.config.theme}"
 
   protect_from_forgery with: :exception
@@ -10,6 +9,7 @@ class ApplicationController < ActionController::Base
   if Rails.env.production?
     rescue_from ActionController::RoutingError,
                 ActiveRecord::RecordNotFound,
+                ActionView::MissingTemplate,
                 with: lambda { |exception| render_error 404 }
   end
 
@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
   end
 
   def render_error(status)
-    render template: "errors/#{status}", status: status, layout: false
+    render template: "errors/#{status}.html", status: status, layout: false
   end
 end
 
