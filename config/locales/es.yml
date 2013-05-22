@@ -131,7 +131,7 @@ es:
       edit_event_title: 'Actualizar un evento'
     show:
       event_not_found: 'Evento no encontrado'
-      where_when: 'Donde y cuando'
+      where_when: 'Dónde y cuándo'
       organizer: 'Organizado por %{organize}'
       contact: 'Contacto: %{contact}'
     create:
