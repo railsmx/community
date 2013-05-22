@@ -26,7 +26,7 @@
           <%= display_login_link do %>
             <span class="user-info">
               <%= t('.welcome', user: current_identity.try(:username))  %>
-              <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), alt: current_identity.username) %>
+              <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), alt: current_identity.username) if current_identity.email.present? %>
             </span>
             <%= link_to t('.sign_out'), main_app.signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
           <% end %>
