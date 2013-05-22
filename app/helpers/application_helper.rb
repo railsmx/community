@@ -73,6 +73,21 @@ module ApplicationHelper
     content_for(:url_for) { url_for(options) } unless options.empty?
   end
 
+  def convert_link_to(text)
+    if text.include? 'http://' or text.include? 'https://'
+      link_to  text, text
+    elsif is_email?(text)
+      mail_to text
+    else
+      text
+    end
+  end
+
+  def is_email?(email)
+    return true if email =~ /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/
+    false
+  end
+
   def field_error(model, field)
     if model.errors[field].any?
       content_tag :span, class: 'error' do
