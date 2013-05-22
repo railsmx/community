@@ -1,11 +1,4 @@
 class ApplicationController < ActionController::Base
-  #rescue_from Exception, :with => :server_error
-
-  if Rails.env.production?
-    rescue_from ActionController::RoutingError,
-                ActiveRecord::RecordNotFound,
-                with: lambda { |exception| render_error 404 }
-  end
 
   prepend_view_path "app/views/#{Rails.application.config.theme}"
 
@@ -14,13 +7,19 @@ class ApplicationController < ActionController::Base
   helper_method :current_identity, :identity_signed_in?, :warden,
     :crowdblog_current_user, :crowdblog_authenticate_user!
 
+  if Rails.env.production?
+    rescue_from ActionController::RoutingError,
+                ActiveRecord::RecordNotFound,
+                with: lambda { |exception| render_error 404 }
+  end
+
+  protected
   def raise_not_found!
     raise ActionController::RoutingError.new("No route matches #{params[:unmatched_route]}")
   end
 
-  protected
   def warden
-    #request.env['warden']
+    request.env['warden']
   end
 
   def identity_signed_in?
@@ -55,9 +54,5 @@ class ApplicationController < ActionController::Base
   def render_error(status)
     render template: "errors/#{status}", status: status, layout: false
   end
-
-  #def server_error(exception)
-  #  ExceptionNotifier::Notifier.exception_notification(request.env, exception).deliver
-  #end
 end
 
