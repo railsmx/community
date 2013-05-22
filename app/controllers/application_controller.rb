@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-  rescue_from Exception, :with => :server_error
+  #rescue_from Exception, :with => :server_error
 
   if Rails.env.production?
-    rescue_from ActionController::RoutingError, 
-                ActiveRecord::RecordNotFound, 
+    rescue_from ActionController::RoutingError,
+                ActiveRecord::RecordNotFound,
                 with: lambda { |exception| render_error 404 }
   end
 
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_identity, :identity_signed_in?, :warden,
-    :crowdblog_current_user, :crowdblog_authenticate_user!  
+    :crowdblog_current_user, :crowdblog_authenticate_user!
 
   def raise_not_found!
     raise ActionController::RoutingError.new("No route matches #{params[:unmatched_route]}")
