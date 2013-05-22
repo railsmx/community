@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title 'Rails Mx'
+  feed.title 'rails.mx'
   feed.updated @items.first.updated_at if @items.first
   @items.each do |item|
     if item.class == Crowdblog::Post

@@ -18,7 +18,8 @@ Community::Application.routes.draw do
   post "/contacto" => "contact_form#create", as: :contact_form
 
 
-  get "/atom" => 'atom_feeds#show'
+  get "/blog.(:format)" => 'feeds#show'
+
   get "/:id" => "home#show", as: :static
 
   if Rails.env.test?
