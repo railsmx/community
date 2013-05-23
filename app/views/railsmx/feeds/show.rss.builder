@@ -1,4 +1,4 @@
-xml.instruct! :xml, :version => "1.0" 
+xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
     xml.title "rails.mx"
@@ -12,8 +12,8 @@ xml.rss :version => "2.0" do
           xml.pubDate item.published_at.to_s(:rfc822)
           xml.link post_url(*item.url_params)
         end
-      
-      else 
+
+      else
 
         xml.item do
           xml.title item.name
