@@ -1,5 +1,5 @@
 <div class="form-event">
-  <%= form_for event, url: event_path(event) do |f| %>
+  <%= form_for event do |f| %>
     <div>
       <label><%= t('.event_name') %></label>
       <%= f.text_field :name, maxlength: 60 %>
