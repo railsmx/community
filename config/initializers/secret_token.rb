@@ -9,4 +9,9 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Community::Application.config.secret_key_base = 'aa4499f74569d7cfc9608471298e7d4a8cb7860bdb831fea2db67865aee9a095a8e86ac6058fe7eb588a23fe51495ca76d33eeca4359618deb4a9129e703f9bb'
+secret_token = if Rails.env.production?
+                 ENV['SECRET_TOKEN']
+               else
+                 '1da52ceef866b5ebb5997f0d1495a3c97826dcb605e3c8a00f0e6de40f06208d84bac74c62f0f08803bbfd7382e52d57c0903959468ffc917387cb638ec1e535'
+               end
+Community::Application.config.secret_key_base = secret_token

@@ -1,4 +1,4 @@
-  class ContactForm < MailForm::Base
+class ContactForm < MailForm::Base
   attributes :name, validate: true
   attribute :email
   attributes :message
