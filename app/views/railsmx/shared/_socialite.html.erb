@@ -18,7 +18,7 @@
       <a href="http://www.facebook.com/sharer.php?" class="socialite facebook-like" data-href="<%= content_for?(:url_for) ? yield(:url_for) : url_for(only_path:false) %>" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank" style="position:absolute; z-index:1;">
       </a>
   </li>
-
+</ul>
 <script>
   $(document).on('page:fetch', function(){
     fb_root = $('#fb-root').detach();
