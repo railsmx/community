@@ -33,4 +33,10 @@ Community::Application.configure do
 
   # Debug mode disables concatenation and preprocessing of assets.
   config.assets.debug = true
+
+  config.middleware.insert_before(Rack::Lock, Rack::Block) do
+    ip_pattern '187.191.22.162' do
+      halt 302
+    end
+  end
 end

@@ -245,6 +245,8 @@ GEM
     puma (2.0.1)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
+    rack-block (0.1.1)
+      rack (>= 1.3)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
     rack-test (0.6.2)
@@ -348,6 +350,7 @@ DEPENDENCIES
   pretty_formatter
   pry-rails
   puma
+  rack-block
   rails (= 4.0.0.beta1)
   rails3_serve_static_assets!
   rails_log_stdout!
