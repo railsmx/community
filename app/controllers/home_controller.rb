@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def index; end
 
   def show
-    pages = %w(acerca privacidad)
+    pages = %w(acerca privacidad guia-blog)
     page = params[:id] || ''
 
     return render page.downcase if pages.include?(page.downcase)
