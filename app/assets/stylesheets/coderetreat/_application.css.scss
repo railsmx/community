@@ -423,7 +423,7 @@ footer {
     }
   }
 
-  div 				{
+  div         {
     margin-left: 0 !important;
     margin-top: $margin;
 
@@ -560,4 +560,32 @@ footer {
   -moz-border-radius: 3px;
   border-radius: 3px;
   background-color: white;
+}
+
+
+.menu {
+  list-style-type: none;
+  margin: 0 0 0 $margin;
+
+  li {
+    float: left;
+    color: $red;
+    margin-right: ($margin / 2);
+
+    &:after {
+      content: '|';
+      margin-left: ($margin / 2);
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+
+    a {
+      color: $light-red;
+      font-size: 1.2em;
+      font-weight: lighter;
+      text-decoration: none;
+    }
+  }
 }

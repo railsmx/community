@@ -81,6 +81,7 @@
       </div>
     </footer>
 
+    <%= render partial: '/shared/ga' if Rails.env.production? %>
     <script type='text/javascript'>
       jQuery(function($){
         $(".tweet").tweet({
