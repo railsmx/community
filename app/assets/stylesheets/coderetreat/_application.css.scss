@@ -569,7 +569,7 @@ footer {
 
   li {
     float: left;
-    color: $red;
+    color: $green;
     margin-right: ($margin / 2);
 
     &:after {
@@ -582,7 +582,7 @@ footer {
     }
 
     a {
-      color: $light-red;
+      color: $green;
       font-size: 1.2em;
       font-weight: lighter;
       text-decoration: none;
