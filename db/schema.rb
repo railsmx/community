@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130507142525) do
+ActiveRecord::Schema.define(version: 20130624200153) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "crowdblog_assets", force: true do |t|
     t.integer  "post_id"
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 20130507142525) do
     t.string   "provider",                   null: false
     t.string   "uid",                        null: false
     t.string   "username",                   null: false
-    t.string   "email",                      null: false
+    t.string   "email"
     t.boolean  "blocked",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
