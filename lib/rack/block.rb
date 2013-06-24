@@ -10,14 +10,14 @@ module Rack
 
     def call(env)
       req = Rack::Request.new(env)
-      if @blocked_content.detect{|block| req.path_info =~ /#{block}/}
+      if @blocked_content.detect{|block| req.url =~ /#{block}/}
         return [302, {"Content-Type" => "text/html"}, ['']]
       end
       @app.call(env)
     end
 
-    def block(*content)
-      @blocked_content.push *content
+    def block(content)
+      @blocked_content.concat(content).uniq!
     end
   end
 end
