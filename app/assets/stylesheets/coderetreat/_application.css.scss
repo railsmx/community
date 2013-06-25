@@ -160,6 +160,7 @@ footer {
         float: left;
         margin-left: $margin / 2;
       }
+      
       .timeline-header, .customisable-border { display: none; }
 
       img {
@@ -185,21 +186,14 @@ footer {
 
         .tweet {
           margin-top: $margin / 2;
+          margin-bottom: $margin / 2;
           float: left;
-
-          .each_tweet {
-            color: $text-color;
-            float: left;
-            width: 100%;
-            margin-top: 15px;
+          
+          .timePosted {
+            font-weight: 100;
+            font-style: italic;
           }
-
-          .ago {
-            @extend .each_tweet;
-            font-size: 12px;
-            margin-top: 5px;
-          }
-
+          
           ul {
             margin: 0;
             padding: 0;
