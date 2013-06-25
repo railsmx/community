@@ -16,7 +16,7 @@ es:
       who_we_are: 'Acerca de'
       contact: 'Contacto'
       privacy: 'Privacidad'
-      contact_us: 'Si deseas organizar un Code Retreat o necesitas ayuda para organizarlo, ponte en contacto con nosotros.'
+      contact_us: 'Si deseas organizar un Coderetreat o necesitas ayuda para organizarlo, ponte en contacto con nosotros.'
       more_info: 'Más información...'
       blog: 'BLOG'
       twitter: 'TWITTER'
@@ -26,9 +26,9 @@ es:
   home:
     acerca:
       who_we_are: 'Acerca de ...'
-      about_coderetreat: 'ACERCA DEL CODE RETREAT'
+      about_coderetreat: 'ACERCA DEL CODERETREAT'
       history: 'HISTORIA'
-      oragnize_coderetreat: 'ORGANIZA TU CODE RETREAT'
+      oragnize_coderetreat: 'ORGANIZA TU CODERETREAT'
     privacidad:
       privacy: 'Privacidad'
     index:

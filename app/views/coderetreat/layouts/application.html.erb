@@ -85,6 +85,7 @@
       </div>
     </footer>
 
+    <%= render partial: '/shared/ga' if Rails.env.production? %>
     <script type='text/javascript'>
       $(function(){
         twitterFetcher.fetch('<%= Rails.application.config.widget_id %>', 'tweets', 2, true, false, true);
