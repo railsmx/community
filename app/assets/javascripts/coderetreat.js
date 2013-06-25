@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.tweet
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es
 //= require jquery.inputmask
