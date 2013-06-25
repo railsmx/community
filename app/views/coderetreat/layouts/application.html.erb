@@ -43,8 +43,8 @@
           </div>
           <div class="three">
             <h4><%= t('.twitter') %></h4>
-            <%= link_to '@coderetreatmx', 'https://twitter.com/coderetreatmx', class: "tweet_link", target: "_blank" %>
-            <div class="tweet">
+            <%= link_to '@CodeRetreatMex', 'https://twitter.com/coderetreatmex', class: "tweet_link", target: "_blank" %>
+            <div id="tweets" class="tweet">
               <!-- Here is added the tweets -->
             </div>
           </div>
@@ -71,7 +71,11 @@
               <%= display_login_link do %>
                 <span class="user-info">
                   <%= link_to t('.sign_out'), main_app.signout_path, class: "sign-out zocial secondary", style: "font-size: .8em;" %>
-                  <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), alt: current_identity.username) %>
+                  <% if current_identity.email.present? %>
+                    <%= gravatar_image_tag(current_identity.email.gsub('spam', current_identity.username), alt: current_identity.username) %>
+                  <% else %>
+                    <%= gravatar_image_tag('junk', alt: 'Github Default Gravatar') %>
+                  <% end %>
                 </span>
               <% end %>
             <% end %>
@@ -83,20 +87,9 @@
 
     <%= render partial: '/shared/ga' if Rails.env.production? %>
     <script type='text/javascript'>
-      /*jQuery(function($){
-        $(".tweet").tweet({
-          username: "coderetreatmx",
-          join_text: "auto",
-          avatar_size: 32,
-          count: 2,
-          auto_join_text_default: "",
-          auto_join_text_ed: "",
-          auto_join_text_ing: "",
-          auto_join_text_reply: "",
-          auto_join_text_url: "",
-          loading_text: "loading tweets..."
-        });
-      });*/
+      $(function(){
+        twitterFetcher.fetch('<%= Rails.application.config.widget_id %>', 'tweets', 2, true, false, true);
+      });
     </script>
   </body>
 </html>

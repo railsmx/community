@@ -4,7 +4,11 @@
   <section class="left-section">
     <div class="author">
       <div class="avatar">
-        <%= gravatar_image_tag(@post.author.email.gsub('spam', @post.author.username), alt: @post.author.username, gravatar: { size: 56 }) %>
+        <% if @post.author.email.present? %>
+          <%= gravatar_image_tag(@post.author.email.gsub('spam', @post.author.username), alt: @post.author.username, gravatar: { size: 56 }) %>
+        <% else %>
+          <%= gravatar_image_tag('junk', alt: 'Github Default Gravatar') %>
+        <% end %>
       </div>
       <h3 class="published"><%= @post.author.username %></h3>
       <div class="published-date">
