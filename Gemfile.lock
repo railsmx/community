@@ -1,20 +1,20 @@
 GIT
   remote: git://github.com/FriendlyId/friendly_id.git
-  revision: 903f2fac79774edb119a7f6baa2396ab7c555d47
+  revision: 78d639d67a17135fe5e3b9731fd4328c315c74b1
   branch: rails4
   specs:
     friendly_id (4.1.0.beta.2)
 
 GIT
   remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
-  revision: 446568e95f1c2f6016ac900aee3e4fb9d04f689a
+  revision: 2780818f4f3fb709e43a05b8c5313a3a82f5fac6
   specs:
-    bootstrap-datepicker-rails (1.0.0.6)
+    bootstrap-datepicker-rails (1.1.1.1)
       railties (>= 3.0)
 
 GIT
   remote: git://github.com/crowdint/crowdblog.git
-  revision: 39279afec48c5b0a446a7d2e4022960bde9781de
+  revision: 29aa754e8df9296b85a806065f5638634d2247be
   branch: rails4-userless
   specs:
     crowdblog (0.3.2)
@@ -50,18 +50,18 @@ GIT
 
 GIT
   remote: git://github.com/sferik/twitter.git
-  revision: 6f1d19037430f06788454ee59b54aea3001536b0
+  revision: 7a56772d0fff12001e112e1593dae61b8cd91024
   specs:
-    twitter (4.6.2)
+    twitter (4.8.1)
       faraday (~> 0.8, < 0.10)
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
 
 GIT
   remote: git://github.com/smartinez87/exception_notification.git
-  revision: 52d3b79f68cd4ec48d2b79e2478674c2256eddee
+  revision: 327b38350f7c58829b173b4929189a0cd63aa337
   specs:
-    exception_notification (3.0.1)
+    exception_notification (4.0.0.rc1)
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
 
@@ -92,13 +92,13 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.33)
-    addressable (2.3.4)
+    addressable (2.3.5)
     arel (4.0.0)
-    atomic (1.1.9)
-    better_errors (0.8.0)
+    atomic (1.1.10)
+    better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    bourbon (3.1.6)
+    bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
     brakeman (1.9.2)
@@ -113,7 +113,7 @@ GEM
       terminal-table (~> 1.4)
     builder (3.1.4)
     callsite (0.0.11)
-    cane (2.5.2)
+    cane (2.6.0)
       parallel
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -133,24 +133,24 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     colorize (0.5.8)
-    dalli (2.6.3)
-    dotenv (0.7.0)
+    dalli (2.6.4)
+    dotenv (0.8.0)
     erubis (2.7.0)
-    excon (0.21.0)
+    excon (0.6.6)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
     fastercsv (1.5.5)
-    fog (1.11.1)
+    fog (0.9.0)
       builder
-      excon (~> 0.20)
-      formatador (~> 0.2.0)
-      json (~> 1.7)
+      excon (~> 0.6.1)
+      formatador (>= 0.1.3)
+      json
       mime-types
-      net-scp (~> 1.1)
-      net-ssh (>= 2.1.3)
-      nokogiri (~> 1.5.0)
+      net-scp (>= 1.0.4)
+      net-ssh (>= 2.1.4)
+      nokogiri (>= 1.4.4)
       ruby-hmac
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
@@ -165,13 +165,13 @@ GEM
     haml (3.1.8)
     hashie (2.0.5)
     highline (1.6.19)
-    hike (1.2.2)
+    hike (1.2.3)
     httpauth (0.2.0)
     i18n (0.6.4)
-    jbuilder (1.4.1)
+    jbuilder (1.4.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
-    jquery-rails (2.2.1)
+    jquery-rails (3.0.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.0)
@@ -182,13 +182,14 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta_request (0.2.5)
+    meta_request (0.2.7)
       callsite
       rack-contrib
       railties
     method_source (0.8.1)
     mime-types (1.23)
-    minitest (4.7.4)
+    mini_portile (0.5.0)
+    minitest (4.7.5)
     minitest-capybara (0.1.0)
       capybara (>= 1.0)
       minitest-matchers (>= 1.2)
@@ -209,13 +210,14 @@ GEM
       minitest-matchers (~> 1.2)
       minitest-metadata (~> 0.3)
       minitest-rails (~> 0.9.1)
-    multi_json (1.7.3)
+    multi_json (1.7.7)
     multipart-post (1.2.0)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)
-    newrelic_rpm (3.6.2.96)
-    nokogiri (1.5.9)
+    newrelic_rpm (3.6.4.122)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -231,7 +233,7 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
-    parallel (0.6.5)
+    parallel (0.7.0)
     pg (0.15.1)
     polyglot (0.3.3)
     pretty_formatter (0.0.1)
@@ -240,9 +242,9 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pry-rails (0.3.0)
+    pry-rails (0.3.1)
       pry (>= 0.9.10)
-    puma (2.0.1)
+    puma (2.1.1)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-contrib (1.1.0)
@@ -263,51 +265,50 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.17.0, < 2.0)
-    rake (10.0.4)
+    rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    redcarpet (2.2.2)
+    redcarpet (2.3.0)
     ruby-hmac (0.4.0)
-    ruby2ruby (2.0.5)
+    ruby2ruby (2.0.6)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
     sass (3.2.9)
-    sass-rails (4.0.0.rc1)
+    sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
-      sprockets-rails (~> 2.0.0.rc0)
-      tilt (~> 1.3)
+      sprockets-rails (~> 2.0.0)
     sexp_processor (4.2.1)
     simple_oauth (0.2.0)
-    slim (1.0.1)
-      temple (~> 0.3.0)
-      tilt (~> 1.2)
+    slim (2.0.0)
+      temple (~> 0.6.5)
+      tilt (~> 1.3, >= 1.3.3)
     slop (3.4.5)
-    sprockets (2.9.3)
+    sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.0.0.rc4)
+    sprockets-rails (2.0.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     state_machine (1.2.0)
-    temple (0.3.5)
+    temple (0.6.5)
     terminal-table (1.4.5)
     thor (0.18.1)
     thread_safe (0.1.0)
       atomic
     tilt (1.4.1)
-    treetop (1.4.12)
+    treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (1.1.1)
+    turbolinks (1.2.0)
       coffee-rails
     tzinfo (0.3.37)
-    uglifier (2.1.0)
+    uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)

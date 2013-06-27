@@ -410,16 +410,17 @@ footer {
   }
 
   .submit {
-    padding-left: ($padding * 5.5);
+    padding-left: ($padding * 4.75);
     input[type="submit"] {
       @include button($green);
       font-size: 1em;
     }
   }
 
-  div         {
+  div {
     margin-left: 0 !important;
     margin-top: $margin;
+    overflow: hidden;
 
     .date {
       @include size(150px 30px);
@@ -456,7 +457,7 @@ footer {
 
       .date {
         float:left;
-        margin: 0 ($margin / 2) 0 0 !important;
+        margin: 0 $margin 0 0 !important;
       }
     }
 
@@ -464,7 +465,7 @@ footer {
       font-size: .7em;
       color: $red;
       float: left;
-      margin: ($margin / 4) ($margin / 4) ($margin / 4) 0;
+      margin: ($margin / 4);
     }
   }
 
@@ -475,7 +476,6 @@ footer {
     float: left;
   }
 }
-
 
 .contact_form {
   .contact {
