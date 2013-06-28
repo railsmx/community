@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - ruby-head
 before_install:
-  - gem install bundler --pre
+  - gem install bundler
 
 bundler_args: --without development
 
