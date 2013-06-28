@@ -23,7 +23,7 @@
         <%= t('.organizer', organize: @event.organizer) %>
       </div>
       <div class="contact">
-        <%= t('.contact', contact: convert_link_to(@event.contact).html_safe) %>
+        <%= t('.contact', contact: convert_link_to(@event.contact)).html_safe %>
       </div>
 
       <div class="datetime">
