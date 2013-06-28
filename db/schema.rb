@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20130624200153) do
     t.string   "slug"
   end
 
-  add_index "events", ["identity_id"], name: "index_events_on_identity_id"
-  add_index "events", ["slug"], name: "index_events_on_slug", unique: true
+  add_index "events", ["identity_id"], name: "index_events_on_identity_id", using: :btree
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true, using: :btree
 
   create_table "identities", force: true do |t|
     t.string   "provider",                   null: false
