@@ -24,7 +24,7 @@ group :production do
   gem 'newrelic_rpm'
 end
 
-gem "exception_notification", github: "smartinez87/exception_notification"
+gem 'exception_notification', '~> 4.0.0.rc1'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -57,14 +57,6 @@ GIT
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
 
-GIT
-  remote: git://github.com/smartinez87/exception_notification.git
-  revision: 327b38350f7c58829b173b4929189a0cd63aa337
-  specs:
-    exception_notification (4.0.0.rc1)
-      actionmailer (>= 3.0.4)
-      activesupport (>= 3.0.4)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -136,6 +128,9 @@ GEM
     dalli (2.6.4)
     dotenv (0.8.0)
     erubis (2.7.0)
+    exception_notification (4.0.0.rc1)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
     excon (0.6.6)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -325,7 +320,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   crowdblog!
   dalli
-  exception_notification!
+  exception_notification (~> 4.0.0.rc1)
   fog
   font-awesome-sass-rails
   foreman
