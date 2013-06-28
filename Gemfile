@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '4.0.0'
 
 gem 'pg'
 gem 'puma'
@@ -29,8 +29,8 @@ gem "exception_notification", github: "smartinez87/exception_notification"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
 
   gem 'uglifier', '>= 1.0.3'
 
