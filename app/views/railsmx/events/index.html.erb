@@ -10,6 +10,23 @@
           <%= !@current_posts.empty? ? (render partial: 'shared/post', collection: @current_posts) : t('.not_content') %>
         </div>
       </div>
+      <div class="social-links">
+        <h4><%= t('.social') %></h4>
+        <ul>
+          <div class="icons icon-twitter">
+            <i><%= link_to '@railsmx', 'http://twitter.com/railsmx', target: '_blank' %></i>
+          </div>
+          <div class="icons icon-google-plus">
+            <i><%= link_to 'RailsMX', 'https://plus.google.com/communities/113995479213399624141', target: '_blank' %></i>
+          </div>
+          <div class="icons icon-microphone">
+            <i><%= link_to 'Ruby en Español', 'http://rubyen.es', target: '_blank' %></i>
+          </div>
+          <div class="icons icon-group">
+            <i><%= link_to 'Codificadas MX', 'https://www.facebook.com/Codificadas', target: '_blank' %></i>
+          </div>
+        </ul>
+      </div>
     </sidebar>
   </section>
 

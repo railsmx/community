@@ -47,6 +47,7 @@ es:
       coming_events: 'Próximos Eventos'
       blog: 'Blog'
       not_content: 'No hay contenido disponible'
+      social: 'Social'
     post:
       details: 'Ver detalles...'
     event:
@@ -91,6 +92,7 @@ es:
         blog: 'Blog'
         coming_events: 'Próximos Eventos'
         not_content: 'No hay contenido disponible'
+        social: 'Social'
     admin:
       posts:
         index:
@@ -126,6 +128,7 @@ es:
       add_event: 'Registrar evento'
       create_event: 'Su evento ha sido creado'
       edit: 'Modificar'
+      social: 'Social'
     edit:
       update_event: 'Actualizar evento'
       edit_event_title: 'Actualizar un evento'

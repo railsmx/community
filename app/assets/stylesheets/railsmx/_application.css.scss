@@ -224,9 +224,9 @@ sidebar {
       font-family: "Helvetica" !important;
       font-size: 0.8em !important;
 
-      p { 
+      p {
         margin-top: 0;
-        font-weight: 300; 
+        font-weight: 300;
       }
     }
   }
@@ -241,6 +241,46 @@ sidebar {
       p {
         font-weight: 300;
       }
+    }
+  }
+
+  .social-links {
+    margin: $margin 0;
+
+    ul {
+      margin: ($margin / 4) 0;
+      padding: 0;
+    }
+
+    .icons {
+      color: gray;
+      width: 100%;
+      display: inline-block;
+      padding: ($padding / 3) 0;
+
+      i {
+        font-family: FontAwesome;
+        font-style: normal;
+        text-decoration: inherit;
+      }
+
+      a {
+        color: gray;
+        padding-right: 0;
+        font-weight: normal;
+        font-size: .8em !important;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+
+    .icons:hover {
+      color: $red;
+
+      a { color: $red; }
+    }
+
+    .icon-microphone {
+      i { padding-left: 5px; }
     }
   }
 
