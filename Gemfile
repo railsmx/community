@@ -38,7 +38,7 @@ group :assets do
   gem 'bootstrap-datepicker-rails',
     :require => 'bootstrap-datepicker-rails',
     github: 'Nerian/bootstrap-datepicker-rails'
-  gem 'font-awesome-sass-rails'
+  gem 'font-awesome-rails'
 end
 
 gem 'jquery-rails'
