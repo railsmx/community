@@ -50,14 +50,14 @@
           </div>
           <div class="three">
             <h4><%= t('.blog') %></h4><br>
-            <% cache @current_posts do %>
-              <% if !@current_posts.empty? %>
+            <% if !@current_posts.empty? %>
+              <% cache @current_posts do %>
                 <%= (render partial: 'shared/post', collection: @current_posts) %>
-              <% else %>
-                <div class="advice">
-                  <%= t('.not_content') %>
-                </div>
               <% end %>
+            <% else %>
+              <div class="advice">
+                <%= t('.not_content') %>
+              </div>
             <% end %>
           </div>
           <div class="three">
