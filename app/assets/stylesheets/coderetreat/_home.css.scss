@@ -1,7 +1,7 @@
 .home {
   .hero {
     @include size(1100px 300px);
-    background: image-url('slider.png') no-repeat;
+    background: image-url('slider.jpg') no-repeat;
 
     .welcome-text {
       color: #fff;
