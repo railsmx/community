@@ -38,7 +38,7 @@ group :assets do
   gem 'bootstrap-datepicker-rails',
     :require => 'bootstrap-datepicker-rails',
     github: 'Nerian/bootstrap-datepicker-rails'
-  gem 'font-awesome-sass-rails'
+  gem 'font-awesome-rails'
 end
 
 gem 'jquery-rails'
@@ -49,6 +49,7 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-focus'
   gem 'minitest-colorize'
+  gem 'minitest-capybara', '= 0.1.0'
   gem 'minitest-rails-capybara'
   gem 'launchy'
 end
