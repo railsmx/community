@@ -6,5 +6,5 @@ begin
     config.oauth_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
   end
 rescue Exception => exc
-  logger.error("Message for the log file #{exc.message}")
+  Rails.logger.error("Message for the log file #{exc.message}")
 end
