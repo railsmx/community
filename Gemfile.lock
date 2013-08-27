@@ -1,9 +1,10 @@
 GIT
   remote: git://github.com/FriendlyId/friendly_id.git
-  revision: c49ce30ff2b370669ccf1708e99fb08ab51435d9
-  branch: rails4
+  revision: 4c8197c30e495b3d6249f191a03dcc3224db7e4b
+  tag: 5.0.0.beta4
   specs:
-    friendly_id (4.1.0.beta.2)
+    friendly_id (5.0.0.beta4)
+      activerecord (~> 4.0.0)
 
 GIT
   remote: git://github.com/Nerian/bootstrap-datepicker-rails.git

@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   geocoded_by :address
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :finders]
 
   validates :name, :date, :location, :address, :contact, :identity_id,
     presence: true

@@ -10,7 +10,7 @@ gem 'dalli'
 gem 'warden', '~> 1.2.1'
 gem 'omniauth-github'
 gem 'pretty_formatter'
-gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'rails4'
+gem 'friendly_id', github: 'FriendlyId/friendly_id', tag: '5.0.0.beta4'
 gem 'mail_form', github: 'mariochavez/mail_form'
 gem 'crowdblog', github:  'crowdint/crowdblog', branch: 'rails4-userless'
 
